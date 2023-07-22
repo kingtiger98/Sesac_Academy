@@ -20,13 +20,17 @@ class DateViewController: UIViewController {
     @IBOutlet var ddayShadows: [UIView]!
     
     
+    @IBOutlet weak var testBtn: UIButton!
+    @IBOutlet weak var testLbl: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         datePickerDs()
         ddayImage()
-    
         
+        // 클릭하지 않았지만 액션함수가 실행되도록!
+        datePickerValueChanged(datePicker)
     }
 
     // dday 계산 함수
@@ -73,9 +77,7 @@ class DateViewController: UIViewController {
         for image in ddayImages {
                 // 이미지 뷰 모서리 둥글게 처리
                 image.layer.cornerRadius = 10
-                image.clipsToBounds = true // clipsToBounds를 false로 설정
-
-                
+                image.clipsToBounds = true
             }
         
         for shadow in ddayShadows {
@@ -86,6 +88,5 @@ class DateViewController: UIViewController {
             shadow.layer.shadowRadius = 10
         }
     }
-    
     
 }

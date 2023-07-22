@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C36283E2A6A0C70008C0DE5 /* sampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C36283D2A6A0C70008C0DE5 /* sampleViewController.swift */; };
+		4C3628402A6A0F23008C0DE5 /* autolayoutPractice.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C36283F2A6A0F23008C0DE5 /* autolayoutPractice.storyboard */; };
+		4C3628422A6A10E1008C0DE5 /* autolayoutExample.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C3628412A6A10E1008C0DE5 /* autolayoutExample.storyboard */; };
+		4C3628442A6A4AF4008C0DE5 /* WordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3628432A6A4AF4008C0DE5 /* WordViewController.swift */; };
 		4C38A5EF2A68DAD40086C5D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C38A5EE2A68DAD40086C5D2 /* AppDelegate.swift */; };
 		4C38A5F12A68DAD40086C5D2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C38A5F02A68DAD40086C5D2 /* SceneDelegate.swift */; };
 		4C38A5F32A68DAD40086C5D2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C38A5F22A68DAD40086C5D2 /* ViewController.swift */; };
@@ -17,6 +21,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C36283D2A6A0C70008C0DE5 /* sampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sampleViewController.swift; sourceTree = "<group>"; };
+		4C36283F2A6A0F23008C0DE5 /* autolayoutPractice.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = autolayoutPractice.storyboard; sourceTree = "<group>"; };
+		4C3628412A6A10E1008C0DE5 /* autolayoutExample.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = autolayoutExample.storyboard; sourceTree = "<group>"; };
+		4C3628432A6A4AF4008C0DE5 /* WordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordViewController.swift; sourceTree = "<group>"; };
 		4C38A5EB2A68DAD40086C5D2 /* calender.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = calender.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C38A5EE2A68DAD40086C5D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C38A5F02A68DAD40086C5D2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +47,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C1A2A1D2A6A0BDE0068533E /* ddayCalender */ = {
+			isa = PBXGroup;
+			children = (
+				4C36283D2A6A0C70008C0DE5 /* sampleViewController.swift */,
+				4C3628432A6A4AF4008C0DE5 /* WordViewController.swift */,
+			);
+			path = ddayCalender;
+			sourceTree = "<group>";
+		};
 		4C38A5E22A68DAD40086C5D2 = {
 			isa = PBXGroup;
 			children = (
@@ -58,10 +75,13 @@
 		4C38A5ED2A68DAD40086C5D2 /* calender */ = {
 			isa = PBXGroup;
 			children = (
+				4C1A2A1D2A6A0BDE0068533E /* ddayCalender */,
 				4C38A5EE2A68DAD40086C5D2 /* AppDelegate.swift */,
 				4C38A5F02A68DAD40086C5D2 /* SceneDelegate.swift */,
 				4C38A5F22A68DAD40086C5D2 /* ViewController.swift */,
 				4C38A5F42A68DAD40086C5D2 /* Main.storyboard */,
+				4C36283F2A6A0F23008C0DE5 /* autolayoutPractice.storyboard */,
+				4C3628412A6A10E1008C0DE5 /* autolayoutExample.storyboard */,
 				4CD8CB942A68DBE000CB079E /* DateViewController.swift */,
 				4C38A5F72A68DAD50086C5D2 /* Assets.xcassets */,
 				4C38A5F92A68DAD50086C5D2 /* LaunchScreen.storyboard */,
@@ -128,8 +148,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C3628422A6A10E1008C0DE5 /* autolayoutExample.storyboard in Resources */,
 				4C38A5FB2A68DAD50086C5D2 /* LaunchScreen.storyboard in Resources */,
 				4C38A5F82A68DAD50086C5D2 /* Assets.xcassets in Resources */,
+				4C3628402A6A0F23008C0DE5 /* autolayoutPractice.storyboard in Resources */,
 				4C38A5F62A68DAD40086C5D2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -141,7 +163,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C3628442A6A4AF4008C0DE5 /* WordViewController.swift in Sources */,
 				4CD8CB952A68DBE000CB079E /* DateViewController.swift in Sources */,
+				4C36283E2A6A0C70008C0DE5 /* sampleViewController.swift in Sources */,
 				4C38A5F32A68DAD40086C5D2 /* ViewController.swift in Sources */,
 				4C38A5EF2A68DAD40086C5D2 /* AppDelegate.swift in Sources */,
 				4C38A5F12A68DAD40086C5D2 /* SceneDelegate.swift in Sources */,

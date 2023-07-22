@@ -1,8 +1,8 @@
 //
 //  ViewController.swift
-//  newWord
+//  Baemin
 //
-//  Created by 황재하 on 7/20/23.
+//  Created by 황재하 on 7/22/23.
 //
 
 import UIKit
