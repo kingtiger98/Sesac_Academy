@@ -24,7 +24,7 @@ class WordViewController: UIViewController {
         newWordListWordSet()
 
         print("안녕안녕")
-        
+        print("커밋과 동시에 푸시하기")
     }
 
     // 돋보기 버튼
