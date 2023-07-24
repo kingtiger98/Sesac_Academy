@@ -23,6 +23,8 @@ class WordViewController: UIViewController {
         newWordListDesign()
         newWordListWordSet()
         
+        
+        
     }
 
     // 돋보기 버튼
