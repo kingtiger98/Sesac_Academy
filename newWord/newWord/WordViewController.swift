@@ -25,6 +25,7 @@ class WordViewController: UIViewController {
 
         print("안녕안녕")
         print("커밋과 동시에 푸시하기")
+        print("ReadMe 사용했다")
     }
 
     // 돋보기 버튼
