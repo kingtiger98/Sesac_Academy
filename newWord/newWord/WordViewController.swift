@@ -158,7 +158,9 @@ class WordViewController: UIViewController {
         alter.addAction(okay)
         
         present(alter, animated: true)
-
+        
+        resultLabel.text = "신조어를 검색해주세요!"
+        
     }
     
     
