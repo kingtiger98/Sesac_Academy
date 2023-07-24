@@ -34,12 +34,14 @@ class ViewController: UIViewController {
     
     @IBAction func textFieldReturnKey(_ sender: UITextField) {
         textField.text = resultLabel.text
+        textField.text = ""
     }
     
     
     
     @IBAction func sendingButton(_ sender: UIButton) {
-         resultLabel.text = textField.text
+        resultLabel.text = textField.text
+        textField.text = ""
     }
     
     
