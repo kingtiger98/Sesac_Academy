@@ -22,8 +22,8 @@ class WordViewController: UIViewController {
         newWordTextFieldDesign()
         newWordListDesign()
         newWordListWordSet()
-        
-        
+
+        print("안녕안녕")
         
     }
 
