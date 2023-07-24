@@ -13,8 +13,8 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var resultLabel: UILabel!
+    @IBOutlet weak var toggleButton: UISwitch!
     
-   
     @IBOutlet var buttons: [UIButton]!
     
     
@@ -39,7 +39,7 @@ class ViewController: UIViewController {
     
     
     @IBAction func sendingButton(_ sender: UIButton) {
-         resultLabel.text = textField.text 
+         resultLabel.text = textField.text
     }
     
     
@@ -48,8 +48,37 @@ class ViewController: UIViewController {
         textColor = getRandomColor()
         
         resultLabel.textColor = textColor
-        buttons[1].tintColor = textColor
+        toggleButton.onTintColor = textColor
+
     }
+    
+    
+    @IBAction func sendToggle(_ sender: UISwitch) {
+        
+        
+        if toggleButton.isOn == true {
+            textField.isHidden = false
+            
+            for num in 0...buttons.count - 1 {
+                buttons[num].isHidden = false
+            }
+            
+            toggleButton.thumbTintColor = .white
+            toggleButton.layer.opacity = 1
+
+        } else if toggleButton.isOn == false {
+            textField.isHidden = true
+            
+            for num in 0...buttons.count - 1 {
+                buttons[num].isHidden = true
+            }
+            
+            toggleButton.thumbTintColor = .darkGray
+            toggleButton.layer.opacity = 0.1
+            
+        }
+    }
+    
     
     
     // UIColor색상 랜덤 추출 함수

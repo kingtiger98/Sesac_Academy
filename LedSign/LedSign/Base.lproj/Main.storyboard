@@ -44,7 +44,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N0W-ow-GDh">
                                         <rect key="frame" x="92" y="0.0" width="58" height="34.333333333333336"/>
-                                        <color key="tintColor" systemColor="systemGreenColor"/>
+                                        <color key="tintColor" systemColor="systemRedColor"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Aa"/>
                                         <connections>
@@ -63,6 +63,13 @@
                                 <color key="textColor" systemColor="systemGreenColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EtY-Hk-nWi">
+                                <rect key="frame" x="324" y="767" width="51" height="31"/>
+                                <color key="onTintColor" systemColor="systemGreenColor"/>
+                                <connections>
+                                    <action selector="sendToggle:" destination="BYZ-38-t0r" eventType="valueChanged" id="Xv9-qe-cuy"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -76,11 +83,14 @@
                             <constraint firstItem="eSz-S5-Gri" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="SRd-Fk-jNq"/>
                             <constraint firstItem="hY8-XL-4eh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="28" id="Ywa-uX-TvT"/>
                             <constraint firstItem="eSz-S5-Gri" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZVi-uf-wz0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EtY-Hk-nWi" secondAttribute="trailing" constant="20" id="et9-XP-4x8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="EtY-Hk-nWi" secondAttribute="bottom" constant="20" id="kdx-mV-hsk"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="resultLabel" destination="eSz-S5-Gri" id="Nz0-42-efc"/>
                         <outlet property="textField" destination="j0f-DG-buB" id="Qk0-Y5-wLi"/>
+                        <outlet property="toggleButton" destination="EtY-Hk-nWi" id="fbJ-za-4de"/>
                         <outletCollection property="buttons" destination="GyX-TS-47E" collectionClass="NSMutableArray" id="tLj-lb-NLv"/>
                         <outletCollection property="buttons" destination="N0W-ow-GDh" collectionClass="NSMutableArray" id="iZc-3R-xHt"/>
                     </connections>
@@ -92,7 +102,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="84.732824427480907" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="171" y="5"/>
         </scene>
     </scenes>
     <resources>
@@ -101,6 +111,9 @@
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
