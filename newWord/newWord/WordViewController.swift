@@ -9,6 +9,13 @@ import UIKit
 
 let words = ["번달번줌", "만반잘부", "별다줄", "알잘딱깔센", "억까"]
 
+let wordDictionary: [String: String] = ["번달번줌": "번호달라고 하면 번호 줌?",
+                                         "만반잘부": "만나서 반가워 잘 부탁해",
+                                         "별다줄": "별걸 다 줄이네",
+                                         "알잘딱깔센": "알아서 잘 딱 깔끔하게 센스있게",
+                                         "억까": "억지로 까기"]
+
+
 class WordViewController: UIViewController {
 
     
@@ -23,25 +30,45 @@ class WordViewController: UIViewController {
         newWordListDesign()
         newWordListWordSet()
 
-        print("안녕안녕")
-        print("커밋과 동시에 푸시하기")
-        print("ReadMe 사용했다")
+                
     }
 
     // 돋보기 버튼
     @IBAction func newWordSearchButton(_ sender: UIButton) {
-        resultLabel.text = newWordMean(newWord: newWordTextField.text!)
+        
+        guard let textCount = newWordTextField.text?.count else { return }
+        
+        if textCount <= 1 {
+            wordAlert()
+        } else {
+            resultLabel.text = newWordMean(newWord: userInputText())
+        }
     }
     
     
     // 텍스트필드 엔터 버튼
     @IBAction func textFieldEnterButton(_ sender: Any) {
-        resultLabel.text = newWordMean(newWord: newWordTextField.text!)
-    }
+        guard let textCount = newWordTextField.text?.count else { return }
+        
+        if textCount <= 1 {
+            wordAlert()
+        } else {
+            resultLabel.text = newWordMean(newWord: userInputText())
+        }    }
     
     // 추천 신조어 버튼
     @IBAction func newWordButtonTapped(_ sender: UIButton) {
-        newWordTextField.text = sender.titleLabel?.text!
+        guard let tappedButtonTitle = sender.titleLabel?.text else { return }
+        newWordTextField.text = tappedButtonTitle
+    }
+    
+    // 사용자가 입력한 신조어 저장
+    func userInputText() -> String {
+        guard let userTyppingText = newWordTextField.text else {
+            print("사용자가 입력한 신조어가 없습니다.")
+            return "사용자가 입력한 신조어가 없습니다."
+        }
+        return userTyppingText
     }
     
     // 텍스트필드 디자인
@@ -70,33 +97,70 @@ class WordViewController: UIViewController {
         }
     }
     
-    // 신조어 제안 버튼, 신조어 할당
+    // 신조어 제안 버튼, 신조어 할당 => 버튼의 tag값과 배열의 인덱스 사용해 수정
     func newWordListWordSet() {
-        for word in 0...3 {
-            newWorldButtonList[word].setTitle(words[word], for: .normal)
+        
+        let wordShuffled: [String] = words.shuffled()
+
+        for word in 0...newWorldButtonList.count - 1 {
+            
+            switch newWorldButtonList[word].tag {
+            case 1:
+                newWorldButtonList[word].setTitle(wordShuffled[word], for: .normal)
+            case 2:
+                newWorldButtonList[word].setTitle(wordShuffled[word], for: .normal)
+            case 3:
+                newWorldButtonList[word].setTitle(wordShuffled[word], for: .normal)
+            case 4:
+                newWorldButtonList[word].setTitle(wordShuffled[word], for: .normal)
+            default:
+                print("tag가 잘못됨")
+            }
         }
+        
     }
     
     // 신조어 설명 함수
     func newWordMean(newWord: String) -> String {
-        var Mean: String?
         
-        switch newWord {
-        case "번달번줌":
-            Mean = "번호달라고 하면 번호줌?"
-        case "만반잘부":
-            Mean = "만나서 반가워 잘 부탁해!"
-        case "별다줄":
-            Mean = "별걸 다 줄이네~"
-        case "알잘딱깔센":
-            Mean = "알아서 잘 딱 깔끔하게 센스있게"
-        case "억까":
-            Mean = "억지로 까기"
-        default:
-            Mean = "올바르지 않은 신조어입니다."
+        guard let newWordMean = wordDictionary[newWord] else {
+            print("사용자가 입력한 신조어가 없습니다.")
+            return "사용자가 입력한 신조어가 없습니다."
         }
-        return Mean!
+                
+        return newWordMean
+        
+//        var Mean: String?
+//
+//        switch newWord {
+//        case "번달번줌":
+//            Mean = "번호달라고 하면 번호줌?"
+//        case "만반잘부":
+//            Mean = "만나서 반가워 잘 부탁해!"
+//        case "별다줄":
+//            Mean = "별걸 다 줄이네~"
+//        case "알잘딱깔센":
+//            Mean = "알아서 잘 딱 깔끔하게 센스있게"
+//        case "억까":
+//            Mean = "억지로 까기"
+//        default:
+//            Mean = "올바르지 않은 신조어입니다."
+//        }
+//        return Mean!
     }
+    
+    func wordAlert() {
+        
+        let alter = UIAlertController(title: "잘못된 입력입니다.", message: "한 글자 이상 입력해주세요!", preferredStyle: .alert)
+        
+        let okay = UIAlertAction(title: "확인", style: .default)
+        
+        alter.addAction(okay)
+        
+        present(alter, animated: true)
+
+    }
+    
     
     // 키보드 내리기
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
