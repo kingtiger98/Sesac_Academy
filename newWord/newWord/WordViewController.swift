@@ -129,24 +129,6 @@ class WordViewController: UIViewController {
         }
                 
         return newWordMean
-        
-//        var Mean: String?
-//
-//        switch newWord {
-//        case "번달번줌":
-//            Mean = "번호달라고 하면 번호줌?"
-//        case "만반잘부":
-//            Mean = "만나서 반가워 잘 부탁해!"
-//        case "별다줄":
-//            Mean = "별걸 다 줄이네~"
-//        case "알잘딱깔센":
-//            Mean = "알아서 잘 딱 깔끔하게 센스있게"
-//        case "억까":
-//            Mean = "억지로 까기"
-//        default:
-//            Mean = "올바르지 않은 신조어입니다."
-//        }
-//        return Mean!
     }
     
     func wordAlert() {

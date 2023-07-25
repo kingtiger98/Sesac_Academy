@@ -27,13 +27,17 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // (레이블, 이미지뷰)는 클릭이 되지 않기 때문에 제스쳐가 적용되지 않는 문제 해결
+        //    ㄴ isUserInteractionEnabled를 true로 설정함
         firstImageView.isUserInteractionEnabled = true
-        
+        secondImageView.isUserInteractionEnabled = true
+
         print(firstImageView.isUserInteractionEnabled)
         print(view.isUserInteractionEnabled)
         
     }
 
+    
     // 버튼에 tag값을 주어 구분함
     @IBAction func playButtonClicked(_ sender: UIButton) {
         print(sender.tag)
@@ -46,7 +50,7 @@ class ViewController: UIViewController {
         print("first")
     }
     
-    //
+    // 두 개의 이미지뷰가 연결된 액션버튼
     @IBAction func tapGesture2(_ sender: UIGestureRecognizer) {
         print("second")
         
@@ -70,19 +74,15 @@ class ViewController: UIViewController {
 
         // 5. @@@ ? ㅇㅇ : ㄴㄴ 삼항조건연산자
         firstImageView.isHidden = firstImageView.isHidden == true ? false : true
-        
-        
-        
+        secondImageView.isHidden = secondImageView.isHidden == true ? false : true
+
         
         print("제스쳐 후", firstImageView.isHidden)
         
     }
     
     
-    
-    
-    
-    
-    
 }
 
+
+// isUserInteractionEnabled를 true로 안바꾸고 버튼을 끌어다 제스쳐에 추가 하면 안됨

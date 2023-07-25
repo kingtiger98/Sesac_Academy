@@ -51,7 +51,8 @@ class ViewController: UIViewController {
         
         resultLabel.textColor = textColor
         toggleButton.onTintColor = textColor
-
+        buttons[1].tintColor = textColor
+        
     }
     
     
