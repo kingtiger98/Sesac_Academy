@@ -19,35 +19,35 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="KUi-QK-XZ4">
-                                <rect key="frame" x="0.0" y="133" width="393" height="636"/>
+                                <rect key="frame" x="0.0" y="153" width="393" height="616"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P6d-GL-hlR">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="127.33333333333333"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="123.33333333333333"/>
                                         <color key="backgroundColor" red="0.90588235859999999" green="0.45098042490000001" blue="0.55294120309999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kDE-kc-eq3">
-                                        <rect key="frame" x="0.0" y="127.33333333333331" width="393" height="127"/>
+                                        <rect key="frame" x="0.0" y="123.33333333333331" width="393" height="123"/>
                                         <color key="backgroundColor" red="0.9529411793" green="0.86666667460000002" blue="0.57647061349999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ne-3V-PoO">
-                                        <rect key="frame" x="0.0" y="254.33333333333334" width="393" height="127.33333333333334"/>
+                                        <rect key="frame" x="0.0" y="246.33333333333334" width="393" height="123.33333333333334"/>
                                         <color key="backgroundColor" red="0.97254902119999997" green="0.98039215800000001" blue="0.71372550729999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gBV-dw-APX">
-                                        <rect key="frame" x="0.0" y="381.66666666666663" width="393" height="127"/>
+                                        <rect key="frame" x="0.0" y="369.66666666666663" width="393" height="123"/>
                                         <color key="backgroundColor" red="0.72941178080000002" green="0.93333333730000001" blue="0.88235294819999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5a0-k3-1NO">
-                                        <rect key="frame" x="0.0" y="508.66666666666657" width="393" height="127.33333333333331"/>
+                                        <rect key="frame" x="0.0" y="492.66666666666657" width="393" height="123.33333333333331"/>
                                         <color key="backgroundColor" red="0.24313727020000001" green="0.40000003579999999" blue="0.58823531870000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </view>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ybr-IH-dMd">
-                                <rect key="frame" x="0.0" y="133" width="393" height="636"/>
+                                <rect key="frame" x="0.0" y="153" width="393" height="616"/>
                                 <subviews>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y3Q-BO-qET">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="127.33333333333333"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="123.33333333333333"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="emoji1"/>
                                         <connections>
@@ -55,7 +55,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OQF-ex-WDd">
-                                        <rect key="frame" x="0.0" y="127.33333333333331" width="393" height="127"/>
+                                        <rect key="frame" x="0.0" y="123.33333333333331" width="393" height="123"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="emoji2"/>
                                         <connections>
@@ -63,7 +63,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DjD-zT-8mP">
-                                        <rect key="frame" x="0.0" y="254.33333333333334" width="393" height="127.33333333333334"/>
+                                        <rect key="frame" x="0.0" y="246.33333333333334" width="393" height="123.33333333333334"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="emoji3"/>
                                         <connections>
@@ -71,7 +71,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eMv-XA-lBb">
-                                        <rect key="frame" x="0.0" y="381.66666666666663" width="393" height="127"/>
+                                        <rect key="frame" x="0.0" y="369.66666666666663" width="393" height="123"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="emoji4"/>
                                         <connections>
@@ -79,7 +79,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3eV-hJ-lZY">
-                                        <rect key="frame" x="0.0" y="508.66666666666657" width="393" height="127.33333333333331"/>
+                                        <rect key="frame" x="0.0" y="492.66666666666657" width="393" height="123.33333333333331"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="emoji5"/>
                                         <connections>
@@ -89,7 +89,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZZR-ek-eUJ">
-                                <rect key="frame" x="363.33333333333331" y="103" width="25.666666666666686" height="30"/>
+                                <rect key="frame" x="363.33333333333331" y="103" width="25.666666666666686" height="50"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <menu key="menu" id="u8K-Gc-oxh">
                                     <children>
@@ -107,18 +107,18 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="KUi-QK-XZ4" firstAttribute="top" secondItem="ZZR-ek-eUJ" secondAttribute="bottom" id="0F9-Uv-Agl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZZR-ek-eUJ" secondAttribute="trailing" constant="4" id="1ak-7b-Vtx"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="KUi-QK-XZ4" secondAttribute="bottom" id="4QY-eE-tCQ"/>
+                            <constraint firstItem="KUi-QK-XZ4" firstAttribute="top" secondItem="ZZR-ek-eUJ" secondAttribute="bottom" id="6Kk-7f-dcY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ybr-IH-dMd" secondAttribute="trailing" id="GkV-3q-onB"/>
-                            <constraint firstItem="ybr-IH-dMd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="MFX-cQ-ZJV"/>
+                            <constraint firstItem="ybr-IH-dMd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="MFX-cQ-ZJV"/>
                             <constraint firstItem="ybr-IH-dMd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="RBZ-v4-OX7"/>
-                            <constraint firstItem="KUi-QK-XZ4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="aBA-n9-pou"/>
-                            <constraint firstItem="ZZR-ek-eUJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="aMD-mo-WZj"/>
+                            <constraint firstItem="ZZR-ek-eUJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="W8i-Ur-2ZV"/>
+                            <constraint firstItem="KUi-QK-XZ4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="aBA-n9-pou"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ybr-IH-dMd" secondAttribute="bottom" id="aZf-c0-EO5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KUi-QK-XZ4" secondAttribute="trailing" id="hj1-m4-GdC"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZZR-ek-eUJ" secondAttribute="trailing" constant="4" id="laH-eW-mvj"/>
                             <constraint firstItem="KUi-QK-XZ4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zZs-Sq-buI"/>
                         </constraints>
                     </view>
@@ -344,6 +344,11 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="I5m-ff-9yP">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -363,6 +368,11 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="PHj-30-V4A">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

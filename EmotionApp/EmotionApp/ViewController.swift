@@ -17,9 +17,10 @@ class ViewController: UIViewController {
 //    @IBOutlet weak var blueBtn: UIButton!
     
     
-    
     @IBOutlet var emotionButtons: [UIButton]!
     @IBOutlet weak var pullDownButton: UIButton!
+    
+    var userTappedButton: Emotion = .pink
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,22 +30,25 @@ class ViewController: UIViewController {
 
     
     @IBAction func emotionTapped(_ sender: UIButton) {
-        if sender.tag == 1 {
+        
+        switch userTappedButton {
+        case .pink:
             countTapped[Emotion.pink]! += 1
             print("완전행복지수를 \(countTapped[Emotion.pink]!)회 입력하셨습니다.")
-        } else if sender.tag == 2 {
+        case .orange:
             countTapped[Emotion.orange]! += 1
             print("적당미소지수를 \(countTapped[Emotion.orange]!)회 입력하셨습니다.")
-        } else if sender.tag == 3 {
+        case .yellow:
             countTapped[Emotion.yellow]! += 1
             print("그냥저냥지수를 \(countTapped[Emotion.yellow]!)회 입력하셨습니다.")
-        } else if sender.tag == 4 {
+        case .mint:
             countTapped[Emotion.mint]! += 1
             print("좀속상한지수를 \(countTapped[Emotion.mint]!)회 입력하셨습니다.")
-        } else if sender.tag == 5 {
+        case .blue:
             countTapped[Emotion.blue]! += 1
             print("많이슬픈지수를 \(countTapped[Emotion.blue]!)회 입력하셨습니다.")
         }
+        
     }
     
     

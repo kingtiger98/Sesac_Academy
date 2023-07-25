@@ -15,6 +15,15 @@ let wordDictionary: [String: String] = ["번달번줌": "번호달라고 하면 
                                          "알잘딱깔센": "알아서 잘 딱 깔끔하게 센스있게",
                                          "억까": "억지로 까기"]
 
+enum WordEnum: String {
+    case 번달번줌 = "번호달라고 하면 번호 줌?"
+    case 만반잘부 = "만나서 반가워 잘 부탁해"
+    case 별다줄 = "별걸 다 줄이네"
+    case 알잘딱깔센 = "알아서 잘 딱 깔끔하게 센스있게"
+    case 억까 = "억지로 까기"
+}
+
+
 
 class WordViewController: UIViewController {
 
@@ -62,7 +71,7 @@ class WordViewController: UIViewController {
         newWordTextField.text = tappedButtonTitle
     }
     
-    // 사용자가 입력한 신조어 저장
+    // 사용자가 입력한 신조어 리턴
     func userInputText() -> String {
         guard let userTyppingText = newWordTextField.text else {
             print("사용자가 입력한 신조어가 없습니다.")
@@ -101,7 +110,7 @@ class WordViewController: UIViewController {
     func newWordListWordSet() {
         
         let wordShuffled: [String] = words.shuffled()
-
+        
         for word in 0...newWorldButtonList.count - 1 {
             
             switch newWorldButtonList[word].tag {
@@ -127,7 +136,7 @@ class WordViewController: UIViewController {
             print("사용자가 입력한 신조어가 없습니다.")
             return "사용자가 입력한 신조어가 없습니다."
         }
-                
+        
         return newWordMean
     }
     
