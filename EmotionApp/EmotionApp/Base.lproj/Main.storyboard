@@ -48,26 +48,41 @@
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="133.33333333333334"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="emoji1"/>
+                                        <connections>
+                                            <action selector="emotionTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kez-Mz-81u"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OQF-ex-WDd">
                                         <rect key="frame" x="0.0" y="133.33333333333334" width="393" height="133.00000000000003"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="emoji2"/>
+                                        <connections>
+                                            <action selector="emotionTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KpR-kv-4gq"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DjD-zT-8mP">
                                         <rect key="frame" x="0.0" y="266.33333333333331" width="393" height="133.33333333333331"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="emoji3"/>
+                                        <connections>
+                                            <action selector="emotionTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BNS-Zj-J3f"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eMv-XA-lBb">
                                         <rect key="frame" x="0.0" y="399.66666666666669" width="393" height="133.00000000000006"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="emoji4"/>
+                                        <connections>
+                                            <action selector="emotionTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YEK-tq-Xft"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3eV-hJ-lZY">
                                         <rect key="frame" x="0.0" y="532.66666666666663" width="393" height="133.33333333333337"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="emoji5"/>
+                                        <connections>
+                                            <action selector="emotionTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jqx-At-WFG"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -86,6 +101,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="OH MY MOOD" id="yDb-E5-N4U"/>
+                    <connections>
+                        <outletCollection property="emotionButtons" destination="Y3Q-BO-qET" collectionClass="NSMutableArray" id="JpH-75-6UG"/>
+                        <outletCollection property="emotionButtons" destination="OQF-ex-WDd" collectionClass="NSMutableArray" id="wBt-JK-5u8"/>
+                        <outletCollection property="emotionButtons" destination="DjD-zT-8mP" collectionClass="NSMutableArray" id="Mp8-5c-fAT"/>
+                        <outletCollection property="emotionButtons" destination="eMv-XA-lBb" collectionClass="NSMutableArray" id="TKV-wd-3OD"/>
+                        <outletCollection property="emotionButtons" destination="3eV-hJ-lZY" collectionClass="NSMutableArray" id="Zvl-uQ-ZkD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

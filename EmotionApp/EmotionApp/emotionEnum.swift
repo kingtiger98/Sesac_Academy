@@ -14,3 +14,5 @@ enum Emotion {
     case mint
     case blue
 }
+
+var countTapped: [Emotion: Int] = [.pink: 0, .orange: 0, .yellow: 0, .mint: 0, .blue: 0]
