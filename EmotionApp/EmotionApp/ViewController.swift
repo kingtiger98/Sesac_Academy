@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     
     
     @IBOutlet var emotionButtons: [UIButton]!
+    @IBOutlet weak var pullDownButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +47,15 @@ class ViewController: UIViewController {
         }
     }
     
+    
+    @IBAction func tapCountChageButton(_ sender: UIButton) {
+        pullDownButton.showsMenuAsPrimaryAction = true
+        
+        let ok = UIAction(title: "확인", handler: { _ in print("확인") })
+        let cancel = UIAction(title: "취소", attributes: .destructive, handler: { _ in print("취소") })
+        let buttonMenu = UIMenu(title: "메뉴 타이틀", children: [ok, cancel])
+        pullDownButton.menu = buttonMenu
+    }
     
     
     
