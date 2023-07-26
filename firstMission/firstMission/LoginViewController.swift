@@ -63,11 +63,11 @@ class LoginViewController: UIViewController {
         let testInt = UserDefaults.standard.integer(forKey: "testInt")
         let testBool = UserDefaults.standard.bool(forKey: "testBool")
 
-        print(testString, testInt, testBool)
+        print(testString, testInt, testBool) // nil 0 false
         
         
         
-        // 2. 앱에 저장된 내용 가져오기
+        // 2. 앱에 저장된 내용 가져오기 =============================================
         let emailphone = UserDefaults.standard.string(forKey: "emailPhone")
         let password =  UserDefaults.standard.string(forKey: "password")
         let nickname = UserDefaults.standard.string(forKey: "nickname")
@@ -104,7 +104,7 @@ class LoginViewController: UIViewController {
         UserDefaults.standard.set(nicknameText.text!, forKey: "nickname")
 
         
-        // 저장 버튼 클릭 횟수 저장 기능 _ 감정표현앱에서 사용가능 할 듯!!!!
+        // 저장 버튼 클릭 횟수 저장 기능 _ 감정표현앱에서 사용가능 할 듯!!!! =================
         // 1. 저장된 횟수 가지고 오고
         let value = UserDefaults.standard.integer(forKey: "count")
         

@@ -2,7 +2,28 @@
 
 import Foundation
 
-// 쉬운 몬스터 * 100
+// 클래스 내 모든 프로퍼티는 초기화되어 있어야 한다!
+// 1. 선언과 동시에 초기화
+// 2. 옵셔널로 선언하기
+// 3. 매개변수, 초기화 구문 만들기
+class BabyMonster {
+    var name: String?
+    var exp: Int?
+    var speed = 1
+    var power = 1
+    
+    init(monsterName: String, experience: Int) {
+        name = monsterName
+        exp = experience
+    }
+    
+}
+
+let baby = BabyMonster(monsterName: "스위프트", experience: 100)
+baby.speed
+
+
+// 몬스터 * 100
 // BaseClass
 class Monster {
     var exp = 1
