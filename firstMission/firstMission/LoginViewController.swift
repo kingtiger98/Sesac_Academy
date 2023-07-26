@@ -21,6 +21,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailPhoneText: UITextField!
     @IBOutlet weak var passwordText: UITextField!
     @IBOutlet weak var nicknameText: UITextField!
+    
     @IBOutlet weak var locationText: UITextField!
     @IBOutlet weak var recomendCodeText: UITextField!
     @IBOutlet weak var signInBtn: UIButton!
@@ -54,6 +55,31 @@ class LoginViewController: UIViewController {
         passwordText.tag = TextFieldType.password.rawValue
         nicknameText.tag = TextFieldType.nickname.rawValue
         
+        
+        
+        
+        // 값이 없으면 기본으로 값이 저장됨 단, String은 nil이다 저장될 값이 너무 다양하기 때문임
+        let testString = UserDefaults.standard.string(forKey: "testString")
+        let testInt = UserDefaults.standard.integer(forKey: "testInt")
+        let testBool = UserDefaults.standard.bool(forKey: "testBool")
+
+        print(testString, testInt, testBool)
+        
+        
+        
+        // 2. 앱에 저장된 내용 가져오기
+        let emailphone = UserDefaults.standard.string(forKey: "emailPhone")
+        let password =  UserDefaults.standard.string(forKey: "password")
+        let nickname = UserDefaults.standard.string(forKey: "nickname")
+
+        // 3. 가져온 내용 사용!
+        if let emailphone, let password, let nickname {
+            emailPhoneText.text = emailphone
+            passwordText.text = password
+            nicknameText.text = nickname
+        }
+        
+        
     }
     
     // 키보드 내리기
@@ -63,29 +89,47 @@ class LoginViewController: UIViewController {
     
     // 회원가입 버튼
     @IBAction func signInBtn(_ sender: UIButton) {
-        guard let nickname = nicknameText.text else { return }
-        if nickname == "" {
-            failNickname()
-        } else {
-            successNickname(name: nickname)
-        }
+//        guard let nickname = nicknameText.text else { return }
+//        if nickname == "" {
+//            failNickname()
+//        } else {
+//            successNickname(name: nickname)
+//        }
+        
+        // 앱에서 영구적으로 데이터를 저장해서 사용하는 방법
+        // 1. 앱의 UserDefaults에 저장함 아직 사용자에게 보이진 않는다
+        // 2. ViewDidLoad()에서 이어서 작성 : 저장한 값 불러오기
+        UserDefaults.standard.set(emailPhoneText.text!, forKey: "emailPhone")
+        UserDefaults.standard.set(passwordText.text!, forKey: "password")
+        UserDefaults.standard.set(nicknameText.text!, forKey: "nickname")
+
+        
+        // 저장 버튼 클릭 횟수 저장 기능 _ 감정표현앱에서 사용가능 할 듯!!!!
+        // 1. 저장된 횟수 가지고 오고
+        let value = UserDefaults.standard.integer(forKey: "count")
+        
+        // 2. 저장된 횟수에 1을 더하기
+        let result = value + 1
+        
+        // 3. 2번에서 나온 결과를 다시 저장해주기
+        UserDefaults.standard.set(result, forKey: "count")
+
+        // 4. 값 확인해보기
+        print(UserDefaults.standard.integer(forKey: "count"))
     }
     
-    
-    
-    
-    
+
     
     // 이메일 주소 또는 전화번호 버튼
     @IBAction func textFieldKeyboardTapped(_ sender: UITextField) {
-
+    
         // enum의 올바른 사용법
         guard let textValue = sender.text, let EnumValue = TextFieldType(rawValue: sender.tag) else {
             print("오류 발생")
             return
         }
         
-//
+
 //        guard let EnumValue = TextFieldType(rawValue: sender.tag) else {
 //            print("오류 발생")
 //            return
@@ -115,8 +159,6 @@ class LoginViewController: UIViewController {
 //        case TextFieldType.nickname.rawValue: print("이메일은 \(textValue)입니다.")
 //        default: print("오류가 발생했습니다.")
 //        }
-        
-
         
 
     }
