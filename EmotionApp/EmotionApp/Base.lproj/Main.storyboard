@@ -3,9 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="UIMenu" message="Requires Xcode 11 or later." minToolsVersion="11.0" requiredIntegratedClassName="UICommandDiff"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,35 +16,35 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="KUi-QK-XZ4">
-                                <rect key="frame" x="0.0" y="153" width="393" height="616"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P6d-GL-hlR">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="123.33333333333333"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="133.33333333333334"/>
                                         <color key="backgroundColor" red="0.90588235859999999" green="0.45098042490000001" blue="0.55294120309999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kDE-kc-eq3">
-                                        <rect key="frame" x="0.0" y="123.33333333333331" width="393" height="123"/>
+                                        <rect key="frame" x="0.0" y="133.33333333333334" width="393" height="133.00000000000003"/>
                                         <color key="backgroundColor" red="0.9529411793" green="0.86666667460000002" blue="0.57647061349999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ne-3V-PoO">
-                                        <rect key="frame" x="0.0" y="246.33333333333334" width="393" height="123.33333333333334"/>
+                                        <rect key="frame" x="0.0" y="266.33333333333331" width="393" height="133.33333333333331"/>
                                         <color key="backgroundColor" red="0.97254902119999997" green="0.98039215800000001" blue="0.71372550729999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gBV-dw-APX">
-                                        <rect key="frame" x="0.0" y="369.66666666666663" width="393" height="123"/>
+                                        <rect key="frame" x="0.0" y="399.66666666666669" width="393" height="133.00000000000006"/>
                                         <color key="backgroundColor" red="0.72941178080000002" green="0.93333333730000001" blue="0.88235294819999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5a0-k3-1NO">
-                                        <rect key="frame" x="0.0" y="492.66666666666657" width="393" height="123.33333333333331"/>
+                                        <rect key="frame" x="0.0" y="532.66666666666663" width="393" height="133.33333333333337"/>
                                         <color key="backgroundColor" red="0.24313727020000001" green="0.40000003579999999" blue="0.58823531870000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </view>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ybr-IH-dMd">
-                                <rect key="frame" x="0.0" y="153" width="393" height="616"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
                                 <subviews>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y3Q-BO-qET">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="123.33333333333333"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="133.33333333333334"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="emoji1"/>
                                         <connections>
@@ -54,7 +52,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OQF-ex-WDd">
-                                        <rect key="frame" x="0.0" y="123.33333333333331" width="393" height="123"/>
+                                        <rect key="frame" x="0.0" y="133.33333333333334" width="393" height="133.00000000000003"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="emoji2"/>
                                         <connections>
@@ -62,7 +60,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DjD-zT-8mP">
-                                        <rect key="frame" x="0.0" y="246.33333333333334" width="393" height="123.33333333333334"/>
+                                        <rect key="frame" x="0.0" y="266.33333333333331" width="393" height="133.33333333333331"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="emoji3"/>
                                         <connections>
@@ -70,7 +68,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eMv-XA-lBb">
-                                        <rect key="frame" x="0.0" y="369.66666666666663" width="393" height="123"/>
+                                        <rect key="frame" x="0.0" y="399.66666666666669" width="393" height="133.00000000000006"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="emoji4"/>
                                         <connections>
@@ -78,7 +76,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3eV-hJ-lZY">
-                                        <rect key="frame" x="0.0" y="492.66666666666657" width="393" height="123.33333333333331"/>
+                                        <rect key="frame" x="0.0" y="532.66666666666663" width="393" height="133.33333333333337"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="emoji5"/>
                                         <connections>
@@ -87,35 +85,15 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZZR-ek-eUJ">
-                                <rect key="frame" x="363.33333333333331" y="103" width="25.666666666666686" height="50"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <menu key="menu" id="u8K-Gc-oxh">
-                                    <children>
-                                        <command title="Item 1" id="maH-yM-cWz"/>
-                                        <command title="Item 2" id="VLo-u7-px4"/>
-                                    </children>
-                                </menu>
-                                <state key="normal">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <imageReference key="image" image="ellipsis.circle" catalog="system" symbolScale="large"/>
-                                </state>
-                                <connections>
-                                    <action selector="tapCountChageButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cYv-zF-4U6"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZZR-ek-eUJ" secondAttribute="trailing" constant="4" id="1ak-7b-Vtx"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="KUi-QK-XZ4" secondAttribute="bottom" id="4QY-eE-tCQ"/>
-                            <constraint firstItem="KUi-QK-XZ4" firstAttribute="top" secondItem="ZZR-ek-eUJ" secondAttribute="bottom" id="6Kk-7f-dcY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ybr-IH-dMd" secondAttribute="trailing" id="GkV-3q-onB"/>
-                            <constraint firstItem="ybr-IH-dMd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="MFX-cQ-ZJV"/>
+                            <constraint firstItem="ybr-IH-dMd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="MFX-cQ-ZJV"/>
                             <constraint firstItem="ybr-IH-dMd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="RBZ-v4-OX7"/>
-                            <constraint firstItem="ZZR-ek-eUJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="W8i-Ur-2ZV"/>
-                            <constraint firstItem="KUi-QK-XZ4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="aBA-n9-pou"/>
+                            <constraint firstItem="KUi-QK-XZ4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="aBA-n9-pou"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ybr-IH-dMd" secondAttribute="bottom" id="aZf-c0-EO5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KUi-QK-XZ4" secondAttribute="trailing" id="hj1-m4-GdC"/>
                             <constraint firstItem="KUi-QK-XZ4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zZs-Sq-buI"/>
@@ -123,7 +101,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="OH MY MOOD" id="yDb-E5-N4U"/>
                     <connections>
-                        <outlet property="pullDownButton" destination="ZZR-ek-eUJ" id="Mwq-Kx-5KB"/>
                         <outletCollection property="emotionButtons" destination="Y3Q-BO-qET" collectionClass="NSMutableArray" id="JpH-75-6UG"/>
                         <outletCollection property="emotionButtons" destination="OQF-ex-WDd" collectionClass="NSMutableArray" id="wBt-JK-5u8"/>
                         <outletCollection property="emotionButtons" destination="DjD-zT-8mP" collectionClass="NSMutableArray" id="Mp8-5c-fAT"/>
@@ -138,7 +115,7 @@
         <!--OH MY MOOD-->
         <scene sceneID="MZj-Tg-Vzc">
             <objects>
-                <viewController id="R8l-Ps-3Uc" sceneMemberID="viewController">
+                <viewController id="R8l-Ps-3Uc" customClass="TotalViewController" customModule="EmotionApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oia-ye-i5U">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -309,6 +286,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="OH MY MOOD" id="YTe-bv-azo"/>
+                    <connections>
+                        <outletCollection property="totalCountLabel" destination="ENG-KZ-8zT" collectionClass="NSMutableArray" id="gz9-hX-ON2"/>
+                        <outletCollection property="totalCountLabel" destination="g6w-eO-tdn" collectionClass="NSMutableArray" id="tKh-PC-mGe"/>
+                        <outletCollection property="totalCountLabel" destination="QPq-19-pzn" collectionClass="NSMutableArray" id="cKo-ca-qj3"/>
+                        <outletCollection property="totalCountLabel" destination="xqv-rH-qz1" collectionClass="NSMutableArray" id="3Ul-gG-sRY"/>
+                        <outletCollection property="totalCountLabel" destination="cff-l8-IT3" collectionClass="NSMutableArray" id="d1J-Sx-Aka"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UP0-oN-3BU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -386,7 +370,6 @@
     </scenes>
     <resources>
         <image name="chart.bar" catalog="system" width="128" height="89"/>
-        <image name="ellipsis.circle" catalog="system" width="128" height="123"/>
         <image name="emoji1" width="53" height="51"/>
         <image name="emoji2" width="52" height="48"/>
         <image name="emoji3" width="50" height="38"/>

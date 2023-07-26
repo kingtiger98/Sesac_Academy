@@ -18,7 +18,6 @@ class ViewController: UIViewController {
     
     
     @IBOutlet var emotionButtons: [UIButton]!
-    @IBOutlet weak var pullDownButton: UIButton!
     
     var userTappedButton: Emotion = .pink
     
@@ -31,35 +30,35 @@ class ViewController: UIViewController {
     
     @IBAction func emotionTapped(_ sender: UIButton) {
         
-        switch userTappedButton {
-        case .pink:
-            countTapped[Emotion.pink]! += 1
-            print("완전행복지수를 \(countTapped[Emotion.pink]!)회 입력하셨습니다.")
-        case .orange:
-            countTapped[Emotion.orange]! += 1
-            print("적당미소지수를 \(countTapped[Emotion.orange]!)회 입력하셨습니다.")
-        case .yellow:
-            countTapped[Emotion.yellow]! += 1
-            print("그냥저냥지수를 \(countTapped[Emotion.yellow]!)회 입력하셨습니다.")
-        case .mint:
-            countTapped[Emotion.mint]! += 1
-            print("좀속상한지수를 \(countTapped[Emotion.mint]!)회 입력하셨습니다.")
-        case .blue:
-            countTapped[Emotion.blue]! += 1
-            print("많이슬픈지수를 \(countTapped[Emotion.blue]!)회 입력하셨습니다.")
+        guard let tappedEmotion = Emotion(rawValue: sender.tag) else {
+            print("오류입니다")
+            return
         }
         
-    }
-    
-    
-    @IBAction func tapCountChageButton(_ sender: UIButton) {
-        pullDownButton.showsMenuAsPrimaryAction = true
+        switch tappedEmotion {
+        case .pink:
+            UserDefaults.standard.set(pinkTotal, forKey: "pinkCount")
+            pinkTotal += 1
+        case .orange:
+            UserDefaults.standard.set(orangeTotal, forKey: "orangeCount")
+            orangeTotal += 1
+        case .yellow:
+            UserDefaults.standard.set(yellowTotal, forKey: "yellowCount")
+            yellowTotal += 1
+        case .mint:
+            UserDefaults.standard.set(mintTotal, forKey: "mintCount")
+            mintTotal += 1
+        case .blue:
+            UserDefaults.standard.set(blueTotal, forKey: "blueCount")
+            blueTotal += 1
+        }
         
-        let ok = UIAction(title: "확인", handler: { _ in print("확인") })
-        let cancel = UIAction(title: "취소", attributes: .destructive, handler: { _ in print("취소") })
-        let buttonMenu = UIMenu(title: "메뉴 타이틀", children: [ok, cancel])
-        pullDownButton.menu = buttonMenu
+//        // 값 저장 확인
+//        print("\(pinkTotal), \(orangeTotal), \(yellowTotal), \(mintTotal), \(blueTotal)")
     }
+    
+    
+
     
     
     

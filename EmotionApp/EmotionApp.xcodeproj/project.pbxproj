@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C886C5B2A70F55800D9E28D /* TotalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C886C5A2A70F55800D9E28D /* TotalViewController.swift */; };
 		4C8BD79C2A6FF2600011AF3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8BD79B2A6FF2600011AF3B /* AppDelegate.swift */; };
 		4C8BD79E2A6FF2600011AF3B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8BD79D2A6FF2600011AF3B /* SceneDelegate.swift */; };
 		4C8BD7A02A6FF2600011AF3B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8BD79F2A6FF2600011AF3B /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C886C5A2A70F55800D9E28D /* TotalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalViewController.swift; sourceTree = "<group>"; };
 		4C8BD7982A6FF2600011AF3B /* EmotionApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmotionApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C8BD79B2A6FF2600011AF3B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C8BD79D2A6FF2600011AF3B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				4C8BD79F2A6FF2600011AF3B /* ViewController.swift */,
 				4C8BD7AF2A6FFEA80011AF3B /* emotionEnum.swift */,
 				4C8BD7A12A6FF2600011AF3B /* Main.storyboard */,
+				4C886C5A2A70F55800D9E28D /* TotalViewController.swift */,
 				4C8BD7A42A6FF2610011AF3B /* Assets.xcassets */,
 				4C8BD7A62A6FF2610011AF3B /* LaunchScreen.storyboard */,
 				4C8BD7A92A6FF2610011AF3B /* Info.plist */,
@@ -144,6 +147,7 @@
 				4C8BD7B02A6FFEA80011AF3B /* emotionEnum.swift in Sources */,
 				4C8BD7A02A6FF2600011AF3B /* ViewController.swift in Sources */,
 				4C8BD79C2A6FF2600011AF3B /* AppDelegate.swift in Sources */,
+				4C886C5B2A70F55800D9E28D /* TotalViewController.swift in Sources */,
 				4C8BD79E2A6FF2600011AF3B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

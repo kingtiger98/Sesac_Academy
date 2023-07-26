@@ -7,12 +7,26 @@
 
 import Foundation
 
-enum Emotion {
-    case pink
-    case orange
+enum Emotion: Int{
+    case pink = 1
+    case orange 
     case yellow
     case mint
     case blue
 }
 
-var countTapped: [Emotion: Int] = [.pink: 0, .orange: 0, .yellow: 0, .mint: 0, .blue: 0]
+let pinkCount = UserDefaults.standard.integer(forKey: "pinkCount")
+let orangeCount = UserDefaults.standard.integer(forKey: "orangeCount")
+let yellowCount = UserDefaults.standard.integer(forKey: "yellowCount")
+let mintCount = UserDefaults.standard.integer(forKey: "mintCount")
+let blueCount = UserDefaults.standard.integer(forKey: "blueCount")
+
+var pinkTotal = pinkCount + 1
+var orangeTotal = orangeCount + 1
+var yellowTotal = yellowCount + 1
+var mintTotal = mintCount + 1
+var blueTotal = blueCount + 1
+
+
+var totalCountList = [pinkCount, orangeCount, yellowCount, mintCount, blueCount]
+
