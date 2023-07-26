@@ -15,11 +15,7 @@ enum Emotion: Int{
     case blue
 }
 
-let pinkCount = UserDefaults.standard.integer(forKey: "pinkCount")
-let orangeCount = UserDefaults.standard.integer(forKey: "orangeCount")
-let yellowCount = UserDefaults.standard.integer(forKey: "yellowCount")
-let mintCount = UserDefaults.standard.integer(forKey: "mintCount")
-let blueCount = UserDefaults.standard.integer(forKey: "blueCount")
+let defaults = UserDefaults.standard
 
 var pinkTotal = pinkCount + 1
 var orangeTotal = orangeCount + 1
@@ -27,6 +23,11 @@ var yellowTotal = yellowCount + 1
 var mintTotal = mintCount + 1
 var blueTotal = blueCount + 1
 
+// 감정별 탭했던 횟수 가져오기
+let pinkCount = defaults.integer(forKey: "pinkCount")
+let orangeCount = defaults.integer(forKey: "orangeCount")
+let yellowCount = defaults.integer(forKey: "yellowCount")
+let mintCount = defaults.integer(forKey: "mintCount")
+let blueCount = defaults.integer(forKey: "blueCount")
 
 var totalCountList = [pinkCount, orangeCount, yellowCount, mintCount, blueCount]
-

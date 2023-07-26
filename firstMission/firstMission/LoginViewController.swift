@@ -9,9 +9,19 @@ import UIKit
 
 
 enum TextFieldType: Int {
+    
     case email = 100
     case password = 200
     case nickname = 300
+    
+    var key: String {
+        switch self{
+        case .email: return "email"
+        case .password: return "password"
+        case .nickname: return "nickname"
+        }
+    }
+    
 }
 
 

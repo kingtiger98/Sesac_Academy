@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     
 //    @IBOutlet weak var pinkBtn: UIButton!
 //    @IBOutlet weak var orangeBtn: UIButton!
@@ -19,14 +19,26 @@ class ViewController: UIViewController {
     
     @IBOutlet var emotionButtons: [UIButton]!
     
+    @IBOutlet weak var pullDownBtn: UIButton!
+    
     var userTappedButton: Emotion = .pink
+    
+    var standardNum: Int = 1
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        pullDownBtnMake()
+        configureRightBarButtonItem()
 
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        
+    }
     
     @IBAction func emotionTapped(_ sender: UIButton) {
         
@@ -37,30 +49,54 @@ class ViewController: UIViewController {
         
         switch tappedEmotion {
         case .pink:
-            UserDefaults.standard.set(pinkTotal, forKey: "pinkCount")
-            pinkTotal += 1
+            // 탭 횟수 저장
+            pinkTotal += standardNum
+            defaults.set(pinkTotal, forKey: "pinkCount")
         case .orange:
-            UserDefaults.standard.set(orangeTotal, forKey: "orangeCount")
-            orangeTotal += 1
+            orangeTotal += standardNum
+            defaults.set(pinkTotal, forKey: "orangeCount")
         case .yellow:
-            UserDefaults.standard.set(yellowTotal, forKey: "yellowCount")
-            yellowTotal += 1
+            yellowTotal += standardNum
+            defaults.set(pinkTotal, forKey: "yellowCount")
         case .mint:
-            UserDefaults.standard.set(mintTotal, forKey: "mintCount")
-            mintTotal += 1
+            mintTotal += standardNum
+            defaults.set(pinkTotal, forKey: "mintCount")
         case .blue:
-            UserDefaults.standard.set(blueTotal, forKey: "blueCount")
-            blueTotal += 1
+            blueTotal += standardNum
+            defaults.set(pinkTotal, forKey: "blueCount")
         }
         
-//        // 값 저장 확인
-//        print("\(pinkTotal), \(orangeTotal), \(yellowTotal), \(mintTotal), \(blueTotal)")
+        // 값 저장 확인
+        print("\(pinkTotal), \(orangeTotal), \(yellowTotal), \(mintTotal), \(blueTotal)")
     }
     
-    
 
-    
-    
-    
+    func pullDownBtnMake() {
+        
+    }
+
 }
 
+extension ViewController {
+    
+    func configureRightBarButtonItem() {
+        let favorite1 = UIAction(title: "+ 1", image: UIImage(systemName: "heart"), handler: { _ in self.standardNum = 1 })
+        let favorite2 = UIAction(title: "+ 5", image: UIImage(systemName: "heart"), handler: { _ in self.standardNum = 5 })
+        let favorite3 = UIAction(title: "+ 10", image: UIImage(systemName: "heart"), handler: { _ in self.standardNum = 10 })
+        
+        let barButton = UIBarButtonItem(
+            image: UIImage(systemName: "ellipsis.circle"),
+            style: .plain,
+            target: self,
+            action: nil
+        )
+        barButton.menu = UIMenu(title: "탭 횟수 조정하기",
+                                image: UIImage(systemName: "heart.fill"),
+                                identifier: nil,
+                                options: .displayInline,
+                                children: [favorite1, favorite2, favorite3])
+        
+        navigationItem.rightBarButtonItem = barButton
+    }
+    
+}

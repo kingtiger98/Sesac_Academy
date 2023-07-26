@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="UIMenu" message="Requires Xcode 11 or later." minToolsVersion="11.0" requiredIntegratedClassName="UICommandDiff"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -99,7 +100,11 @@
                             <constraint firstItem="KUi-QK-XZ4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zZs-Sq-buI"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="OH MY MOOD" id="yDb-E5-N4U"/>
+                    <navigationItem key="navigationItem" title="OH MY MOOD" id="yDb-E5-N4U">
+                        <centerItemGroups>
+                            <barButtonItemGroup customizationDisposition="fixed" id="VRh-Tz-cpN"/>
+                        </centerItemGroups>
+                    </navigationItem>
                     <connections>
                         <outletCollection property="emotionButtons" destination="Y3Q-BO-qET" collectionClass="NSMutableArray" id="JpH-75-6UG"/>
                         <outletCollection property="emotionButtons" destination="OQF-ex-WDd" collectionClass="NSMutableArray" id="wBt-JK-5u8"/>
@@ -109,6 +114,17 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="YHX-Wd-GAV">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="111"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <menu key="menu" id="crg-Wl-Ccm">
+                        <children>
+                            <command title="Item 1" id="DHc-ql-1uo"/>
+                            <command title="Item 2" id="bNX-W5-nsQ"/>
+                        </children>
+                    </menu>
+                    <state key="normal" title="Button"/>
+                </button>
             </objects>
             <point key="canvasLocation" x="-1098.4732824427481" y="1333.8028169014085"/>
         </scene>

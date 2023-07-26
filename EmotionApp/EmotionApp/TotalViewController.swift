@@ -15,6 +15,13 @@ class TotalViewController: UIViewController {
         super.viewDidLoad()
 
         updateTotal()
+
+        
+    }
+    
+
+    @IBAction func updateButton(_ sender: UIButton) {
+        
     }
     
     func updateTotal() {
@@ -22,6 +29,7 @@ class TotalViewController: UIViewController {
             totalCountLabel[emotion].text = "\(totalCountList[emotion])점"
         }
     }
-
+    
+    
 
 }
