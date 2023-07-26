@@ -20,8 +20,10 @@ class BabyMonster {
     }
 }
 
-
 // 멤버와이즈 이니셜라이저 구문 제공
+// 기본 자료형들은 구조체, UI요소들은 클래스
+// 구조체는 값타입 + 상속 불가
+// 클래스는 참조타입 + 상속 가능
 struct BabyMonsterStruct {
     var name: String
     var exp: Int
@@ -33,13 +35,18 @@ struct BabyMonsterStruct {
 let baby = BabyMonster(name: "아기몬스터", exp: 1, speed: 1, power: 1)
 baby.speed
 
+let secondBaby = baby
+baby.exp = 100
+
+print(baby.exp)
+print(secondBaby.exp)
+
+
 let structBaby = BabyMonsterStruct(name: "구조체몬스터", exp: 1, speed: 3, power: 2)
 structBaby.name
 
 //ex.
-
 var nickname = "고래밥"
-
 var subNickname = nickname
 
 nickname = "칙촉"
