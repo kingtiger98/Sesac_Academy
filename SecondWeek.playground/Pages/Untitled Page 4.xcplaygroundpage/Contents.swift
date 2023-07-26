@@ -27,6 +27,10 @@ hard.clothes
 hard.speed
 hard.power
 
+// BossMonster는 Monster를 상속 받고 있기 때문에
+// Monster가 가지고 있는 변수를 사용할 수 있다.
+// -> BossMonster: SubClass
+// -> Monster: SuperClass
 class BossMonster: Monster { //  Monster상속
     
     var specialItem = "레벨업"
