@@ -7,20 +7,47 @@ import Foundation
 // 2. 옵셔널로 선언하기
 // 3. 매개변수, 초기화 구문 만들기
 class BabyMonster {
-    var name: String?
-    var exp: Int?
-    var speed = 1
-    var power = 1
+    var name: String
+    var exp: Int
+    var speed: Int
+    var power: Int
     
-    init(monsterName: String, experience: Int) {
-        name = monsterName
-        exp = experience
+    init(name: String, exp: Int, speed: Int, power: Int) {
+        self.name = name
+        self.exp = exp
+        self.speed = speed
+        self.power = power
     }
-    
 }
 
-let baby = BabyMonster(monsterName: "스위프트", experience: 100)
+
+// 멤버와이즈 이니셜라이저 구문 제공
+struct BabyMonsterStruct {
+    var name: String
+    var exp: Int
+    var speed: Int
+    var power: Int
+}
+
+
+let baby = BabyMonster(name: "아기몬스터", exp: 1, speed: 1, power: 1)
 baby.speed
+
+let structBaby = BabyMonsterStruct(name: "구조체몬스터", exp: 1, speed: 3, power: 2)
+structBaby.name
+
+//ex.
+
+var nickname = "고래밥"
+
+var subNickname = nickname
+
+nickname = "칙촉"
+
+print(nickname)
+print(subNickname)
+
+
 
 
 // 몬스터 * 100
