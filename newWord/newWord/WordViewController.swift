@@ -23,7 +23,7 @@ enum WordEnum: String {
     case 억까 = "억지로 까기"
 }
 
-
+var userInputWord: WordEnum = .번달번줌
 
 class WordViewController: UIViewController {
 
@@ -129,7 +129,7 @@ class WordViewController: UIViewController {
         
     }
     
-    // 신조어 설명 함수
+    // 신조어 설명 함수 _ 딕셔너리
     func newWordMean(newWord: String) -> String {
         
         guard let newWordMean = wordDictionary[newWord] else {
@@ -139,6 +139,9 @@ class WordViewController: UIViewController {
         
         return newWordMean
     }
+    
+    // 신조어 설명 함수 _ 열거형
+
     
     func wordAlert() {
         

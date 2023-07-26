@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="UIMenu" message="Requires Xcode 11 or later." minToolsVersion="11.0" requiredIntegratedClassName="UICommandDiff"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -302,7 +301,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="AcT-fo-1Qy"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="AcT-fo-1Qy" firstAttribute="trailing" secondItem="xdy-mG-VJN" secondAttribute="trailing" constant="20" id="Qvl-YU-wpC"/>
                             <constraint firstItem="xdy-mG-VJN" firstAttribute="top" secondItem="AcT-fo-1Qy" secondAttribute="top" constant="20" id="pKF-9e-PRv"/>
@@ -321,6 +320,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="pB1-VJ-toy" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eFr-Bv-s05">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -393,8 +393,5 @@
         <image name="emoji4" width="52" height="48"/>
         <image name="emoji5" width="54" height="50"/>
         <image name="pencil.circle" catalog="system" width="128" height="123"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>
