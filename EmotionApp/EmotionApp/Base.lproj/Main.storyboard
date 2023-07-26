@@ -303,11 +303,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="OH MY MOOD" id="YTe-bv-azo"/>
                     <connections>
-                        <outletCollection property="totalCountLabel" destination="ENG-KZ-8zT" collectionClass="NSMutableArray" id="gz9-hX-ON2"/>
-                        <outletCollection property="totalCountLabel" destination="g6w-eO-tdn" collectionClass="NSMutableArray" id="tKh-PC-mGe"/>
-                        <outletCollection property="totalCountLabel" destination="QPq-19-pzn" collectionClass="NSMutableArray" id="cKo-ca-qj3"/>
-                        <outletCollection property="totalCountLabel" destination="xqv-rH-qz1" collectionClass="NSMutableArray" id="3Ul-gG-sRY"/>
-                        <outletCollection property="totalCountLabel" destination="cff-l8-IT3" collectionClass="NSMutableArray" id="d1J-Sx-Aka"/>
+                        <outlet property="blueResultLabel" destination="cff-l8-IT3" id="QEr-zS-JFb"/>
+                        <outlet property="mintResultLabel" destination="xqv-rH-qz1" id="nVO-xo-QaE"/>
+                        <outlet property="orangeResultLabel" destination="g6w-eO-tdn" id="0t2-TH-toO"/>
+                        <outlet property="pinkResultLabel" destination="ENG-KZ-8zT" id="LOr-56-do6"/>
+                        <outlet property="yellowResultLabel" destination="QPq-19-pzn" id="dAg-pV-Muq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UP0-oN-3BU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -9,27 +9,48 @@ import UIKit
 
 class TotalViewController: UIViewController {
 
-    @IBOutlet var totalCountLabel: [UILabel]!
-    
+    let defaults = UserDefaults.standard
+        
+    @IBOutlet weak var pinkResultLabel: UILabel!
+    @IBOutlet weak var orangeResultLabel: UILabel!
+    @IBOutlet weak var yellowResultLabel: UILabel!
+    @IBOutlet weak var mintResultLabel: UILabel!
+    @IBOutlet weak var blueResultLabel: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        updateTotal()
+        configureResultLabels()
 
-        
     }
     
-
-    @IBAction func updateButton(_ sender: UIButton) {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
+        updateTotal()
+
     }
     
     func updateTotal() {
-        for emotion in 0...totalCountLabel.count - 1 {
-            totalCountLabel[emotion].text = "\(totalCountList[emotion])점"
-        }
+        let pinkResult = defaults.integer(forKey: Emotion.pink.key)
+        let orangeResult = defaults.integer(forKey: Emotion.orange.key)
+        let yellowResult = defaults.integer(forKey: Emotion.yellow.key)
+        let mintResult = defaults.integer(forKey: Emotion.mint.key)
+        let blueResult = defaults.integer(forKey: Emotion.blue.key)
+     
+        pinkResultLabel.text = "\(pinkResult)점"
+        orangeResultLabel.text = "\(orangeResult)점"
+        yellowResultLabel.text = "\(yellowResult)점"
+        mintResultLabel.text = "\(mintResult)점"
+        blueResultLabel.text = "\(blueResult)점"
     }
     
-    
+    func configureResultLabels() {
+        pinkResultLabel.text = "0점"
+        orangeResultLabel.text = "0점"
+        yellowResultLabel.text = "0점"
+        mintResultLabel.text = "0점"
+        blueResultLabel.text = "0점"
+    }
 
 }

@@ -13,21 +13,32 @@ enum Emotion: Int{
     case yellow
     case mint
     case blue
+    
+    var key: String {
+        switch self{
+        case .pink:
+            return "pinkCount"
+        case .orange:
+            return "orangeCount"
+        case .yellow:
+            return "yellowCount"
+        case .mint:
+            return "mintCount"
+        case .blue:
+            return "blueCount"
+        }
+    }
+    
 }
 
-let defaults = UserDefaults.standard
+enum UserDefaultKey: String {
+    case pink = "pinkCount"
+    case orange = "orangeCount"
+    case yellow = "yellowCount"
+    case mint = "mintCount"
+    case blue = "blueCount"
+}
 
-var pinkTotal = pinkCount + 1
-var orangeTotal = orangeCount + 1
-var yellowTotal = yellowCount + 1
-var mintTotal = mintCount + 1
-var blueTotal = blueCount + 1
 
-// 감정별 탭했던 횟수 가져오기
-let pinkCount = defaults.integer(forKey: "pinkCount")
-let orangeCount = defaults.integer(forKey: "orangeCount")
-let yellowCount = defaults.integer(forKey: "yellowCount")
-let mintCount = defaults.integer(forKey: "mintCount")
-let blueCount = defaults.integer(forKey: "blueCount")
 
-var totalCountList = [pinkCount, orangeCount, yellowCount, mintCount, blueCount]
+

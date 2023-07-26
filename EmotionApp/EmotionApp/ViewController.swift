@@ -9,17 +9,16 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    
-//    @IBOutlet weak var pinkBtn: UIButton!
-//    @IBOutlet weak var orangeBtn: UIButton!
-//    @IBOutlet weak var yellowBtn: UIButton!
-//    @IBOutlet weak var mintBtn: UIButton!
-//    @IBOutlet weak var blueBtn: UIButton!
-    
-    
     @IBOutlet var emotionButtons: [UIButton]!
     
-    @IBOutlet weak var pullDownBtn: UIButton!
+    
+    var pinkTotal: Int = 0
+    var orangeTotal: Int = 0
+    var yellowTotal: Int = 0
+    var mintTotal: Int = 0
+    var blueTotal: Int = 0
+
+    let defaults = UserDefaults.standard
     
     var userTappedButton: Emotion = .pink
     
@@ -50,20 +49,20 @@ class ViewController: UIViewController {
         switch tappedEmotion {
         case .pink:
             // 탭 횟수 저장
-            pinkTotal += standardNum
-            defaults.set(pinkTotal, forKey: "pinkCount")
+            pinkTotal = defaults.integer(forKey: UserDefaultKey.pink.rawValue) + standardNum
+            defaults.set(pinkTotal, forKey: Emotion.pink.key)
         case .orange:
-            orangeTotal += standardNum
-            defaults.set(pinkTotal, forKey: "orangeCount")
+            orangeTotal = defaults.integer(forKey: UserDefaultKey.orange.rawValue) + standardNum
+            defaults.set(orangeTotal, forKey: Emotion.orange.key)
         case .yellow:
-            yellowTotal += standardNum
-            defaults.set(pinkTotal, forKey: "yellowCount")
+            yellowTotal = defaults.integer(forKey: UserDefaultKey.yellow.rawValue) + standardNum
+            defaults.set(yellowTotal, forKey: Emotion.yellow.key)
         case .mint:
-            mintTotal += standardNum
-            defaults.set(pinkTotal, forKey: "mintCount")
+            mintTotal = defaults.integer(forKey: UserDefaultKey.mint.rawValue) + standardNum
+            defaults.set(mintTotal, forKey: Emotion.mint.key)
         case .blue:
-            blueTotal += standardNum
-            defaults.set(pinkTotal, forKey: "blueCount")
+            blueTotal = defaults.integer(forKey: UserDefaultKey.blue.rawValue) + standardNum
+            defaults.set(blueTotal, forKey: Emotion.blue.key)
         }
         
         // 값 저장 확인
