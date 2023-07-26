@@ -7,6 +7,15 @@
 
 import UIKit
 
+
+enum TextFieldType: Int {
+    case email = 100
+    case password = 200
+    case nickname = 300
+}
+
+
+
 class LoginViewController: UIViewController {
 
     @IBOutlet weak var emailPhoneText: UITextField!
@@ -40,6 +49,11 @@ class LoginViewController: UIViewController {
         // 스위치 버튼
         switchDs()
         
+        // 텍스트필드 tag값 부여
+        emailPhoneText.tag = TextFieldType.email.rawValue
+        passwordText.tag = TextFieldType.password.rawValue
+        nicknameText.tag = TextFieldType.nickname.rawValue
+        
     }
     
     // 키보드 내리기
@@ -56,6 +70,69 @@ class LoginViewController: UIViewController {
             successNickname(name: nickname)
         }
     }
+    
+    
+    
+    
+    
+    
+    // 이메일 주소 또는 전화번호 버튼
+    @IBAction func textFieldKeyboardTapped(_ sender: UITextField) {
+
+        // enum의 올바른 사용법
+        guard let textValue = sender.text, let EnumValue = TextFieldType(rawValue: sender.tag) else {
+            print("오류 발생")
+            return
+        }
+        
+//
+//        guard let EnumValue = TextFieldType(rawValue: sender.tag) else {
+//            print("오류 발생")
+//            return
+//        }
+        
+        switch EnumValue {
+        case .email: print("이메일은 \(textValue)입니다.")
+        case .password: print("비밀번호는 \(textValue)입니다.")
+        case .nickname: print("닉네임은 \(textValue)입니다.")
+        }
+        
+        
+        // enum 사용 했지만 더 좋은 방법이 많다
+//        if sender.tag == TextFieldType.email.rawValue {
+//            print("이메일은 \(textValue)입니다.")
+//        } else if sender.tag == TextFieldType.password.rawValue {
+//            print("비밀번호는 \(textValue)입니다.")
+//        } else if sender.tag == TextFieldType.nickname.rawValue {
+//            print("닉네임는 \(textValue)입니다.")
+//        }
+        
+        
+        // enum 사용 했지만 default 구문이 있어서 아쉬움
+//        switch sender.tag {
+//        case TextFieldType.email.rawValue: print("이메일은 \(textValue)입니다.")
+//        case TextFieldType.password.rawValue: print("이메일은 \(textValue)입니다.")
+//        case TextFieldType.nickname.rawValue: print("이메일은 \(textValue)입니다.")
+//        default: print("오류가 발생했습니다.")
+//        }
+        
+
+        
+
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     // 닉네임 설정 성공
     func successNickname(name: String) {
