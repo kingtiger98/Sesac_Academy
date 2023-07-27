@@ -31,6 +31,7 @@ enum Emotion: Int{
     
 }
 
+
 enum UserDefaultKey: String {
     case pink = "pinkCount"
     case orange = "orangeCount"
