@@ -20,6 +20,7 @@
 		4CEF448F2A72544B00A2DB35 /* WorkTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEF448E2A72544B00A2DB35 /* WorkTableViewController.swift */; };
 		4CEF44912A72546100A2DB35 /* SetTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEF44902A72546100A2DB35 /* SetTableViewController.swift */; };
 		4CEF44932A72546B00A2DB35 /* ShopTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEF44922A72546B00A2DB35 /* ShopTableViewController.swift */; };
+		4CEF44952A72A86600A2DB35 /* ShopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEF44942A72A86600A2DB35 /* ShopTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		4CEF448E2A72544B00A2DB35 /* WorkTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkTableViewController.swift; sourceTree = "<group>"; };
 		4CEF44902A72546100A2DB35 /* SetTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTableViewController.swift; sourceTree = "<group>"; };
 		4CEF44922A72546B00A2DB35 /* ShopTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopTableViewController.swift; sourceTree = "<group>"; };
+		4CEF44942A72A86600A2DB35 /* ShopTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 				4CEF448E2A72544B00A2DB35 /* WorkTableViewController.swift */,
 				4CEF44902A72546100A2DB35 /* SetTableViewController.swift */,
 				4CEF44922A72546B00A2DB35 /* ShopTableViewController.swift */,
+				4CEF44942A72A86600A2DB35 /* ShopTableViewCell.swift */,
 				4CAD91E82A71FFF6002A286F /* Assets.xcassets */,
 				4CAD91EA2A71FFF6002A286F /* LaunchScreen.storyboard */,
 				4CAD91ED2A71FFF6002A286F /* Info.plist */,
@@ -165,6 +168,7 @@
 				4CEF44932A72546B00A2DB35 /* ShopTableViewController.swift in Sources */,
 				4CEF44912A72546100A2DB35 /* SetTableViewController.swift in Sources */,
 				4C95FBF92A7232D5003AA6F8 /* StudyTableViewController.swift in Sources */,
+				4CEF44952A72A86600A2DB35 /* ShopTableViewCell.swift in Sources */,
 				4CAD91E02A71FFF5002A286F /* AppDelegate.swift in Sources */,
 				4CEF448F2A72544B00A2DB35 /* WorkTableViewController.swift in Sources */,
 				4CAD91E22A71FFF5002A286F /* SceneDelegate.swift in Sources */,

@@ -3,6 +3,8 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -83,33 +85,138 @@
             <point key="canvasLocation" x="1043.5114503816794" y="1292.9577464788733"/>
         </scene>
         <!--쇼핑-->
-        <scene sceneID="AH8-a6-MJg">
+        <scene sceneID="Fci-Ex-aWN">
             <objects>
-                <tableViewController id="CMJ-D6-Naq" customClass="ShopTableViewController" customModule="SeSACWeek3" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="TKJ-31-Ixi">
+                <viewController id="Lxx-yn-hpY" customClass="ShopTableViewController" customModule="SeSACWeek3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RY2-qv-1ZA">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n5Y-g8-kfv">
+                                <rect key="frame" x="20" y="123" width="353" height="75"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="St7-QE-6k2">
+                                        <rect key="frame" x="16" y="20" width="321" height="35"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="200" verticalHuggingPriority="200" horizontalCompressionResistancePriority="700" verticalCompressionResistancePriority="700" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="무엇을 구매하실 건가요?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="43q-dD-dub">
+                                                <rect key="frame" x="0.0" y="0.0" width="247.33333333333334" height="35"/>
+                                                <color key="backgroundColor" red="0.94901967050000002" green="0.94901967050000002" blue="0.96862745289999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qBR-FP-r77">
+                                                <rect key="frame" x="267.33333333333331" y="0.0" width="53.666666666666686" height="35"/>
+                                                <color key="backgroundColor" red="0.89803922179999995" green="0.89803922179999995" blue="0.91372549530000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="추가"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="addWantListButtonClicked:" destination="Lxx-yn-hpY" eventType="touchUpInside" id="trn-P5-Xtd"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.94901967050000002" green="0.94901967050000002" blue="0.97254902119999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.94901967050000002" green="0.94901967050000002" blue="0.97254902119999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="1q4-gK-YZZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="St7-QE-6k2" secondAttribute="bottom" constant="20" id="7la-XZ-NI6"/>
+                                    <constraint firstAttribute="trailing" secondItem="St7-QE-6k2" secondAttribute="trailing" constant="16" id="G9u-xG-7FK"/>
+                                    <constraint firstItem="St7-QE-6k2" firstAttribute="leading" secondItem="n5Y-g8-kfv" secondAttribute="leading" constant="16" id="cb7-N2-jtw"/>
+                                    <constraint firstItem="St7-QE-6k2" firstAttribute="top" secondItem="n5Y-g8-kfv" secondAttribute="top" constant="20" id="dPe-50-LDm"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="kfJ-Kr-enW">
+                                <rect key="frame" x="0.0" y="218" width="393" height="634"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="shopCell" editingAccessoryType="detailDisclosureButton" rowHeight="64" id="GeU-XF-loZ" customClass="ShopTableViewCell" customModule="SeSACWeek3" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="55.333332061767578" width="353" height="64"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GeU-XF-loZ" id="dWj-yY-7qM">
+                                            <rect key="frame" x="0.0" y="0.0" width="353" height="64"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="jrF-v1-hIk">
+                                                    <rect key="frame" x="0.0" y="20" width="353" height="24"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PhE-oI-ycB">
+                                                            <rect key="frame" x="0.0" y="0.0" width="49.333333333333336" height="24"/>
+                                                            <state key="normal" title="Button"/>
+                                                            <buttonConfiguration key="configuration" style="plain" title="">
+                                                                <imageReference key="image" image="checkmark.square" catalog="system" symbolScale="large"/>
+                                                                <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" weight="semibold"/>
+                                                                <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </buttonConfiguration>
+                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="200" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Kg-of-ZSf">
+                                                            <rect key="frame" x="61.333333333333343" y="0.0" width="227.00000000000003" height="24"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jhv-Q5-CXg">
+                                                            <rect key="frame" x="300.33333333333331" y="0.0" width="52.666666666666686" height="24"/>
+                                                            <state key="normal" title="Button"/>
+                                                            <buttonConfiguration key="configuration" style="plain" image="star" catalog="system" title="">
+                                                                <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="large" weight="semibold"/>
+                                                                <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </buttonConfiguration>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="jrF-v1-hIk" firstAttribute="leading" secondItem="dWj-yY-7qM" secondAttribute="leading" id="Ooe-fI-pzw"/>
+                                                <constraint firstAttribute="bottom" secondItem="jrF-v1-hIk" secondAttribute="bottom" constant="20" id="V8Y-gR-o2Q"/>
+                                                <constraint firstAttribute="trailing" secondItem="jrF-v1-hIk" secondAttribute="trailing" id="aTi-4S-4O8"/>
+                                                <constraint firstItem="jrF-v1-hIk" firstAttribute="top" secondItem="dWj-yY-7qM" secondAttribute="top" constant="20" id="fGV-w9-sS6"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="checkButton" destination="PhE-oI-ycB" id="uuI-vz-ovf"/>
+                                            <outlet property="favoriteButton" destination="jhv-Q5-CXg" id="V5W-Ef-TKv"/>
+                                            <outlet property="shoppingList" destination="0Kg-of-ZSf" id="GcE-Y2-O5A"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="FQ6-TG-eCO"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="shopCell" id="Zs7-Sg-Yvu">
-                                <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Zs7-Sg-Yvu" id="J46-Xz-ice">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="CMJ-D6-Naq" id="fY6-R8-kqL"/>
-                            <outlet property="delegate" destination="CMJ-D6-Naq" id="u1z-5O-FjC"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="쇼핑" id="SBe-Sd-tdO"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="u6c-BJ-kej" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <constraints>
+                            <constraint firstItem="kfJ-Kr-enW" firstAttribute="top" secondItem="n5Y-g8-kfv" secondAttribute="bottom" constant="20" id="KMF-Yh-gjZ"/>
+                            <constraint firstItem="n5Y-g8-kfv" firstAttribute="leading" secondItem="FQ6-TG-eCO" secondAttribute="leading" constant="20" id="N2R-zh-01g"/>
+                            <constraint firstItem="FQ6-TG-eCO" firstAttribute="trailing" secondItem="n5Y-g8-kfv" secondAttribute="trailing" constant="20" id="eNN-F1-QyK"/>
+                            <constraint firstItem="n5Y-g8-kfv" firstAttribute="top" secondItem="FQ6-TG-eCO" secondAttribute="top" constant="20" id="l9j-h8-qy1"/>
+                            <constraint firstItem="kfJ-Kr-enW" firstAttribute="leading" secondItem="FQ6-TG-eCO" secondAttribute="leading" id="obm-Wr-d16"/>
+                            <constraint firstAttribute="bottom" secondItem="kfJ-Kr-enW" secondAttribute="bottom" id="wfg-41-AEi"/>
+                            <constraint firstItem="FQ6-TG-eCO" firstAttribute="trailing" secondItem="kfJ-Kr-enW" secondAttribute="trailing" id="yp8-QO-6Z6"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="쇼핑" id="ZOM-C7-1A4"/>
+                    <connections>
+                        <outlet property="addTextField" destination="43q-dD-dub" id="zm7-Li-Cw8"/>
+                        <outlet property="addWantListButton" destination="qBR-FP-r77" id="g86-xH-95A"/>
+                        <outlet property="shopTable" destination="kfJ-Kr-enW" id="7qi-vk-Fbc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fWs-LC-DON" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2047" y="1293"/>
+            <point key="canvasLocation" x="2049.6183206106871" y="1306.3380281690143"/>
         </scene>
         <!--집중 모드-->
         <scene sceneID="Zua-5q-lC8">
@@ -311,7 +418,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="CMJ-D6-Naq" kind="relationship" relationship="rootViewController" id="0ng-Ft-uMj"/>
+                        <segue destination="Lxx-yn-hpY" kind="relationship" relationship="rootViewController" id="Fqe-rK-2As"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gmW-mD-eOz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -321,6 +428,7 @@
     </scenes>
     <resources>
         <image name="bed.double.fill" catalog="system" width="128" height="82"/>
+        <image name="checkmark.square" catalog="system" width="128" height="114"/>
         <image name="clipboard.fill" catalog="system" width="103" height="128"/>
         <image name="gearshape" catalog="system" width="128" height="123"/>
         <image name="moon.fill" catalog="system" width="128" height="123"/>

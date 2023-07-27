@@ -32,7 +32,20 @@ extension UILabel {
         self.font = .boldSystemFont(ofSize: 20)
         self.textAlignment = .center
     }
+}
+
+
+
+extension ShopTableViewController {
     
-    
+    func showAlert() {
+        let alert = UIAlertController(title: "경고", message: "한글자 이상 입력해주세요.", preferredStyle: .alert)
+        
+        let ok = UIAlertAction(title: "확인", style: .default)
+        
+        alert.addAction(ok)
+        
+        present(alert, animated: true)
+    }
     
 }
