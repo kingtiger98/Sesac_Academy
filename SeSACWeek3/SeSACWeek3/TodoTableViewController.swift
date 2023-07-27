@@ -19,11 +19,15 @@ class TodoTableViewController: UITableViewController {
     
     
     @IBAction func addButtonClicked(_ sender: UIBarButtonItem) {
+        
+        // extenstion을 사용해 만든 메서드를 가져옴!
+        showAlert()
+        
         // 1. list에 요소 추가
         toDoList.append("고래밥 먹기")
         print(toDoList)
         
-        // 테이블뷰 새로고침! _ 테이블뷰 갱신해줌 리스트가 추가된다거나 하면
+        // 2. 테이블뷰 새로고침! _ 테이블뷰 갱신해줌 리스트가 추가된다거나 하면
         tableView.reloadData() // ***
     }
     
@@ -50,8 +54,9 @@ class TodoTableViewController: UITableViewController {
         
         cell.textLabel?.text = toDoList[indexPath.row]
         
-        cell.textLabel?.textColor = .red
-        cell.textLabel?.font = .boldSystemFont(ofSize: 20)
+//        cell.textLabel?.textColor = .red
+//        cell.textLabel?.font = .boldSystemFont(ofSize: 20)
+        cell.textLabel?.confiureTitleText() // extension으로 만든 메서드를 가져와 위의 2줄(주석된) 을 한 줄로 줄인 것
         
         cell.detailTextLabel?.text = "디테일 텍스트"
         cell.detailTextLabel?.textColor = .blue

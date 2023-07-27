@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4C703B802A72108B007BC3DF /* TodoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C703B7F2A72108B007BC3DF /* TodoTableViewController.swift */; };
+		4C7F26092A724978000EECEB /* ExtensionUse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7F26082A724978000EECEB /* ExtensionUse.swift */; };
 		4C95FBF92A7232D5003AA6F8 /* StudyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C95FBF82A7232D5003AA6F8 /* StudyTableViewController.swift */; };
 		4CAD91E02A71FFF5002A286F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAD91DF2A71FFF5002A286F /* AppDelegate.swift */; };
 		4CAD91E22A71FFF5002A286F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAD91E12A71FFF5002A286F /* SceneDelegate.swift */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		4C703B7F2A72108B007BC3DF /* TodoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTableViewController.swift; sourceTree = "<group>"; };
+		4C7F26082A724978000EECEB /* ExtensionUse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUse.swift; sourceTree = "<group>"; };
 		4C95FBF82A7232D5003AA6F8 /* StudyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyTableViewController.swift; sourceTree = "<group>"; };
 		4CAD91DC2A71FFF5002A286F /* SeSACWeek3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSACWeek3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CAD91DF2A71FFF5002A286F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 			children = (
 				4CAD91DF2A71FFF5002A286F /* AppDelegate.swift */,
 				4CAD91E12A71FFF5002A286F /* SceneDelegate.swift */,
+				4C7F26082A724978000EECEB /* ExtensionUse.swift */,
 				4C95FBF82A7232D5003AA6F8 /* StudyTableViewController.swift */,
 				4C703B7F2A72108B007BC3DF /* TodoTableViewController.swift */,
 				4CAD91E32A71FFF5002A286F /* ViewController.swift */,
@@ -149,6 +152,7 @@
 				4C95FBF92A7232D5003AA6F8 /* StudyTableViewController.swift in Sources */,
 				4CAD91E02A71FFF5002A286F /* AppDelegate.swift in Sources */,
 				4CAD91E22A71FFF5002A286F /* SceneDelegate.swift in Sources */,
+				4C7F26092A724978000EECEB /* ExtensionUse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
