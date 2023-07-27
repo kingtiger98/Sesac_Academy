@@ -37,7 +37,6 @@ enum WordEnum: Int {
             return "알아서 잘 딱 깔끔하게 센스있게"
         case .억까:
             return "억지로 까기"
-
         }
     }
     

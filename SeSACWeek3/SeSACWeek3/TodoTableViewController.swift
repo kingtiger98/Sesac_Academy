@@ -10,12 +10,23 @@ import UIKit
 class TodoTableViewController: UITableViewController {
 
     
-    let toDoList = ["장보기", "영화보기", "낮잠자기", "코드보기", "서핑하기", "운동하기", "게임하기"]
+    var toDoList = ["장보기", "영화보기", "낮잠자기", "코드보기", "서핑하기", "운동하기", "게임하기"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
+    
+    
+    @IBAction func addButtonClicked(_ sender: UIBarButtonItem) {
+        // 1. list에 요소 추가
+        toDoList.append("고래밥 먹기")
+        print(toDoList)
+        
+        // 테이블뷰 새로고침! _ 테이블뷰 갱신해줌 리스트가 추가된다거나 하면
+        tableView.reloadData() // ***
+    }
+    
 
     // MARK: - Table view data source
 
