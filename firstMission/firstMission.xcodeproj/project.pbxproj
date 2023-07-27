@@ -11,6 +11,7 @@
 		4C537AB12A677031006D4857 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C537AB02A677031006D4857 /* LoginViewController.swift */; };
 		4C537AB32A6770AD006D4857 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C537AB22A6770AD006D4857 /* DetailViewController.swift */; };
 		4C537AB52A67A71D006D4857 /* BoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C537AB42A67A71D006D4857 /* BoardViewController.swift */; };
+		4CB5B6D42A71F8DE000D5874 /* SecondTapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB5B6D32A71F8DE000D5874 /* SecondTapViewController.swift */; };
 		4CB6BAEF2A668BB3009F025A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB6BAEE2A668BB3009F025A /* AppDelegate.swift */; };
 		4CB6BAF12A668BB3009F025A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB6BAF02A668BB3009F025A /* SceneDelegate.swift */; };
 		4CB6BAF32A668BB3009F025A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB6BAF22A668BB3009F025A /* ViewController.swift */; };
@@ -24,6 +25,7 @@
 		4C537AB02A677031006D4857 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4C537AB22A6770AD006D4857 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		4C537AB42A67A71D006D4857 /* BoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewController.swift; sourceTree = "<group>"; };
+		4CB5B6D32A71F8DE000D5874 /* SecondTapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTapViewController.swift; sourceTree = "<group>"; };
 		4CB6BAEB2A668BB3009F025A /* firstMission.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = firstMission.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CB6BAEE2A668BB3009F025A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CB6BAF02A668BB3009F025A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 				4CB6BAF02A668BB3009F025A /* SceneDelegate.swift */,
 				4CB6BAF22A668BB3009F025A /* ViewController.swift */,
 				4CB6BAF42A668BB3009F025A /* Main.storyboard */,
+				4CB5B6D32A71F8DE000D5874 /* SecondTapViewController.swift */,
 				4C537AB42A67A71D006D4857 /* BoardViewController.swift */,
 				4C537AB22A6770AD006D4857 /* DetailViewController.swift */,
 				4C537AB02A677031006D4857 /* LoginViewController.swift */,
@@ -150,6 +153,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CB5B6D42A71F8DE000D5874 /* SecondTapViewController.swift in Sources */,
 				4C537AB52A67A71D006D4857 /* BoardViewController.swift in Sources */,
 				4CB6BAF32A668BB3009F025A /* ViewController.swift in Sources */,
 				4CB6BAEF2A668BB3009F025A /* AppDelegate.swift in Sources */,

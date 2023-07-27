@@ -39,6 +39,8 @@ class ViewController: UIViewController {
         
     }
     
+    
+    
     @IBAction func emotionTapped(_ sender: UIButton) {
         
         guard let tappedEmotion = Emotion(rawValue: sender.tag) else {

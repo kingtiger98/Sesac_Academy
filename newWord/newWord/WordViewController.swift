@@ -7,6 +7,9 @@
 
 import UIKit
 
+
+
+
 let words = ["번달번줌", "만반잘부", "별다줄", "알잘딱깔센", "억까"]
 
 let wordDictionary: [String: String] = ["번달번줌": "번호달라고 하면 번호 줌?",
@@ -15,12 +18,29 @@ let wordDictionary: [String: String] = ["번달번줌": "번호달라고 하면 
                                          "알잘딱깔센": "알아서 잘 딱 깔끔하게 센스있게",
                                          "억까": "억지로 까기"]
 
-enum WordEnum: String {
-    case 번달번줌 = "번호달라고 하면 번호 줌?"
-    case 만반잘부 = "만나서 반가워 잘 부탁해"
-    case 별다줄 = "별걸 다 줄이네"
-    case 알잘딱깔센 = "알아서 잘 딱 깔끔하게 센스있게"
-    case 억까 = "억지로 까기"
+enum WordEnum: Int {
+    case 번달번줌
+    case 만반잘부
+    case 별다줄
+    case 알잘딱깔센
+    case 억까
+    
+    var key: String {
+        switch self {
+        case .번달번줌:
+            return "번호달라고 하면 번호 줌?"
+        case .만반잘부:
+            return "만나서 반가워 잘 부탁해"
+        case .별다줄:
+            return "별걸 다 줄이네"
+        case .알잘딱깔센:
+            return "알아서 잘 딱 깔끔하게 센스있게"
+        case .억까:
+            return "억지로 까기"
+
+        }
+    }
+    
 }
 
 var userInputWord: WordEnum = .번달번줌
