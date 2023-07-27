@@ -17,7 +17,6 @@ class ViewController: UIViewController {
     
     @IBOutlet var buttons: [UIButton]!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
