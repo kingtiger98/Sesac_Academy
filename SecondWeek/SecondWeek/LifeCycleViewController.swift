@@ -13,7 +13,6 @@ class LifeCycleViewController: UIViewController {
         super.viewDidLoad()
         print("LifeCycleViewController", #function)
 
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
