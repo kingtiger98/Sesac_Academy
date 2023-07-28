@@ -41,6 +41,7 @@ class ShopTableViewController: UIViewController, UITableViewDelegate, UITableVie
             print(addLists)
             
             shopTable.reloadData()
+            addTextField.text = ""
         }
     }
     
