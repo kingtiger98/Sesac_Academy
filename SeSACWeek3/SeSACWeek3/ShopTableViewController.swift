@@ -26,7 +26,6 @@ class ShopTableViewController: UIViewController, UITableViewDelegate, UITableVie
         shopTable.rowHeight = 70
     }
 
-
     
     @IBAction func addWantListButtonClicked(_ sender: UIButton) {
         guard let addItme = addTextField.text else {
@@ -44,9 +43,6 @@ class ShopTableViewController: UIViewController, UITableViewDelegate, UITableVie
             addTextField.text = ""
         }
     }
-    
-    
-    
     
     
     func numberOfSections(in tableView: UITableView) -> Int {

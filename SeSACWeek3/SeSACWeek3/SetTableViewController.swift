@@ -36,16 +36,19 @@ class SetTableViewController: UITableViewController {
         
         
         if section == 0 {
-            sectionNum = allSetList.count
+            return allSetList.count
         } else if section == 1 {
-            sectionNum = individualSetList.count
+            return individualSetList.count
         } else if section == 2 {
-            sectionNum = etcSetList.count
+            return etcSetList.count
+        } else {
+            return 0
         }
         
-        
-        return sectionNum
+ 
     }
+    
+    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -72,14 +75,17 @@ class SetTableViewController: UITableViewController {
 
  
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
         if section == 0 {
             return "전체 설정"
         } else if section == 1 {
             return "개인 설정"
         } else if section == 2 {
             return "기타"
+        } else {
+            return "리턴이상해"
         }
-        return "리턴이상해"
+        
     }
 
     
