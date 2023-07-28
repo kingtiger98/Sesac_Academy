@@ -18,14 +18,19 @@ class Apple: Mobile {
     let conference = "WWDC"
 }
 
-
+// 인스턴스 생성시 타입를 명시하면
 let iphone: Mobile = Apple(name: "iPhone14 Pro Max")
 
-
+// Apple클래스로 인스턴스를 생성했지만 Mobile의 프로퍼티들에만 접근이 가능함
 iphone.name
+//iphone.conference // 접근이 불가능
 
-
-
+// 해결방안이 다운캐스팅임 : as!, as?
+if let a = iphone as? Apple {
+    print(a.conference) // 이젠 Apple 클래스의 프로퍼티에도 접근가능해짐!
+} else {
+    print("다운캐스팅 실패")
+}
 
 
 
