@@ -18,6 +18,11 @@
 		4CAD91E72A71FFF5002A286F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CAD91E52A71FFF5002A286F /* Main.storyboard */; };
 		4CAD91E92A71FFF6002A286F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CAD91E82A71FFF6002A286F /* Assets.xcassets */; };
 		4CAD91EC2A71FFF6002A286F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CAD91EA2A71FFF6002A286F /* LaunchScreen.storyboard */; };
+		4CC90F142A73A57A00D3F9AC /* MovieInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC90F132A73A57A00D3F9AC /* MovieInfo.swift */; };
+		4CC90F162A73A69600D3F9AC /* Movie.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CC90F152A73A69600D3F9AC /* Movie.storyboard */; };
+		4CC90F182A73A71E00D3F9AC /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC90F172A73A71E00D3F9AC /* Movie.swift */; };
+		4CC90F1A2A73ADAA00D3F9AC /* MovieTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC90F192A73ADAA00D3F9AC /* MovieTableViewController.swift */; };
+		4CC90F1C2A73ADBA00D3F9AC /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC90F1B2A73ADBA00D3F9AC /* MovieTableViewCell.swift */; };
 		4CEF448D2A72529D00A2DB35 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CEF448C2A72529D00A2DB35 /* Setting.storyboard */; };
 		4CEF448F2A72544B00A2DB35 /* WorkTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEF448E2A72544B00A2DB35 /* WorkTableViewController.swift */; };
 		4CEF44912A72546100A2DB35 /* SetTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEF44902A72546100A2DB35 /* SetTableViewController.swift */; };
@@ -41,6 +46,11 @@
 		4CAD91E82A71FFF6002A286F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4CAD91EB2A71FFF6002A286F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4CAD91ED2A71FFF6002A286F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4CC90F132A73A57A00D3F9AC /* MovieInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieInfo.swift; sourceTree = "<group>"; };
+		4CC90F152A73A69600D3F9AC /* Movie.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Movie.storyboard; sourceTree = "<group>"; };
+		4CC90F172A73A71E00D3F9AC /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		4CC90F192A73ADAA00D3F9AC /* MovieTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewController.swift; sourceTree = "<group>"; };
+		4CC90F1B2A73ADBA00D3F9AC /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 		4CEF448C2A72529D00A2DB35 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		4CEF448E2A72544B00A2DB35 /* WorkTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkTableViewController.swift; sourceTree = "<group>"; };
 		4CEF44902A72546100A2DB35 /* SetTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTableViewController.swift; sourceTree = "<group>"; };
@@ -82,23 +92,28 @@
 			children = (
 				4CAD91DF2A71FFF5002A286F /* AppDelegate.swift */,
 				4CAD91E12A71FFF5002A286F /* SceneDelegate.swift */,
-				4C7F26082A724978000EECEB /* ExtensionUse.swift */,
+				4CAD91E52A71FFF5002A286F /* Main.storyboard */,
+				4CAD91E32A71FFF5002A286F /* ViewController.swift */,
 				4C95FBF82A7232D5003AA6F8 /* StudyTableViewController.swift */,
 				4C703B7F2A72108B007BC3DF /* TodoTableViewController.swift */,
-				4CAD91E32A71FFF5002A286F /* ViewController.swift */,
-				4CAD91E52A71FFF5002A286F /* Main.storyboard */,
 				4C8BDCA22A736C2F00C75865 /* CustomTableViewController.swift */,
-				4CFFFAD62A738A1200A32A2A /* ToDoInformation.swift */,
 				4C8BDCA42A736C3F00C75865 /* CustomTableViewCell.swift */,
+				4CFFFAD42A7389C600A32A2A /* ToDo.swift */,
+				4CFFFAD62A738A1200A32A2A /* ToDoInformation.swift */,
+				4C7F26082A724978000EECEB /* ExtensionUse.swift */,
 				4CEF448C2A72529D00A2DB35 /* Setting.storyboard */,
 				4CEF448E2A72544B00A2DB35 /* WorkTableViewController.swift */,
 				4CEF44902A72546100A2DB35 /* SetTableViewController.swift */,
 				4CEF44922A72546B00A2DB35 /* ShopTableViewController.swift */,
 				4CEF44942A72A86600A2DB35 /* ShopTableViewCell.swift */,
-				4CAD91E82A71FFF6002A286F /* Assets.xcassets */,
 				4CAD91EA2A71FFF6002A286F /* LaunchScreen.storyboard */,
+				4CC90F152A73A69600D3F9AC /* Movie.storyboard */,
+				4CC90F192A73ADAA00D3F9AC /* MovieTableViewController.swift */,
+				4CC90F1B2A73ADBA00D3F9AC /* MovieTableViewCell.swift */,
+				4CC90F172A73A71E00D3F9AC /* Movie.swift */,
+				4CC90F132A73A57A00D3F9AC /* MovieInfo.swift */,
+				4CAD91E82A71FFF6002A286F /* Assets.xcassets */,
 				4CAD91ED2A71FFF6002A286F /* Info.plist */,
-				4CFFFAD42A7389C600A32A2A /* ToDo.swift */,
 			);
 			path = SeSACWeek3;
 			sourceTree = "<group>";
@@ -161,6 +176,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CC90F162A73A69600D3F9AC /* Movie.storyboard in Resources */,
 				4CAD91EC2A71FFF6002A286F /* LaunchScreen.storyboard in Resources */,
 				4CAD91E92A71FFF6002A286F /* Assets.xcassets in Resources */,
 				4CAD91E72A71FFF5002A286F /* Main.storyboard in Resources */,
@@ -176,10 +192,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CAD91E42A71FFF5002A286F /* ViewController.swift in Sources */,
+				4CC90F142A73A57A00D3F9AC /* MovieInfo.swift in Sources */,
+				4CC90F1C2A73ADBA00D3F9AC /* MovieTableViewCell.swift in Sources */,
 				4C703B802A72108B007BC3DF /* TodoTableViewController.swift in Sources */,
 				4CEF44932A72546B00A2DB35 /* ShopTableViewController.swift in Sources */,
 				4CEF44912A72546100A2DB35 /* SetTableViewController.swift in Sources */,
+				4CC90F1A2A73ADAA00D3F9AC /* MovieTableViewController.swift in Sources */,
 				4C95FBF92A7232D5003AA6F8 /* StudyTableViewController.swift in Sources */,
+				4CC90F182A73A71E00D3F9AC /* Movie.swift in Sources */,
 				4CEF44952A72A86600A2DB35 /* ShopTableViewCell.swift in Sources */,
 				4CFFFAD72A738A1200A32A2A /* ToDoInformation.swift in Sources */,
 				4C8BDCA52A736C3F00C75865 /* CustomTableViewCell.swift in Sources */,

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Tt7-0o-Azc">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21701"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Movie Table View Controller-->
+        <scene sceneID="Svz-Ma-k6C">
+            <objects>
+                <tableViewController id="Tt7-0o-Azc" customClass="MovieTableViewController" customModule="SeSACWeek3" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="76G-vL-A6b">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="movieTableViewCell" rowHeight="157" id="GKU-3c-l7N" customClass="MovieTableViewCell" customModule="SeSACWeek3" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="50" width="393" height="157"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GKU-3c-l7N" id="G8p-ja-blM">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="157"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="O54-el-7FZ">
+                                            <rect key="frame" x="106" y="8" width="283" height="43.666666666666664"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="암살" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ad8-rb-usW">
+                                                    <rect key="frame" x="0.0" y="0.0" width="31.333333333333332" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ezw-gk-C3m">
+                                                    <rect key="frame" x="0.0" y="23" width="145" height="20.666666666666671"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2015.07.22" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZF8-ly-zEI">
+                                                            <rect key="frame" x="0.0" y="0.0" width="74.333333333333329" height="20.666666666666668"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="139분" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cqu-Qc-NLV">
+                                                            <rect key="frame" x="74.333333333333343" y="0.0" width="38.333333333333343" height="20.666666666666668"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9.1점" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nsX-6U-pVA">
+                                                            <rect key="frame" x="112.66666666666664" y="0.0" width="32.333333333333329" height="20.666666666666668"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                        </stackView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7BI-Rd-Cr5">
+                                            <rect key="frame" x="106" y="55.666666666666664" width="283" height="93.333333333333343"/>
+                                            <mutableString key="text">"1933년 조국이 사라진 시대 대한민국 임시정부는 일본 측에 노출되지 않은 세 명을 암살작전에 지목한다. 한국 독립군 저격수 안옥윤, 신흥무관학교 출신 속사포, 폭탄 전문가 황덕삼! 김구의 두터운 신임을 받는 임시정부 경무국 대장 염석진은 이들을 찾아 나서기 시작한다. 암살단의 타깃은 조선주둔군 사령관 카와구치 마모루와 친일파 강인국. 한편, 누군가에게 거액의 의뢰를 받은 청부살인업자 하와이 피스톨이 암살단의 뒤를 쫓는데... 친일파 암살작전을 둘러싼 이들의 예측할 수 없는 운명이 펼쳐진다!"</mutableString>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="암살" translatesAutoresizingMaskIntoConstraints="NO" id="W1d-N4-Ez3">
+                                            <rect key="frame" x="8" y="8" width="94" height="141"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="W1d-N4-Ez3" secondAttribute="height" multiplier="2:3" id="0hY-R9-uhf"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="7BI-Rd-Cr5" secondAttribute="bottom" constant="8" id="58y-a9-M7h"/>
+                                        <constraint firstItem="O54-el-7FZ" firstAttribute="top" secondItem="G8p-ja-blM" secondAttribute="top" constant="8" id="Dra-Z8-pfS"/>
+                                        <constraint firstItem="W1d-N4-Ez3" firstAttribute="top" secondItem="G8p-ja-blM" secondAttribute="top" constant="8" id="SM9-VL-uJq"/>
+                                        <constraint firstItem="7BI-Rd-Cr5" firstAttribute="top" secondItem="O54-el-7FZ" secondAttribute="bottom" constant="4" id="Y4s-E7-W3x"/>
+                                        <constraint firstItem="W1d-N4-Ez3" firstAttribute="leading" secondItem="G8p-ja-blM" secondAttribute="leading" constant="8" id="b1u-uz-FwG"/>
+                                        <constraint firstAttribute="bottom" secondItem="W1d-N4-Ez3" secondAttribute="bottom" constant="8" id="ebc-B1-Pmm"/>
+                                        <constraint firstItem="7BI-Rd-Cr5" firstAttribute="leading" secondItem="W1d-N4-Ez3" secondAttribute="trailing" constant="4" id="tE7-QM-6Lv"/>
+                                        <constraint firstAttribute="trailing" secondItem="7BI-Rd-Cr5" secondAttribute="trailing" constant="4" id="ulg-6N-jgD"/>
+                                        <constraint firstItem="O54-el-7FZ" firstAttribute="leading" secondItem="W1d-N4-Ez3" secondAttribute="trailing" constant="4" id="viQ-et-LAX"/>
+                                        <constraint firstAttribute="trailing" secondItem="O54-el-7FZ" secondAttribute="trailing" constant="4" id="vvm-ea-O11"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="movieInformation" destination="7BI-Rd-Cr5" id="Zwl-cR-OG7"/>
+                                    <outlet property="movieOpenDate" destination="ZF8-ly-zEI" id="8zG-19-mw5"/>
+                                    <outlet property="moviePoster" destination="W1d-N4-Ez3" id="Ayc-fd-odC"/>
+                                    <outlet property="movieRunTime" destination="cqu-Qc-NLV" id="D4J-w8-eqP"/>
+                                    <outlet property="movieScore" destination="nsX-6U-pVA" id="Rf3-mw-Wjx"/>
+                                    <outlet property="movieTitle" destination="ad8-rb-usW" id="IC2-8W-DVJ"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Tt7-0o-Azc" id="QKu-dN-iat"/>
+                            <outlet property="delegate" destination="Tt7-0o-Azc" id="qys-l7-6Lw"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bUW-28-45n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="735.1145038167939" y="-11.267605633802818"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="암살" width="80" height="120.33333587646484"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
