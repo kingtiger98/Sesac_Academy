@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4C703B802A72108B007BC3DF /* TodoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C703B7F2A72108B007BC3DF /* TodoTableViewController.swift */; };
 		4C7F26092A724978000EECEB /* ExtensionUse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7F26082A724978000EECEB /* ExtensionUse.swift */; };
+		4C8BDCA32A736C2F00C75865 /* CustomTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8BDCA22A736C2F00C75865 /* CustomTableViewController.swift */; };
+		4C8BDCA52A736C3F00C75865 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8BDCA42A736C3F00C75865 /* CustomTableViewCell.swift */; };
 		4C95FBF92A7232D5003AA6F8 /* StudyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C95FBF82A7232D5003AA6F8 /* StudyTableViewController.swift */; };
 		4CAD91E02A71FFF5002A286F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAD91DF2A71FFF5002A286F /* AppDelegate.swift */; };
 		4CAD91E22A71FFF5002A286F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAD91E12A71FFF5002A286F /* SceneDelegate.swift */; };
@@ -21,11 +23,15 @@
 		4CEF44912A72546100A2DB35 /* SetTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEF44902A72546100A2DB35 /* SetTableViewController.swift */; };
 		4CEF44932A72546B00A2DB35 /* ShopTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEF44922A72546B00A2DB35 /* ShopTableViewController.swift */; };
 		4CEF44952A72A86600A2DB35 /* ShopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEF44942A72A86600A2DB35 /* ShopTableViewCell.swift */; };
+		4CFFFAD52A7389C600A32A2A /* ToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFFFAD42A7389C600A32A2A /* ToDo.swift */; };
+		4CFFFAD72A738A1200A32A2A /* ToDoInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFFFAD62A738A1200A32A2A /* ToDoInformation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4C703B7F2A72108B007BC3DF /* TodoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTableViewController.swift; sourceTree = "<group>"; };
 		4C7F26082A724978000EECEB /* ExtensionUse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUse.swift; sourceTree = "<group>"; };
+		4C8BDCA22A736C2F00C75865 /* CustomTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewController.swift; sourceTree = "<group>"; };
+		4C8BDCA42A736C3F00C75865 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		4C95FBF82A7232D5003AA6F8 /* StudyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyTableViewController.swift; sourceTree = "<group>"; };
 		4CAD91DC2A71FFF5002A286F /* SeSACWeek3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSACWeek3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CAD91DF2A71FFF5002A286F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -40,6 +46,8 @@
 		4CEF44902A72546100A2DB35 /* SetTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTableViewController.swift; sourceTree = "<group>"; };
 		4CEF44922A72546B00A2DB35 /* ShopTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopTableViewController.swift; sourceTree = "<group>"; };
 		4CEF44942A72A86600A2DB35 /* ShopTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopTableViewCell.swift; sourceTree = "<group>"; };
+		4CFFFAD42A7389C600A32A2A /* ToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo.swift; sourceTree = "<group>"; };
+		4CFFFAD62A738A1200A32A2A /* ToDoInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoInformation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +87,9 @@
 				4C703B7F2A72108B007BC3DF /* TodoTableViewController.swift */,
 				4CAD91E32A71FFF5002A286F /* ViewController.swift */,
 				4CAD91E52A71FFF5002A286F /* Main.storyboard */,
+				4C8BDCA22A736C2F00C75865 /* CustomTableViewController.swift */,
+				4CFFFAD62A738A1200A32A2A /* ToDoInformation.swift */,
+				4C8BDCA42A736C3F00C75865 /* CustomTableViewCell.swift */,
 				4CEF448C2A72529D00A2DB35 /* Setting.storyboard */,
 				4CEF448E2A72544B00A2DB35 /* WorkTableViewController.swift */,
 				4CEF44902A72546100A2DB35 /* SetTableViewController.swift */,
@@ -87,6 +98,7 @@
 				4CAD91E82A71FFF6002A286F /* Assets.xcassets */,
 				4CAD91EA2A71FFF6002A286F /* LaunchScreen.storyboard */,
 				4CAD91ED2A71FFF6002A286F /* Info.plist */,
+				4CFFFAD42A7389C600A32A2A /* ToDo.swift */,
 			);
 			path = SeSACWeek3;
 			sourceTree = "<group>";
@@ -169,9 +181,13 @@
 				4CEF44912A72546100A2DB35 /* SetTableViewController.swift in Sources */,
 				4C95FBF92A7232D5003AA6F8 /* StudyTableViewController.swift in Sources */,
 				4CEF44952A72A86600A2DB35 /* ShopTableViewCell.swift in Sources */,
+				4CFFFAD72A738A1200A32A2A /* ToDoInformation.swift in Sources */,
+				4C8BDCA52A736C3F00C75865 /* CustomTableViewCell.swift in Sources */,
+				4C8BDCA32A736C2F00C75865 /* CustomTableViewController.swift in Sources */,
 				4CAD91E02A71FFF5002A286F /* AppDelegate.swift in Sources */,
 				4CEF448F2A72544B00A2DB35 /* WorkTableViewController.swift in Sources */,
 				4CAD91E22A71FFF5002A286F /* SceneDelegate.swift in Sources */,
+				4CFFFAD52A7389C600A32A2A /* ToDo.swift in Sources */,
 				4C7F26092A724978000EECEB /* ExtensionUse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
