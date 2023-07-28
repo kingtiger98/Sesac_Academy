@@ -64,7 +64,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="암살" translatesAutoresizingMaskIntoConstraints="NO" id="W1d-N4-Ez3">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="암살" translatesAutoresizingMaskIntoConstraints="NO" id="W1d-N4-Ez3">
                                             <rect key="frame" x="8" y="8" width="94" height="141"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="W1d-N4-Ez3" secondAttribute="height" multiplier="2:3" id="0hY-R9-uhf"/>
