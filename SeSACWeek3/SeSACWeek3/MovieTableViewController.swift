@@ -11,8 +11,6 @@ class MovieTableViewController: UITableViewController {
 
     let movieInfo = MovieInfo()
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
