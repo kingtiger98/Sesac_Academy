@@ -9,9 +9,6 @@ import UIKit
 
 class CustomTableViewCell: UITableViewCell {
 
-    
-    static let idenrifier = "CustomTableViewCell"
-    
     @IBOutlet weak var backView: UIView!
     
     @IBOutlet weak var mainLabel: UILabel!

@@ -26,16 +26,19 @@ class MovieTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "movieTableViewCell") as? MovieTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Movie.identifier) as? MovieTableViewCell else {
             return UITableViewCell()
         }
         
-        cell.moviePoster.image = UIImage(named: "\(movieInfo.movie[indexPath.row].title)")
-        cell.movieTitle.text = movieInfo.movie[indexPath.row].title
-        cell.movieOpenDate.text = movieInfo.movie[indexPath.row].releaseDate + "ㅣ"
-        cell.movieRunTime.text = "\(movieInfo.movie[indexPath.row].runtime)" + "분 ㅣ"
-        cell.movieScore.text = "\(movieInfo.movie[indexPath.row].rate)" + "점"
-        cell.movieInformation.text = movieInfo.movie[indexPath.row].overview
+        let row = movieInfo.movie[indexPath.row]
+        
+        cell.configureCell(row: row)
+//        cell.moviePoster.image = UIImage(named: "\(row.title)")
+//        cell.movieTitle.text = row.title
+//        cell.movieOpenDate.text = row.releaseDate + "ㅣ"
+//        cell.movieRunTime.text = "\(row.runtime)" + "분 ㅣ"
+//        cell.movieScore.text = "\(row.rate)" + "점"
+//        cell.movieInformation.text = row.overview
 
         
         return cell

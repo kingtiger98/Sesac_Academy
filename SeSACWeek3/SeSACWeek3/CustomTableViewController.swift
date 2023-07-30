@@ -30,7 +30,7 @@ class CustomTableViewController: UITableViewController {
     
     // 2.
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "customTableViewCell", for: indexPath) as? CustomTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ToDo.identifier, for: indexPath) as? CustomTableViewCell else { return UITableViewCell() }
 
         let row = toDo.list[indexPath.row]
 

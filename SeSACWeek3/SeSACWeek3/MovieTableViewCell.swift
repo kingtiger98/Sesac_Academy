@@ -9,7 +9,7 @@ import UIKit
 
 class MovieTableViewCell: UITableViewCell {
 
-
+    static let indentifier = "movieTableViewCell"
     
     @IBOutlet weak var moviePoster: UIImageView!
     
@@ -19,7 +19,16 @@ class MovieTableViewCell: UITableViewCell {
     @IBOutlet weak var movieScore: UILabel!
     @IBOutlet weak var movieInformation: UILabel!
     
-    
+    func configureCell(row: Movie) {
+        
+        moviePoster.image = UIImage(named: "\(row.title)")
+        movieTitle.text = row.title
+        movieOpenDate.text = row.releaseDate + "ㅣ"
+        movieRunTime.text = "\(row.runtime)" + "분 ㅣ"
+        movieScore.text = "\(row.rate)" + "점"
+        movieInformation.text = row.overview
+        
+    }
     
 
 }

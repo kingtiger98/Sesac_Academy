@@ -9,6 +9,10 @@ import Foundation
 
 // 식판
 struct ToDo {
+ 
+    static let identifier = "CustomTableViewCell"
+
+    
     var main: String
     var sub: String
     var like: Bool
