@@ -45,7 +45,6 @@ class SearchCollectionViewController: UICollectionViewController {
     }
     
     
-    
 
     // 1. 셀 갯수
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

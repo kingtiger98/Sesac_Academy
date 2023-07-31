@@ -124,7 +124,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ddQ-in-b04">
-                                <rect key="frame" x="0.0" y="769" width="393" height="49"/>
+                                <rect key="frame" x="0.0" y="774" width="393" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="tqe-FL-YsA"/>
+                                </constraints>
                                 <items>
                                     <barButtonItem title="삭제" id="ioj-vf-fbe">
                                         <connections>
@@ -135,15 +138,28 @@
                                     <barButtonItem title="Item" id="FYA-f3-grX"/>
                                 </items>
                             </toolbar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ggh-vQ-T17">
+                                <rect key="frame" x="30" y="89" width="333" height="655"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Oyi-CS-UFI"/>
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                         <constraints>
+                            <constraint firstItem="Ggh-vQ-T17" firstAttribute="top" secondItem="Oyi-CS-UFI" secondAttribute="top" constant="30" id="C4Z-KE-32c"/>
+                            <constraint firstItem="ddQ-in-b04" firstAttribute="top" secondItem="Ggh-vQ-T17" secondAttribute="bottom" constant="30" id="Lte-dN-l4m"/>
+                            <constraint firstItem="Ggh-vQ-T17" firstAttribute="leading" secondItem="Oyi-CS-UFI" secondAttribute="leading" constant="30" id="O2m-iu-Ocy"/>
                             <constraint firstItem="ddQ-in-b04" firstAttribute="leading" secondItem="Oyi-CS-UFI" secondAttribute="leading" id="Syu-pg-Nhl"/>
+                            <constraint firstItem="Oyi-CS-UFI" firstAttribute="trailing" secondItem="Ggh-vQ-T17" secondAttribute="trailing" constant="30" id="dMj-9a-z8j"/>
                             <constraint firstItem="ddQ-in-b04" firstAttribute="bottom" secondItem="Oyi-CS-UFI" secondAttribute="bottom" id="luY-rH-gxL"/>
                             <constraint firstItem="ddQ-in-b04" firstAttribute="trailing" secondItem="Oyi-CS-UFI" secondAttribute="trailing" id="myI-f1-7EU"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="contentsLabel" destination="Ggh-vQ-T17" id="JCX-NE-ArS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KBd-R4-QXu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -86,10 +86,14 @@ class DiaryTableViewController: UITableViewController {
         // 2. 스토리보드 파일 내 뷰컨트롤러 찾기
         let vc = sb.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
         
+        // Pass Data 2. 다음 뷰의 데이터를 받을 공간(프로퍼티)에 데이터 전달
+        // vc.contents = "Diary 뷰컨트롤러에서 데이터 전달하면서 화면 전환 하기!!!"
+        vc.contents = list[indexPath.row] // 누른 셀의 데이터 전달하기***
+        
+        // vc.contentsLabel.text = list[indexPath.row] // 값 전달 시 아웃렛 활용은 불가능함, contentsLabel이 만들어 지는 것보다 더 빨리 값을 전달하기 떄문임
+        
         // 인터페이스 빌더에 네이베게이션 컨트롤러가 임베드 되어 있어야만 push가 작동합니다!
         navigationController?.pushViewController(vc, animated: true)
-        
-        
     }
     
     
@@ -113,6 +117,9 @@ class DiaryTableViewController: UITableViewController {
         cell.contentLable.text = list[indexPath.row]
         
         cell.backgroundColor = .clear
+        
+        
+        
         
         return cell
     }
