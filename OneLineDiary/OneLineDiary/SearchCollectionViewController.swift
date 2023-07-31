@@ -22,16 +22,24 @@ class SearchCollectionViewController: UICollectionViewController {
     }
 
     
-    // ****
+    // CollectionView 레이이웃 잡아보기 함수 *****
     func setCollectionViewLayout() {
         
+        // cell estimated size none으로 인터페이스 빌더에서 설정할 것!
+        // 1.
         let layout = UICollectionViewFlowLayout()
         
-        layout.itemSize = CGSize(width: 100, height: 100)
-        layout.sectionInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
-        layout.minimumLineSpacing = 20
-        layout.minimumInteritemSpacing = 20
+        let spacing: CGFloat = 20
+        // 디바이스 전체 너비
+        let width = UIScreen.main.bounds.width - ( spacing * 4 )
         
+        // 2.
+        layout.itemSize = CGSize(width: width / 3, height: width / 3)
+        layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
+        layout.minimumLineSpacing = spacing
+        layout.minimumInteritemSpacing = spacing
+        
+        // 3.
         collectionView.collectionViewLayout = layout
         
     }
