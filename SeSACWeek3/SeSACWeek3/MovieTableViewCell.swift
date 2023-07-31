@@ -8,8 +8,6 @@
 import UIKit
 
 class MovieTableViewCell: UITableViewCell {
-
-    static let indentifier = "movieTableViewCell"
     
     @IBOutlet weak var moviePoster: UIImageView!
     
@@ -20,7 +18,6 @@ class MovieTableViewCell: UITableViewCell {
     @IBOutlet weak var movieInformation: UILabel!
     
     func configureCell(row: Movie) {
-        
         moviePoster.image = UIImage(named: "\(row.title)")
         movieTitle.text = row.title
         movieOpenDate.text = row.releaseDate + "ㅣ"
@@ -29,6 +26,9 @@ class MovieTableViewCell: UITableViewCell {
         movieInformation.text = row.overview
         
     }
-    
 
 }
+
+
+
+

@@ -17,3 +17,5 @@ struct Movie {
     var overview: String
     var rate: Double
 }
+
+
