@@ -30,6 +30,24 @@ class DiaryTableViewController: UITableViewController {
     }
     
     
+    //
+    @IBAction func searchBarButtonClicked(_ sender: UIBarButtonItem) {
+        
+        // 1. 스토리보드 파일 찾기
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        // 2. 스토리보드 파일 내의 뷰컨트롤러 찾기
+        let vc = sb.instantiateViewController(identifier: "SearchCollectionViewController") as! SearchCollectionViewController
+        // 3. 화면 전환 방식 설정
+        vc.modalTransitionStyle = .coverVertical
+        vc.modalPresentationStyle = .automatic
+        // 4. 화면 띄우기
+        present(vc, animated: true)
+        
+    }
+    
+    
+    
+    
     
     
     // Present방식 or Navigation 형태로 Presnet하기
@@ -44,8 +62,6 @@ class DiaryTableViewController: UITableViewController {
         // 2_1(옵션). 네비게이션 컨트롤러가 있는 형태(제목바)로 Present 하고 싶은 경우!
         // nav를 사용한다면, present와 화면 전환 방식도 nav로 수정 해주어야 함!!
         let nav = UINavigationController(rootViewController: viewController)
-        
-        
         
         // 3. 화면 전환 방식 설정
         // viewController.modalTransitionStyle = .crossDissolve // 모달 애니메이션

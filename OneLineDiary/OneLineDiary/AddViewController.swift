@@ -18,7 +18,7 @@ class AddViewController: UIViewController {
         
         // 코드로 모달창 닫기 버튼 추가
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(closeButtonClicked))
-        navigationItem.leftBarButtonItem?.tintColor = .gray
+        navigationItem.leftBarButtonItem?.tintColor = .white // 순서 주의 : 버튼아이템 만들고 색상 지정해줘야 저장됨!
         
     }
 
