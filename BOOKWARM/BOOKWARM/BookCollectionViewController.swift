@@ -24,6 +24,10 @@ class BookCollectionViewController: UICollectionViewController {
         
         
         navigationItem.backButtonTitle = ""
+        
+        
+        
+        
     }
 
     
@@ -57,19 +61,40 @@ class BookCollectionViewController: UICollectionViewController {
             return UICollectionViewCell()
         }
         
-        
         cell.movieNameLabel.text = movieInfo.movie[indexPath.row].title
         cell.movieRateLabel.text = "\(movieInfo.movie[indexPath.row].rate)"
         cell.movieImageView.image = UIImage(named: "\(movieInfo.movie[indexPath.row].title)")
         
         
-        cell.backgroundColor = .orange
         cell.layer.cornerRadius = 15
         cell.backgroundColor = changeBackgroundColorRandom()
+        
+        
+        // 좋아요 버튼_하트
+        cell.likeButton.tag = indexPath.row
+        cell.likeButton.addTarget(self, action: #selector(likeButtonClicked), for: .touchUpInside)
+        
+        if movieInfo.movie[indexPath.row].favorite == true {
+            cell.likeButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+        } else {
+            cell.likeButton.setImage(UIImage(systemName: "heart"), for: .normal)
+        }
+        
+        
         
         return cell
         
     }
+    
+    @objc func likeButtonClicked(_ sender: UIButton) {
+        print("버튼 태그값 : \(sender.tag)")
+
+        movieInfo.movie[sender.tag].favorite.toggle()
+        collectionView.reloadData()
+    }
+    
+    
+    
     
     // 화면이동 + 값 전달
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -98,10 +123,10 @@ class BookCollectionViewController: UICollectionViewController {
         let width = UIScreen.main.bounds.width - (spacing * 3)
         
         // 3.
-        layout.itemSize = CGSize(width: width / 2, height: width / 2)
-        layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
-        layout.minimumLineSpacing = spacing
-        layout.minimumLineSpacing = spacing
+        layout.itemSize = CGSize(width: width / 2, height: width / 2) // item의 가로, 세로 길이 지정
+        layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing) // 섹션의 상하좌우 여백 조정
+        layout.minimumLineSpacing = spacing // item간 간격 지정
+        layout.minimumInteritemSpacing = spacing // item간 간격 지정
 
         
         // 4.

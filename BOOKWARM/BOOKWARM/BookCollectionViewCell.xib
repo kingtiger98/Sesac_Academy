@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,40 +17,53 @@
                 <rect key="frame" x="0.0" y="0.0" width="211" height="211"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="800" text="아바타" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dtV-HR-fqU">
-                        <rect key="frame" x="12" y="11.999999999999998" width="191" height="26.333333333333329"/>
-                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
-                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="800" text="9.07" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="74o-1f-0HT">
-                        <rect key="frame" x="20" y="178" width="52" height="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="800" text="9.07" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="74o-1f-0HT">
+                        <rect key="frame" x="20" y="178" width="28" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="아바타" translatesAutoresizingMaskIntoConstraints="NO" id="vXU-k0-5NS">
-                        <rect key="frame" x="92" y="50.333333333333329" width="107" height="160.66666666666669"/>
-                        <constraints>
-                            <constraint firstAttribute="width" secondItem="vXU-k0-5NS" secondAttribute="height" multiplier="2:3" id="6Bk-v3-AHr"/>
-                        </constraints>
+                        <rect key="frame" x="84" y="46.333333333333329" width="115" height="164.66666666666669"/>
                     </imageView>
+                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o5Z-4z-TDx">
+                        <rect key="frame" x="8" y="7.9999999999999982" width="195" height="26.333333333333329"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="800" text="아바타" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dtV-HR-fqU">
+                                <rect key="frame" x="0.0" y="0.0" width="169" height="26.333333333333332"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mXF-t7-NoH">
+                                <rect key="frame" x="169" y="0.0" width="26" height="26.333333333333332"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="26" id="WBQ-Xa-Hcz"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <imageReference key="image" image="heart" catalog="system" symbolScale="medium"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
+                    </stackView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="vXU-k0-5NS" secondAttribute="bottom" id="3SR-qp-new"/>
                 <constraint firstItem="74o-1f-0HT" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="7Yo-Bt-BPw"/>
-                <constraint firstAttribute="trailing" secondItem="dtV-HR-fqU" secondAttribute="trailing" constant="8" id="BPh-1V-C6V"/>
-                <constraint firstItem="vXU-k0-5NS" firstAttribute="leading" secondItem="74o-1f-0HT" secondAttribute="trailing" constant="20" id="Ijd-RV-xhF"/>
+                <constraint firstItem="vXU-k0-5NS" firstAttribute="top" secondItem="o5Z-4z-TDx" secondAttribute="bottom" constant="12" id="NzR-Z9-Su5"/>
+                <constraint firstAttribute="bottom" secondItem="vXU-k0-5NS" secondAttribute="bottom" id="O8T-KM-Ptq"/>
+                <constraint firstItem="o5Z-4z-TDx" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="QhK-8k-zhm"/>
+                <constraint firstAttribute="trailing" secondItem="o5Z-4z-TDx" secondAttribute="trailing" constant="8" id="Tjm-er-d5f"/>
+                <constraint firstAttribute="trailing" secondItem="vXU-k0-5NS" secondAttribute="trailing" constant="12" id="WIu-oj-EbR"/>
                 <constraint firstAttribute="bottom" secondItem="74o-1f-0HT" secondAttribute="bottom" constant="16" id="Zp6-aE-8kt"/>
-                <constraint firstItem="vXU-k0-5NS" firstAttribute="top" secondItem="dtV-HR-fqU" secondAttribute="bottom" constant="12" id="hMD-ob-OBZ"/>
-                <constraint firstAttribute="trailing" secondItem="vXU-k0-5NS" secondAttribute="trailing" constant="12" id="lwP-ek-3tT"/>
-                <constraint firstItem="dtV-HR-fqU" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="12" id="lwk-q7-fej"/>
-                <constraint firstItem="dtV-HR-fqU" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="12" id="wcy-9H-nGl"/>
+                <constraint firstItem="vXU-k0-5NS" firstAttribute="leading" secondItem="74o-1f-0HT" secondAttribute="trailing" constant="36" id="tae-za-RC0"/>
+                <constraint firstItem="o5Z-4z-TDx" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="zMu-M4-bu8"/>
             </constraints>
             <size key="customSize" width="211" height="211"/>
             <connections>
+                <outlet property="likeButton" destination="mXF-t7-NoH" id="Spn-vx-aAb"/>
                 <outlet property="movieImageView" destination="vXU-k0-5NS" id="Lbu-sf-HIv"/>
                 <outlet property="movieNameLabel" destination="dtV-HR-fqU" id="Ii3-Da-U6f"/>
                 <outlet property="movieRateLabel" destination="74o-1f-0HT" id="SMT-ry-KG5"/>
@@ -58,6 +72,7 @@
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="heart" catalog="system" width="128" height="107"/>
         <image name="아바타" width="240" height="361"/>
     </resources>
 </document>

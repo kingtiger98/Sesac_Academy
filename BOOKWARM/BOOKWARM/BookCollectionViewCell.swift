@@ -13,6 +13,7 @@ class BookCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var movieNameLabel: UILabel!
     @IBOutlet weak var movieRateLabel: UILabel!
     @IBOutlet weak var movieImageView: UIImageView!
+    @IBOutlet weak var likeButton: UIButton!
     
     
 }
