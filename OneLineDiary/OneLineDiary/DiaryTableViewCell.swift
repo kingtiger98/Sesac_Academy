@@ -9,6 +9,7 @@ import UIKit
 
 class DiaryTableViewCell: UITableViewCell {
 
+    static let identifier = "DiaryTableViewCell"
     
     @IBOutlet weak var backView: UIView!
     @IBOutlet weak var contentLable: UILabel!

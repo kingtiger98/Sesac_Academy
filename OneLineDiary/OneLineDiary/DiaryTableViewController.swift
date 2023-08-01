@@ -20,8 +20,8 @@ class DiaryTableViewController: UITableViewController {
         setBackGroundColor()
         
         // XIB로 테이블뷰셀을 생성한 경우, 테이블뷰에 사용할 셀을 등록해주는 과정이 필요!
-        let nib = UINib(nibName: "DiaryTableViewCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: "DiaryTableViewCell")
+        let nib = UINib(nibName: DiaryTableViewCell.identifier, bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: DiaryTableViewCell.identifier)
         
         // Dynamic Height : 1. automaticDimension, 2. label.numberOfLines, 3. AutoLaylut(여백)
         // 텍스트의 양에 따라서 셀의 높이가 자동으로 달라짐, numberOfLines = 0 으로 설정해주어야함
@@ -35,11 +35,17 @@ class DiaryTableViewController: UITableViewController {
         
         // 1. 스토리보드 파일 찾기
         let sb = UIStoryboard(name: "Main", bundle: nil)
+        
         // 2. 스토리보드 파일 내의 뷰컨트롤러 찾기
         let vc = sb.instantiateViewController(identifier: "SearchCollectionViewController") as! SearchCollectionViewController
+        
+        // 같은 스토리보드 안에 전환될 뷰가 있으면 1,2 번을 아래와 같이 사용 가능
+        // let vc = storyboard?.instantiateViewController(identifier: "SearchCollectionViewController") as! SearchCollectionViewController
+
         // 3. 화면 전환 방식 설정
         vc.modalTransitionStyle = .coverVertical
         vc.modalPresentationStyle = .automatic
+        
         // 4. 화면 띄우기
         present(vc, animated: true)
         
@@ -105,7 +111,7 @@ class DiaryTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "DiaryTableViewCell") as? DiaryTableViewCell  else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: DiaryTableViewCell.identifier) as? DiaryTableViewCell  else {
             print("nil이나 다운캐스팅 실패")
             return UITableViewCell()
         }
