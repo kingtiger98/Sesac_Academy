@@ -22,12 +22,9 @@ class BookCollectionViewController: UICollectionViewController {
         // 컬렉션뷰 레이아웃 잡기
         setCollectionViewLayout()
         
-        
+
         navigationItem.backButtonTitle = ""
-        
-        
-        
-        
+
     }
 
     
@@ -67,8 +64,7 @@ class BookCollectionViewController: UICollectionViewController {
         
         
         cell.layer.cornerRadius = 15
-        cell.backgroundColor = changeBackgroundColorRandom()
-        
+        cell.contentView.backgroundColor = changeBackgroundColorRandom()
         
         // 좋아요 버튼_하트
         cell.likeButton.tag = indexPath.row
@@ -79,18 +75,15 @@ class BookCollectionViewController: UICollectionViewController {
         } else {
             cell.likeButton.setImage(UIImage(systemName: "heart"), for: .normal)
         }
-        
-        
-        
+
         return cell
         
     }
     
     @objc func likeButtonClicked(_ sender: UIButton) {
-        print("버튼 태그값 : \(sender.tag)")
-
         movieInfo.movie[sender.tag].favorite.toggle()
         collectionView.reloadData()
+
     }
     
     
@@ -108,6 +101,17 @@ class BookCollectionViewController: UICollectionViewController {
         navigationController?.pushViewController(viewController, animated: true)
         
         viewController.navigationItem.title = movieInfo.movie[indexPath.row].title
+        
+        
+        
+        
+        viewController.nameContents = movieInfo.movie[indexPath.row].title
+        viewController.dateContents = movieInfo.movie[indexPath.row].releaseDate
+        viewController.overviewContents = movieInfo.movie[indexPath.row].overview
+        viewController.timeContents = movieInfo.movie[indexPath.row].runtime
+        viewController.rateContents = movieInfo.movie[indexPath.row].rate
+
+
     
     }
     
