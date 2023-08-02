@@ -9,6 +9,8 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
+    static let identifier = "DetailViewController"
+    
     var nameContents: String = ""
     var dateContents: String = ""
     var overviewContents: String = ""
@@ -37,11 +39,19 @@ class DetailViewController: UIViewController {
         mvOverview.text = overviewContents
         
     }
-    
 
     @IBAction func disMissbuttonClicked(_ sender: UIButton) {
         dismiss(animated: true)
     }
+    
+    func configureDetail(row: Movie) {
+        nameContents = row.title
+        dateContents = row.releaseDate
+        overviewContents = row.overview
+        timeContents = row.runtime
+        rateContents = row.rate
+    }
+    
     
 
 }

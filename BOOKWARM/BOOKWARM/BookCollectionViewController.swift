@@ -102,8 +102,6 @@ class BookCollectionViewController: UICollectionViewController {
         }
         // 3. Push
         navigationController?.pushViewController(viewController, animated: true)
-                
-        
         
         // 데이터 전달
         viewController.navigationItem.title = movieInfo.movie[indexPath.row].title
@@ -112,6 +110,7 @@ class BookCollectionViewController: UICollectionViewController {
         viewController.overviewContents = movieInfo.movie[indexPath.row].overview
         viewController.timeContents = movieInfo.movie[indexPath.row].runtime
         viewController.rateContents = movieInfo.movie[indexPath.row].rate
+                
     }
     
 

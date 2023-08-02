@@ -54,23 +54,21 @@ class AroundViewController: UIViewController, UITableViewDataSource, UITableView
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        guard let vc = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController else {
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: DetailViewController.identifier ) as? DetailViewController else {
             return
         }
         vc.modalPresentationStyle = .fullScreen
         vc.modalTransitionStyle = .crossDissolve
         
         // 데이터 전달
-        vc.nameContents = bestmovieinfo.movie[indexPath.row].title
-        vc.dateContents = bestmovieinfo.movie[indexPath.row].releaseDate
-        vc.overviewContents = bestmovieinfo.movie[indexPath.row].overview
-        vc.timeContents = bestmovieinfo.movie[indexPath.row].runtime
-        vc.rateContents = bestmovieinfo.movie[indexPath.row].rate
+        let row = bestmovieinfo.movie[indexPath.row]
+        vc.configureDetail(row: row)
         
         present(vc, animated: true)
         
     }
     
+    // 컬렉션뷰 레이아웃
     func recentCollectionViewFlowLayout() {
         let layout = UICollectionViewFlowLayout()
         
@@ -86,7 +84,6 @@ class AroundViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
 
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return bestmovieinfo.movie.count
     }
@@ -97,33 +94,23 @@ class AroundViewController: UIViewController, UITableViewDataSource, UITableView
             return UITableViewCell()
         }
         
-        cell.bestMoviePosterImageView.image = UIImage(named: bestmovieinfo.movie[indexPath.row].title)
-        cell.bestMovieNameLabel.text = bestmovieinfo.movie[indexPath.row].title
-        cell.bestMovieOpenDateLabel.text = bestmovieinfo.movie[indexPath.row].releaseDate
-        cell.bestMovieRateLabel.text = "⭐️ " + "\(bestmovieinfo.movie[indexPath.row].rate)"
-
-        cell.bestMoviePosterImageView.layer.cornerRadius = 5
-        cell.bestMovieNameLabel.textColor = .darkGray
-        cell.bestMovieOpenDateLabel.textColor = .lightGray
-        cell.bestMovieRateLabel.textColor = .darkGray
+        let row = bestmovieinfo.movie[indexPath.row]
+        cell.configureCell(row: row)
         
         return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        guard let vc = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController else {
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: DetailViewController.identifier ) as? DetailViewController else {
             return
         }
         vc.modalPresentationStyle = .fullScreen
         vc.modalTransitionStyle = .crossDissolve
         
         // 데이터 전달
-        vc.nameContents = bestmovieinfo.movie[indexPath.row].title
-        vc.dateContents = bestmovieinfo.movie[indexPath.row].releaseDate
-        vc.overviewContents = bestmovieinfo.movie[indexPath.row].overview
-        vc.timeContents = bestmovieinfo.movie[indexPath.row].runtime
-        vc.rateContents = bestmovieinfo.movie[indexPath.row].rate
+        let row = bestmovieinfo.movie[indexPath.row]
+        vc.configureDetail(row: row)
         
         present(vc, animated: true)
         
