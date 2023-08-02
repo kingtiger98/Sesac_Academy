@@ -15,5 +15,11 @@ class BookCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var movieImageView: UIImageView!
     @IBOutlet weak var likeButton: UIButton!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        
+    }
+    
     
 }

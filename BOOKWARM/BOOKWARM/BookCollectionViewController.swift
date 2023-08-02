@@ -58,10 +58,9 @@ class BookCollectionViewController: UICollectionViewController {
         cell.movieNameLabel.text = movieInfo.movie[indexPath.row].title
         cell.movieRateLabel.text = "\(movieInfo.movie[indexPath.row].rate)"
         cell.movieImageView.image = UIImage(named: "\(movieInfo.movie[indexPath.row].title)")
-        
+        cell.contentView.backgroundColor = movieInfo.movie[indexPath.row].color
         
         cell.layer.cornerRadius = 15
-        cell.contentView.backgroundColor = changeBackgroundColorRandom()
         
         // 좋아요 토글 버튼 *** addTarget사용 ***
         cell.likeButton.tag = indexPath.row
@@ -81,7 +80,6 @@ class BookCollectionViewController: UICollectionViewController {
     @objc func likeButtonClicked(_ sender: UIButton) {
         movieInfo.movie[sender.tag].favorite.toggle()
         collectionView.reloadData()
-
     }
     
     
@@ -133,19 +131,6 @@ class BookCollectionViewController: UICollectionViewController {
         
     }
     
-    
-    
-    
-    
-    // 랜덤 색 추출
-    func changeBackgroundColorRandom() -> UIColor{
-        let r : CGFloat = CGFloat.random(in: 0...1)
-        let g : CGFloat = CGFloat.random(in: 0...1)
-        let b : CGFloat = CGFloat.random(in: 0...1)
-
-        
-        return UIColor(red: r, green: g, blue: b, alpha: 1)
-    }
     
     
 }
