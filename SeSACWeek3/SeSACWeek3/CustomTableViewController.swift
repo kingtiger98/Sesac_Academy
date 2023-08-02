@@ -18,8 +18,7 @@ class CustomTableViewController: UITableViewController {
     
     @IBOutlet weak var searchBar: UISearchBar!
     
-    
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,12 +29,15 @@ class CustomTableViewController: UITableViewController {
         searchBar.placeholder = "할 일을 입력해주세요!"
         searchBar.searchTextField.addTarget(self, action: #selector(searchBarReturnTapped), for: .editingDidEndOnExit)
         
+        
+        
+        
     }
     
     @objc func searchBarReturnTapped() {
         
         // ToDo항목을 추가하고
-        let data = ToDo(main: searchBar.text!, sub: "23.08.01", like: false, done: false)
+        let data = ToDo(main: searchBar.text!, sub: "23.08.01", like: false, done: false, color: ToDoInformation.randomBackgorundColor())
         
         // list에 추가
         toDo.list.append(data)
@@ -88,6 +90,19 @@ class CustomTableViewController: UITableViewController {
     // 3. 셀 선택
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath)
+
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        vc.modalTransitionStyle = .crossDissolve
+        vc.modalPresentationStyle = .automatic
+        
+        // vc.mainContents = toDo.list[indexPath.row].main
+        vc.data = toDo.list[indexPath.row]
+        
+        present(vc, animated: true)
+
+        tableView.reloadRows(at: [indexPath], with: .automatic)// 셀 선택된 효과 지우기 위함***
+        
     }
 
 
