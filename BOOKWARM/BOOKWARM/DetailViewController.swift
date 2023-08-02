@@ -22,12 +22,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var mvRateLabel: UILabel!
     @IBOutlet weak var mvRunningTimeLabel: UILabel!
     @IBOutlet weak var mvOverview: UITextView!
-    
-    
-    
-    
-    
-    
+
     
     
     override func viewDidLoad() {
@@ -35,22 +30,14 @@ class DetailViewController: UIViewController {
 
         mvImageView.image = UIImage(named: nameContents)
         mvName.text = nameContents
-        mvOpenDateLabel.text = dateContents
-        mvRateLabel.text = "\(rateContents)"
-        mvRunningTimeLabel.text = "\(timeContents)"
+        mvOpenDateLabel.text = "개봉    " + dateContents
+        mvRateLabel.text = "평점    " + "\(rateContents)"
+        mvRunningTimeLabel.text = "\(timeContents)분"
         mvOverview.text = overviewContents
         
     }
     
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
