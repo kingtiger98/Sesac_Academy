@@ -26,6 +26,11 @@ class BookCollectionViewController: UICollectionViewController {
         navigationItem.backButtonTitle = ""
 
     }
+    
+    
+    
+    
+    
 
     // 코드로 화면전환( Show : Push_Pop )구현 + 다음 뷰로 데이터 전달
     @IBAction func searchButtonClicked(_ sender: UIBarButtonItem) {
@@ -97,7 +102,7 @@ class BookCollectionViewController: UICollectionViewController {
         }
         // 3. Push
         navigationController?.pushViewController(viewController, animated: true)
-        
+                
         
         
         // 데이터 전달

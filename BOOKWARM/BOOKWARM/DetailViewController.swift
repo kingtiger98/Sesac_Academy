@@ -24,6 +24,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var mvOverview: UITextView!
 
     
+    @IBOutlet weak var dissMissButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +39,9 @@ class DetailViewController: UIViewController {
     }
     
 
-
+    @IBAction func disMissbuttonClicked(_ sender: UIButton) {
+        dismiss(animated: true)
+    }
+    
 
 }
