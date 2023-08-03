@@ -16,15 +16,6 @@ class BookCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
-        searchBar.delegate = self
-        searchBar.placeholder = "영화를 검색해보세요."
-        searchBar.showsCancelButton = true
-        navigationItem.titleView = searchBar
-        
-        
-        
         
         
         // XIB로 컬렉션뷰셀 생성했으므로 Register 해준다. ***
@@ -34,29 +25,16 @@ class BookCollectionViewController: UICollectionViewController {
         // 컬렉션뷰 레이아웃 잡기
         setCollectionViewLayout()
         
-        navigationItem.backButtonTitle = ""
-        
+        // 영화검색버튼
+        configureSearchButton()
     }
-
-    // 코드로 화면전환( Show : Push_Pop )구현 + 다음 뷰로 데이터 전달
-    @IBAction func searchButtonClicked(_ sender: UIBarButtonItem) {
-        
-        // 1. 스토리보드 위치 확인
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        // 2. 스토리보드 내의 전환 될 뷰 확인, 뷰의 요소들에 접근하기 위해 다운캐스팅
-        guard let vc = sb.instantiateViewController(withIdentifier: "SearchViewController") as? SearchViewController else {
-            print("검색버튼 다운캐스팅 실패")
-            return
-        }
-        
-        vc.navigationItem.title = "검색 화면"
-        navigationController?.pushViewController(vc, animated: true)
-    }
+    
     
     // 1. 섹션 안의 item 갯수 지정
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return searchMovieInfo.searchMovieList.count
     }
+    
     
     // 2. item 디자인 및 데이터 조작
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -68,6 +46,7 @@ class BookCollectionViewController: UICollectionViewController {
             return UICollectionViewCell()
         }
         
+        // 셀 디자인 및 데이터 할당 함수
         cell.configureCell(row: row)
         
         // 좋아요 토글 버튼 *** addTarget사용 ***
@@ -88,7 +67,7 @@ class BookCollectionViewController: UICollectionViewController {
         collectionView.reloadData()
     }
     
-    
+    // 메인 화면 -> 상세 화면
     // 코드로 화면전환( Show : Push_Pop )구현 + 다음 뷰로 데이터 전달
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
@@ -111,11 +90,24 @@ class BookCollectionViewController: UICollectionViewController {
         // 데이터 전달
         viewController.configureDetail(row: row)
     }
-    
 
+    // 메인 화면 -> 검색 화면
+    // 코드로 화면전환( Show : Push_Pop )구현 + 다음 뷰로 데이터 전달
+    @IBAction func searchButtonClicked(_ sender: UIBarButtonItem) {
+        // 1. 스토리보드 위치 확인
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        // 2. 스토리보드 내의 전환 될 뷰 확인, 뷰의 요소들에 접근하기 위해 다운캐스팅
+        guard let vc = sb.instantiateViewController(withIdentifier: "SearchViewController") as? SearchViewController else {
+            print("검색버튼 다운캐스팅 실패")
+            return
+        }
+        vc.navigationItem.title = "검색 화면"
+        navigationController?.pushViewController(vc, animated: true)
+    }
+
+    
     // 컬렉션뷰 레이아웃 조정
     func setCollectionViewLayout() {
-        
         // 1.
         let layout = UICollectionViewFlowLayout()
         
@@ -131,10 +123,25 @@ class BookCollectionViewController: UICollectionViewController {
         
         // 4. 컬렉션뷰에 레이아웃 적용
         collectionView.collectionViewLayout = layout
+    }
+    
+    
+    // 네비게이션바 TitleView_ 영화 검색 버튼
+    func configureSearchButton() {
+        searchBar.delegate = self
+        searchBar.placeholder = "영화를 검색해보세요."
+        searchBar.showsCancelButton = true
+        navigationItem.titleView = searchBar
         
+        // 뒤로가기버튼 텍스트
+        navigationItem.backButtonTitle = ""
     }
     
 }
+
+
+
+
 
 extension BookCollectionViewController: UISearchBarDelegate {
 
@@ -169,5 +176,7 @@ extension BookCollectionViewController: UISearchBarDelegate {
         }
         collectionView.reloadData()
     }
+    
+    
 }
 

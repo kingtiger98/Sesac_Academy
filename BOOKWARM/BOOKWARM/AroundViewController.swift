@@ -36,11 +36,12 @@ class AroundViewController: UIViewController, UITableViewDataSource, UITableView
         recentCollectionViewFlowLayout()
     }
     
-    
+    // 아이템 갯수
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return bestmovieinfo.movie.count
     }
     
+    // 아이템 디자인 및 데이터
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecentCollectionViewCell.identifier, for: indexPath) as? RecentCollectionViewCell else {
@@ -52,13 +53,12 @@ class AroundViewController: UIViewController, UITableViewDataSource, UITableView
         return cell
     }
     
+    // 아이템 선택 시 값 전달 + 화면 전환
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         guard let vc = storyboard?.instantiateViewController(withIdentifier: "DetailViewController" ) as? DetailViewController else {
             return
         }
-        
-        
      
         // 데이터 전달
         let row = bestmovieinfo.movie[indexPath.row]
@@ -69,7 +69,6 @@ class AroundViewController: UIViewController, UITableViewDataSource, UITableView
         vc.modalTransitionStyle = .crossDissolve
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
-        
     }
     
     // 컬렉션뷰 레이아웃
@@ -87,11 +86,14 @@ class AroundViewController: UIViewController, UITableViewDataSource, UITableView
         recentCollectionView.collectionViewLayout = layout
     }
     
-
+    
+    // 셀 갯수
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return bestmovieinfo.movie.count
     }
     
+    
+    //셀 디자인 및 데이터
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = bestTableView.dequeueReusableCell(withIdentifier: BestTableViewCell.identifier) as? BestTableViewCell else {
@@ -104,6 +106,8 @@ class AroundViewController: UIViewController, UITableViewDataSource, UITableView
         return cell
     }
 
+    
+    // 셀 선택 시 데이터 전달 + 화면 전환
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         guard let vc = storyboard?.instantiateViewController(withIdentifier: "DetailViewController" ) as? DetailViewController else {
@@ -124,15 +128,17 @@ class AroundViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     
-    
+    // 테이블뷰 헤더 타이틀
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "요즘 인기 작품"
     }
     
+    // 테이블뷰 헤더 높이
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 40
     }
     
+    // 테이블뷰 헤더 타이틀 색상
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         guard let header = view as? UITableViewHeaderFooterView else { return; }
         header.textLabel?.textColor = .black

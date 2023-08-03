@@ -11,15 +11,12 @@ class DetailViewController: UIViewController {
     
     static let identifier = "DetailViewController"
     
-    
-    
     @IBOutlet weak var memoTextView: UITextView!
     let placeholder = "영화에 대해 간단히 메모하세요 ^^*"
     
     var nameContents: String = ""
     var dateContents: String = ""
     var overviewContents: String = ""
-    
     var timeContents: Int = 0
     var rateContents: Double = 0.0
     
@@ -33,31 +30,20 @@ class DetailViewController: UIViewController {
     var disMissButtonHiddenBool: Bool = false
     @IBOutlet weak var disMissButton: UIButton!
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         memoTextView.delegate = self
         
-        
-        
         configureSetValue()
-        
-        disMissButton.tintColor = .black
-        disMissButton.setTitle("나가기", for: .normal)
-        disMissButton.isHidden = disMissButtonHiddenBool
+        configureDisMissButton()
+
     }
     
     // present시 상세화면 나가기 버튼
     @IBAction func disMissButtonClicked(_ sender: UIButton) {
         dismiss(animated: true)
-        
     }
-    
-    
-    
-    
     
     // 빈 방에 값 전달 함수
     func configureDetail(row: Movie) {
@@ -78,8 +64,16 @@ class DetailViewController: UIViewController {
         mvOverview.text = overviewContents
     }
     
+    func configureDisMissButton() {
+        disMissButton.tintColor = .black
+        disMissButton.setTitle("나가기", for: .normal)
+        disMissButton.isHidden = disMissButtonHiddenBool
+    }
 
 }
+
+
+
 
 
 
