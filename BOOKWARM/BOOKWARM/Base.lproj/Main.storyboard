@@ -104,15 +104,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wln-Mz-HDS">
-                                <rect key="frame" x="20.000000000000004" y="71" width="46.333333333333343" height="36"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="xmark" catalog="system"/>
-                                <connections>
-                                    <action selector="disMissbuttonClicked:" destination="BCc-xb-0gS" eventType="touchUpInside" id="evZ-g1-D1Q"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="c2x-lY-Afg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -120,21 +111,17 @@
                             <constraint firstItem="N89-65-a68" firstAttribute="height" secondItem="Hpy-Qb-kbj" secondAttribute="height" multiplier="1.00833" id="47S-PW-5ft"/>
                             <constraint firstItem="N89-65-a68" firstAttribute="top" secondItem="c2x-lY-Afg" secondAttribute="top" constant="60" id="5tg-eL-u4e"/>
                             <constraint firstItem="JGu-9a-SOx" firstAttribute="leading" secondItem="c2x-lY-Afg" secondAttribute="leading" constant="20" id="EO7-MD-uQn"/>
-                            <constraint firstItem="wln-Mz-HDS" firstAttribute="top" secondItem="c2x-lY-Afg" secondAttribute="top" constant="12" id="NgC-GN-kgf"/>
                             <constraint firstItem="c2x-lY-Afg" firstAttribute="bottom" secondItem="JGu-9a-SOx" secondAttribute="bottom" constant="12" id="WSQ-z2-Va8"/>
                             <constraint firstItem="c2x-lY-Afg" firstAttribute="trailing" secondItem="N89-65-a68" secondAttribute="trailing" constant="20" id="YHS-G9-DVn"/>
                             <constraint firstItem="Hpy-Qb-kbj" firstAttribute="top" secondItem="c2x-lY-Afg" secondAttribute="top" constant="60" id="b42-6v-4Et"/>
-                            <constraint firstItem="wln-Mz-HDS" firstAttribute="leading" secondItem="c2x-lY-Afg" secondAttribute="leading" constant="20" id="i93-uY-6wf"/>
                             <constraint firstItem="Hpy-Qb-kbj" firstAttribute="leading" secondItem="c2x-lY-Afg" secondAttribute="leading" constant="20" id="jBW-GN-xiv"/>
                             <constraint firstItem="N89-65-a68" firstAttribute="leading" secondItem="Hpy-Qb-kbj" secondAttribute="trailing" constant="12" id="rPz-vA-xlz"/>
-                            <constraint firstItem="Hpy-Qb-kbj" firstAttribute="top" secondItem="wln-Mz-HDS" secondAttribute="bottom" constant="12" id="tsa-d5-GkC"/>
                             <constraint firstItem="JGu-9a-SOx" firstAttribute="top" secondItem="N89-65-a68" secondAttribute="bottom" constant="20" id="xhW-tI-rox"/>
                             <constraint firstItem="c2x-lY-Afg" firstAttribute="trailing" secondItem="JGu-9a-SOx" secondAttribute="trailing" constant="20" id="yl4-yM-bL0"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="El6-WQ-6xM"/>
                     <connections>
-                        <outlet property="dissMissButton" destination="wln-Mz-HDS" id="YJK-cH-JK1"/>
                         <outlet property="mvImageView" destination="Hpy-Qb-kbj" id="KFq-ju-cto"/>
                         <outlet property="mvName" destination="cx7-o4-7AH" id="5GY-QO-buc"/>
                         <outlet property="mvOpenDateLabel" destination="WTB-aB-UAx" id="15U-Wt-HMt"/>
@@ -145,7 +132,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xwg-nx-qvz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3315.2671755725191" y="1802.8169014084508"/>
+            <point key="canvasLocation" x="3247" y="1525"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="vkI-Tm-V47">
@@ -179,7 +166,6 @@
         <!--Tap1-->
         <scene sceneID="ksc-aa-b8k">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TJG-Xy-AmN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SMi-Ri-Mui" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Tap1" image="star.fill" catalog="system" id="BXU-7O-6Sn"/>
                     <toolbarItems/>
@@ -192,6 +178,7 @@
                         <segue destination="dhe-sT-wQU" kind="relationship" relationship="rootViewController" id="nOJ-6O-Xef"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TJG-Xy-AmN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1334" y="-2"/>
         </scene>
@@ -264,6 +251,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="3WA-fX-ymB" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fF2-bU-bEX">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -299,7 +287,6 @@
     <resources>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
-        <image name="xmark" catalog="system" width="128" height="113"/>
         <image name="광해" width="240" height="361"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
