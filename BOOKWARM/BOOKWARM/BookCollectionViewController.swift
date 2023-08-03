@@ -8,29 +8,23 @@
 import UIKit
 
 class BookCollectionViewController: UICollectionViewController {
-
+    
+    let searchBar = UISearchBar()
+    
     var movieInfo = MovieInfo()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-        // XIB로 컬렉션뷰셀 생성했으므로 Register 해준다. ****
+        // XIB로 컬렉션뷰셀 생성했으므로 Register 해준다. ***
         let nib = UINib(nibName: "BookCollectionViewCell", bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: "BookCollectionViewCell")
         
         // 컬렉션뷰 레이아웃 잡기
         setCollectionViewLayout()
         
-
         navigationItem.backButtonTitle = ""
-
     }
-    
-    
-    
-    
-    
 
     // 코드로 화면전환( Show : Push_Pop )구현 + 다음 뷰로 데이터 전달
     @IBAction func searchButtonClicked(_ sender: UIBarButtonItem) {
@@ -55,17 +49,14 @@ class BookCollectionViewController: UICollectionViewController {
     // 2. item 디자인 및 데이터 조작
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BookCollectionViewCell", for: indexPath) as? BookCollectionViewCell else {
+        let row: Movie = movieInfo.movie[indexPath.row]
+        
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BookCollectionViewCell.identifier, for: indexPath) as? BookCollectionViewCell else {
             print("다운캐스팅 실패")
             return UICollectionViewCell()
         }
         
-        cell.movieNameLabel.text = movieInfo.movie[indexPath.row].title
-        cell.movieRateLabel.text = "\(movieInfo.movie[indexPath.row].rate)"
-        cell.movieImageView.image = UIImage(named: "\(movieInfo.movie[indexPath.row].title)")
-        cell.contentView.backgroundColor = movieInfo.movie[indexPath.row].color
-        
-        cell.layer.cornerRadius = 15
+        cell.configureCell(row: row)
         
         // 좋아요 토글 버튼 *** addTarget사용 ***
         cell.likeButton.tag = indexPath.row
@@ -76,9 +67,7 @@ class BookCollectionViewController: UICollectionViewController {
         } else {
             cell.likeButton.setImage(UIImage(systemName: "heart"), for: .normal)
         }
-
         return cell
-        
     }
     
     // 좋아요 토글 버튼 ***
@@ -88,10 +77,10 @@ class BookCollectionViewController: UICollectionViewController {
     }
     
     
-    
-    
     // 코드로 화면전환( Show : Push_Pop )구현 + 다음 뷰로 데이터 전달
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let row: Movie = movieInfo.movie[indexPath.row]
         
         // 1. 스토리보드 위치 확인
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
@@ -100,17 +89,15 @@ class BookCollectionViewController: UICollectionViewController {
             print("화면이동 다운캐스팅 실패")
             return
         }
+        
+        // dismiss버튼 안보이게!
+        viewController.disMissButtonHiddenBool = true
+        
         // 3. Push
         navigationController?.pushViewController(viewController, animated: true)
         
         // 데이터 전달
-        viewController.navigationItem.title = movieInfo.movie[indexPath.row].title
-        viewController.nameContents = movieInfo.movie[indexPath.row].title
-        viewController.dateContents = movieInfo.movie[indexPath.row].releaseDate
-        viewController.overviewContents = movieInfo.movie[indexPath.row].overview
-        viewController.timeContents = movieInfo.movie[indexPath.row].runtime
-        viewController.rateContents = movieInfo.movie[indexPath.row].rate
-                
+        viewController.configureDetail(row: row)
     }
     
 
@@ -135,6 +122,13 @@ class BookCollectionViewController: UICollectionViewController {
         
     }
     
+}
+
+extension BookCollectionViewController: UISearchBarDelegate {
+    
+    
+    
     
     
 }
+

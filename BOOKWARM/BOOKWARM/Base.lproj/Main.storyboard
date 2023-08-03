@@ -104,6 +104,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yey-Wh-lpf">
+                                <rect key="frame" x="20" y="108.66666666666667" width="75" height="34.333333333333329"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="disMissButtonClicked:" destination="BCc-xb-0gS" eventType="touchUpInside" id="3ol-6K-NJd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="c2x-lY-Afg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -111,8 +119,10 @@
                             <constraint firstItem="N89-65-a68" firstAttribute="height" secondItem="Hpy-Qb-kbj" secondAttribute="height" multiplier="1.00833" id="47S-PW-5ft"/>
                             <constraint firstItem="N89-65-a68" firstAttribute="top" secondItem="c2x-lY-Afg" secondAttribute="top" constant="60" id="5tg-eL-u4e"/>
                             <constraint firstItem="JGu-9a-SOx" firstAttribute="leading" secondItem="c2x-lY-Afg" secondAttribute="leading" constant="20" id="EO7-MD-uQn"/>
+                            <constraint firstItem="Hpy-Qb-kbj" firstAttribute="top" secondItem="yey-Wh-lpf" secondAttribute="bottom" constant="20" id="T3n-wg-nEM"/>
                             <constraint firstItem="c2x-lY-Afg" firstAttribute="bottom" secondItem="JGu-9a-SOx" secondAttribute="bottom" constant="12" id="WSQ-z2-Va8"/>
                             <constraint firstItem="c2x-lY-Afg" firstAttribute="trailing" secondItem="N89-65-a68" secondAttribute="trailing" constant="20" id="YHS-G9-DVn"/>
+                            <constraint firstItem="yey-Wh-lpf" firstAttribute="leading" secondItem="c2x-lY-Afg" secondAttribute="leading" constant="20" id="Yt0-wL-Z36"/>
                             <constraint firstItem="Hpy-Qb-kbj" firstAttribute="top" secondItem="c2x-lY-Afg" secondAttribute="top" constant="60" id="b42-6v-4Et"/>
                             <constraint firstItem="Hpy-Qb-kbj" firstAttribute="leading" secondItem="c2x-lY-Afg" secondAttribute="leading" constant="20" id="jBW-GN-xiv"/>
                             <constraint firstItem="N89-65-a68" firstAttribute="leading" secondItem="Hpy-Qb-kbj" secondAttribute="trailing" constant="12" id="rPz-vA-xlz"/>
@@ -122,6 +132,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="El6-WQ-6xM"/>
                     <connections>
+                        <outlet property="disMissButton" destination="yey-Wh-lpf" id="dTS-Ac-S0e"/>
                         <outlet property="mvImageView" destination="Hpy-Qb-kbj" id="KFq-ju-cto"/>
                         <outlet property="mvName" destination="cx7-o4-7AH" id="5GY-QO-buc"/>
                         <outlet property="mvOpenDateLabel" destination="WTB-aB-UAx" id="15U-Wt-HMt"/>
@@ -191,7 +202,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="m6w-98-ECr">
-                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <rect key="frame" x="0.0" y="133" width="393" height="636"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionView key="tableHeaderView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="CA7-HR-Bcb">
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="131"/>
@@ -225,13 +236,21 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="최근 본 작품" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vep-nl-tRa">
+                                <rect key="frame" x="20" y="105" width="78" height="20"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="MPQ-Jn-VqS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="m6w-98-ECr" firstAttribute="top" secondItem="vep-nl-tRa" secondAttribute="bottom" constant="8" id="45l-1y-7tl"/>
                             <constraint firstItem="MPQ-Jn-VqS" firstAttribute="bottom" secondItem="m6w-98-ECr" secondAttribute="bottom" id="LUi-fq-aCH"/>
+                            <constraint firstItem="m6w-98-ECr" firstAttribute="top" secondItem="MPQ-Jn-VqS" secondAttribute="top" constant="30" id="QX7-uG-BGa"/>
+                            <constraint firstItem="vep-nl-tRa" firstAttribute="leading" secondItem="MPQ-Jn-VqS" secondAttribute="leading" constant="20" id="YeK-gN-p68"/>
                             <constraint firstItem="MPQ-Jn-VqS" firstAttribute="trailing" secondItem="m6w-98-ECr" secondAttribute="trailing" id="bwu-R3-YEa"/>
-                            <constraint firstItem="m6w-98-ECr" firstAttribute="top" secondItem="MPQ-Jn-VqS" secondAttribute="top" id="gG8-xe-3pU"/>
                             <constraint firstItem="m6w-98-ECr" firstAttribute="leading" secondItem="MPQ-Jn-VqS" secondAttribute="leading" id="qXx-qT-QIz"/>
                         </constraints>
                     </view>

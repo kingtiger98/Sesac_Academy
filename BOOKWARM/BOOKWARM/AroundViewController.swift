@@ -54,15 +54,22 @@ class AroundViewController: UIViewController, UITableViewDataSource, UITableView
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        guard let vc = storyboard?.instantiateViewController(withIdentifier: DetailViewController.identifier ) as? DetailViewController else {
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: "DetailViewController" ) as? DetailViewController else {
             return
         }
+        
+        
      
         // 데이터 전달
         let row = bestmovieinfo.movie[indexPath.row]
         vc.configureDetail(row: row)
         
-        navigationController?.pushViewController(vc, animated: true)
+        // navigationController?.pushViewController(vc, animated: true)
+
+        vc.modalTransitionStyle = .crossDissolve
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
+        
     }
     
     // 컬렉션뷰 레이아웃
@@ -99,15 +106,19 @@ class AroundViewController: UIViewController, UITableViewDataSource, UITableView
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        guard let vc = storyboard?.instantiateViewController(withIdentifier: DetailViewController.identifier ) as? DetailViewController else {
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: "DetailViewController" ) as? DetailViewController else {
             return
         }
 
         // 데이터 전달
         let row = bestmovieinfo.movie[indexPath.row]
         vc.configureDetail(row: row)
+        vc.modalTransitionStyle = .crossDissolve
+        vc.modalPresentationStyle = .fullScreen
         
-        navigationController?.pushViewController(vc, animated: true)
+        // navigationController?.pushViewController(vc, animated: true)
+        
+        present(vc, animated: true)
         
         tableView.reloadRows(at: [indexPath], with: .automatic)
     }
@@ -126,4 +137,7 @@ class AroundViewController: UIViewController, UITableViewDataSource, UITableView
         guard let header = view as? UITableViewHeaderFooterView else { return; }
         header.textLabel?.textColor = .black
     }
+    
+    
+    
 }
