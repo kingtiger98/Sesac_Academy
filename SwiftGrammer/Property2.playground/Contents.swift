@@ -49,6 +49,18 @@ print(computedProperty)
 
 // 연산 프로퍼티 사용해보기
 struct BMI {
+    
+    // 저장 프로퍼티(인스턴스 프로퍼티)
+    var nickname: String {
+        willSet{ // nickname의 값이 변경될 예정이면 실행됨
+            print("닉네임이 \(nickname)에서 \(newValue)으로 변경될 예정입니다.")
+        }
+        didSet{ // nickname의 값이 변경되면 실행됨
+            print("닉네임이 \(oldValue)에서 \(nickname)으로 변경되었습니다.")
+        }
+    }
+    
+    // 저장 프로퍼티(인스턴스 프로퍼티)
     var weight: Double
     var height: Double
     
@@ -59,14 +71,95 @@ struct BMI {
         get {
             let bmiValue = weight / ( height * height )
             let bmiStatus = bmiValue < 18.5 ? "저체중" : "정상 이상"
-            return "고래밥 님의 BMI지수는 \(bmiValue)로 \(bmiStatus)입니다."
+            return "\(nickname)님의 BMI지수는 \(bmiValue)로 \(bmiStatus)입니다."
+        }
+        set {
+            nickname = newValue
         }
     }
     
 }
 
-let bmi = BMI(weight: 84, height: 1.8)
+var bmi = BMI(nickname: "고래밥", weight: 84, height: 1.8)
 print(bmi.BMIResult)
+
+bmi.BMIResult = "칙촉" // set의 newValue에 "칙촉" 들어감
+print(bmi.BMIResult)
+
+
+
+
+class FoodRestaurant{
+    let name = "잭치킨"
+     
+    var totalOrderCount = 10
+    
+    var newOrder: Int {
+        get{
+           return totalOrderCount * 5000
+        }
+        set{
+            totalOrderCount += newValue
+        }
+    }
+}
+
+let food = FoodRestaurant()
+
+food.newOrder = 30
+print(food.newOrder)
+
+
+
+class TypeFoodRestaurant {
+    
+    static let name = "잭치킨"
+    
+    static var totalOrderCount = 10 {
+        willSet{
+            print("총 주문 건수가 \(totalOrderCount)에서 \(newValue)로 변경될 예정입니다,")
+        }
+        didSet {
+            print("총 주문 건수가 \(oldValue)에서 \(totalOrderCount)로 변경되었습니다.")
+        }
+    }
+    
+    
+    static var newOrder: Int {
+        get {
+            return totalOrderCount * 5000
+        }
+        set {
+            totalOrderCount += newValue
+        }
+    }
+    
+}
+
+TypeFoodRestaurant.newOrder
+TypeFoodRestaurant.newOrder = 30
+TypeFoodRestaurant.newOrder
+
+
+
+
+class Coffee {
+    static var name = "아메리카노"
+    static var shot = 2
+    
+    static func plusShot() {
+        shot += 1
+    }
+}
+
+
+class Latte: Coffee {
+    
+    override class func plusShot() {
+        
+    }
+    
+}
 
 
 
@@ -106,5 +199,8 @@ enum Resource: String {
     static let addIcon = "추가"
     static let addButton = "추가"
 }
+
+
+
 
 
