@@ -57,15 +57,12 @@ class AroundViewController: UIViewController, UITableViewDataSource, UITableView
         guard let vc = storyboard?.instantiateViewController(withIdentifier: DetailViewController.identifier ) as? DetailViewController else {
             return
         }
-        vc.modalPresentationStyle = .fullScreen
-        vc.modalTransitionStyle = .crossDissolve
-        
+     
         // 데이터 전달
         let row = bestmovieinfo.movie[indexPath.row]
         vc.configureDetail(row: row)
         
-        present(vc, animated: true)
-        
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     // 컬렉션뷰 레이아웃
@@ -105,15 +102,14 @@ class AroundViewController: UIViewController, UITableViewDataSource, UITableView
         guard let vc = storyboard?.instantiateViewController(withIdentifier: DetailViewController.identifier ) as? DetailViewController else {
             return
         }
-        vc.modalPresentationStyle = .fullScreen
-        vc.modalTransitionStyle = .crossDissolve
-        
+
         // 데이터 전달
         let row = bestmovieinfo.movie[indexPath.row]
         vc.configureDetail(row: row)
         
-        present(vc, animated: true)
+        navigationController?.pushViewController(vc, animated: true)
         
+        tableView.reloadRows(at: [indexPath], with: .automatic)
     }
     
     
