@@ -8,14 +8,25 @@
 import UIKit
 
 class BookCollectionViewController: UICollectionViewController {
+        
+    var movieInfo = MovieInfo()
+    var searchMovieInfo = MovieInfo()
     
     let searchBar = UISearchBar()
-    
-    var movieInfo = MovieInfo()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        searchBar.delegate = self
+        searchBar.placeholder = "영화를 검색해보세요."
+        searchBar.showsCancelButton = true
+        navigationItem.titleView = searchBar
+        
+        
+        
+        
+        
         // XIB로 컬렉션뷰셀 생성했으므로 Register 해준다. ***
         let nib = UINib(nibName: "BookCollectionViewCell", bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: "BookCollectionViewCell")
@@ -24,6 +35,7 @@ class BookCollectionViewController: UICollectionViewController {
         setCollectionViewLayout()
         
         navigationItem.backButtonTitle = ""
+        
     }
 
     // 코드로 화면전환( Show : Push_Pop )구현 + 다음 뷰로 데이터 전달
@@ -43,13 +55,13 @@ class BookCollectionViewController: UICollectionViewController {
     
     // 1. 섹션 안의 item 갯수 지정
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return movieInfo.movie.count
+        return searchMovieInfo.searchMovieList.count
     }
     
     // 2. item 디자인 및 데이터 조작
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let row: Movie = movieInfo.movie[indexPath.row]
+        let row: Movie = searchMovieInfo.searchMovieList[indexPath.row]
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BookCollectionViewCell.identifier, for: indexPath) as? BookCollectionViewCell else {
             print("다운캐스팅 실패")
@@ -62,7 +74,7 @@ class BookCollectionViewController: UICollectionViewController {
         cell.likeButton.tag = indexPath.row
         cell.likeButton.addTarget(self, action: #selector(likeButtonClicked), for: .touchUpInside)
         
-        if movieInfo.movie[indexPath.row].favorite == true {
+        if searchMovieInfo.searchMovieList[indexPath.row].favorite == true {
             cell.likeButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
         } else {
             cell.likeButton.setImage(UIImage(systemName: "heart"), for: .normal)
@@ -72,7 +84,7 @@ class BookCollectionViewController: UICollectionViewController {
     
     // 좋아요 토글 버튼 ***
     @objc func likeButtonClicked(_ sender: UIButton) {
-        movieInfo.movie[sender.tag].favorite.toggle()
+        searchMovieInfo.searchMovieList[sender.tag].favorite.toggle()
         collectionView.reloadData()
     }
     
@@ -80,7 +92,7 @@ class BookCollectionViewController: UICollectionViewController {
     // 코드로 화면전환( Show : Push_Pop )구현 + 다음 뷰로 데이터 전달
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let row: Movie = movieInfo.movie[indexPath.row]
+        let row: Movie = searchMovieInfo.searchMovieList[indexPath.row]
         
         // 1. 스토리보드 위치 확인
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
@@ -125,10 +137,37 @@ class BookCollectionViewController: UICollectionViewController {
 }
 
 extension BookCollectionViewController: UISearchBarDelegate {
-    
-    
-    
-    
-    
+
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+
+        searchMovieInfo.searchMovieList.removeAll()
+
+        for movie in 0...movieInfo.movie.count - 1{
+            if movieInfo.movie[movie].title.contains(searchBar.text!) {
+                searchMovieInfo.searchMovieList.append(movieInfo.movie[movie])
+                print(searchMovieInfo.searchMovieList)
+            }
+        }
+        collectionView.reloadData()
+    }
+
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchMovieInfo.searchMovieList.removeAll()
+        searchBar.text = ""
+        collectionView.reloadData()
+    }
+
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        searchMovieInfo.searchMovieList.removeAll()
+        
+        for movie in 0...movieInfo.movie.count - 1{
+            if movieInfo.movie[movie].title.contains(searchBar.text!) {
+                searchMovieInfo.searchMovieList.append(movieInfo.movie[movie])
+                print(searchMovieInfo.searchMovieList)
+            }
+        }
+        collectionView.reloadData()
+    }
 }
 

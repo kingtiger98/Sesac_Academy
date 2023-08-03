@@ -11,6 +11,11 @@ class DetailViewController: UIViewController {
     
     static let identifier = "DetailViewController"
     
+    
+    
+    @IBOutlet weak var memoTextView: UITextView!
+    let placeholder = "영화에 대해 간단히 메모하세요 ^^*"
+    
     var nameContents: String = ""
     var dateContents: String = ""
     var overviewContents: String = ""
@@ -33,6 +38,10 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        memoTextView.delegate = self
+        
+        
+        
         configureSetValue()
         
         disMissButton.tintColor = .black
@@ -70,4 +79,27 @@ class DetailViewController: UIViewController {
     }
     
 
+}
+
+
+
+extension DetailViewController: UITextViewDelegate {
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        print(#function)
+        if textView.text == placeholder {
+            textView.text = nil
+            textView.textColor = .black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        print(#function)
+        if textView.text.isEmpty {
+            textView.text = placeholder
+            textView.textColor = .lightGray
+        }
+    }
+    
+    
 }
