@@ -116,7 +116,7 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="z3B-pE-g4W">
-                                <rect key="frame" x="20" y="660.66666666666663" width="353" height="177.33333333333337"/>
+                                <rect key="frame" x="20" y="660.66666666666663" width="353" height="117.33333333333337"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -137,11 +137,11 @@
                             <constraint firstItem="c2x-lY-Afg" firstAttribute="trailing" secondItem="yey-Wh-lpf" secondAttribute="trailing" constant="298" id="flq-dC-hXW"/>
                             <constraint firstItem="z3B-pE-g4W" firstAttribute="top" secondItem="JGu-9a-SOx" secondAttribute="bottom" constant="20" id="haj-Ed-mxo"/>
                             <constraint firstItem="Hpy-Qb-kbj" firstAttribute="leading" secondItem="c2x-lY-Afg" secondAttribute="leading" constant="20" id="jBW-GN-xiv"/>
-                            <constraint firstItem="z3B-pE-g4W" firstAttribute="bottom" secondItem="c2x-lY-Afg" secondAttribute="bottom" constant="20" id="lQW-RY-HpV"/>
                             <constraint firstItem="z3B-pE-g4W" firstAttribute="leading" secondItem="c2x-lY-Afg" secondAttribute="leading" constant="20" id="pT5-8W-MFA"/>
                             <constraint firstItem="N89-65-a68" firstAttribute="leading" secondItem="Hpy-Qb-kbj" secondAttribute="trailing" constant="12" id="rPz-vA-xlz"/>
                             <constraint firstItem="JGu-9a-SOx" firstAttribute="top" secondItem="N89-65-a68" secondAttribute="bottom" constant="20" id="xhW-tI-rox"/>
                             <constraint firstItem="c2x-lY-Afg" firstAttribute="trailing" secondItem="JGu-9a-SOx" secondAttribute="trailing" constant="20" id="yl4-yM-bL0"/>
+                            <constraint firstItem="c2x-lY-Afg" firstAttribute="bottom" secondItem="z3B-pE-g4W" secondAttribute="bottom" constant="40" id="zFk-vq-fjt"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="El6-WQ-6xM"/>

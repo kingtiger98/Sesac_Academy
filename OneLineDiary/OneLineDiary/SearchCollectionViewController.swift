@@ -78,7 +78,6 @@ class SearchCollectionViewController: UICollectionViewController {
 extension SearchCollectionViewController: UISearchBarDelegate {
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        print("======")
         
         searchList.removeAll()
         
@@ -116,3 +115,4 @@ extension SearchCollectionViewController: UISearchBarDelegate {
     
     
 }
+

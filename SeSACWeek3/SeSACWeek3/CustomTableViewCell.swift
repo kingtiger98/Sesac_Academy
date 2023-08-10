@@ -30,9 +30,9 @@ class CustomTableViewCell: UITableViewCell {
     // static func -> override class
     // class가 메서드 앞에 붙어 있으면 타입 메서드구나!
     // override 부모 클래스의 메서드를 자식 클래스가 사용하는 것
-    override class func awakeFromNib() { // 부모의 타입 메서드를 가져와 사용하면 class가 붙는 것이다
-        <#code#>
-    }
+//    override class func awakeFromNib() { // 부모의 타입 메서드를 가져와 사용하면 class가 붙는 것이다
+//        <#code#>
+//    }
     
     
     

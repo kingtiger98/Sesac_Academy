@@ -84,6 +84,7 @@ extension DetailViewController: UITextViewDelegate {
         if textView.text == placeholder {
             textView.text = nil
             textView.textColor = .black
+            textView.backgroundColor = .systemGray6
         }
     }
     

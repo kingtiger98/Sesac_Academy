@@ -139,10 +139,6 @@ class BookCollectionViewController: UICollectionViewController {
     
 }
 
-
-
-
-
 extension BookCollectionViewController: UISearchBarDelegate {
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
