@@ -48,7 +48,7 @@ class MovieViewController: UIViewController {
     
     func callRequset() {
         
-        let urlTrend = "https://api.themoviedb.org/3/trending/movie/week?api_key=c0b4546420c726a81d2b711a048e1846&language=ko-KR"
+        let urlTrend = "https://api.themoviedb.org/3/trending/movie/week?api_key=\(APIKey.TMDBKey)&language=ko-KR"
         
         AF.request(urlTrend, method: .get).validate().responseJSON { response in
             switch response.result {

@@ -59,7 +59,7 @@ class MovieDetailViewController: UIViewController {
         
         let headers: HTTPHeaders = [
           "accept": "application/json",
-          "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjMGI0NTQ2NDIwYzcyNmE4MWQyYjcxMWEwNDhlMTg0NiIsInN1YiI6IjY0ZDZlZGU3ZjQ5NWVlMDI4ZjYzZDNiYyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.BGtl-e-IpDeMJ9JAqP2qK5rmfvOf5gBPOuuYeYfDcbk"
+          "Authorization": APIKey.TMDBToken
         ]
 
         AF.request(urlCredit, method: .get, headers: headers).validate().responseJSON { response in
