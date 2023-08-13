@@ -42,8 +42,8 @@ class MovieViewController: UIViewController {
 
 
     func callRequset() {
-        TmdbAPIManager.shared.callRequset(type: .movie) { data in
-            self.movieInfo.append(data)
+        TmdbAPIManager.shared.callRequset(type: .movie) { Movie in
+            self.movieInfo.append(Movie)
             self.MovieCollectionView.reloadData()
         }
     }
@@ -114,8 +114,8 @@ extension MovieViewController: UICollectionViewDelegate, UICollectionViewDataSou
         guard let url = URL(string: row.poster_path) else {
             return UICollectionViewCell()
         }
-        
         cell.movieImageView.kf.setImage(with: url)
+        
         cell.configureCell()
         
         return cell

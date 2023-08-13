@@ -27,27 +27,31 @@ class TmdbAPIManager{
         let urlTrend =  type.requestURL
 
         
-        AF.request(urlTrend, method: .get, headers: headers).validate().responseJSON { response in
+        AF.request(urlTrend, method: .get, headers: headers).validate(statusCode: 200...500).responseJSON { response in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
                 
-                // print(json["results"].arrayValue.count)
+                let statusCode = response.response?.statusCode ?? 500
                 
-                for item in json["results"].arrayValue {
-                    
-                    let id = item["id"].stringValue
-                    let title = item["title"].stringValue
-                    let overview = item["overview"].stringValue
-                    let release_date = item["release_date"].stringValue
-                    let vote_average = item["vote_average"].stringValue
-                    let poster_path = "https://image.tmdb.org/t/p/w500/" + item["poster_path"].stringValue
-                    let backdrop_path = "https://image.tmdb.org/t/p/w500/" + item["backdrop_path"].stringValue
+                if statusCode == 200 {
+                    for item in json["results"].arrayValue {
+                        
+                        let id = item["id"].stringValue
+                        let title = item["title"].stringValue
+                        let overview = item["overview"].stringValue
+                        let release_date = item["release_date"].stringValue
+                        let vote_average = item["vote_average"].stringValue
+                        let poster_path = "https://image.tmdb.org/t/p/w500/" + item["poster_path"].stringValue
+                        let backdrop_path = "https://image.tmdb.org/t/p/w500/" + item["backdrop_path"].stringValue
 
-                    
-                    let data = Movie(id: id, title: title, overview: overview, release_date: release_date, vote_average: vote_average, poster_path: poster_path, backdrop_path: backdrop_path)
-                    completionHandler(data)
-                    //self.movieInfo.append(data)
+                        
+                        let data = Movie(id: id, title: title, overview: overview, release_date: release_date, vote_average: vote_average, poster_path: poster_path, backdrop_path: backdrop_path)
+                        completionHandler(data)
+                        //self.movieInfo.append(data)
+                    }
+                } else {
+                    print("문제발생 영화리스트 못가져왔어용")
                 }
                 
                     //self.MovieCollectionView.reloadData()
