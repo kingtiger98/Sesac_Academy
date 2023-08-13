@@ -6,15 +6,22 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
+import Kingfisher
 
 class MovieCollectionViewCell: UICollectionViewCell {
 
     
     @IBOutlet weak var movieImageView: UIImageView!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+
+    func configureCell(){
+        backgroundColor = .none
+        layer.masksToBounds = true
+        layer.cornerRadius = 5.0
     }
+    
+    
 
 }

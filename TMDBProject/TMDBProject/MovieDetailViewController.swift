@@ -10,13 +10,17 @@ import Alamofire
 import SwiftyJSON
 import Kingfisher
 
+
+struct Actor {
+    let original_name: String
+    let character: String
+    let profile_path: String
+}
+
+
 class MovieDetailViewController: UIViewController {
 
-    struct Actor {
-        let original_name: String
-        let character: String
-        let profile_path: String
-    }
+
     
     var actorInfo: [Actor] = []
     
@@ -38,8 +42,8 @@ class MovieDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let nib = UINib(nibName: "ActorTableViewCell", bundle: nil)
-        actorTable.register(nib, forCellReuseIdentifier: "ActorTableViewCell")
+        let nib = UINib(nibName: ActorTableViewCell.identifier, bundle: nil)
+        actorTable.register(nib, forCellReuseIdentifier: ActorTableViewCell.identifier)
         actorTable.dataSource = self
         actorTable.delegate = self
         actorTable.rowHeight = 120
@@ -52,46 +56,57 @@ class MovieDetailViewController: UIViewController {
         configureLabel()
     }
     
-    
+
     func callRequest() {
-        
-        let urlCredit =  "https://api.themoviedb.org/3/movie/\(movieID)/credits?language=ko-KR"
-        
-        let headers: HTTPHeaders = [
-          "accept": "application/json",
-          "Authorization": APIKey.TMDBToken
-        ]
-
-        AF.request(urlCredit, method: .get, headers: headers).validate().responseJSON { response in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                
-                // json["cast"].arrayValue
-
-                for actor in json["cast"].arrayValue {
-                    let original_name = actor["original_name"].stringValue
-                    let character = actor["character"].stringValue
-                    let profile_path =  "https://image.tmdb.org/t/p/w500/" + actor["profile_path"].stringValue
-                    
-                    print(original_name, character, profile_path)
-                    
-                    let data = Actor(original_name: original_name, character: character, profile_path: profile_path)
-                    
-                    self.actorInfo.append(data)
-                }
-                
-                self.actorTable.reloadData()
-                
-                
-            case .failure(let error):
-                print(error)
-            }
+        TmdbCreditAPIManager.shared.callRequest(type: .actor, movieId: movieID) { Actor in
+            self.actorInfo.append(Actor)
+            self.actorTable.reloadData()
         }
-        
-        
     }
     
+//    func callRequest() {
+//
+//        // URL.baseURl => "https://api.themoviedb.org/3/"
+//        // let urlCredit =  URL.baseURl + "movie/\(movieID)/credits?language=ko-KR"
+//        let urlCredit =  EndPoint.actor.requestURL + "\(movieID)/credits?language=ko-KR"
+//
+//        let headers: HTTPHeaders = [
+//          "accept": "application/json",
+//          "Authorization": APIKey.TMDBToken
+//        ]
+//
+//        AF.request(urlCredit, method: .get, headers: headers).validate().responseJSON { response in
+//            switch response.result {
+//            case .success(let value):
+//                let json = JSON(value)
+//
+//                // json["cast"].arrayValue
+//
+//                for actor in json["cast"].arrayValue {
+//                    let original_name = actor["original_name"].stringValue
+//                    let character = actor["character"].stringValue
+//                    let profile_path =  "https://image.tmdb.org/t/p/w500/" + actor["profile_path"].stringValue
+//
+//                    //print(original_name, character, profile_path)
+//
+//                    let data = Actor(original_name: original_name, character: character, profile_path: profile_path)
+//
+//                    self.actorInfo.append(data)
+//                }
+//
+//                self.actorTable.reloadData()
+//
+//
+//            case .failure(let error):
+//                print(error)
+//            }
+//        }
+//
+//
+//    }
+    
+
+
     
 
 }
@@ -102,34 +117,44 @@ extension MovieDetailViewController: UITableViewDataSource, UITableViewDelegate{
         return actorInfo.count
     }
     
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = actorTable.dequeueReusableCell(withIdentifier: "ActorTableViewCell", for: indexPath) as? ActorTableViewCell else {
+        
+        let row: Actor = actorInfo[indexPath.row]
+        
+        guard let cell = actorTable.dequeueReusableCell(withIdentifier: ActorTableViewCell.identifier, for: indexPath) as? ActorTableViewCell else {
             return UITableViewCell()
         }
         
-        if let url = URL(string: actorInfo[indexPath.row].profile_path) {
-            cell.actorImageView.kf.setImage(with: url)
-            cell.actorImageView.layer.cornerRadius = 5
+        guard let url = URL(string: actorInfo[indexPath.row].profile_path) else {
+            return UITableViewCell()
         }
-        
-        cell.actorNameLabel.text = actorInfo[indexPath.row].original_name
-        cell.characterLabel.text = actorInfo[indexPath.row].character
+        cell.actorImageView.kf.setImage(with: url)
+        cell.configureCell(row: row)
         
         return cell
     }
     
+    
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "Cast"
     }
-    
-    
-    
     
 }
 
 
 extension MovieDetailViewController {
     
+    // MovieViewController -> MovieDetailViewController 값 전달 함수
+    func transferData(row: Movie){
+        nameContent = row.title
+        backImageContent = row.backdrop_path
+        frontImageContent = row.poster_path
+        overviewContent = row.overview
+        movieID = row.id
+    }
+    
+    // 전달 받은 값 셋팅 함수
     func setMovieData() {
         movieNameLabel.text = nameContent
         movieOverview.text = overviewContent
@@ -139,7 +164,6 @@ extension MovieDetailViewController {
             backImageView.kf.setImage(with: url2)
         }
     }
-    
     
     func configureNavigationBar() {
         navigationItem.title = "About Movie"
