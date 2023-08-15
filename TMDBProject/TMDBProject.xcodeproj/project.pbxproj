@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C1A29C52A8B7E820067F6C2 /* TMDBStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1A29C42A8B7E820067F6C2 /* TMDBStruct.swift */; };
 		4C6252AC2A87B07400B3D88A /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6252AA2A87B07400B3D88A /* MovieCollectionViewCell.swift */; };
 		4C6252AD2A87B07400B3D88A /* MovieCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C6252AB2A87B07400B3D88A /* MovieCollectionViewCell.xib */; };
 		4C6252AF2A87B8BA00B3D88A /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6252AE2A87B8BA00B3D88A /* MovieDetailViewController.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C1A29C42A8B7E820067F6C2 /* TMDBStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBStruct.swift; sourceTree = "<group>"; };
 		4C6252AA2A87B07400B3D88A /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
 		4C6252AB2A87B07400B3D88A /* MovieCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCollectionViewCell.xib; sourceTree = "<group>"; };
 		4C6252AE2A87B8BA00B3D88A /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				4C6252B82A8889BF00B3D88A /* APIKey.swift */,
 				4C6252C02A889FE700B3D88A /* TmdbAPIManager.swift */,
 				4C6252C22A88A74E00B3D88A /* TmdbCreditAPIManager.swift */,
+				4C1A29C42A8B7E820067F6C2 /* TMDBStruct.swift */,
 				4CB50AA92A8788CA00F5E26E /* Info.plist */,
 				4C6252B62A88856200B3D88A /* .gitignore */,
 			);
@@ -199,6 +202,7 @@
 				4C6252B92A8889BF00B3D88A /* APIKey.swift in Sources */,
 				4C6252C12A889FE700B3D88A /* TmdbAPIManager.swift in Sources */,
 				4C6252BD2A88908500B3D88A /* EndPoint.swift in Sources */,
+				4C1A29C52A8B7E820067F6C2 /* TMDBStruct.swift in Sources */,
 				4C6252B22A886D2800B3D88A /* ActorTableViewCell.swift in Sources */,
 				4C6252BF2A88945E00B3D88A /* ReuseableViewProtocol.swift in Sources */,
 				4C6252AF2A87B8BA00B3D88A /* MovieDetailViewController.swift in Sources */,

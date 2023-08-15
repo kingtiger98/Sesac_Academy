@@ -26,8 +26,6 @@ class TmdbCreditAPIManager{
         // URL.baseURl => "https://api.themoviedb.org/3/"
         // let urlCredit =  URL.baseURl + "movie/\(movieID)/credits?language=ko-KR"
         let urlCredit =  EndPoint.actor.requestURL + movieId + "/credits?language=ko-KR"
-        
-
 
         AF.request(urlCredit, method: .get, headers: headers).validate(statusCode: 200...500).responseJSON { response in
             switch response.result {
@@ -59,7 +57,6 @@ class TmdbCreditAPIManager{
                 print(error)
             }
         }
-        
         
     }
     

@@ -32,6 +32,8 @@ class TmdbAPIManager{
             case .success(let value):
                 let json = JSON(value)
                 
+                print(json)
+                
                 let statusCode = response.response?.statusCode ?? 500
                 
                 if statusCode == 200 {
