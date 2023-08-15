@@ -20,8 +20,6 @@ struct Actor {
 
 class MovieDetailViewController: UIViewController {
 
-
-    
     var actorInfo: [Actor] = []
     
     var nameContent: String = ""
@@ -30,6 +28,7 @@ class MovieDetailViewController: UIViewController {
     var overviewContent: String = ""
     var movieID: String = ""
     
+    @IBOutlet var backView: UIView!
     @IBOutlet weak var actorTable: UITableView!
     
     @IBOutlet weak var backImageView: UIImageView!
@@ -53,6 +52,7 @@ class MovieDetailViewController: UIViewController {
         
         setMovieData()
         configureNavigationBar()
+        configureTableView()
         configureLabel()
     }
     
@@ -167,7 +167,10 @@ extension MovieDetailViewController {
     
     func configureNavigationBar() {
         navigationItem.title = "About Movie"
-
+    }
+    
+    func configureTableView() {
+        actorTable.backgroundColor = .white
     }
     
     func configureLabel() {

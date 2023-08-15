@@ -10,6 +10,7 @@ import Alamofire
 import SwiftyJSON
 import Kingfisher
 
+
 struct Movie {
     let id: String
     let title: String
@@ -20,11 +21,17 @@ struct Movie {
     let backdrop_path: String
 }
 
+
 class MovieViewController: UIViewController {
 
     @IBOutlet weak var MovieCollectionView: UICollectionView!
+    @IBOutlet var backView: UIView!
     
     var movieInfo: [Movie] = []
+    
+    // Codable***
+    var movieCodableInfo: Page?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,15 +44,38 @@ class MovieViewController: UIViewController {
         callRequset()
         
         configureNavigationBar()
+        configureCollectionView()
         configureFlowLayout()
+        
+        print()
+        
     }
 
 
+    
+    
+    
+    
     func callRequset() {
-        TmdbAPIManager.shared.callRequset(type: .movie) { Movie in
-            self.movieInfo.append(Movie)
-            self.MovieCollectionView.reloadData()
+        
+        TmdbAPIManager.shared.callRequset(type: .movie) { response in
+            // self.movieInfo.append(Movie)
+            // self.MovieCollectionView.reloadData()
+            
+            // Codable
+            self.movieCodableInfo = response
+            print(self.movieCodableInfo!.results.count)
+            
+            // UI관련 작업 메인스레드에서 실행
+            DispatchQueue.main.async {
+                self.MovieCollectionView.reloadData()
+            }
+            
         }
+        
+    }
+    
+        
     }
         
 //     func callRequset() {
@@ -94,47 +124,67 @@ class MovieViewController: UIViewController {
     
     
     
-}
+
 
 
 extension MovieViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return movieInfo.count
+        // return movieInfo.count
+        
+        guard let cellCount = movieCodableInfo?.results.count else {
+            print("셀 갯수가 nil")
+            return 0
+        }
+        
+        return cellCount
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let row: Movie = movieInfo[indexPath.row]
+        // let row: Movie = movieInfo[indexPath.row]
+        //let row: Page = resultMovieInfo[indexPath.row]
+        
+        //let row: Result =
         
         guard let cell = MovieCollectionView.dequeueReusableCell(withReuseIdentifier: MovieCollectionViewCell.identifier, for: indexPath) as? MovieCollectionViewCell else {
             return UICollectionViewCell()
         }
     
-        guard let url = URL(string: row.poster_path) else {
-            return UICollectionViewCell()
-        }
-        cell.movieImageView.kf.setImage(with: url)
+//        guard let url = URL(string: row.poster_path) else {
+//            return UICollectionViewCell()
+//        }
+//        cell.movieImageView.kf.setImage(with: url)
+        
+        // Codable***
+//        guard let url = URL(string: row.posterPath) else {
+//            return UICollectionViewCell()
+//        }
+//        cell.movieImageView.kf.setImage(with: url)
+                
+        
+        
         
         cell.configureCell()
         
         return cell
     }
 
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        let row: Movie = movieInfo[indexPath.row]
-        
-        guard let detailVC = storyboard?.instantiateViewController(withIdentifier: MovieDetailViewController.identifier) as? MovieDetailViewController else{
-            return
-        }
-        
-        // 값 전달
-        detailVC.transferData(row: row)
-        
-        navigationController?.pushViewController(detailVC, animated: true)
-        
-    }
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//
+//        let row: Result = movieCodableInfo!.results[indexPath.row]
+//
+//        guard let detailVC = storyboard?.instantiateViewController(withIdentifier: MovieDetailViewController.identifier) as? MovieDetailViewController else{
+//            return
+//        }
+//
+//        // 값 전달
+//         detailVC.transferData(row: row)
+//
+//        navigationController?.pushViewController(detailVC, animated: true)
+//
+//    }
 
     
 }
@@ -144,11 +194,20 @@ extension MovieViewController: UICollectionViewDelegate, UICollectionViewDataSou
 
 extension MovieViewController {
     
+    
     func configureNavigationBar() {
         navigationItem.title = "Movies"
         navigationItem.backButtonTitle = ""
-        navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.tintColor = .black
+        
     }
+    
+    func configureCollectionView() {
+        
+        MovieCollectionView.backgroundColor = .white
+        backView.backgroundColor = .white
+    }
+    
     
     func configureFlowLayout(){
         let layout = UICollectionViewFlowLayout()

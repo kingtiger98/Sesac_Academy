@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BkN-FI-WEZ">
-                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="749"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="H7s-GW-mgh">
                                     <size key="itemSize" width="128" height="128"/>
@@ -41,20 +41,21 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="BkN-FI-WEZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Anl-8w-nUg"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="BkN-FI-WEZ" secondAttribute="bottom" id="Lz0-hu-sYR"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BkN-FI-WEZ" secondAttribute="trailing" id="bW2-xP-Au2"/>
-                            <constraint firstItem="BkN-FI-WEZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="hsA-l8-gfP"/>
+                            <constraint firstItem="BkN-FI-WEZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JXs-Ox-5yc"/>
+                            <constraint firstItem="BkN-FI-WEZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="WSd-mo-nwp"/>
+                            <constraint firstItem="BkN-FI-WEZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="X6X-GE-RIP"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="BkN-FI-WEZ" secondAttribute="bottom" constant="-34" id="q6R-Sb-AcX"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="qLF-3c-1IC"/>
                     <connections>
                         <outlet property="MovieCollectionView" destination="BkN-FI-WEZ" id="Sz3-Oo-6Al"/>
+                        <outlet property="backView" destination="8bC-Xf-vdC" id="PtW-z6-2FF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1065" y="-248"/>
+            <point key="canvasLocation" x="1064.885496183206" y="-248.59154929577466"/>
         </scene>
         <!--Movie Detail View Controller-->
         <scene sceneID="G6a-pB-UbU">
@@ -146,6 +147,7 @@
                     <connections>
                         <outlet property="actorTable" destination="gvN-si-Kce" id="AVg-qU-QWF"/>
                         <outlet property="backImageView" destination="MqO-Mo-Tyn" id="nef-pP-1QZ"/>
+                        <outlet property="backView" destination="Dze-17-Fww" id="veA-Dm-iuC"/>
                         <outlet property="frontImageView" destination="Jcq-GY-Tyv" id="mZR-2E-kpj"/>
                         <outlet property="movieNameLabel" destination="RiL-im-okg" id="cQ5-yn-vYm"/>
                         <outlet property="movieOverview" destination="dXp-IN-GBY" id="CCQ-9l-Jf6"/>
@@ -163,6 +165,11 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="p8Y-DE-fMp">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
