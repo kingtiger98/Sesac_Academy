@@ -23,14 +23,12 @@ import Kingfisher
 
 
 class MovieViewController: UIViewController {
-
+    
     @IBOutlet weak var MovieCollectionView: UICollectionView!
     @IBOutlet var backView: UIView!
     
-    var movieInfo: [Movie] = []
-    
     // Codable***
-    var movieCodableInfo: [Movie]?
+    var movieInfo: MovieData = MovieData(totalPages: 0, totalResults: 0, page: 0, results: [] )
     
     
     override func viewDidLoad() {
@@ -41,142 +39,75 @@ class MovieViewController: UIViewController {
         MovieCollectionView.delegate = self
         MovieCollectionView.dataSource = self
         
-        callRequset()
-      
         configureNavigationBar()
         configureCollectionView()
         configureFlowLayout()
-             
-        MovieCollectionView.reloadData()
-    }
-    
-    func callRequset() {
         
-        TmdbAPIManager.shared.callRequset(type: .movie) { response in
-            
-            // Codable
-            self.movieCodableInfo = response.results // 구조체에 저장이 안된다...!!!!
-            
-            print(self.movieCodableInfo!.count)
-            print(self.movieCodableInfo![0].title)
-            
-            // UI관련 작업 메인스레드에서 실행
-            //            DispatchQueue.main.async {
-            //                self.MovieCollectionView.reloadData()
-            //            }
-            
-            
+        callRequset { data in
+            self.movieInfo = data
+            self.MovieCollectionView.reloadData()
         }
         
     }
     
+    func callRequset(completHandler: @escaping (MovieData) -> Void) {
+        
+        TmdbAPIManager.shared.callRequsetCodable(type: .movie) { response in
+            
+            // Codable
+            print(self.movieInfo.results.count)
+            completHandler(response)
+        }
         
     }
-        
-//     func callRequset() {
-//        // "https://api.themoviedb.org/3/trending/all/day?language=en-US"
-//        // let urlTrend =  URL.baseURl + "trending/all/day?language=en-US"
-//        let urlTrend =  EndPoint.movie.requestURL
-//
-//        let headers: HTTPHeaders = [
-//          "accept": "application/json",
-//          "Authorization": APIKey.TMDBToken
-//        ]
-//
-//        AF.request(urlTrend, method: .get, headers: headers).validate().responseJSON { response in
-//            switch response.result {
-//            case .success(let value):
-//                let json = JSON(value)
-//
-//                // print(json["results"].arrayValue.count)
-//
-//                for item in json["results"].arrayValue {
-//
-//                    let id = item["id"].stringValue
-//                    let title = item["title"].stringValue
-//                    let overview = item["overview"].stringValue
-//                    let release_date = item["release_date"].stringValue
-//                    let vote_average = item["vote_average"].stringValue
-//                    let poster_path = "https://image.tmdb.org/t/p/w500/" + item["poster_path"].stringValue
-//                    let backdrop_path = "https://image.tmdb.org/t/p/w500/" + item["backdrop_path"].stringValue
-//
-//
-//                    let data = Movie(id: id, title: title, overview: overview, release_date: release_date, vote_average: vote_average, poster_path: poster_path, backdrop_path: backdrop_path)
-//
-//                    self.movieInfo.append(data)
-//
-//                }
-//
-//                    self.MovieCollectionView.reloadData()
-//
-//            case .failure(let error):
-//                print("통신 안됐지요")
-//                print(error)
-//            }
-//        }
-//
-//    }
     
+}
+
+
 
 extension MovieViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // return movieInfo.count
         
-        guard let cellCount = movieCodableInfo?.count else {
-            print("셀 갯수가 nil")
-            return 0
-        }
-        
-        print(cellCount)
-        
-        return cellCount
+        return movieInfo.results.count
         
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        // let row: Movie = movieInfo[indexPath.row]
-        // let row: Page = resultMovieInfo[indexPath.row]
         
-        let row: Movie = movieCodableInfo![indexPath.row]
+        
         
         guard let cell = MovieCollectionView.dequeueReusableCell(withReuseIdentifier: MovieCollectionViewCell.identifier, for: indexPath) as? MovieCollectionViewCell else {
             return UICollectionViewCell()
         }
-    
-//        guard let url = URL(string: row.poster_path) else {
-//            return UICollectionViewCell()
-//        }
-//        cell.movieImageView.kf.setImage(with: url)
         
         // Codable***
-        guard let url = URL(string: row.posterPath) else {
-            return UICollectionViewCell()
-        }
         
-        cell.movieImageView.kf.setImage(with: url)
-                
+        let url = "https://image.tmdb.org/t/p/w500\(movieInfo.results[indexPath.row].posterPath)"
+        cell.movieImageView.kf.setImage(with: URL(string: url))
+        
         cell.configureCell()
         
         return cell
     }
-
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//
-//        let row: Result = movieCodableInfo!.results[indexPath.row]
-//
-//        guard let detailVC = storyboard?.instantiateViewController(withIdentifier: MovieDetailViewController.identifier) as? MovieDetailViewController else{
-//            return
-//        }
-//
-//        // 값 전달
-//         detailVC.transferData(row: row)
-//
-//        navigationController?.pushViewController(detailVC, animated: true)
-//
-//    }
-
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let row: Movie = movieInfo.results[indexPath.row]
+        
+        guard let detailVC = storyboard?.instantiateViewController(withIdentifier: MovieDetailViewController.identifier) as? MovieDetailViewController else{
+            return
+        }
+        
+        // 값 전달
+        detailVC.transferData(row: row)
+        
+        navigationController?.pushViewController(detailVC, animated: true)
+        
+    }
+    
 }
 
 

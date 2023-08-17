@@ -17,7 +17,7 @@ class MovieCollectionViewCell: UICollectionViewCell {
     
 
     func configureCell(){
-        backgroundColor = .none
+        backgroundColor = .lightGray
         layer.masksToBounds = true
         layer.cornerRadius = 5.0
     }

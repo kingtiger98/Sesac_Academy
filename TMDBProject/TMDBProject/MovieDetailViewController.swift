@@ -36,8 +36,6 @@ class MovieDetailViewController: UIViewController {
     @IBOutlet weak var movieNameLabel: UILabel!
     @IBOutlet weak var movieOverview: UITextView!
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -63,50 +61,6 @@ class MovieDetailViewController: UIViewController {
             self.actorTable.reloadData()
         }
     }
-    
-//    func callRequest() {
-//
-//        // URL.baseURl => "https://api.themoviedb.org/3/"
-//        // let urlCredit =  URL.baseURl + "movie/\(movieID)/credits?language=ko-KR"
-//        let urlCredit =  EndPoint.actor.requestURL + "\(movieID)/credits?language=ko-KR"
-//
-//        let headers: HTTPHeaders = [
-//          "accept": "application/json",
-//          "Authorization": APIKey.TMDBToken
-//        ]
-//
-//        AF.request(urlCredit, method: .get, headers: headers).validate().responseJSON { response in
-//            switch response.result {
-//            case .success(let value):
-//                let json = JSON(value)
-//
-//                // json["cast"].arrayValue
-//
-//                for actor in json["cast"].arrayValue {
-//                    let original_name = actor["original_name"].stringValue
-//                    let character = actor["character"].stringValue
-//                    let profile_path =  "https://image.tmdb.org/t/p/w500/" + actor["profile_path"].stringValue
-//
-//                    //print(original_name, character, profile_path)
-//
-//                    let data = Actor(original_name: original_name, character: character, profile_path: profile_path)
-//
-//                    self.actorInfo.append(data)
-//                }
-//
-//                self.actorTable.reloadData()
-//
-//
-//            case .failure(let error):
-//                print(error)
-//            }
-//        }
-//
-//
-//    }
-    
-
-
     
 
 }
@@ -159,10 +113,12 @@ extension MovieDetailViewController {
         movieNameLabel.text = nameContent
         movieOverview.text = overviewContent
         
-        if let url1 = URL(string: frontImageContent), let url2 = URL(string: backImageContent) {
-            frontImageView.kf.setImage(with: url1)
-            backImageView.kf.setImage(with: url2)
-        }
+        let url1 = "https://image.tmdb.org/t/p/w500\(frontImageContent)"
+        let url2 = "https://image.tmdb.org/t/p/w500\(backImageContent)"
+
+            frontImageView.kf.setImage(with: URL(string: url1))
+            backImageView.kf.setImage(with: URL(string: url2))
+        
     }
     
     func configureNavigationBar() {

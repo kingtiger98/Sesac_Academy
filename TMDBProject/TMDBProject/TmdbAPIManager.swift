@@ -21,59 +21,22 @@ class TmdbAPIManager{
       "Authorization": APIKey.TMDBToken
     ]
     
-    func callRequset(type: EndPoint, completionHandler: @escaping (MovieData) -> Void ) {
-        // "https://api.themoviedb.org/3/trending/all/day?language=en-US"
-        // let urlTrend =  URL.baseURl + "trending/all/day?language=en-US"
+    func callRequsetCodable(type: EndPoint, completionHandler: @escaping (MovieData) -> Void ) {
+
         let urlTrend =  type.requestURL
 
         // Codable***
         AF.request(urlTrend, method: .get, headers: headers).validate()
             .responseDecodable(of: MovieData.self) { response in
 
-                guard let value = response.value else { return }
-                print(value)
-                completionHandler(value)
-
+                switch response.result {
+                case .success(let value):
+                    //print(value)
+                    completionHandler(value)
+                case .failure(let error):
+                    print(error)
+                }
             }
-        
-        
-        
-//        AF.request(urlTrend, method: .get, headers: headers).validate(statusCode: 200...500).responseJSON { response in
-//            switch response.result {
-//            case .success(let value):
-//                let json = JSON(value)
-//
-//                print(json)
-//
-//                let statusCode = response.response?.statusCode ?? 500
-//
-//                if statusCode == 200 {
-//                    for item in json["results"].arrayValue {
-//
-//                        let id = item["id"].stringValue
-//                        let title = item["title"].stringValue
-//                        let overview = item["overview"].stringValue
-//                        let release_date = item["release_date"].stringValue
-//                        let vote_average = item["vote_average"].stringValue
-//                        let poster_path = "https://image.tmdb.org/t/p/w500/" + item["poster_path"].stringValue
-//                        let backdrop_path = "https://image.tmdb.org/t/p/w500/" + item["backdrop_path"].stringValue
-//
-//
-//                        let data = Movie(id: id, title: title, overview: overview, release_date: release_date, vote_average: vote_average, poster_path: poster_path, backdrop_path: backdrop_path)
-//                        completionHandler(data)
-//                        //self.movieInfo.append(data)
-//                    }
-//                } else {
-//                    print("문제발생 영화리스트 못가져왔어용")
-//                }
-//
-//                    //self.MovieCollectionView.reloadData()
-//
-//            case .failure(let error):
-//                print("통신 안됐지요")
-//                print(error)
-//            }
-//        }
 
     }
     
