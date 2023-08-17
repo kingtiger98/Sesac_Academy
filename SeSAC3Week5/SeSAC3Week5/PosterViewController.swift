@@ -158,7 +158,7 @@ extension PosterViewController : UICollectionViewDelegate, UICollectionViewDataS
         
         if kind == UICollectionView.elementKindSectionHeader {
             
-            guard let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "HeaderPosterCollectionReusableView", for: indexPath) as? HeaderPosterCollectionReusableView else { return UICollectionReusableView() }
+            guard let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderPosterCollectionReusableView.identifier, for: indexPath) as? HeaderPosterCollectionReusableView else { return UICollectionReusableView() }
             
             view.titleLabel.text = "테스트 섹션"
             
@@ -184,7 +184,7 @@ extension PosterViewController : CollectionViewAttributeProtocol {
         posterCollectionView.dataSource = self
         
         posterCollectionView.register(UINib(nibName: PosterCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: PosterCollectionViewCell.identifier)
-        posterCollectionView.register(UINib(nibName: "HeaderPosterCollectionReusableView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "HeaderPosterCollectionReusableView")
+        posterCollectionView.register(UINib(nibName: HeaderPosterCollectionReusableView.identifier, bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderPosterCollectionReusableView.identifier)
     }
     
     func configureCollectionViewLayout() {
