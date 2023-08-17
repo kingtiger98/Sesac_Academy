@@ -25,6 +25,8 @@ class PosterViewController: UIViewController {
     // 네트워킹한 데이터 저장할 번수
     var firstList: Recommendation = Recommendation(totalResults: 0, page: 0, totalPages: 0, results: [])
     var secondList: Recommendation = Recommendation(totalResults: 0, page: 0, totalPages: 0, results: [])
+    var thirdList: Recommendation = Recommendation(totalResults: 0, page: 0, totalPages: 0, results: [])
+    var forthList: Recommendation = Recommendation(totalResults: 0, page: 0, totalPages: 0, results: [])
 
     
     override func viewDidLoad() {
@@ -50,10 +52,24 @@ class PosterViewController: UIViewController {
             self.posterCollectionView.reloadData()
         }
         
+        callRecommendation(id: 567646) { data in
+            // 네트워킹한 데이터 저장~***
+            self.thirdList = data
+            self.posterCollectionView.reloadData()
+        }
+        
+        callRecommendation(id: 447365) { data in
+            // 네트워킹한 데이터 저장~***
+            self.forthList = data
+            self.posterCollectionView.reloadData()
+        }
+        
+        
+        
     }
     
     
-    // 오펜하이머 : 872585, 인터스텔라 : 157336, 극한직업 : 567646
+    // 오펜하이머 : 872585, 인터스텔라 : 157336, 극한직업 : 567646, 가오갤 : 447365
     func callRecommendation(id: Int, completionHandler: @escaping (Recommendation) -> Void) {
         let url = "https://api.themoviedb.org/3/movie/\(id)/recommendations?api_key=\(Key.tmdb)&language=ko-KR"
         
@@ -102,6 +118,10 @@ extension PosterViewController : UICollectionViewDelegate, UICollectionViewDataS
             return firstList.results.count
         } else if section == 1 {
             return secondList.results.count
+        } else if section == 2{
+            return thirdList.results.count
+        } else if section == 3{
+            return forthList.results.count
         }
         
         return 9
@@ -118,6 +138,12 @@ extension PosterViewController : UICollectionViewDelegate, UICollectionViewDataS
             cell.posterImageView.kf.setImage(with: URL(string: url))
         } else if indexPath.section == 1 {
             let url = "https://image.tmdb.org/t/p/w500\(secondList.results[indexPath.item].posterPath ?? "")"
+            cell.posterImageView.kf.setImage(with: URL(string: url))
+        } else if indexPath.section == 2 {
+            let url = "https://image.tmdb.org/t/p/w500\(thirdList.results[indexPath.item].posterPath ?? "")"
+            cell.posterImageView.kf.setImage(with: URL(string: url))
+        } else if indexPath.section == 3 {
+            let url = "https://image.tmdb.org/t/p/w500\(forthList.results[indexPath.item].posterPath ?? "")"
             cell.posterImageView.kf.setImage(with: URL(string: url))
         }
         
