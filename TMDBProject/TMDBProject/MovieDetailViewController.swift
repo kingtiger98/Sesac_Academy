@@ -148,10 +148,10 @@ extension MovieDetailViewController {
     // MovieViewController -> MovieDetailViewController 값 전달 함수
     func transferData(row: Movie){
         nameContent = row.title
-        backImageContent = row.backdrop_path
-        frontImageContent = row.poster_path
+        backImageContent = row.backdropPath
+        frontImageContent = row.posterPath
         overviewContent = row.overview
-        movieID = row.id
+        movieID = String(describing: row.id)
     }
     
     // 전달 받은 값 셋팅 함수

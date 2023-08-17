@@ -11,15 +11,15 @@ import SwiftyJSON
 import Kingfisher
 
 
-struct Movie {
-    let id: String
-    let title: String
-    let overview: String
-    let release_date: String
-    let vote_average: String
-    let poster_path: String
-    let backdrop_path: String
-}
+//struct Movie {
+//    let id: String
+//    let title: String
+//    let overview: String
+//    let release_date: String
+//    let vote_average: String
+//    let poster_path: String
+//    let backdrop_path: String
+//}
 
 
 class MovieViewController: UIViewController {
@@ -30,7 +30,7 @@ class MovieViewController: UIViewController {
     var movieInfo: [Movie] = []
     
     // Codable***
-    var movieCodableInfo: Page?
+    var movieCodableInfo: [Movie]?
     
     
     override func viewDidLoad() {
@@ -42,34 +42,29 @@ class MovieViewController: UIViewController {
         MovieCollectionView.dataSource = self
         
         callRequset()
-        
+      
         configureNavigationBar()
         configureCollectionView()
         configureFlowLayout()
-        
-        print()
-        
+             
+        MovieCollectionView.reloadData()
     }
-
-
-    
-    
-    
     
     func callRequset() {
         
         TmdbAPIManager.shared.callRequset(type: .movie) { response in
-            // self.movieInfo.append(Movie)
-            // self.MovieCollectionView.reloadData()
             
             // Codable
-            self.movieCodableInfo = response
-            print(self.movieCodableInfo!.results.count)
+            self.movieCodableInfo = response.results // 구조체에 저장이 안된다...!!!!
+            
+            print(self.movieCodableInfo!.count)
+            print(self.movieCodableInfo![0].title)
             
             // UI관련 작업 메인스레드에서 실행
-            DispatchQueue.main.async {
-                self.MovieCollectionView.reloadData()
-            }
+            //            DispatchQueue.main.async {
+            //                self.MovieCollectionView.reloadData()
+            //            }
+            
             
         }
         
@@ -122,20 +117,18 @@ class MovieViewController: UIViewController {
 //
 //    }
     
-    
-    
-
-
 
 extension MovieViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // return movieInfo.count
         
-        guard let cellCount = movieCodableInfo?.results.count else {
+        guard let cellCount = movieCodableInfo?.count else {
             print("셀 갯수가 nil")
             return 0
         }
+        
+        print(cellCount)
         
         return cellCount
         
@@ -144,9 +137,9 @@ extension MovieViewController: UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         // let row: Movie = movieInfo[indexPath.row]
-        //let row: Page = resultMovieInfo[indexPath.row]
+        // let row: Page = resultMovieInfo[indexPath.row]
         
-        //let row: Result =
+        let row: Movie = movieCodableInfo![indexPath.row]
         
         guard let cell = MovieCollectionView.dequeueReusableCell(withReuseIdentifier: MovieCollectionViewCell.identifier, for: indexPath) as? MovieCollectionViewCell else {
             return UICollectionViewCell()
@@ -158,14 +151,12 @@ extension MovieViewController: UICollectionViewDelegate, UICollectionViewDataSou
 //        cell.movieImageView.kf.setImage(with: url)
         
         // Codable***
-//        guard let url = URL(string: row.posterPath) else {
-//            return UICollectionViewCell()
-//        }
-//        cell.movieImageView.kf.setImage(with: url)
+        guard let url = URL(string: row.posterPath) else {
+            return UICollectionViewCell()
+        }
+        
+        cell.movieImageView.kf.setImage(with: url)
                 
-        
-        
-        
         cell.configureCell()
         
         return cell
@@ -186,7 +177,6 @@ extension MovieViewController: UICollectionViewDelegate, UICollectionViewDataSou
 //
 //    }
 
-    
 }
 
 

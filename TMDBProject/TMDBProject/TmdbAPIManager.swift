@@ -16,28 +16,23 @@ class TmdbAPIManager{
     
     private init() {}
     
-    // Codable***
-    var resultMovieInfo: Page?
-    
     let headers: HTTPHeaders = [
       "accept": "application/json",
       "Authorization": APIKey.TMDBToken
     ]
     
-    func callRequset(type: EndPoint, completionHandler: @escaping (Page) -> () ) {
+    func callRequset(type: EndPoint, completionHandler: @escaping (MovieData) -> Void ) {
         // "https://api.themoviedb.org/3/trending/all/day?language=en-US"
         // let urlTrend =  URL.baseURl + "trending/all/day?language=en-US"
         let urlTrend =  type.requestURL
 
         // Codable***
         AF.request(urlTrend, method: .get, headers: headers).validate()
-            .responseDecodable(of: Page.self) { response in
+            .responseDecodable(of: MovieData.self) { response in
 
-             
-                //self.resultMovieInfo = response.value
-                //print(response.value)
-                
-                completionHandler(self.resultMovieInfo!)
+                guard let value = response.value else { return }
+                print(value)
+                completionHandler(value)
 
             }
         
