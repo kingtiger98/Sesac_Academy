@@ -8,35 +8,69 @@
 import UIKit
 import Alamofire
 import Kingfisher
+import WebKit
 
 class MediaViewController: UIViewController {
-
-    @IBOutlet weak var MediaCollectionView: UICollectionView!
-    @IBOutlet weak var segmentController: UISegmentedControl!
+    
     @IBOutlet var MediaBackView: UIView!
+    @IBOutlet weak var MediaCollectionView: UICollectionView!
+    
+    @IBOutlet weak var backPosterImageView: UIImageView!
+    @IBOutlet weak var frontPosterImageView: UIImageView!
+    @IBOutlet weak var movieNameLabel: UILabel!
+    
+    
+    @IBOutlet weak var trailerWebView: WKWebView!
+    
+    
+    // var movieInfo : MovieData = MovieData(totalPages: 0, totalResults: 0, page: 0, results: [])
+    var smilarList : SimilarData = SimilarData(page: 0, results: [], totalPages: 0, totalResults: 0)
+    var videoList : VideoData = VideoData(id: 0, results: [])
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         configureMediaView()
-        
+        configureNavigatinController()
         registerMediaCollectionView()
         configureMediaFlowLayout()
         configuerMediaCollection()
-        configureSegment()
         
-//        TmdbAPIManager.shared.callRequestTrend(type: .Trend) { data in
-//            print(data)
-//        }
         
-        TmdbAPIManager.shared.callRequsetSimilar(type: .similar, movieId: 724209) { data in
-            print(data)
-        }
+        dispatchGroupSimilarata()
+
         
     }
     
-    @IBAction func segmentChangeButtonClick(_ sender: UISegmentedControl) {
+    func dispatchGroupSimilarata(){
+        let groupSimilar = DispatchGroup()
         
+        groupSimilar.enter()
+        TmdbAPIManager.shared.callRequsetSimilar(type: .similar, movieId: 724209) { data in
+            print("작업 1 : callRequsetSimilar")
+            self.smilarList = data
+            groupSimilar.leave()
+        }
+        
+        groupSimilar.enter()
+        TmdbAPIManager.shared.callRequestVideo(type: .video, movieId: 724209) { data in
+            print("작업 2 : callRequestVideo")
+            self.videoList = data
+            groupSimilar.leave()
+        }
+        
+        
+        groupSimilar.notify(queue: .main) {
+            print("작업 groupSimilar END")
+            
+            self.movieNameLabel.text = self.videoList.results[0].name
+            
+            // let url = URL(string: "https://www.themoviedb.org/video/play?key=bR3R3FSmD2c")
+            // let request = URLRequest(url: url!)
+            // self.trailerWebView.load(request)
+            
+            self.MediaCollectionView.reloadData()
+        }
     }
     
  
@@ -45,8 +79,14 @@ class MediaViewController: UIViewController {
 extension MediaViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 30
+        return smilarList.results.count
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
+
+    }
+
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
@@ -54,7 +94,9 @@ extension MediaViewController: UICollectionViewDelegate, UICollectionViewDataSou
             return UICollectionViewCell()
         }
         
-        cell.configureMediaCollectionViewCell()
+        let row = smilarList.results[indexPath.row]
+        
+        cell.configureMediaCollectionViewCell(row: row)
         
         return cell
     }
@@ -65,22 +107,20 @@ extension MediaViewController: UICollectionViewDelegate, UICollectionViewDataSou
 extension MediaViewController {
     
     func configureMediaView() {
-        
         MediaBackView.backgroundColor = .black
+    }
+    
+    func configureNavigatinController() {
+        navigationItem.title = "Movies"
         
+    }
+    
+    func configurePoster() {
         
     }
     
 }
 
-// 세그먼트 디자인
-extension MediaViewController {
-    
-    func configureSegment() {
-        segmentController.selectedSegmentTintColor = .lightGray
-        segmentController.backgroundColor = .darkGray
-    }
-}
 
 
 // 컬렉션뷰 관련 함수

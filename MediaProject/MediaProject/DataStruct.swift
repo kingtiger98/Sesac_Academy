@@ -62,8 +62,9 @@ enum OriginalLanguage: String, Codable {
 }
 
 
+// ==================================================================
 
-// ====
+
 // MARK: - Welcome
 struct SimilarData: Codable {
     let page: Int
@@ -85,7 +86,7 @@ struct Similar: Codable {
     let id: Int
     let originalLanguage, originalTitle, overview: String
     let popularity: Double
-    let posterPath, releaseDate, title: String?
+    let posterPath, releaseDate, title: String
     let video: Bool
     let voteAverage: Double
     let voteCount: Int
@@ -105,5 +106,36 @@ struct Similar: Codable {
         case voteCount = "vote_count"
     }
 }
+
+
+// ==================================================================
+
+
+// MARK: - Welcome
+struct VideoData: Codable {
+    let id: Int
+    let results: [Video]
+}
+
+// MARK: - Result
+struct Video: Codable {
+    let iso639_1, iso3166_1, name, key: String
+    let site: String
+    let size: Int
+    let type: String
+    let official: Bool
+    let publishedAt, id: String
+
+    enum CodingKeys: String, CodingKey {
+        case iso639_1 = "iso_639_1"
+        case iso3166_1 = "iso_3166_1"
+        case name, key, site, size, type, official
+        case publishedAt = "published_at"
+        case id
+    }
+}
+
+
+
 
 

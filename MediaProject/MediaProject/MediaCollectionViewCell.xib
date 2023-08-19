@@ -15,9 +15,23 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="213" height="186"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lch-YJ-zhn">
+                        <rect key="frame" x="0.0" y="0.0" width="213" height="186"/>
+                    </imageView>
+                </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="lch-YJ-zhn" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="AXU-KV-15Y"/>
+                <constraint firstAttribute="trailing" secondItem="lch-YJ-zhn" secondAttribute="trailing" id="QoO-1j-kdp"/>
+                <constraint firstItem="lch-YJ-zhn" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Tx9-D3-k2b"/>
+                <constraint firstAttribute="bottom" secondItem="lch-YJ-zhn" secondAttribute="bottom" id="qrC-jw-LhP"/>
+            </constraints>
             <size key="customSize" width="213" height="186"/>
+            <connections>
+                <outlet property="similarMovieImageView" destination="lch-YJ-zhn" id="8Bq-37-vbO"/>
+            </connections>
             <point key="canvasLocation" x="252.67175572519082" y="36.619718309859159"/>
         </collectionViewCell>
     </objects>

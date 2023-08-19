@@ -39,7 +39,9 @@ class TmdbAPIManager{
 
     }
     
-    func callRequsetSimilar(type: EndPoint, movieId: Int, completionHandler: @escaping (SimilarData) -> Void) {
+    
+    
+    func callRequsetSimilar(type: EndPoint, movieId: Int, completionHandler: @escaping (SimilarData) -> Void ) {
         
         let url = type.requestURL + "\(movieId)/similar?language=ko-KR"
         
@@ -47,9 +49,27 @@ class TmdbAPIManager{
             .responseDecodable(of: SimilarData.self) { response in
                 switch response.result {
                 case .success(let value):
+                    completionHandler(value)
                     print(value)
-                case .failure(let value):
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        
+    }
+    
+    func callRequestVideo(type: EndPoint, movieId: Int, completionHandler: @escaping (VideoData) -> Void ) {
+        
+        let url = type.requestURL + "\(movieId)/videos?language=ko-KR"
+        
+        AF.request(url, method: .get, headers: header).validate()
+            .responseDecodable(of: VideoData.self) { response in
+                switch response.result {
+                case .success(let value):
+                    completionHandler(value)
                     print(value)
+                case .failure(let error):
+                    print(error)
                 }
             }
         
