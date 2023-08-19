@@ -12,12 +12,107 @@ class GCDBasicViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
  
-        globalAsyncTwo()
+        dispatchGroup()
+       
+    }
+    
+    func NoDispatchGroup() {
+                
+        DispatchQueue.global().async() {
+            for i in 1...100{
+                print(i, terminator: " ")
+            }
+        }
+        
+        DispatchQueue.global().async(){
+            for i in 101...200{
+                print(i, terminator: " ")
+            }
+        }
+        
+        DispatchQueue.global().async(){
+            for i in 201...300{
+                print(i, terminator: " ")
+            }
+        }
+        
+        DispatchQueue.global().async(){
+            for i in 301...400{
+                print(i, terminator: " ")
+            }
+        }
+        
+        print("END")
+        
+    }
+    
+    func dispatchGroup() {
+        
+        let group = DispatchGroup()
+        
+        DispatchQueue.global().async(group: group) {
+            for i in 1...100{
+                print(i, terminator: " ")
+            }
+        }
+        
+        DispatchQueue.global().async(group: group){
+            for i in 101...200{
+                print(i, terminator: " ")
+            }
+        }
+        
+        DispatchQueue.global().async(group: group){
+            for i in 201...300{
+                print(i, terminator: " ")
+            }
+        }
+        
+        DispatchQueue.global().async(group: group){
+            for i in 301...400{
+                print(i, terminator: " ")
+            }
+        }
+        
+        // 컬렉션뷰 갱신등의 코드가 들어갈 곳!!!***
+        group.notify(queue: .main) {
+            print("END")
+        }
+        
     }
     
     
-    func globalAsyncTwo() {
+    // GCD qos : quality of service
+    func dispatchQOS() {
+    
+        //global의 qos 매개변수는 작업의 우선순위를 적용해 줄 수 있음 _ 절대적이진 않으나 유도할 수 있는 정도?
+        DispatchQueue.global(qos: .userInteractive).async() { // qos: .userInteractive 우선순위 1등!
+            for i in 1...100{
+                print(i, terminator: " ")
+            }
+        }
+ 
+        DispatchQueue.global().async(qos: .background){ // qos: .background 우선순위 꼴등..
+            for i in 101...200{
+                print(i, terminator: " ")
+            }
+        }
         
+        DispatchQueue.global().async(){
+            for i in 201...300{
+                print(i, terminator: " ")
+            }
+        }
+        
+        DispatchQueue.global().async(){
+            for i in 301...400{
+                print(i, terminator: " ")
+            }
+        }
+        
+    }
+    
+    func globalAsyncTwo() {
         
         // 작업 1
         print("Strat")
@@ -31,7 +126,6 @@ class GCDBasicViewController: UIViewController {
             }
             
         }
-        
         
         // 작업 3
         for i in 101...200 {
@@ -154,8 +248,6 @@ class GCDBasicViewController: UIViewController {
                 print(i, terminator: " ")
             }
         }
-            
-        
         
         print("End")
     }

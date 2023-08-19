@@ -55,10 +55,7 @@ class VideoViewController: UIViewController {
         KakaoAPIManager.shared.callRequest(type: .video, query: query) { data in
             print(data)
             completionHandler(data)
-        }
-        
-        //KakaoAPIManager.shared.callRequest(type: .video, query: query) { json in
-            //print("===========================\(json)")
+            }
             
         }
         

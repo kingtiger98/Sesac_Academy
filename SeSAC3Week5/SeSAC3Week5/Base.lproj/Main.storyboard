@@ -111,7 +111,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AIN-ep-p7a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1044" y="-27"/>
+            <point key="canvasLocation" x="1127" y="-40"/>
         </scene>
         <!--Poster View Controller-->
         <scene sceneID="Dma-PZ-PaY">
@@ -122,7 +122,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gX9-B1-ziX">
-                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <rect key="frame" x="0.0" y="159" width="393" height="659"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0jQ-Sz-ORw">
                                     <size key="itemSize" width="128" height="128"/>
@@ -141,11 +141,21 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fWf-nR-pLq">
+                                <rect key="frame" x="44" y="73" width="124" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.78039215689999997" blue="0.74509803919999995" alpha="0.25279651990000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="sendNotification:" destination="BRB-CT-Zgt" eventType="touchUpInside" id="oDr-QY-ViF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WaC-HD-vBN"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="gX9-B1-ziX" firstAttribute="top" secondItem="WaC-HD-vBN" secondAttribute="top" id="WZ3-Hb-lAT"/>
+                            <constraint firstItem="gX9-B1-ziX" firstAttribute="top" secondItem="WaC-HD-vBN" secondAttribute="top" constant="100" id="WZ3-Hb-lAT"/>
                             <constraint firstItem="gX9-B1-ziX" firstAttribute="leading" secondItem="WaC-HD-vBN" secondAttribute="leading" id="ico-uK-ZRk"/>
                             <constraint firstItem="WaC-HD-vBN" firstAttribute="bottom" secondItem="gX9-B1-ziX" secondAttribute="bottom" id="nDT-kv-XyM"/>
                             <constraint firstItem="WaC-HD-vBN" firstAttribute="trailing" secondItem="gX9-B1-ziX" secondAttribute="trailing" id="tzA-8O-jtg"/>
@@ -157,7 +167,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8uj-RI-1Ur" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1547" y="-27"/>
+            <point key="canvasLocation" x="-1547.3282442748091" y="-27.464788732394368"/>
         </scene>
         <!--Codable View Controller-->
         <scene sceneID="X0D-pi-k0D">

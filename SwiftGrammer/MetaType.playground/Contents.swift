@@ -1,12 +1,12 @@
 import UIKit
-
+import Foundation
 struct User {
-    
+
     // static let shared = User()
-    
+
     let name = "포카칩" // 인스턴스 프로퍼티
     static let originalName = "Hwang" // 타입 프로퍼티
-    
+
 }
 
 // User.shared.name

@@ -26,7 +26,7 @@ class PosterViewController: UIViewController {
     var firstList: Recommendation = Recommendation(totalResults: 0, page: 0, totalPages: 0, results: [])
     var secondList: Recommendation = Recommendation(totalResults: 0, page: 0, totalPages: 0, results: [])
     var thirdList: Recommendation = Recommendation(totalResults: 0, page: 0, totalPages: 0, results: [])
-    var forthList: Recommendation = Recommendation(totalResults: 0, page: 0, totalPages: 0, results: [])
+    var fourthList: Recommendation = Recommendation(totalResults: 0, page: 0, totalPages: 0, results: [])
 
     
     override func viewDidLoad() {
@@ -40,32 +40,163 @@ class PosterViewController: UIViewController {
         configureCollectionView()
         configureCollectionViewLayout()
         
-        callRecommendation(id: 872585) { data in
+        
+//        for item in UIFont.familyNames {
+//            print(item)
+//            for name in UIFont.fontNames(forFamilyName: item) {
+//                print("===\(name)")
+//            }
+//        }
+        
+        
+        
+        
+        // DispatchGroup() 세 번째 구현!!!***
+        let id = [ 671, 672, 673, 674 ] // 2차원 배열로 개선해봐!
+
+        let group = DispatchGroup()
+
+        for item in id {
+            group.enter() // 작업 드가자~ : 작업량 +1
+            callRecommendation(id: item) { data in
+                if item == 671 {
+                    self.firstList = data
+                } else if item == 672 {
+                    self.secondList = data
+                } else if item == 673 {
+                    self.thirdList = data
+                } else if item == 674 {
+                    self.fourthList = data
+                }
+
+                group.leave() // 작업 끝이다~ : 작업량 -1
+            }
+        }
+
+        group.notify(queue: .main) {
+            self.posterCollectionView.reloadData()
+        }
+        
+        
+    }
+    
+    
+    @IBAction func sendNotification(_ sender: UIButton) {
+        
+        // 포그라운드에서 알림이 안뜨는게 디폴트! : 앱실행중
+        
+        // 1. 컨텐츠
+        let content = UNMutableNotificationContent()
+        content.title = "다마고치에게 물을 \(Int.random(in: 1...49))모금 주세요"
+        content.body = "아직 레벨 3이에요. 물을 주세요!!"
+        content.badge = 100 // 뱃지 사라지는 코드는 따로 구현해야해
+        
+        // 2. 언제 => 알림 보내!
+        // let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false) // repeats을 false하면 60초 아래로 알림오는 것도 가능함
+
+        let request = UNNotificationRequest(identifier: "\(Date())", content: content, trigger: trigger)
+        
+        UNUserNotificationCenter.current().add(request) { error in
+            print(error)
+        }
+        
+    }
+    
+    
+    
+    
+    
+    // DispatchGroup() 두 번째 구현!!!***
+    // group.enter() / group.leave() : 비동기 함수를 비동기 함수로 감싸는 법***
+    func dispatchGroupEnterLeave() {
+
+        let group = DispatchGroup()
+        
+        group.enter() // 1. 나 그룹 들어갈게~, 작업량 +1
+        self.callRecommendation(id: 872585) { data in
             // 네트워킹한 데이터 저장~***
             self.firstList = data
-            self.posterCollectionView.reloadData()
+            print("===1")
+            group.leave() // 2. 나 그룹 떠날게~, 작업량 -1
         }
         
-        callRecommendation(id: 157336) { data in
+        group.enter() // 1. 나 그룹 들어갈게~, 작업량 +1
+        self.callRecommendation(id: 157336) { data in
             // 네트워킹한 데이터 저장~***
             self.secondList = data
-            self.posterCollectionView.reloadData()
+            print("===2")
+            group.leave() // 2. 나 그룹 떠날게~, 작업량 -1
         }
         
-        callRecommendation(id: 567646) { data in
+        group.enter() // 1. 나 그룹 들어갈게~, 작업량 +1
+        self.callRecommendation(id: 567646) { data in
             // 네트워킹한 데이터 저장~***
             self.thirdList = data
-            self.posterCollectionView.reloadData()
+            print("===3")
+            group.leave() // 2. 나 그룹 떠날게~, 작업량 -1
         }
         
-        callRecommendation(id: 447365) { data in
+        group.enter() // 1. 나 그룹 들어갈게~, 작업량 +1
+        self.callRecommendation(id: 447365) { data in
             // 네트워킹한 데이터 저장~***
-            self.forthList = data
+            self.fourthList = data
+            print("===4")
+            group.leave() // 2. 나 그룹 떠날게~, 작업량 -1
+        }
+        
+        // 작업량이 0이 되는 순간 notify실행!
+        group.notify(queue: .main) {
+            print("=========END========")
             self.posterCollectionView.reloadData()
+        }
+    }
+    
+    // DispatchGroup() 첫 번째 구현! // 개선점 있음
+    func dispatchGroupNotify() {
+        // DispatchGroup()****
+        let group = DispatchGroup()
+        
+        // 네트워크 통신과 같은 비동기 함수가 => 비동기 함수로 묶이게 되면 다른 스레드에서 일하게 되는 문제 발생
+        DispatchQueue.global().async(group: group) {
+            self.callRecommendation(id: 671) { data in
+                // 네트워킹한 데이터 저장~***
+                self.firstList = data
+                print("===1")
+            }
+        }
+
+        DispatchQueue.global().async(group: group) {
+            self.callRecommendation(id: 672) { data in
+                // 네트워킹한 데이터 저장~***
+                self.secondList = data
+                print("===2")
+            }
+        }
+        
+        DispatchQueue.global().async(group: group) {
+            self.callRecommendation(id: 673) { data in
+                // 네트워킹한 데이터 저장~***
+                self.thirdList = data
+                print("===3")
+            }
         }
         
         
+        DispatchQueue.global().async(group: group) {
+            self.callRecommendation(id: 674) { data in
+                // 네트워킹한 데이터 저장~***
+                self.fourthList = data
+                print("===4")
+            }
+        }
         
+        // notify는 동기 함수만 올바르게 처리가 가능함
+        // 비동기 함수가 비동기 함수를 감싸면 안댐
+        group.notify(queue: .main) {
+            print("END")
+            self.posterCollectionView.reloadData()
+        }
     }
     
     
@@ -121,7 +252,7 @@ extension PosterViewController : UICollectionViewDelegate, UICollectionViewDataS
         } else if section == 2{
             return thirdList.results.count
         } else if section == 3{
-            return forthList.results.count
+            return fourthList.results.count
         }
         
         return 9
@@ -143,7 +274,7 @@ extension PosterViewController : UICollectionViewDelegate, UICollectionViewDataS
             let url = "https://image.tmdb.org/t/p/w500\(thirdList.results[indexPath.item].posterPath ?? "")"
             cell.posterImageView.kf.setImage(with: URL(string: url))
         } else if indexPath.section == 3 {
-            let url = "https://image.tmdb.org/t/p/w500\(forthList.results[indexPath.item].posterPath ?? "")"
+            let url = "https://image.tmdb.org/t/p/w500\(fourthList.results[indexPath.item].posterPath ?? "")"
             cell.posterImageView.kf.setImage(with: URL(string: url))
         }
         
@@ -161,6 +292,7 @@ extension PosterViewController : UICollectionViewDelegate, UICollectionViewDataS
             guard let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderPosterCollectionReusableView.identifier, for: indexPath) as? HeaderPosterCollectionReusableView else { return UICollectionReusableView() }
             
             view.titleLabel.text = "테스트 섹션"
+            view.titleLabel.font = UIFont(name: "Yeongdeok-Sea", size: 24) // 커스텀 폰트 적용하기
             
             return view
             
