@@ -30,7 +30,7 @@ class TmdbAPIManager{
             .responseDecodable(of: MovieData.self) { response in
                 switch response.result {
                 case .success(let value):
-                    print("성공 ===== ", value)
+                    //print("성공 ===== ", value)
                     complitionHandler(value)
                 case .failure(let error):
                     print("실패 ===== ", error)
@@ -41,16 +41,16 @@ class TmdbAPIManager{
     
     
     
-    func callRequsetSimilar(type: EndPoint, movieId: Int, completionHandler: @escaping (SimilarData) -> Void ) {
+    func callRequsetSimilar(type: EndPoint, movieId: Int, page: Int, completionHandler: @escaping (SimilarData) -> Void ) {
         
-        let url = type.requestURL + "\(movieId)/similar?language=ko-KR"
+        let url = type.requestURL + "\(movieId)/similar?language=en-US&page=\(page)"
         
         AF.request(url, method: .get, headers: header).validate()
             .responseDecodable(of: SimilarData.self) { response in
                 switch response.result {
                 case .success(let value):
                     completionHandler(value)
-                    print(value)
+                    //print(value)
                 case .failure(let error):
                     print(error)
                 }
@@ -60,14 +60,14 @@ class TmdbAPIManager{
     
     func callRequestVideo(type: EndPoint, movieId: Int, completionHandler: @escaping (VideoData) -> Void ) {
         
-        let url = type.requestURL + "\(movieId)/videos?language=ko-KR"
+        let url = type.requestURL + "\(movieId)/videos?language=en-US"
         
         AF.request(url, method: .get, headers: header).validate()
             .responseDecodable(of: VideoData.self) { response in
                 switch response.result {
                 case .success(let value):
                     completionHandler(value)
-                    print(value)
+                    //print(value)
                 case .failure(let error):
                     print(error)
                 }

@@ -22,7 +22,7 @@ class MediaViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         configureMediaView()
         configureNavigatinController()
         registerMediaCollectionView()
@@ -30,16 +30,16 @@ class MediaViewController: UIViewController {
         configuerMediaCollection()
         
         
-        dispatchGroupSimilarata()
+        dispatchGroupSimilarData()
 
         
     }
     
-    func dispatchGroupSimilarata(){
+    func dispatchGroupSimilarData(){
         let groupSimilar = DispatchGroup()
         
         groupSimilar.enter()
-        TmdbAPIManager.shared.callRequsetSimilar(type: .similar, movieId: 724209) { data in
+        TmdbAPIManager.shared.callRequsetSimilar(type: .similar, movieId: 724209, page: 1) { data in
             print("작업 1 : callRequsetSimilar")
             self.smilarList = data
             groupSimilar.leave()
@@ -49,14 +49,8 @@ class MediaViewController: UIViewController {
         TmdbAPIManager.shared.callRequestVideo(type: .video, movieId: 724209) { data in
             print("작업 2 : callRequestVideo")
             self.videoList = data
-            self.movieNameLabel.text = self.videoList.results[0].name
             
-            let videoURLString = "https://www.youtube.com/watch?v=" + self.videoList.results[0].key
-            if let videoURL = URL(string: videoURLString) {
-                let request = URLRequest(url: videoURL)
-                self.videoWebView.load(request)
-            }
-            
+            self.configureWebView()
             
             groupSimilar.leave()
         }
@@ -91,6 +85,27 @@ extension MediaViewController: UICollectionViewDelegate, UICollectionViewDataSou
         return cell
     }
     
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        TmdbAPIManager.shared.callRequestVideo(type: .video, movieId: smilarList.results[indexPath.row].id) { data in
+            
+            self.movieNameLabel.text = data.results[0].name
+
+            let videoURLString = "https://www.youtube.com/watch?v=\(data.results[0].key)?autoplay=0"
+            
+            if let videoURL = URL(string: videoURLString) {
+                let request = URLRequest(url: videoURL)
+                self.videoWebView.load(request)
+                
+            }
+            
+        }
+        
+    }
+    
+    
+    
 }
 
 // 메인화면 디자인
@@ -105,9 +120,20 @@ extension MediaViewController {
         
     }
     
-    func configurePoster() {
+    func configureWebView() {
+        self.movieNameLabel.text = self.videoList.results[2].name
         
+        let videoURLString = "https://www.youtube.com/watch?v=\(self.videoList.results[0].key)?autoplay=0"
+        if let videoURL = URL(string: videoURLString) {
+            let request = URLRequest(url: videoURL)
+            self.videoWebView.load(request)
+            
+            // 웹뷰 설정: 비디오 자동 재생 비활성화
+            self.videoWebView.configuration.allowsInlineMediaPlayback = false
+  
+        }
     }
+    
     
 }
 
