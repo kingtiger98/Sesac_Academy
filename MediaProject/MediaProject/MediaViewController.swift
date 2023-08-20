@@ -14,16 +14,9 @@ class MediaViewController: UIViewController {
     
     @IBOutlet var MediaBackView: UIView!
     @IBOutlet weak var MediaCollectionView: UICollectionView!
-    
-    @IBOutlet weak var backPosterImageView: UIImageView!
-    @IBOutlet weak var frontPosterImageView: UIImageView!
     @IBOutlet weak var movieNameLabel: UILabel!
+    @IBOutlet weak var videoWebView: WKWebView!
     
-    
-    @IBOutlet weak var trailerWebView: WKWebView!
-    
-    
-    // var movieInfo : MovieData = MovieData(totalPages: 0, totalResults: 0, page: 0, results: [])
     var smilarList : SimilarData = SimilarData(page: 0, results: [], totalPages: 0, totalResults: 0)
     var videoList : VideoData = VideoData(id: 0, results: [])
     
@@ -56,18 +49,21 @@ class MediaViewController: UIViewController {
         TmdbAPIManager.shared.callRequestVideo(type: .video, movieId: 724209) { data in
             print("작업 2 : callRequestVideo")
             self.videoList = data
+            self.movieNameLabel.text = self.videoList.results[0].name
+            
+            let videoURLString = "https://www.youtube.com/watch?v=" + self.videoList.results[0].key
+            if let videoURL = URL(string: videoURLString) {
+                let request = URLRequest(url: videoURL)
+                self.videoWebView.load(request)
+            }
+            
+            
             groupSimilar.leave()
         }
         
         
         groupSimilar.notify(queue: .main) {
             print("작업 groupSimilar END")
-            
-            self.movieNameLabel.text = self.videoList.results[0].name
-            
-            // let url = URL(string: "https://www.themoviedb.org/video/play?key=bR3R3FSmD2c")
-            // let request = URLRequest(url: url!)
-            // self.trailerWebView.load(request)
             
             self.MediaCollectionView.reloadData()
         }
@@ -81,13 +77,7 @@ extension MediaViewController: UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return smilarList.results.count
     }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
-
-    }
-
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         guard let cell = MediaCollectionView.dequeueReusableCell(withReuseIdentifier: MediaCollectionViewCell.identifier, for: indexPath) as? MediaCollectionViewCell else {
