@@ -11,11 +11,11 @@ import SwiftyJSON
 import Kingfisher
 
 class MovieCollectionViewCell: UICollectionViewCell {
-
     
     @IBOutlet weak var movieImageView: UIImageView!
+    @IBOutlet weak var originalTitleLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
     
-
     func configureCell(){
         backgroundColor = .lightGray
         layer.masksToBounds = true

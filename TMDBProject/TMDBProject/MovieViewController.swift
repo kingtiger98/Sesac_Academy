@@ -89,6 +89,8 @@ extension MovieViewController: UICollectionViewDelegate, UICollectionViewDataSou
         cell.movieImageView.kf.setImage(with: URL(string: url))
         
         cell.configureCell()
+        cell.originalTitleLabel.text = movieInfo.results[indexPath.row].originalTitle
+        cell.titleLabel.text = movieInfo.results[indexPath.row].title
         
         return cell
     }
@@ -133,7 +135,7 @@ extension MovieViewController {
     func configureFlowLayout(){
         let layout = UICollectionViewFlowLayout()
         
-        let width = UIScreen.main.bounds.width / 3
+        let width = UIScreen.main.bounds.width 
         
         layout.scrollDirection = .vertical
         layout.itemSize = CGSize(width: width - 12, height: width * 1.5)
