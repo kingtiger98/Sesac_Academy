@@ -56,11 +56,6 @@ enum MediaType: String, Codable {
     case movie = "movie"
 }
 
-enum OriginalLanguage: String, Codable {
-    case en = "en"
-    case hi = "hi"
-}
-
 
 // ==================================================================
 
@@ -107,9 +102,7 @@ struct Similar: Codable {
     }
 }
 
-
 // ==================================================================
-
 
 // MARK: - Welcome
 struct VideoData: Codable {

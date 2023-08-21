@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  SeSAC3Week5
+//  SeSAC3Week6
 //
-//  Created by jack on 2023/08/14.
+//  Created by 황재하 on 8/21/23.
 //
 
 import UIKit
@@ -29,14 +29,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneDidBecomeActive(_ scene: UIScene) {
         // Called when the scene has moved from an inactive state to an active state.
         // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
-        
-        // 뱃지 없애기 or 값 바꾸기
-        UIApplication.shared.applicationIconBadgeNumber = 0
-        // 사용자에게 이미 전달된 노티
-        UNUserNotificationCenter.current().removeAllDeliveredNotifications() // 앱이 켜지면 스택에 쌓인 알림들을 모두 제거 _ 특정한 알림만 지울 수도 있음
-        // 사요앚에게 전달될 예정인 노티 >>> 투두 장보기 알림 받기
-        UNUserNotificationCenter.current().removeAllPendingNotificationRequests() // 요청을 대기하고 있는 알림들을 모두 제거
-        
     }
 
     func sceneWillResignActive(_ scene: UIScene) {

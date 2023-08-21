@@ -87,14 +87,22 @@ class PosterViewController: UIViewController {
         
         // 1. 컨텐츠
         let content = UNMutableNotificationContent()
-        content.title = "다마고치에게 물을 \(Int.random(in: 1...49))모금 주세요"
-        content.body = "아직 레벨 3이에요. 물을 주세요!!"
+        content.title = "알림 알림 알림"
+        content.body = ["5초 뒤에 알림 받기", "Asd", "Asdf"].randomElement()!
         content.badge = 100 // 뱃지 사라지는 코드는 따로 구현해야해
         
         // 2. 언제 => 알림 보내!
+        
+        var component = DateComponents()
+        component.minute =  5 // 매 시간 5분
+        component.hour = 10 // 매일 10시
+        //    ㄴ 매일 10시 5분
+        
+        let trigger = UNCalendarNotificationTrigger(dateMatching: component, repeats: false)
+        
         // let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false) // repeats을 false하면 60초 아래로 알림오는 것도 가능함
-
+        // let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false) // repeats을 false하면 60초 아래로 알림오는 것도 가능함
+        
         let request = UNNotificationRequest(identifier: "\(Date())", content: content, trigger: trigger)
         
         UNUserNotificationCenter.current().add(request) { error in
