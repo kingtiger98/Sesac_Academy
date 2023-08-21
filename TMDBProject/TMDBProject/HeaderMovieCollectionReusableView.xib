@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HeaderMovieCollectionReusableView" id="U6b-Vx-4bR" customClass="HeaderMovieCollectionReusableView" customModule="TMDBProject" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="387" height="148"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j3E-47-iV6">
+                    <rect key="frame" x="0.0" y="59" width="387" height="55"/>
+                    <color key="backgroundColor" red="0.72941178080000002" green="0.93333333730000001" blue="0.88235294819999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.69411766529999996" green="0.37254902719999999" blue="0.91372549530000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
+            <constraints>
+                <constraint firstItem="j3E-47-iV6" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" id="Vcx-md-ZYj"/>
+                <constraint firstItem="VXr-Tz-HHm" firstAttribute="bottom" secondItem="j3E-47-iV6" secondAttribute="bottom" id="hCL-2G-siv"/>
+                <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="j3E-47-iV6" secondAttribute="trailing" id="mJn-0z-28g"/>
+                <constraint firstItem="j3E-47-iV6" firstAttribute="top" secondItem="VXr-Tz-HHm" secondAttribute="top" id="nd0-wA-1hZ"/>
+            </constraints>
+            <connections>
+                <outlet property="movieSectionLabel" destination="j3E-47-iV6" id="0E9-ot-mX1"/>
+            </connections>
+            <point key="canvasLocation" x="142.74809160305344" y="23.239436619718312"/>
+        </collectionReusableView>
+    </objects>
+</document>

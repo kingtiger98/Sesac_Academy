@@ -34,10 +34,15 @@ class MovieViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let nib = UINib(nibName: MovieCollectionViewCell.identifier, bundle: nil)
-        MovieCollectionView.register(nib, forCellWithReuseIdentifier: MovieCollectionViewCell.identifier)
         MovieCollectionView.delegate = self
         MovieCollectionView.dataSource = self
+        
+        let nib = UINib(nibName: MovieCollectionViewCell.identifier, bundle: nil)
+        MovieCollectionView.register(nib, forCellWithReuseIdentifier: MovieCollectionViewCell.identifier)
+        
+        let nib2 = UINib(nibName: HeaderMovieCollectionReusableView.identifier, bundle: nil)
+        MovieCollectionView.register(nib2, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderMovieCollectionReusableView.identifier)
+
         
         configureNavigationBar()
         configureCollectionView()
@@ -68,23 +73,34 @@ class MovieViewController: UIViewController {
 extension MovieViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // return movieInfo.count
-        
         return movieInfo.results.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        if kind == UICollectionView.elementKindSectionHeader {
+            
+            guard let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderMovieCollectionReusableView.identifier, for: indexPath) as? HeaderMovieCollectionReusableView else {
+                return UICollectionReusableView()
+            }
+            
+            view.movieSectionLabel.text = "장르올 레이블"
+    
+            return view
+            
+        } else {
+            return UICollectionReusableView()
+        }
         
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        
-        
         
         guard let cell = MovieCollectionView.dequeueReusableCell(withReuseIdentifier: MovieCollectionViewCell.identifier, for: indexPath) as? MovieCollectionViewCell else {
             return UICollectionViewCell()
         }
         
         // Codable***
-        
         let url = "https://image.tmdb.org/t/p/w500\(movieInfo.results[indexPath.row].posterPath)"
         cell.movieImageView.kf.setImage(with: URL(string: url))
         
@@ -102,12 +118,9 @@ extension MovieViewController: UICollectionViewDelegate, UICollectionViewDataSou
         guard let detailVC = storyboard?.instantiateViewController(withIdentifier: MovieDetailViewController.identifier) as? MovieDetailViewController else{
             return
         }
-        
         // 값 전달
         detailVC.transferData(row: row)
-        
         navigationController?.pushViewController(detailVC, animated: true)
-        
     }
     
 }
@@ -135,13 +148,14 @@ extension MovieViewController {
     func configureFlowLayout(){
         let layout = UICollectionViewFlowLayout()
         
-        let width = UIScreen.main.bounds.width 
+        let width = UIScreen.main.bounds.width / 2
         
         layout.scrollDirection = .vertical
         layout.itemSize = CGSize(width: width - 12, height: width * 1.5)
         layout.sectionInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
         layout.minimumLineSpacing = 8
         layout.minimumInteritemSpacing = 8
+        layout.headerReferenceSize = CGSize(width: width, height: 50)
         
         MovieCollectionView.collectionViewLayout = layout
     }

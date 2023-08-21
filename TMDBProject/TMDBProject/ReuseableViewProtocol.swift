@@ -18,7 +18,13 @@ extension UIViewController{
     }
 }
 
-extension UICollectionViewCell {
+//extension UICollectionViewCell {
+//    static var identifier: String {
+//        return String(describing: self)
+//    }
+//}
+
+extension UICollectionReusableView {
     static var identifier: String {
         return String(describing: self)
     }

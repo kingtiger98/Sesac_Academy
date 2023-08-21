@@ -17,16 +17,22 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rDU-G7-p5V">
-                        <rect key="frame" x="0.0" y="0.0" width="240" height="334.66666666666669"/>
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="335"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Original_title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hCf-pR-XaD">
-                        <rect key="frame" x="0.0" y="334.66666666666669" width="96.666666666666671" height="20.333333333333314"/>
+                        <rect key="frame" x="0.0" y="335" width="96.666666666666671" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="9K8-E2-Gd6"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Title" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V5J-vX-KaG">
-                        <rect key="frame" x="96.666666666666671" y="334.66666666666669" width="143.33333333333331" height="20.333333333333314"/>
+                        <rect key="frame" x="96.666666666666671" y="335" width="143.33333333333331" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="LIP-5W-eU2"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
