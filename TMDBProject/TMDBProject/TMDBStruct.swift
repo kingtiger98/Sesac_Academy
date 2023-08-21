@@ -30,7 +30,7 @@ struct Movie: Codable {
     let releaseDate: String
     let mediaType: MediaType
     let backdropPath: String
-    let originalLanguage: OriginalLanguage
+    let originalLanguage: String
     let voteCount: Int
     let overview, posterPath: String
     let adult: Bool
