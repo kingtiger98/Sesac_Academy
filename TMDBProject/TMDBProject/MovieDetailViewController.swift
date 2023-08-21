@@ -20,7 +20,8 @@ struct Actor {
 
 class MovieDetailViewController: UIViewController {
 
-    var actorInfo: [Actor] = []
+    // var actorInfo: [Actor] = []
+    var actorinfo: CastData = CastData(id: 0, crew: [], cast: [])
     
     var nameContent: String = ""
     var backImageContent: String = ""
@@ -56,8 +57,10 @@ class MovieDetailViewController: UIViewController {
     
 
     func callRequest() {
-        TmdbCreditAPIManager.shared.callRequest(type: .actor, movieId: movieID) { Actor in
-            self.actorInfo.append(Actor)
+        TmdbCreditAPIManager.shared.callRequest(type: .actor, movieId: movieID) { data in
+            //self.actorInfo.append(Actor)
+            print(data)
+            self.actorinfo = data
             self.actorTable.reloadData()
         }
     }
@@ -68,19 +71,21 @@ class MovieDetailViewController: UIViewController {
 extension MovieDetailViewController: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return actorInfo.count
+        // return actorInfo.count
+        return actorinfo.cast.count
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let row: Actor = actorInfo[indexPath.row]
+        // let row: Actor = actorInfo[indexPath.row]
+        let row: Cast = actorinfo.cast[indexPath.row]
         
         guard let cell = actorTable.dequeueReusableCell(withIdentifier: ActorTableViewCell.identifier, for: indexPath) as? ActorTableViewCell else {
             return UITableViewCell()
         }
         
-        guard let url = URL(string: actorInfo[indexPath.row].profile_path) else {
+        guard let url = URL(string: "https://image.tmdb.org/t/p/w500" + actorinfo.cast[indexPath.row].profilePath!) else {
             return UITableViewCell()
         }
         cell.actorImageView.kf.setImage(with: url)

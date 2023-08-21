@@ -14,9 +14,9 @@ class ActorTableViewCell: UITableViewCell {
     @IBOutlet weak var characterLabel: UILabel!
     
     
-    func configureCell(row: Actor) {
+    func configureCell(row: Cast) {
         actorImageView.layer.cornerRadius = 5
-        actorNameLabel.text = row.original_name
+        actorNameLabel.text = row.originalName
         characterLabel.text = row.character
     }
     
