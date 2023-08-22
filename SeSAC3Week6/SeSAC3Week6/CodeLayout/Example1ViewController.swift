@@ -47,11 +47,16 @@ class Example1ViewController: UIViewController {
 
         view.backgroundColor = .white
         
-        view.addSubview(grayView)
-        view.addSubview(titleTextfield)
-        view.addSubview(dateTextfield)
-        view.addSubview(contentTextField)
+        [grayView, titleTextfield, dateTextfield, contentTextField].forEach {
+            view.addSubview($0)
+        }
         
+        setConfigureAutoLayout()
+
+    }
+
+    
+    func setConfigureAutoLayout() {
         grayView.snp.makeConstraints { make in
             make.horizontalEdges.equalTo(view).inset(20)
             make.height.equalTo(view).multipliedBy(0.3)
@@ -59,27 +64,23 @@ class Example1ViewController: UIViewController {
         }
         
         titleTextfield.snp.makeConstraints { make in
-            make.horizontalEdges.equalTo(view).inset(20)
+            make.horizontalEdges.equalTo(grayView)
             make.top.equalTo(grayView.snp_bottomMargin).offset(30)
             make.height.equalTo(view).multipliedBy(0.07)
         }
         
         dateTextfield.snp.makeConstraints { make in
-            make.horizontalEdges.equalTo(view).inset(20)
+            make.horizontalEdges.equalTo(grayView)
             make.top.equalTo(titleTextfield.snp_bottomMargin).offset(30)
             make.height.equalTo(view).multipliedBy(0.07)
         }
         
         contentTextField.snp.makeConstraints { make in
-            make.horizontalEdges.equalTo(view).inset(20)
+            make.horizontalEdges.equalTo(grayView)
             make.top.equalTo(dateTextfield.snp_bottomMargin).offset(30)
-            make.height.equalTo(view).multipliedBy(0.4)
+            make.height.equalTo(view).multipliedBy(0.43)
 
         }
     }
-    
-    
-    
-
     
 }
