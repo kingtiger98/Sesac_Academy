@@ -30,7 +30,6 @@ class MovieViewController: UIViewController {
     // Codable***
     var movieInfo: MovieData = MovieData(totalPages: 0, totalResults: 0, page: 0, results: [] )
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,6 +39,7 @@ class MovieViewController: UIViewController {
         let nib = UINib(nibName: MovieCollectionViewCell.identifier, bundle: nil)
         MovieCollectionView.register(nib, forCellWithReuseIdentifier: MovieCollectionViewCell.identifier)
         
+        // 헤더 섹션 등록
         let nib2 = UINib(nibName: HeaderMovieCollectionReusableView.identifier, bundle: nil)
         MovieCollectionView.register(nib2, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderMovieCollectionReusableView.identifier)
 
@@ -49,6 +49,7 @@ class MovieViewController: UIViewController {
         configureFlowLayout()
         
         callRequset { data in
+            print(data)
             self.movieInfo = data
             self.MovieCollectionView.reloadData()
         }
@@ -76,6 +77,7 @@ extension MovieViewController: UICollectionViewDelegate, UICollectionViewDataSou
         return movieInfo.results.count
     }
     
+    // 헤더 섹션 생성
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
         if kind == UICollectionView.elementKindSectionHeader {
@@ -155,7 +157,7 @@ extension MovieViewController {
         layout.sectionInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
         layout.minimumLineSpacing = 8
         layout.minimumInteritemSpacing = 8
-        layout.headerReferenceSize = CGSize(width: width, height: 50)
+        layout.headerReferenceSize = CGSize(width: width, height: 50) // 헤더 섹션 Ui
         
         MovieCollectionView.collectionViewLayout = layout
     }

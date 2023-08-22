@@ -59,9 +59,9 @@ class TextViewController: UIViewController {
         //view.addSubview(titleTextField)
         
         // view에 객체 추가하기 : for
-//        for item in [photoImageView, titleTextField]{
-//            view.addSubview(item)
-//        }
+        // for item in [photoImageView, titleTextField]{
+        //    view.addSubview(item)
+        //}
         
         // view에 객체 추가하기 : forEach
         [photoImageView, titleTextField].forEach {

@@ -335,7 +335,7 @@ extension PosterViewController : CollectionViewAttributeProtocol {
         layout.minimumInteritemSpacing = 8
         layout.scrollDirection = .vertical
         
-        // 첫 등장이오
+        // HeaderPosterCollectionReusableView
         layout.headerReferenceSize = CGSize(width: 300, height: 50)
         
         posterCollectionView.collectionViewLayout = layout

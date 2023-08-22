@@ -16,6 +16,7 @@
 		4C2FDFEE2A94466A00E8975B /* SnapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2FDFED2A94466A00E8975B /* SnapViewController.swift */; };
 		4C2FDFF12A944F4800E8975B /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4C2FDFF02A944F4800E8975B /* SnapKit */; };
 		4C2FDFF32A945CB200E8975B /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2FDFF22A945CB200E8975B /* TextViewController.swift */; };
+		4C2FDFF52A94793900E8975B /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2FDFF42A94793900E8975B /* LocationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		4C12B7262A930A0D00571DA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C2FDFED2A94466A00E8975B /* SnapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapViewController.swift; sourceTree = "<group>"; };
 		4C2FDFF22A945CB200E8975B /* TextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
+		4C2FDFF42A94793900E8975B /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				4C12B7212A930A0D00571DA3 /* Assets.xcassets */,
 				4C12B7232A930A0D00571DA3 /* LaunchScreen.storyboard */,
 				4C12B7262A930A0D00571DA3 /* Info.plist */,
+				4C2FDFF42A94793900E8975B /* LocationViewController.swift */,
 			);
 			path = SeSAC3Week6;
 			sourceTree = "<group>";
@@ -163,6 +166,7 @@
 				4C2FDFF32A945CB200E8975B /* TextViewController.swift in Sources */,
 				4C2FDFEE2A94466A00E8975B /* SnapViewController.swift in Sources */,
 				4C12B71D2A930A0C00571DA3 /* ViewController.swift in Sources */,
+				4C2FDFF52A94793900E8975B /* LocationViewController.swift in Sources */,
 				4C12B7192A930A0C00571DA3 /* AppDelegate.swift in Sources */,
 				4C12B71B2A930A0C00571DA3 /* SceneDelegate.swift in Sources */,
 			);

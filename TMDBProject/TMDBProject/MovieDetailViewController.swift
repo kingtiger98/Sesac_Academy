@@ -20,7 +20,6 @@ struct Actor {
 
 class MovieDetailViewController: UIViewController {
 
-    // var actorInfo: [Actor] = []
     var actorinfo: CastData = CastData(id: 0, crew: [], cast: [])
     
     var nameContent: String = ""
