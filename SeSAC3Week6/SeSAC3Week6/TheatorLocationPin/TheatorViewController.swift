@@ -49,7 +49,7 @@ class TheatorViewController: UIViewController {
     
     // 선택한 영화관만 보이도록
     func showRequestLocationTheatorAlert() {
-        let requestLocationServiceAlert = UIAlertController( title: "재재", message: "하하", preferredStyle: .actionSheet)
+        let requestLocationServiceAlert = UIAlertController( title: nil, message: nil, preferredStyle: .actionSheet)
         
         let meagPin = UIAlertAction(title: "메가박스", style: .destructive) { _ in
             self.setAnnotation(type: "메가박스")
