@@ -18,6 +18,8 @@
 		4C2FDFF32A945CB200E8975B /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2FDFF22A945CB200E8975B /* TextViewController.swift */; };
 		4C2FDFF52A94793900E8975B /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2FDFF42A94793900E8975B /* LocationViewController.swift */; };
 		4C44429B2A964C600048103A /* Example3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C44429A2A964C600048103A /* Example3ViewController.swift */; };
+		4C44429D2A965E270048103A /* sampleCode_map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C44429C2A965E270048103A /* sampleCode_map.swift */; };
+		4C4442A02A9661BF0048103A /* TheatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C44429F2A9661BF0048103A /* TheatorViewController.swift */; };
 		4CA2E85F2A94AEE800D3E203 /* Example1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA2E85E2A94AEE800D3E203 /* Example1ViewController.swift */; };
 		4CA2E8612A95189B00D3E203 /* Example2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA2E8602A95189B00D3E203 /* Example2ViewController.swift */; };
 /* End PBXBuildFile section */
@@ -35,6 +37,8 @@
 		4C2FDFF22A945CB200E8975B /* TextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
 		4C2FDFF42A94793900E8975B /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		4C44429A2A964C600048103A /* Example3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Example3ViewController.swift; sourceTree = "<group>"; };
+		4C44429C2A965E270048103A /* sampleCode_map.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sampleCode_map.swift; sourceTree = "<group>"; };
+		4C44429F2A9661BF0048103A /* TheatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheatorViewController.swift; sourceTree = "<group>"; };
 		4CA2E85E2A94AEE800D3E203 /* Example1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Example1ViewController.swift; sourceTree = "<group>"; };
 		4CA2E8602A95189B00D3E203 /* Example2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Example2ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -70,6 +74,7 @@
 		4C12B7172A930A0C00571DA3 /* SeSAC3Week6 */ = {
 			isa = PBXGroup;
 			children = (
+				4C44429E2A96618A0048103A /* TheatorLocationPin */,
 				4CA2E85D2A94AEA700D3E203 /* CodeLayout */,
 				4C2FDFEC2A94464100E8975B /* Test */,
 				4C12B7182A930A0C00571DA3 /* AppDelegate.swift */,
@@ -91,6 +96,15 @@
 				4C2FDFF22A945CB200E8975B /* TextViewController.swift */,
 			);
 			path = Test;
+			sourceTree = "<group>";
+		};
+		4C44429E2A96618A0048103A /* TheatorLocationPin */ = {
+			isa = PBXGroup;
+			children = (
+				4C44429F2A9661BF0048103A /* TheatorViewController.swift */,
+				4C44429C2A965E270048103A /* sampleCode_map.swift */,
+			);
+			path = TheatorLocationPin;
 			sourceTree = "<group>";
 		};
 		4CA2E85D2A94AEA700D3E203 /* CodeLayout */ = {
@@ -186,7 +200,9 @@
 				4C12B71D2A930A0C00571DA3 /* ViewController.swift in Sources */,
 				4C2FDFF52A94793900E8975B /* LocationViewController.swift in Sources */,
 				4CA2E8612A95189B00D3E203 /* Example2ViewController.swift in Sources */,
+				4C4442A02A9661BF0048103A /* TheatorViewController.swift in Sources */,
 				4CA2E85F2A94AEE800D3E203 /* Example1ViewController.swift in Sources */,
+				4C44429D2A965E270048103A /* sampleCode_map.swift in Sources */,
 				4C12B7192A930A0C00571DA3 /* AppDelegate.swift in Sources */,
 				4C12B71B2A930A0C00571DA3 /* SceneDelegate.swift in Sources */,
 			);
