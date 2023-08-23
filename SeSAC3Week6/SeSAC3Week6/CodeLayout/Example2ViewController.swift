@@ -72,6 +72,31 @@ class Example2ViewController: UIViewController {
         return view
     }()
     
+    let chatLabel = {
+        let view = UILabel()
+        view.textColor = .white
+        view.font = .systemFont(ofSize: 13)
+        view.text = "나와의 채팅"
+        return view
+    }()
+    
+    let editLabel = {
+        let view = UILabel()
+        view.textColor = .white
+        view.font = .systemFont(ofSize: 13)
+        view.text = "프로필 편집"
+        return view
+    }()
+    
+    let storyLabel = {
+        let view = UILabel()
+        view.textColor = .white
+        view.font = .systemFont(ofSize: 13)
+        view.text = "카카오스토리"
+        return view
+    }()
+    
+    
     // 프사, 닉네임 들어갈 뷰
     let profileView = {
         let view = UIView()
@@ -83,7 +108,7 @@ class Example2ViewController: UIViewController {
         let view = UIImageView()
         view.image = UIImage(named: "kakaoprofile")
         view.clipsToBounds = true
-        view.layer.cornerRadius = 30
+        view.layer.cornerRadius = 35
         return view
     }()
     
@@ -105,15 +130,19 @@ class Example2ViewController: UIViewController {
         view.addSubview(diceButton)
         view.addSubview(settingButton)
         
+        view.addSubview(profileView)
+        view.addSubview(profileImage)
+        view.addSubview(profileName)
+
         view.addSubview(setView)
         view.addSubview(chatButton)
         view.addSubview(editButton)
         view.addSubview(storyButton)
         
-        view.addSubview(profileView)
-        view.addSubview(profileImage)
-        view.addSubview(profileName)
-
+        view.addSubview(chatLabel)
+        view.addSubview(editLabel)
+        view.addSubview(storyLabel)
+        
         configureKakaoUISNP()
         
     }
@@ -141,6 +170,21 @@ class Example2ViewController: UIViewController {
             make.trailing.equalTo(diceButton.snp_leadingMargin).offset(-20)
         }
         
+        profileView.snp.makeConstraints { make in
+            make.horizontalEdges.equalTo(view)
+            make.bottom.equalTo(setView.snp_topMargin)
+            make.height.equalTo(view).multipliedBy(0.15)
+        }
+        
+        profileImage.snp.makeConstraints { make in
+            make.center.equalTo(profileView)
+            make.size.equalTo(90)
+        }
+        
+        profileName.snp.makeConstraints { make in
+            make.bottom.centerX.equalTo(profileView).inset(-10)
+        }
+        
         setView.snp.makeConstraints { make in
             make.horizontalEdges.bottom.equalTo(view)
             make.height.equalTo(view).multipliedBy(0.2)
@@ -160,19 +204,19 @@ class Example2ViewController: UIViewController {
             make.trailing.equalTo(setView).inset(100)
         }
 
-        profileView.snp.makeConstraints { make in
-            make.horizontalEdges.equalTo(view)
-            make.bottom.equalTo(setView.snp_topMargin)
-            make.height.equalTo(view).multipliedBy(0.15)
+        chatLabel.snp.makeConstraints { make in
+            make.top.equalTo(chatButton.snp_bottomMargin).offset(20)
+            make.centerX.equalTo(chatButton)
         }
         
-        profileImage.snp.makeConstraints { make in
-            make.center.equalTo(profileView)
-            make.size.equalTo(90)
+        editLabel.snp.makeConstraints { make in
+            make.top.equalTo(editButton.snp_bottomMargin).offset(20)
+            make.centerX.equalTo(editButton)
         }
         
-        profileName.snp.makeConstraints { make in
-            make.bottom.centerX.equalTo(profileView).inset(-10)
+        storyLabel.snp.makeConstraints { make in
+            make.top.equalTo(storyButton.snp_bottomMargin).offset(20)
+            make.centerX.equalTo(storyButton)
         }
         
     }
