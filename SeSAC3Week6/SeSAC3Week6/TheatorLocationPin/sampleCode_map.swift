@@ -22,6 +22,13 @@ struct TheaterList {
     ]
 }
 
+enum Theator: String {
+    case all = "전체보기"
+    case lotte = "롯데시네마"
+    case megabox = "메가박스"
+    case cgv = "CGV"
+}
+
 /*
  Location Authorization Custom Alert
  */

@@ -43,7 +43,7 @@ class TheatorViewController: UIViewController {
       
         let center = CLLocationCoordinate2D(latitude: 37.506831, longitude: 126.960819)
         setRegionAndAnnotation(center: center)
-        setAnnotation(type: "전체보기")
+        setAnnotation(type: Theator.all.rawValue)
         showRequestLocationTheatorAlert()
     }
     
@@ -52,16 +52,16 @@ class TheatorViewController: UIViewController {
         let requestLocationServiceAlert = UIAlertController( title: nil, message: nil, preferredStyle: .actionSheet)
         
         let meagPin = UIAlertAction(title: "메가박스", style: .destructive) { _ in
-            self.setAnnotation(type: "메가박스")
+            self.setAnnotation(type: Theator.megabox.rawValue)
         }
         let lottePin = UIAlertAction(title: "롯데시네마", style: .destructive) { _ in
-            self.setAnnotation(type: "롯데시네마")
+            self.setAnnotation(type: Theator.lotte.rawValue)
         }
         let cgvPin = UIAlertAction(title: "CGV", style: .destructive) { _ in
-            self.setAnnotation(type: "CGV")
+            self.setAnnotation(type: Theator.cgv.rawValue)
         }
         let allPin = UIAlertAction(title: "전체보기", style: .destructive) { _ in
-            self.setAnnotation(type: "전체보기")
+            self.setAnnotation(type: Theator.all.rawValue)
         }
         let cancel = UIAlertAction(title: "취소", style: .cancel)
 
@@ -77,7 +77,7 @@ class TheatorViewController: UIViewController {
     
     var theatorInfo: TheaterList = TheaterList()
     
-    func setAnnotation(type: String) {
+    func setAnnotation(type: Theator.RawValue) {
         // 오늘의 밥상 : 37.517746, 126.887131
         // 컴포즈 커피 : 37.517857, 126.886714
                 
@@ -108,15 +108,15 @@ class TheatorViewController: UIViewController {
         
 
         
-        if type == "전체보기" { // viewDidLoad
+        if type == Theator.all.rawValue { // viewDidLoad
             mapView.addAnnotations([annotation0, annotation1, annotation2, annotation3, annotation4, annotation5])
-        } else if type == "롯데시네마" { // 롯데시네마
+        } else if type == Theator.lotte.rawValue { // 롯데시네마
             mapView.removeAnnotations(mapView.annotations)
             mapView.addAnnotations([annotation0, annotation1])
-        } else if type == "메가박스" { // 메가박스
+        } else if type == Theator.megabox.rawValue { // 메가박스
             mapView.removeAnnotations(mapView.annotations)
             mapView.addAnnotations([annotation2, annotation3])
-        } else if type == "CGV" { // CGV
+        } else if type == Theator.cgv.rawValue { // CGV
             mapView.removeAnnotations(mapView.annotations)
             mapView.addAnnotations([annotation4, annotation5])
         }
