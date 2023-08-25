@@ -10,9 +10,11 @@
 		4C12B7192A930A0C00571DA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C12B7182A930A0C00571DA3 /* AppDelegate.swift */; };
 		4C12B71B2A930A0C00571DA3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C12B71A2A930A0C00571DA3 /* SceneDelegate.swift */; };
 		4C12B71D2A930A0C00571DA3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C12B71C2A930A0C00571DA3 /* ViewController.swift */; };
-		4C12B7202A930A0C00571DA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C12B71E2A930A0C00571DA3 /* Main.storyboard */; };
 		4C12B7222A930A0D00571DA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C12B7212A930A0D00571DA3 /* Assets.xcassets */; };
 		4C12B7252A930A0D00571DA3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C12B7232A930A0D00571DA3 /* LaunchScreen.storyboard */; };
+		4C1FE5172A982AE900D86206 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1FE5162A982AE900D86206 /* CustomTableViewCell.swift */; };
+		4C1FE5192A9840A200D86206 /* PosterImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1FE5182A9840A200D86206 /* PosterImageView.swift */; };
+		4C1FE51C2A984B5500D86206 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1FE51B2A984B5500D86206 /* OnboardingViewController.swift */; };
 		4C2FDFEE2A94466A00E8975B /* SnapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2FDFED2A94466A00E8975B /* SnapViewController.swift */; };
 		4C2FDFF12A944F4800E8975B /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4C2FDFF02A944F4800E8975B /* SnapKit */; };
 		4C2FDFF32A945CB200E8975B /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2FDFF22A945CB200E8975B /* TextViewController.swift */; };
@@ -22,6 +24,11 @@
 		4C4442A02A9661BF0048103A /* TheatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C44429F2A9661BF0048103A /* TheatorViewController.swift */; };
 		4CA2E85F2A94AEE800D3E203 /* Example1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA2E85E2A94AEE800D3E203 /* Example1ViewController.swift */; };
 		4CA2E8612A95189B00D3E203 /* Example2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA2E8602A95189B00D3E203 /* Example2ViewController.swift */; };
+		4CBC3D1E2A96F0EA00A196A7 /* GenericViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBC3D1D2A96F0EA00A196A7 /* GenericViewController.swift */; };
+		4CBC3D202A96F12B00A196A7 /* Extension+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBC3D1F2A96F12B00A196A7 /* Extension+UIViewController.swift */; };
+		4CBC3D232A971CE400A196A7 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBC3D222A971CE400A196A7 /* CustomViewController.swift */; };
+		4CBC3D252A971E9C00A196A7 /* BalckRadiusTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBC3D242A971E9C00A196A7 /* BalckRadiusTextfield.swift */; };
+		4CBC3D272A972A0F00A196A7 /* CustomTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBC3D262A972A0F00A196A7 /* CustomTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,10 +36,12 @@
 		4C12B7182A930A0C00571DA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C12B71A2A930A0C00571DA3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		4C12B71C2A930A0C00571DA3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4C12B71F2A930A0C00571DA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4C12B7212A930A0D00571DA3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C12B7242A930A0D00571DA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4C12B7262A930A0D00571DA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C1FE5162A982AE900D86206 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		4C1FE5182A9840A200D86206 /* PosterImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterImageView.swift; sourceTree = "<group>"; };
+		4C1FE51B2A984B5500D86206 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		4C2FDFED2A94466A00E8975B /* SnapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapViewController.swift; sourceTree = "<group>"; };
 		4C2FDFF22A945CB200E8975B /* TextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
 		4C2FDFF42A94793900E8975B /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
@@ -41,6 +50,11 @@
 		4C44429F2A9661BF0048103A /* TheatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheatorViewController.swift; sourceTree = "<group>"; };
 		4CA2E85E2A94AEE800D3E203 /* Example1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Example1ViewController.swift; sourceTree = "<group>"; };
 		4CA2E8602A95189B00D3E203 /* Example2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Example2ViewController.swift; sourceTree = "<group>"; };
+		4CBC3D1D2A96F0EA00A196A7 /* GenericViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericViewController.swift; sourceTree = "<group>"; };
+		4CBC3D1F2A96F12B00A196A7 /* Extension+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIViewController.swift"; sourceTree = "<group>"; };
+		4CBC3D222A971CE400A196A7 /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
+		4CBC3D242A971E9C00A196A7 /* BalckRadiusTextfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalckRadiusTextfield.swift; sourceTree = "<group>"; };
+		4CBC3D262A972A0F00A196A7 /* CustomTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,19 +88,29 @@
 		4C12B7172A930A0C00571DA3 /* SeSAC3Week6 */ = {
 			isa = PBXGroup;
 			children = (
+				4C1FE51A2A984B1300D86206 /* Onboarding */,
+				4CBC3D212A971CB000A196A7 /* CustomView */,
+				4CBC3D1C2A96F0D300A196A7 /* Generic */,
 				4C44429E2A96618A0048103A /* TheatorLocationPin */,
 				4CA2E85D2A94AEA700D3E203 /* CodeLayout */,
 				4C2FDFEC2A94464100E8975B /* Test */,
 				4C12B7182A930A0C00571DA3 /* AppDelegate.swift */,
 				4C12B71A2A930A0C00571DA3 /* SceneDelegate.swift */,
 				4C12B71C2A930A0C00571DA3 /* ViewController.swift */,
-				4C12B71E2A930A0C00571DA3 /* Main.storyboard */,
 				4C12B7212A930A0D00571DA3 /* Assets.xcassets */,
 				4C12B7232A930A0D00571DA3 /* LaunchScreen.storyboard */,
 				4C12B7262A930A0D00571DA3 /* Info.plist */,
 				4C2FDFF42A94793900E8975B /* LocationViewController.swift */,
 			);
 			path = SeSAC3Week6;
+			sourceTree = "<group>";
+		};
+		4C1FE51A2A984B1300D86206 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				4C1FE51B2A984B5500D86206 /* OnboardingViewController.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 		4C2FDFEC2A94464100E8975B /* Test */ = {
@@ -115,6 +139,27 @@
 				4C44429A2A964C600048103A /* Example3ViewController.swift */,
 			);
 			path = CodeLayout;
+			sourceTree = "<group>";
+		};
+		4CBC3D1C2A96F0D300A196A7 /* Generic */ = {
+			isa = PBXGroup;
+			children = (
+				4CBC3D1D2A96F0EA00A196A7 /* GenericViewController.swift */,
+				4CBC3D1F2A96F12B00A196A7 /* Extension+UIViewController.swift */,
+			);
+			path = Generic;
+			sourceTree = "<group>";
+		};
+		4CBC3D212A971CB000A196A7 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				4CBC3D262A972A0F00A196A7 /* CustomTableViewController.swift */,
+				4C1FE5162A982AE900D86206 /* CustomTableViewCell.swift */,
+				4CBC3D222A971CE400A196A7 /* CustomViewController.swift */,
+				4CBC3D242A971E9C00A196A7 /* BalckRadiusTextfield.swift */,
+				4C1FE5182A9840A200D86206 /* PosterImageView.swift */,
+			);
+			path = CustomView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,7 +228,6 @@
 			files = (
 				4C12B7252A930A0D00571DA3 /* LaunchScreen.storyboard in Resources */,
 				4C12B7222A930A0D00571DA3 /* Assets.xcassets in Resources */,
-				4C12B7202A930A0C00571DA3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,13 +239,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C2FDFF32A945CB200E8975B /* TextViewController.swift in Sources */,
+				4CBC3D232A971CE400A196A7 /* CustomViewController.swift in Sources */,
 				4C44429B2A964C600048103A /* Example3ViewController.swift in Sources */,
 				4C2FDFEE2A94466A00E8975B /* SnapViewController.swift in Sources */,
+				4C1FE51C2A984B5500D86206 /* OnboardingViewController.swift in Sources */,
+				4CBC3D252A971E9C00A196A7 /* BalckRadiusTextfield.swift in Sources */,
 				4C12B71D2A930A0C00571DA3 /* ViewController.swift in Sources */,
 				4C2FDFF52A94793900E8975B /* LocationViewController.swift in Sources */,
+				4C1FE5192A9840A200D86206 /* PosterImageView.swift in Sources */,
 				4CA2E8612A95189B00D3E203 /* Example2ViewController.swift in Sources */,
+				4CBC3D1E2A96F0EA00A196A7 /* GenericViewController.swift in Sources */,
+				4C1FE5172A982AE900D86206 /* CustomTableViewCell.swift in Sources */,
 				4C4442A02A9661BF0048103A /* TheatorViewController.swift in Sources */,
+				4CBC3D202A96F12B00A196A7 /* Extension+UIViewController.swift in Sources */,
 				4CA2E85F2A94AEE800D3E203 /* Example1ViewController.swift in Sources */,
+				4CBC3D272A972A0F00A196A7 /* CustomTableViewController.swift in Sources */,
 				4C44429D2A965E270048103A /* sampleCode_map.swift in Sources */,
 				4C12B7192A930A0C00571DA3 /* AppDelegate.swift in Sources */,
 				4C12B71B2A930A0C00571DA3 /* SceneDelegate.swift in Sources */,
@@ -211,14 +263,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		4C12B71E2A930A0C00571DA3 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4C12B71F2A930A0C00571DA3 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		4C12B7232A930A0D00571DA3 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -357,7 +401,6 @@
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "현재 날씨에 대한 정보를 가지고 오기 위해 위치 정보가 필요해요";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -386,7 +429,6 @@
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "현재 날씨에 대한 정보를 가지고 오기 위해 위치 정보가 필요해요";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

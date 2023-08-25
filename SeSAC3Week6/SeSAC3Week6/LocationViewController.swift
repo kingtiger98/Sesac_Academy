@@ -87,10 +87,8 @@ class LocationViewController: UIViewController {
         } else if type == 1 {
             mapView.removeAnnotations(mapView.annotations)
             mapView.addAnnotations([annotation2])
-        } else if type == 2 {
-            
         }
-        
+
     }
  
     

@@ -100,10 +100,7 @@ class ViewController: UIViewController {
     
     @objc func signButtonClicked() {
         
-        let vc = TheatorViewController()
-        let nav = UINavigationController(rootViewController: vc)
-        
-        present(nav, animated: true)
+        transition(ViewController: GenericViewController.self, style: .present)
         
     }
     

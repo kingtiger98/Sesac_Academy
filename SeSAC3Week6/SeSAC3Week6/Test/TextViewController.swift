@@ -48,10 +48,13 @@ class TextViewController: UIViewController {
     }()
     
     
+
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         view.backgroundColor = .white
         
         // view에 객체 추가하기
@@ -72,11 +75,37 @@ class TextViewController: UIViewController {
 
     }
     
+    
+    // 1.
+    let picker = UIImagePickerController()
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+                
+        // 2. availabel
+        // .photoLibrary : 단순히 사진을 가져오는 건 권한 필요없다.
+        guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
+            printContent("갤러리 사용 불가, 사용자에게 토스트/얼럿")
+            return
+        }
+
+        picker.delegate = self
+        picker.sourceType = .camera // .photoLibrary
+        picker.allowsEditing = true
+        
+        // let picker = UIColorPickerViewController() // UIFontPickerViewController()
+        
+        present(picker, animated: true)
+        
+    }
+    
+    
+    
     func setupConstraints() {
         
         photoImageView.snp.makeConstraints { make in
             make.top.horizontalEdges.equalTo(view.safeAreaLayoutGuide)
-            make.height.equalTo(view).multipliedBy(0.3)
+            make.height.equalTo(view).multipliedBy(0.2)
         }
         
         titleTextField.snp.makeConstraints { make in
@@ -88,9 +117,27 @@ class TextViewController: UIViewController {
         }
         
     }
+
+
+}
+
+
+extension TextViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-
+    // 취소 버튼 클릭시
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true)
+        print(#function)
+    }
     
-
-
+    // 사진을 선택하거나 카메라 촬영 직후 호출 : originalImage, editedImage
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        if let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            self.photoImageView.image = image
+            dismiss(animated: true)
+        }
+        
+    }
+    
 }
