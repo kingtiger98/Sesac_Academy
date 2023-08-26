@@ -23,6 +23,10 @@
                                     <segue destination="lBm-tZ-YIJ" kind="embed" id="dRW-80-sF6"/>
                                 </connections>
                             </containerView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="kakaoback" translatesAutoresizingMaskIntoConstraints="NO" id="i8D-Fj-9Nv">
+                                <rect key="frame" x="119" y="500" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -42,6 +46,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="kakaoback" width="166.66667175292969" height="250"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

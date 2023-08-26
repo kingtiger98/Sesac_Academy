@@ -1,32 +1,30 @@
 //
-//  File.swift
+//  PreviewImageView.swift
 //  SeSAC3Week6
 //
-//  Created by 황재하 on 8/25/23.
+//  Created by 황재하 on 8/26/23.
 //
 
 import UIKit
 
-class PosterImageView: UIImageView {
-        
+class PreviewImageView: UIImageView{
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        configureView()
+        setImage()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-    func configureView() {
-        // print(frame.width, frame)
-        backgroundColor = .yellow
-        layer.borderColor = UIColor.black.cgColor
+    
+    func setImage(){
+        contentMode = .scaleToFill
+        layer.borderColor = UIColor.darkGray.cgColor
         layer.borderWidth = 2
         clipsToBounds = true
-    }
+        }
     
-    //
     override func layoutSubviews() {
         super.layoutSubviews()
         // print("layoutSubviews", frame.width, frame)
@@ -34,6 +32,3 @@ class PosterImageView: UIImageView {
     }
     
 }
-
-
-
