@@ -26,6 +26,8 @@
 		4C46F18D2A99B9700080D05D /* WhiteBoldLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C46F18C2A99B9700080D05D /* WhiteBoldLabel.swift */; };
 		4C46F18F2A99BDD10080D05D /* WhiteSubtitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C46F18E2A99BDD10080D05D /* WhiteSubtitleButton.swift */; };
 		4C46F1912A99CD880080D05D /* PreviewImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C46F1902A99CD880080D05D /* PreviewImageView.swift */; };
+		4C46F1932A99D9EC0080D05D /* Netflix2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C46F1922A99D9EC0080D05D /* Netflix2ViewController.swift */; };
+		4C46F1952A99DB620080D05D /* GrayTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C46F1942A99DB620080D05D /* GrayTextField.swift */; };
 		4CA2E85F2A94AEE800D3E203 /* Example1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA2E85E2A94AEE800D3E203 /* Example1ViewController.swift */; };
 		4CA2E8612A95189B00D3E203 /* Example2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA2E8602A95189B00D3E203 /* Example2ViewController.swift */; };
 		4CBC3D1E2A96F0EA00A196A7 /* GenericViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBC3D1D2A96F0EA00A196A7 /* GenericViewController.swift */; };
@@ -56,6 +58,8 @@
 		4C46F18C2A99B9700080D05D /* WhiteBoldLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteBoldLabel.swift; sourceTree = "<group>"; };
 		4C46F18E2A99BDD10080D05D /* WhiteSubtitleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteSubtitleButton.swift; sourceTree = "<group>"; };
 		4C46F1902A99CD880080D05D /* PreviewImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewImageView.swift; sourceTree = "<group>"; };
+		4C46F1922A99D9EC0080D05D /* Netflix2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Netflix2ViewController.swift; sourceTree = "<group>"; };
+		4C46F1942A99DB620080D05D /* GrayTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrayTextField.swift; sourceTree = "<group>"; };
 		4CA2E85E2A94AEE800D3E203 /* Example1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Example1ViewController.swift; sourceTree = "<group>"; };
 		4CA2E8602A95189B00D3E203 /* Example2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Example2ViewController.swift; sourceTree = "<group>"; };
 		4CBC3D1D2A96F0EA00A196A7 /* GenericViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericViewController.swift; sourceTree = "<group>"; };
@@ -147,6 +151,8 @@
 				4C46F18C2A99B9700080D05D /* WhiteBoldLabel.swift */,
 				4C46F18E2A99BDD10080D05D /* WhiteSubtitleButton.swift */,
 				4C46F1902A99CD880080D05D /* PreviewImageView.swift */,
+				4C46F1922A99D9EC0080D05D /* Netflix2ViewController.swift */,
+				4C46F1942A99DB620080D05D /* GrayTextField.swift */,
 			);
 			path = CodeLayout2_Custom;
 			sourceTree = "<group>";
@@ -260,6 +266,7 @@
 			files = (
 				4C2FDFF32A945CB200E8975B /* TextViewController.swift in Sources */,
 				4C46F18F2A99BDD10080D05D /* WhiteSubtitleButton.swift in Sources */,
+				4C46F1932A99D9EC0080D05D /* Netflix2ViewController.swift in Sources */,
 				4C46F1912A99CD880080D05D /* PreviewImageView.swift in Sources */,
 				4C46F18D2A99B9700080D05D /* WhiteBoldLabel.swift in Sources */,
 				4CBC3D232A971CE400A196A7 /* CustomViewController.swift in Sources */,
@@ -267,6 +274,7 @@
 				4C2FDFEE2A94466A00E8975B /* SnapViewController.swift in Sources */,
 				4C1FE51C2A984B5500D86206 /* OnboardingViewController.swift in Sources */,
 				4CBC3D252A971E9C00A196A7 /* BalckRadiusTextfield.swift in Sources */,
+				4C46F1952A99DB620080D05D /* GrayTextField.swift in Sources */,
 				4C12B71D2A930A0C00571DA3 /* ViewController.swift in Sources */,
 				4C2FDFF52A94793900E8975B /* LocationViewController.swift in Sources */,
 				4C1FE5192A9840A200D86206 /* PosterImageView.swift in Sources */,
