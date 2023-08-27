@@ -144,16 +144,20 @@ extension MovieViewController: UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("왜그래")
+        print("왜그래1")
         let row: Movie = movieInfo.results[indexPath.row]
         
         guard let detailVC = storyboard?.instantiateViewController(withIdentifier: MovieDetailViewController.identifier) as? MovieDetailViewController else{
-            print("왜그래")
+            print("왜그래2")
             return
         }
         // 값 전달
         detailVC.transferData(row: row)
-        navigationController?.pushViewController(detailVC, animated: true)
+
+        
+        // 왜인지 모르겠으나 갑자기 navigationController로 화면 전환이 안됨 ㅜ
+        // navigationController?.pushViewController(detailVC, animated: true)
+        present(detailVC, animated: true)
     }
     
 }
