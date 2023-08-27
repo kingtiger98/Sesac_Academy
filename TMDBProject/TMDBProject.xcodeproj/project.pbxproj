@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4C1A29C52A8B7E820067F6C2 /* TMDBStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1A29C42A8B7E820067F6C2 /* TMDBStruct.swift */; };
+		4C46F1992A9B8DF40080D05D /* IntroMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C46F1982A9B8DF40080D05D /* IntroMovieViewController.swift */; };
+		4C46F19C2A9B97260080D05D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4C46F19B2A9B97260080D05D /* SnapKit */; };
 		4C6252AC2A87B07400B3D88A /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6252AA2A87B07400B3D88A /* MovieCollectionViewCell.swift */; };
 		4C6252AD2A87B07400B3D88A /* MovieCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C6252AB2A87B07400B3D88A /* MovieCollectionViewCell.xib */; };
 		4C6252AF2A87B8BA00B3D88A /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6252AE2A87B8BA00B3D88A /* MovieDetailViewController.swift */; };
@@ -35,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		4C1A29C42A8B7E820067F6C2 /* TMDBStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBStruct.swift; sourceTree = "<group>"; };
+		4C46F1982A9B8DF40080D05D /* IntroMovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroMovieViewController.swift; sourceTree = "<group>"; };
 		4C6252AA2A87B07400B3D88A /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
 		4C6252AB2A87B07400B3D88A /* MovieCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCollectionViewCell.xib; sourceTree = "<group>"; };
 		4C6252AE2A87B8BA00B3D88A /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +68,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CB50AB72A8799AB00F5E26E /* Kingfisher in Frameworks */,
+				4C46F19C2A9B97260080D05D /* SnapKit in Frameworks */,
 				4CB50AB42A87895A00F5E26E /* SwiftyJSON in Frameworks */,
 				4CB50AB12A87893300F5E26E /* Alamofire in Frameworks */,
 			);
@@ -95,6 +99,7 @@
 				4CB50A9B2A8788C800F5E26E /* AppDelegate.swift */,
 				4CB50A9D2A8788C800F5E26E /* SceneDelegate.swift */,
 				4CB50AA12A8788C800F5E26E /* Main.storyboard */,
+				4C46F1982A9B8DF40080D05D /* IntroMovieViewController.swift */,
 				4CB50A9F2A8788C800F5E26E /* MovieViewController.swift */,
 				4C6252AB2A87B07400B3D88A /* MovieCollectionViewCell.xib */,
 				4C6252AA2A87B07400B3D88A /* MovieCollectionViewCell.swift */,
@@ -138,6 +143,7 @@
 				4CB50AB02A87893300F5E26E /* Alamofire */,
 				4CB50AB32A87895A00F5E26E /* SwiftyJSON */,
 				4CB50AB62A8799AB00F5E26E /* Kingfisher */,
+				4C46F19B2A9B97260080D05D /* SnapKit */,
 			);
 			productName = TMDBProject;
 			productReference = 4CB50A982A8788C800F5E26E /* TMDBProject.app */;
@@ -171,6 +177,7 @@
 				4CB50AAF2A87893300F5E26E /* XCRemoteSwiftPackageReference "Alamofire" */,
 				4CB50AB22A87895A00F5E26E /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				4CB50AB52A8799AB00F5E26E /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				4C46F19A2A9B97260080D05D /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 4CB50A992A8788C800F5E26E /* Products */;
 			projectDirPath = "";
@@ -217,6 +224,7 @@
 				4CB50A9C2A8788C800F5E26E /* AppDelegate.swift in Sources */,
 				4CB50A9E2A8788C800F5E26E /* SceneDelegate.swift in Sources */,
 				4C6252AC2A87B07400B3D88A /* MovieCollectionViewCell.swift in Sources */,
+				4C46F1992A9B8DF40080D05D /* IntroMovieViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +444,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		4C46F19A2A9B97260080D05D /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		4CB50AAF2A87893300F5E26E /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -463,6 +479,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		4C46F19B2A9B97260080D05D /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4C46F19A2A9B97260080D05D /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
 		4CB50AB02A87893300F5E26E /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 4CB50AAF2A87893300F5E26E /* XCRemoteSwiftPackageReference "Alamofire" */;
