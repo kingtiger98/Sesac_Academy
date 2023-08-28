@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "해운대.png",
+      "filename" : "해운대.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "해운대 1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "해운대 2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
