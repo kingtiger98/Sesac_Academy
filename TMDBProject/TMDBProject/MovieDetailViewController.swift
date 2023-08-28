@@ -84,7 +84,7 @@ extension MovieDetailViewController: UITableViewDataSource, UITableViewDelegate{
             return UITableViewCell()
         }
         
-        guard let url = URL(string: "https://image.tmdb.org/t/p/w500" + actorinfo.cast[indexPath.row].profilePath!) else {
+        guard let url = URL(string: "https://image.tmdb.org/t/p/w500" + (actorinfo.cast[indexPath.row].profilePath ?? "배우사진없음")) else {
             return UITableViewCell()
         }
         cell.actorImageView.kf.setImage(with: url)

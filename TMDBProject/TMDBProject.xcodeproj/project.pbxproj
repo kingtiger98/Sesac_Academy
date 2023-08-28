@@ -98,8 +98,8 @@
 			children = (
 				4CB50A9B2A8788C800F5E26E /* AppDelegate.swift */,
 				4CB50A9D2A8788C800F5E26E /* SceneDelegate.swift */,
-				4CB50AA12A8788C800F5E26E /* Main.storyboard */,
 				4C46F1982A9B8DF40080D05D /* IntroMovieViewController.swift */,
+				4CB50AA12A8788C800F5E26E /* Main.storyboard */,
 				4CB50A9F2A8788C800F5E26E /* MovieViewController.swift */,
 				4C6252AB2A87B07400B3D88A /* MovieCollectionViewCell.xib */,
 				4C6252AA2A87B07400B3D88A /* MovieCollectionViewCell.swift */,

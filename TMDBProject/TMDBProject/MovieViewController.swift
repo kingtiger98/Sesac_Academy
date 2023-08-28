@@ -10,17 +10,6 @@ import Alamofire
 import SwiftyJSON
 import Kingfisher
 
-//struct Movie {
-//    let id: String
-//    let title: String
-//    let overview: String
-//    let release_date: String
-//    let vote_average: String
-//    let poster_path: String
-//    let backdrop_path: String
-//}
-
-
 class MovieViewController: UIViewController {
     
     @IBOutlet weak var MovieCollectionView: UICollectionView!
@@ -31,10 +20,6 @@ class MovieViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
-        
-        
         
         
         MovieCollectionView.delegate = self
@@ -144,11 +129,9 @@ extension MovieViewController: UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("왜그래1")
         let row: Movie = movieInfo.results[indexPath.row]
         
         guard let detailVC = storyboard?.instantiateViewController(withIdentifier: MovieDetailViewController.identifier) as? MovieDetailViewController else{
-            print("왜그래2")
             return
         }
         // 값 전달
@@ -192,7 +175,7 @@ extension MovieViewController {
         layout.sectionInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
         layout.minimumLineSpacing = 8
         layout.minimumInteritemSpacing = 8
-        layout.headerReferenceSize = CGSize(width: width, height: 50) // 헤더 섹션 Ui
+        // layout.headerReferenceSize = CGSize(width: width, height: 50) // 헤더 섹션 Ui, 주석 풀면 보일거야
         
         MovieCollectionView.collectionViewLayout = layout
     }
