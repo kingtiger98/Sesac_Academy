@@ -7,6 +7,24 @@
 
 import UIKit
 
-class MovieCollectionViewCell: UICollectionViewCell {
+class MovieCollectionViewCell: BaseCollectionViewCell {
+    
+    
+    let posterImageView = {
+        let view = UIImageView()
+        view.backgroundColor = .brown
+        view.contentMode = .scaleToFill
+        return view
+    }()
+    
+    override func setConfigure() {
+        contentView.addSubview(posterImageView)
+    }
+    
+    override func setConstraints() {
+        posterImageView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+    }
     
 }
