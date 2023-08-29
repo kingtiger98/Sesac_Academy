@@ -18,6 +18,8 @@ class ActorViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // MovieViewController에서 전달받은 값 ActorViewController에 셋팅해주는 함수 호출 해야대! ****
         mainView.setData()
         
     }

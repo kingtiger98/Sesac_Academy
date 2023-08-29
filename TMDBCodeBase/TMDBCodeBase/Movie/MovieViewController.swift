@@ -67,12 +67,15 @@ extension MovieViewController: UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
                 
         let item = movieinfo.results[indexPath.row]
-        print(item)
         
-        //***
+        // 값 전달 중요 포인트***
         let vc = ActorViewController()
         vc.mainView.moviedetail.movieNameContent = item.title
-        
+        vc.mainView.moviedetail.movieIdContent = item.id
+        vc.mainView.moviedetail.backgroundPosterContent = item.backdropPath
+        vc.mainView.moviedetail.foregroundPosterContent = item.posterPath
+        vc.mainView.moviedetail.movieOverview = item.overview
+
         navigationController?.pushViewController(vc, animated: true)
         
     }

@@ -13,8 +13,8 @@ class ActorView: BaseView{
         
     let movieNameLable = {
         let view = UILabel()
-        view.text = ""
-        view.font = .boldSystemFont(ofSize: 18)
+        view.textColor = .systemGray6
+        view.font = .boldSystemFont(ofSize: 20)
         return view
     }()
     
@@ -30,11 +30,20 @@ class ActorView: BaseView{
         return view
     }()
     
+    let movieOverView = {
+        let view = UITextView()
+        view.backgroundColor = .systemGray6
+        view.font = .boldSystemFont(ofSize: 14)
+        view.isEditable = false
+        return view
+    }()
+    
     override func setConfigure() {
         super.setConfigure()
         addSubview(backgroundPoster)
         addSubview(foregroundPoster)
         addSubview(movieNameLable)
+        addSubview(movieOverView)
     }
     
     override func setConstraints() {
@@ -55,12 +64,27 @@ class ActorView: BaseView{
             make.top.horizontalEdges.equalTo(self.safeAreaLayoutGuide).inset(20)
         }
         
+        movieOverView.snp.makeConstraints { make in
+            make.top.equalTo(backgroundPoster.snp.bottom)
+            make.horizontalEdges.equalTo(self.safeAreaLayoutGuide)
+            make.height.equalToSuperview().multipliedBy(0.2)
+        }
+        
     }
     
-    // 전달받은 값 셋팅
+    // 전달받은 값 셋팅***
     override func setData() {
         super.setData()
+        
         movieNameLable.text = moviedetail.movieNameContent
+        
+        let urlBackgroundPoster = URL(string:"https://www.themoviedb.org/t/p/w500" + moviedetail.backgroundPosterContent!)
+        backgroundPoster.kf.setImage(with: urlBackgroundPoster)
+        
+        let urlForegroundPoster = URL(string:"https://www.themoviedb.org/t/p/w500" + moviedetail.foregroundPosterContent!)
+        foregroundPoster.kf.setImage(with: urlForegroundPoster)
+        
+        movieOverView.text = moviedetail.movieOverview
     }
 
     
