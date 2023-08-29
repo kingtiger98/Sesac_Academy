@@ -27,9 +27,3 @@ extension UITableViewCell{
         return String(describing: self)
     }
 }
-
-//extension UIView{
-//    static var identifier: String {
-//        return String(describing: self)
-//    }
-//}

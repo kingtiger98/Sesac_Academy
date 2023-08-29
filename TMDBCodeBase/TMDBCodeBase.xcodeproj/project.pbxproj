@@ -31,6 +31,8 @@
 		4CA7C81F2A9DD850000FA519 /* MovieDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA7C81E2A9DD850000FA519 /* MovieDetail.swift */; };
 		4CA7C8212A9DD950000FA519 /* MovieData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA7C8202A9DD950000FA519 /* MovieData.swift */; };
 		4CA7C8232A9DD95A000FA519 /* CastData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA7C8222A9DD95A000FA519 /* CastData.swift */; };
+		4CA7C82C2A9E31FD000FA519 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA7C82B2A9E31FD000FA519 /* BaseTableViewCell.swift */; };
+		4CA7C82E2A9E3253000FA519 /* ActorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA7C82D2A9E3253000FA519 /* ActorTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +59,8 @@
 		4CA7C81E2A9DD850000FA519 /* MovieDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetail.swift; sourceTree = "<group>"; };
 		4CA7C8202A9DD950000FA519 /* MovieData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieData.swift; sourceTree = "<group>"; };
 		4CA7C8222A9DD95A000FA519 /* CastData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastData.swift; sourceTree = "<group>"; };
+		4CA7C82B2A9E31FD000FA519 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		4CA7C82D2A9E3253000FA519 /* ActorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActorTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +118,7 @@
 				4CA7C79A2A9CB52B000FA519 /* BaseViewController.swift */,
 				4CA7C7AE2A9CB6BC000FA519 /* BaseView.swift */,
 				4CA7C7B02A9CB849000FA519 /* BaseCollectionViewCell.swift */,
+				4CA7C82B2A9E31FD000FA519 /* BaseTableViewCell.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -144,6 +149,7 @@
 			children = (
 				4CA7C7D02A9CC932000FA519 /* ActorViewController.swift */,
 				4CA7C81B2A9DCF69000FA519 /* ActorView.swift */,
+				4CA7C82D2A9E3253000FA519 /* ActorTableViewCell.swift */,
 			);
 			path = Actor;
 			sourceTree = "<group>";
@@ -254,6 +260,7 @@
 				4CA7C7AF2A9CB6BC000FA519 /* BaseView.swift in Sources */,
 				4CA7C7D12A9CC932000FA519 /* ActorViewController.swift in Sources */,
 				4CA7C7C52A9CC1B8000FA519 /* EndPoint.swift in Sources */,
+				4CA7C82C2A9E31FD000FA519 /* BaseTableViewCell.swift in Sources */,
 				4CA7C7CE2A9CC282000FA519 /* Extension + URL.swift in Sources */,
 				4CA7C8212A9DD950000FA519 /* MovieData.swift in Sources */,
 				4CA7C8232A9DD95A000FA519 /* CastData.swift in Sources */,
@@ -264,6 +271,7 @@
 				4CA7C7C12A9CC0BD000FA519 /* TmdbApiManager.swift in Sources */,
 				4CA7C7D62A9CCC5D000FA519 /* ReuseableProtocol.swift in Sources */,
 				4CA7C7B12A9CB849000FA519 /* BaseCollectionViewCell.swift in Sources */,
+				4CA7C82E2A9E3253000FA519 /* ActorTableViewCell.swift in Sources */,
 				4CA7C7BE2A9CBC1F000FA519 /* MovieCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

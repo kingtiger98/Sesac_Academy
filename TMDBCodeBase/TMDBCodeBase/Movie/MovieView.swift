@@ -9,6 +9,7 @@ import UIKit
 
 class MovieView: BaseView{
     
+    // 컬렉션뷰***
     lazy var MovieCollectionView = {
         let view = UICollectionView(frame: .zero, collectionViewLayout: MovieCollectionViewFlowLayout())
         view.register(MovieCollectionViewCell.self, forCellWithReuseIdentifier: MovieCollectionViewCell.identifier)
