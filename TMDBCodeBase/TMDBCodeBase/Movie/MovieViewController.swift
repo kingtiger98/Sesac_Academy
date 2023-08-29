@@ -23,7 +23,7 @@ class MovieViewController: BaseViewController{
         
         self.navigationItem.title = "Movies"
         
-        callRequest { data in
+        callRequestMovieData { data in
             self.movieinfo = data
             self.mainView.MovieCollectionView.reloadData()
         }
@@ -40,8 +40,8 @@ class MovieViewController: BaseViewController{
         super.setConstraints()
     }
 
-    override func callRequest(completionHandler: @escaping (MovieData) -> Void) {
-        super.callRequest(completionHandler: completionHandler)
+    override func callRequestMovieData(completionHandler: @escaping (MovieData) -> Void) {
+        super.callRequestMovieData(completionHandler: completionHandler)
     }
     
 }
@@ -75,7 +75,9 @@ extension MovieViewController: UICollectionViewDelegate, UICollectionViewDataSou
         vc.mainView.moviedetail.backgroundPosterContent = item.backdropPath
         vc.mainView.moviedetail.foregroundPosterContent = item.posterPath
         vc.mainView.moviedetail.movieOverview = item.overview
-
+        
+        vc.movieid = item.id
+        
         navigationController?.pushViewController(vc, animated: true)
         
     }

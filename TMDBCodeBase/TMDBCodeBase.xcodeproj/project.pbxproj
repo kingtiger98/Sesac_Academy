@@ -33,6 +33,7 @@
 		4CA7C8232A9DD95A000FA519 /* CastData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA7C8222A9DD95A000FA519 /* CastData.swift */; };
 		4CA7C82C2A9E31FD000FA519 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA7C82B2A9E31FD000FA519 /* BaseTableViewCell.swift */; };
 		4CA7C82E2A9E3253000FA519 /* ActorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA7C82D2A9E3253000FA519 /* ActorTableViewCell.swift */; };
+		4CA7C8302A9E42B2000FA519 /* MovieActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA7C82F2A9E42B2000FA519 /* MovieActor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		4CA7C8222A9DD95A000FA519 /* CastData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastData.swift; sourceTree = "<group>"; };
 		4CA7C82B2A9E31FD000FA519 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		4CA7C82D2A9E3253000FA519 /* ActorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActorTableViewCell.swift; sourceTree = "<group>"; };
+		4CA7C82F2A9E42B2000FA519 /* MovieActor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieActor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 				4CA7C8202A9DD950000FA519 /* MovieData.swift */,
 				4CA7C8222A9DD95A000FA519 /* CastData.swift */,
 				4CA7C81E2A9DD850000FA519 /* MovieDetail.swift */,
+				4CA7C82F2A9E42B2000FA519 /* MovieActor.swift */,
 			);
 			path = Struct;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CA7C8302A9E42B2000FA519 /* MovieActor.swift in Sources */,
 				4CA7C79B2A9CB52B000FA519 /* BaseViewController.swift in Sources */,
 				4CA7C7972A9CB52B000FA519 /* AppDelegate.swift in Sources */,
 				4CA7C7B32A9CB993000FA519 /* MovieView.swift in Sources */,

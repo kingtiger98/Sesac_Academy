@@ -11,7 +11,8 @@ class ActorTableViewCell: BaseTableViewCell{
     
     let actorImageView = {
         let view = UIImageView()
-        view.backgroundColor = .darkGray
+        view.backgroundColor = .lightGray
+        view.contentMode = .scaleToFill
         return view
     }()
     
@@ -40,6 +41,7 @@ class ActorTableViewCell: BaseTableViewCell{
     
     override func setConfigure() {
         super.setConfigure()
+        contentView.backgroundColor = .systemGray6
         contentView.addSubview(actorImageView)
         nameStackView.addArrangedSubview(actorName)
         nameStackView.addArrangedSubview(characterName)

@@ -69,7 +69,9 @@ class ActorView: BaseView{
     
     override func setConfigure() {
         super.setConfigure()
+        
         self.backgroundColor = .white
+        
         addSubview(backgroundPoster)
         addSubview(foregroundPoster)
         addSubview(movieNameLable)

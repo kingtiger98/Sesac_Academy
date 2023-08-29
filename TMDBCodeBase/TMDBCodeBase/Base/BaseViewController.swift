@@ -26,12 +26,17 @@ class BaseViewController: UIViewController {
         
     }
     
-    func callRequest(completionHandler: @escaping (MovieData) -> Void){
-        TmdbApiManager.shared.callRequest(type: .movie) { data in
+    func callRequestMovieData(completionHandler: @escaping (MovieData) -> Void){
+        TmdbApiManager.shared.callRequestMovieData(type: .movie) { data in
             completionHandler(data)
         }
     }
     
+    func callRequestCastData(movieId: String,completionHandler: @escaping (CastData) -> Void){
+        TmdbApiManager.shared.callRequestCastData(type: .actor, movieId: movieId) { data in
+            completionHandler(data)
+        }
+    }
     
 }
 

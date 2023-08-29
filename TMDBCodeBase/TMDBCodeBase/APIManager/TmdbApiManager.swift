@@ -19,7 +19,9 @@ class TmdbApiManager{
       "Authorization": APIKey.TMDBToken
     ]
     
-    func callRequest(type: EndPoint, completionHandler: @escaping (MovieData) -> Void ){
+    
+    
+    func callRequestMovieData(type: EndPoint, completionHandler: @escaping (MovieData) -> Void ){
         
         let url = type.requestURL
         
@@ -34,5 +36,23 @@ class TmdbApiManager{
                 }
             }
     }
+    
+    
+    
+    func callRequestCastData(type: EndPoint, movieId: String, completionHandler: @escaping (CastData) -> Void){
+        
+        let url = type.requestURL + movieId + "/credits?language=ko-KR"
+        
+        AF.request(url, method: .get, headers: headers).validate()
+            .responseDecodable(of: CastData.self) { response in
+                switch response.result {
+                case .success(let value):
+                    completionHandler(value)
+                case .failure(let error):
+                    print(error)
+                }
+            }
+    }
+    
     
 }
