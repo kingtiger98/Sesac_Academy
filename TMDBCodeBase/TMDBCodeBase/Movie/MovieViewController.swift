@@ -65,10 +65,15 @@ extension MovieViewController: UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+                
+        let item = movieinfo.results[indexPath.row]
+        print(item)
         
-        // guard let vc =
+        //***
+        let vc = ActorViewController()
+        vc.mainView.moviedetail.movieNameContent = item.title
         
-        transition(ViewController: ActorViewController.self, style: .push)
+        navigationController?.pushViewController(vc, animated: true)
         
     }
     

@@ -9,12 +9,17 @@ import UIKit
 
 class ActorViewController: BaseViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    lazy var mainView = ActorView()
 
+    override func loadView() {
+        self.view = mainView
+        
     }
     
-
-
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        mainView.setData()
+        
+    }
 
 }

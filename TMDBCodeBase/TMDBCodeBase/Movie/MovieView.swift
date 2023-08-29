@@ -16,7 +16,7 @@ class MovieView: BaseView{
         return view
     }()
     
-    func MovieCollectionViewFlowLayout() -> UICollectionViewFlowLayout{
+    private func MovieCollectionViewFlowLayout() -> UICollectionViewFlowLayout{
         let layout = UICollectionViewFlowLayout()
         let width = UIScreen.main.bounds.width / 2 - 12
         let spacing: CGFloat = 8

@@ -33,8 +33,6 @@ class TmdbApiManager{
                     print(error)
                 }
             }
-        
     }
-    
     
 }

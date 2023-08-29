@@ -13,6 +13,7 @@ class BaseView: UIView{
         super.init(frame: frame)
         setConfigure()
         setConstraints()
+        setData()
     }
     
     required init?(coder: NSCoder) {
@@ -27,4 +28,7 @@ class BaseView: UIView{
         
     }
     
+    func setData(){
+        
+    }
 }
