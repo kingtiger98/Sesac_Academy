@@ -13,6 +13,8 @@ class SearchViewController: BaseViewController {
     
     let imageList = ["pencil", "star", "person", "star.fill", "xmark", "person.circle"]
     
+    // 2. Protocol 값 전달
+    var delegate2: PassImageDelegate?
     
     override func loadView() {
         self.view = mainView
@@ -23,9 +25,16 @@ class SearchViewController: BaseViewController {
         super.viewDidLoad()
         
         // addObsever보다 post가 먼저 신호를 보내면... => addObsever가 신호를 받지 못한다!
+        // addObsever가 먼저 등록되어야해 꼭
         NotificationCenter.default.addObserver(self, selector: #selector(recommandKeywordNotificationObserve), name: NSNotification.Name("RecommandKeyword"), object: nil)
         
     }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        
+
+    }
+    
     
     @objc func recommandKeywordNotificationObserve(notification: NSNotification){
         print("recommandKeywordNotificationObserve")
@@ -34,7 +43,6 @@ class SearchViewController: BaseViewController {
     
     override func configureView() {
         super.configureView()
-        
         mainView.collectionView.delegate = self
         mainView.collectionView.dataSource = self
     }
@@ -65,8 +73,11 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
         
         print(imageList[indexPath.item])
         
-        // 값 역전달하기
-        NotificationCenter.default.post(name: NSNotification.Name("SelectImage"), object: nil, userInfo: ["name": imageList[indexPath.item], "sample": "고래밥"])
+        // 3. Protocol을 통한 값 전달
+        delegate2?.receiveImage(imageName: imageList[indexPath.item])
+
+        // Notification을 통한 값 역 전달하기
+        // NotificationCenter.default.post(name: NSNotification.Name("SelectImage"), object: nil, userInfo: ["name": imageList[indexPath.item], "sample": "고래밥"])
         
         
         dismiss(animated: true)

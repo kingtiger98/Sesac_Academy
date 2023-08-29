@@ -16,6 +16,7 @@ class SearchView: BaseView {
         return view
     }()
     
+    
     // ***
     lazy var collectionView = {
         let view = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout())
@@ -24,7 +25,10 @@ class SearchView: BaseView {
         return view
     }()
     
-    func collectionViewLayout() -> UICollectionViewFlowLayout {
+    
+    // 접근제어자 private : 너는 밖으로 나오지 마! _ 호출할 일이 없는 함수니깐~
+    //    ㄴ 컴파일 최적화에 좋다
+    private func collectionViewLayout() -> UICollectionViewFlowLayout {
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 8
         layout.minimumInteritemSpacing = 8

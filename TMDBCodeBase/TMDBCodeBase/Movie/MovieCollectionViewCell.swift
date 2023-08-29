@@ -14,6 +14,8 @@ class MovieCollectionViewCell: BaseCollectionViewCell {
         let view = UIImageView()
         view.backgroundColor = .brown
         view.contentMode = .scaleToFill
+        view.layer.cornerRadius = 5
+        view.clipsToBounds = true
         return view
     }()
     

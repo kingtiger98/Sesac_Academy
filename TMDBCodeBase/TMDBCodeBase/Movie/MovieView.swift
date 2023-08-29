@@ -11,7 +11,7 @@ class MovieView: BaseView{
     
     lazy var MovieCollectionView = {
         let view = UICollectionView(frame: .zero, collectionViewLayout: MovieCollectionViewFlowLayout())
-        view.register(MovieCollectionViewCell.self, forCellWithReuseIdentifier: "MovieCollectionViewCell")
+        view.register(MovieCollectionViewCell.self, forCellWithReuseIdentifier: MovieCollectionViewCell.identifier)
         view.collectionViewLayout = MovieCollectionViewFlowLayout()
         return view
     }()
