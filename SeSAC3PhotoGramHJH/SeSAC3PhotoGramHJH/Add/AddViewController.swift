@@ -22,6 +22,10 @@ class AddViewController: BaseViewController {
     
     let mainView = AddView()
     
+    // 1.
+    let picker = UIImagePickerController()
+    
+    
     // viewDidLoad보다 먼저 호출됨, super 메서드 호출 xxx
     override func loadView() {
         // 뷰 교체
@@ -32,6 +36,9 @@ class AddViewController: BaseViewController {
         super.viewDidLoad()
         
         APIService.shared.callRequest()
+        
+
+        
         
         
         NotificationCenter.default.addObserver(self, selector: #selector(selectImageNotificationObserver), name: .selectImage, object: nil)
@@ -75,7 +82,37 @@ class AddViewController: BaseViewController {
         
         NotificationCenter.default.post(name: NSNotification.Name("RecommandKeyword"), object: nil, userInfo: ["word": word.randomElement()!])
                                         
-        navigationController?.pushViewController(SearchViewController(), animated: true)
+ 
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        let photo = UIAlertAction(title: "갤러리에서 가져오기", style: .default) { _ in
+            
+            // 2. available
+            guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
+                self.printContent("갤러리 사용 불가, 사용자에게 토스트/얼럿")
+                return
+            }
+
+            self.picker.delegate = self
+            self.picker.sourceType = .photoLibrary // .photoLibrary
+            self.picker.allowsEditing = true
+                    
+            self.present(self.picker, animated: true)
+            
+        }
+        
+        let web = UIAlertAction(title: "웹에서 검색하기", style: .default) { _ in
+            self.navigationController?.pushViewController(SearchViewController(), animated: true)
+        }
+        
+        let cancle = UIAlertAction(title: "취소", style: .cancel)
+        
+        alert.addAction(photo)
+        alert.addAction(web)
+        alert.addAction(cancle)
+                
+        present(alert, animated: true)
+        
     }
     
     override func configureView(){
@@ -161,6 +198,27 @@ extension AddViewController: PassImageDelegate{
     
     func receiveImage(imageName: String) {
         mainView.photoImageView.image = UIImage(systemName: "\(imageName)")
+    }
+    
+}
+
+
+extension AddViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    // 취소 버튼 클릭시
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true)
+        print(#function)
+    }
+    
+    // 사진을 선택하거나 카메라 촬영 직후 호출 : originalImage, editedImage
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        if let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            self.mainView.photoImageView.image = image
+            dismiss(animated: true)
+        }
+        
     }
     
 }

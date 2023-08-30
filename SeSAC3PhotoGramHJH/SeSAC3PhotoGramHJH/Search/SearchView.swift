@@ -48,7 +48,7 @@ class SearchView: BaseView {
     override func setConstraints() {
         
         serchBar.snp.makeConstraints { make in
-            make.top.horizontalEdges.equalToSuperview()
+            make.top.horizontalEdges.equalTo(self.safeAreaLayoutGuide)
         }
         
         collectionView.snp.makeConstraints { make in

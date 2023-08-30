@@ -41,5 +41,21 @@ class APIService {
     }
     
     
+    func callRequest2(){
+        
+        let url = URL(string: "https://api.unsplash.com/search/photos?query=sky&client_id=jIIsu7aMtDknZPWcBQXtkoENW103bwaUMg8nw5OdYYc")
+        
+        let request = URLRequest(url: url!)
+
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            print(data)
+            let value = String(data: data!, encoding: .utf8)
+            print("====\n", value!)
+            print(response)
+            print(error)
+            
+        }.resume() // 네트워크 통신 시작 신호
+    }
+    
     
 }

@@ -34,6 +34,8 @@ class SearchViewController: BaseViewController {
         mainView.serchBar.delegate = self
         
         
+        APIService.shared.callRequest2()
+        
     }
     
     override func viewDidDisappear(_ animated: Bool) {
