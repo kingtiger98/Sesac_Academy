@@ -11,7 +11,6 @@ class ActorViewController: BaseViewController {
 
     let mainView = ActorView()
     
-    
     var movieid = 0
     var actorinfo = CastData(id: 0, crew: [], cast: [])
     
@@ -58,15 +57,13 @@ extension ActorViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        let row = actorinfo.cast[indexPath.row]
+        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ActorTableViewCell.identifier, for: indexPath) as? ActorTableViewCell else {
             return UITableViewCell()
         }
         
-        cell.actorName.text = actorinfo.cast[indexPath.row].originalName
-        cell.characterName.text = actorinfo.cast[indexPath.row].character
-        
-        let url = URL(string: "https://www.themoviedb.org/t/p/w500" + (actorinfo.cast[indexPath.row].profilePath ?? ""))
-        cell.actorImageView.kf.setImage(with: url)
+        cell.ConfigureActorTableViewCell(row: row)
 
         return cell
     }

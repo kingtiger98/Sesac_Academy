@@ -21,27 +21,42 @@ class MovieViewController: BaseViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.title = "Movies"
+    }
+    
+    
+    override func setConfigure() {
+        super.setConfigure()
+        
+        mainView.MovieCollectionView.delegate = self
+        mainView.MovieCollectionView.dataSource = self
         
         callRequestMovieData { data in
             self.movieinfo = data
             self.mainView.MovieCollectionView.reloadData()
         }
         
-    }
-    
-    override func setConfigure() {
-        super.setConfigure()
-        mainView.MovieCollectionView.delegate = self
-        mainView.MovieCollectionView.dataSource = self
+        setNavigationItem()
+        
     }
     
     override func setConstraints() {
         super.setConstraints()
+        
     }
 
     override func callRequestMovieData(completionHandler: @escaping (MovieData) -> Void) {
         super.callRequestMovieData(completionHandler: completionHandler)
+    }
+    
+    func setNavigationItem() {
+        navigationItem.title = "Movies"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person.fill"), style: .plain, target: self, action: #selector(profileButtonClicked))
+        navigationItem.titleView?.tintColor = .black
+        navigationItem.rightBarButtonItem?.tintColor = .black
+    }
+    
+    @objc func profileButtonClicked() {
+        navigationController?.pushViewController(ProfileViewController(), animated: true)
     }
     
 }
@@ -70,6 +85,7 @@ extension MovieViewController: UICollectionViewDelegate, UICollectionViewDataSou
         
         // 값 전달 중요 포인트***
         let vc = ActorViewController()
+        
         vc.mainView.moviedetail.movieNameContent = item.title
         vc.mainView.moviedetail.movieIdContent = item.id
         vc.mainView.moviedetail.backgroundPosterContent = item.backdropPath

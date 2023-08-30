@@ -26,6 +26,8 @@ class BaseViewController: UIViewController {
         
     }
     
+
+    
     func callRequestMovieData(completionHandler: @escaping (MovieData) -> Void){
         TmdbApiManager.shared.callRequestMovieData(type: .movie) { data in
             completionHandler(data)

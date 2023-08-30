@@ -65,6 +65,13 @@ class ActorTableViewCell: BaseTableViewCell{
 
     }
     
+    func ConfigureActorTableViewCell(row: Cast){
+        actorName.text = row.originalName
+        characterName.text = row.character
+        
+        let url = URL(string: "https://www.themoviedb.org/t/p/w500" + (row.profilePath ?? ""))
+        actorImageView.kf.setImage(with: url)
+    }
     
     
 }

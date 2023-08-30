@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C1F17D02A9E51CE00D40D95 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1F17CF2A9E51CE00D40D95 /* ProfileViewController.swift */; };
+		4C1F17D22A9E51D800D40D95 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1F17D12A9E51D800D40D95 /* ProfileView.swift */; };
+		4C1F17D52A9E5E0E00D40D95 /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1F17D42A9E5E0E00D40D95 /* ProfileEditViewController.swift */; };
 		4CA7C7972A9CB52B000FA519 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA7C7962A9CB52B000FA519 /* AppDelegate.swift */; };
 		4CA7C7992A9CB52B000FA519 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA7C7982A9CB52B000FA519 /* SceneDelegate.swift */; };
 		4CA7C79B2A9CB52B000FA519 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA7C79A2A9CB52B000FA519 /* BaseViewController.swift */; };
@@ -37,6 +40,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C1F17CF2A9E51CE00D40D95 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		4C1F17D12A9E51D800D40D95 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		4C1F17D42A9E5E0E00D40D95 /* ProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
 		4CA7C7932A9CB52B000FA519 /* TMDBCodeBase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMDBCodeBase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CA7C7962A9CB52B000FA519 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CA7C7982A9CB52B000FA519 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +85,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C1F17CE2A9E51B600D40D95 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				4C1F17CF2A9E51CE00D40D95 /* ProfileViewController.swift */,
+				4C1F17D12A9E51D800D40D95 /* ProfileView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		4C1F17D32A9E5DE800D40D95 /* ProfileEdit */ = {
+			isa = PBXGroup;
+			children = (
+				4C1F17D42A9E5E0E00D40D95 /* ProfileEditViewController.swift */,
+			);
+			path = ProfileEdit;
+			sourceTree = "<group>";
+		};
 		4CA7C78A2A9CB52B000FA519 = {
 			isa = PBXGroup;
 			children = (
@@ -98,17 +121,19 @@
 		4CA7C7952A9CB52B000FA519 /* TMDBCodeBase */ = {
 			isa = PBXGroup;
 			children = (
-				4CA7C81D2A9DD83A000FA519 /* Struct */,
 				4CA7C7AB2A9CB5D3000FA519 /* Movie */,
 				4CA7C7CF2A9CC91E000FA519 /* Actor */,
-				4CA7C7BF2A9CC078000FA519 /* APIManager */,
-				4CA7C7AA2A9CB5C5000FA519 /* Base */,
-				4CA7C7D22A9CC95A000FA519 /* Generic+Transition */,
+				4C1F17CE2A9E51B600D40D95 /* Profile */,
+				4C1F17D32A9E5DE800D40D95 /* ProfileEdit */,
 				4CA7C7962A9CB52B000FA519 /* AppDelegate.swift */,
 				4CA7C7982A9CB52B000FA519 /* SceneDelegate.swift */,
 				4CA7C79F2A9CB52C000FA519 /* Assets.xcassets */,
 				4CA7C7A12A9CB52C000FA519 /* LaunchScreen.storyboard */,
 				4CA7C7A42A9CB52C000FA519 /* Info.plist */,
+				4CA7C7AA2A9CB5C5000FA519 /* Base */,
+				4CA7C7BF2A9CC078000FA519 /* APIManager */,
+				4CA7C81D2A9DD83A000FA519 /* Struct */,
+				4CA7C7D22A9CC95A000FA519 /* Generic+Transition */,
 				4CA7C7D52A9CCC5D000FA519 /* ReuseableProtocol.swift */,
 			);
 			path = TMDBCodeBase;
@@ -270,10 +295,13 @@
 				4CA7C8232A9DD95A000FA519 /* CastData.swift in Sources */,
 				4CA7C81C2A9DCF69000FA519 /* ActorView.swift in Sources */,
 				4CA7C7C32A9CC176000FA519 /* APIKey.swift in Sources */,
+				4C1F17D02A9E51CE00D40D95 /* ProfileViewController.swift in Sources */,
+				4C1F17D22A9E51D800D40D95 /* ProfileView.swift in Sources */,
 				4CA7C7992A9CB52B000FA519 /* SceneDelegate.swift in Sources */,
 				4CA7C7AD2A9CB638000FA519 /* MovieViewController.swift in Sources */,
 				4CA7C7C12A9CC0BD000FA519 /* TmdbApiManager.swift in Sources */,
 				4CA7C7D62A9CCC5D000FA519 /* ReuseableProtocol.swift in Sources */,
+				4C1F17D52A9E5E0E00D40D95 /* ProfileEditViewController.swift in Sources */,
 				4CA7C7B12A9CB849000FA519 /* BaseCollectionViewCell.swift in Sources */,
 				4CA7C82E2A9E3253000FA519 /* ActorTableViewCell.swift in Sources */,
 				4CA7C7BE2A9CBC1F000FA519 /* MovieCollectionViewCell.swift in Sources */,
