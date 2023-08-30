@@ -31,9 +31,7 @@ class AddViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ClassOpenExample.publicExample()
-        ClassPublicExample.publicExample()
-        // ClassPublicExample.internalExample()
+        APIService.shared.callRequest()
         
         
         NotificationCenter.default.addObserver(self, selector: #selector(selectImageNotificationObserver), name: .selectImage, object: nil)
@@ -45,7 +43,7 @@ class AddViewController: BaseViewController {
         print(#function)
         NotificationCenter.default.addObserver(self, selector: #selector(selectImageNotificationObserver), name: .selectImage, object: nil)
         
-        sesacShowActivityViewController(image: UIImage(systemName: "star")!, url: "hello", text: "hi")
+        // sesacShowActivityViewController(image: UIImage(systemName: "star")!, url: "hello", text: "hi")
         
     }
     
@@ -89,6 +87,8 @@ class AddViewController: BaseViewController {
         mainView.searchProtocolButton.addTarget(self, action: #selector(searchProtocolButtonClicked), for: .touchUpInside)
         mainView.titleButton.addTarget(self, action: #selector(titleButtonClicked), for: .touchUpInside)
         mainView.contentsButton.addTarget(self, action: #selector(titleButton2Clicked), for: .touchUpInside)
+
+        
 
     }
     

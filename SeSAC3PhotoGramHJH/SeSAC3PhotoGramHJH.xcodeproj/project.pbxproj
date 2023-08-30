@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C1F17DB2A9EC73B00D40D95 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1F17DA2A9EC73B00D40D95 /* APIService.swift */; };
+		4C1F17DD2A9EEBD900D40D95 /* URLSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1F17DC2A9EEBD900D40D95 /* URLSessionViewController.swift */; };
 		4C701BA32A9C1D6B001E97C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C701BA22A9C1D6B001E97C0 /* AppDelegate.swift */; };
 		4C701BA52A9C1D6B001E97C0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C701BA42A9C1D6B001E97C0 /* SceneDelegate.swift */; };
 		4C701BA72A9C1D6B001E97C0 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C701BA62A9C1D6B001E97C0 /* AddViewController.swift */; };
@@ -63,6 +65,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4C1F17DA2A9EC73B00D40D95 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		4C1F17DC2A9EEBD900D40D95 /* URLSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionViewController.swift; sourceTree = "<group>"; };
 		4C701B9F2A9C1D6B001E97C0 /* SeSAC3PhotoGramHJH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSAC3PhotoGramHJH.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C701BA22A9C1D6B001E97C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C701BA42A9C1D6B001E97C0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -100,10 +104,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C1F17D92A9EC72600D40D95 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				4C1F17DA2A9EC73B00D40D95 /* APIService.swift */,
+				4C1F17DC2A9EEBD900D40D95 /* URLSessionViewController.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		4C701B962A9C1D6B001E97C0 = {
 			isa = PBXGroup;
 			children = (
-				4CA7C8192A9DC767000FA519 /* WebViewController.swift */,
 				4CA7C8082A9D9B36000FA519 /* SeSACPhotoFramework.xcodeproj */,
 				4C701BA12A9C1D6B001E97C0 /* SeSAC3PhotoGramHJH */,
 				4C701BA02A9C1D6B001E97C0 /* Products */,
@@ -122,6 +134,7 @@
 		4C701BA12A9C1D6B001E97C0 /* SeSAC3PhotoGramHJH */ = {
 			isa = PBXGroup;
 			children = (
+				4C1F17D92A9EC72600D40D95 /* Network */,
 				4CA7C7DD2A9D8E8C000FA519 /* Extension */,
 				4CA7C77E2A9C2FC2000FA519 /* Add */,
 				4CA7C7792A9C2722000FA519 /* Search */,
@@ -131,6 +144,7 @@
 				4C701BAB2A9C1D6C001E97C0 /* Assets.xcassets */,
 				4C701BAD2A9C1D6C001E97C0 /* LaunchScreen.storyboard */,
 				4C701BB02A9C1D6C001E97C0 /* Info.plist */,
+				4CA7C8192A9DC767000FA519 /* WebViewController.swift */,
 			);
 			path = SeSAC3PhotoGramHJH;
 			sourceTree = "<group>";
@@ -303,12 +317,14 @@
 				4CA7C7DC2A9D7DBD000FA519 /* DateViewController.swift in Sources */,
 				4CA7C7862A9C37F4000FA519 /* SearchCollectionViewCell.swift in Sources */,
 				4CA7C7DA2A9D7C79000FA519 /* DateView.swift in Sources */,
+				4C1F17DD2A9EEBD900D40D95 /* URLSessionViewController.swift in Sources */,
 				4CA7C7782A9C2425000FA519 /* BaseViewController.swift in Sources */,
 				4CA7C7822A9C3376000FA519 /* SearchView.swift in Sources */,
 				4CA7C81A2A9DC767000FA519 /* WebViewController.swift in Sources */,
 				4CA7C77D2A9C2ECB000FA519 /* BaseView.swift in Sources */,
 				4C701BA32A9C1D6B001E97C0 /* AppDelegate.swift in Sources */,
 				4C701BA52A9C1D6B001E97C0 /* SceneDelegate.swift in Sources */,
+				4C1F17DB2A9EC73B00D40D95 /* APIService.swift in Sources */,
 				4CA7C8162A9DB551000FA519 /* TitleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

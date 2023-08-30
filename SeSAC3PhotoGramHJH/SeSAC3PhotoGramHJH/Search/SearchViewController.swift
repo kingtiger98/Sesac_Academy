@@ -28,6 +28,12 @@ class SearchViewController: BaseViewController {
         // addObsever가 먼저 등록되어야해 꼭
         NotificationCenter.default.addObserver(self, selector: #selector(recommandKeywordNotificationObserve), name: NSNotification.Name("RecommandKeyword"), object: nil)
         
+        
+        // 키보드 바로 뜨게됨 : serchBar에 Responder할당
+        mainView.serchBar.becomeFirstResponder()
+        mainView.serchBar.delegate = self
+        
+        
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -53,6 +59,21 @@ class SearchViewController: BaseViewController {
     }
     
 }
+
+
+
+extension SearchViewController: UISearchBarDelegate{
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        // serchBar의 잡혀있던 Responder가 떠남
+        mainView.serchBar.resignFirstResponder()
+        
+    }
+    
+}
+
+
 
 extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     
