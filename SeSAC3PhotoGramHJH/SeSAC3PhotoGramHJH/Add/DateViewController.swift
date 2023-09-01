@@ -18,6 +18,10 @@ class  DateViewController: BaseViewController{
         self.view = mainView
     }
     
+    deinit {
+        print("deinit", self)
+    }
+    
     // 3. Protocol 값 전달
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)

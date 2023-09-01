@@ -28,11 +28,9 @@ class SearchViewController: BaseViewController {
         // addObsever가 먼저 등록되어야해 꼭
         NotificationCenter.default.addObserver(self, selector: #selector(recommandKeywordNotificationObserve), name: NSNotification.Name("RecommandKeyword"), object: nil)
         
-        
         // 키보드 바로 뜨게됨 : serchBar에 Responder할당
         mainView.serchBar.becomeFirstResponder()
         mainView.serchBar.delegate = self
-        
         
         APIService.shared.callRequest2()
         

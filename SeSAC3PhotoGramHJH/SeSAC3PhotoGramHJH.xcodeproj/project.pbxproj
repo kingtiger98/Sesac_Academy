@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		4C1F17DB2A9EC73B00D40D95 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1F17DA2A9EC73B00D40D95 /* APIService.swift */; };
 		4C1F17DD2A9EEBD900D40D95 /* URLSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1F17DC2A9EEBD900D40D95 /* URLSessionViewController.swift */; };
+		4C376C242AA01A7B0009404D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C376C232AA01A7B0009404D /* HomeViewController.swift */; };
+		4C376C262AA01A820009404D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C376C252AA01A820009404D /* HomeView.swift */; };
+		4C376C2E2AA0B0E00009404D /* TextFieldEffects in Frameworks */ = {isa = PBXBuildFile; productRef = 4C376C2D2AA0B0E00009404D /* TextFieldEffects */; };
 		4C701BA32A9C1D6B001E97C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C701BA22A9C1D6B001E97C0 /* AppDelegate.swift */; };
 		4C701BA52A9C1D6B001E97C0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C701BA42A9C1D6B001E97C0 /* SceneDelegate.swift */; };
 		4C701BA72A9C1D6B001E97C0 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C701BA62A9C1D6B001E97C0 /* AddViewController.swift */; };
@@ -67,6 +70,8 @@
 /* Begin PBXFileReference section */
 		4C1F17DA2A9EC73B00D40D95 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		4C1F17DC2A9EEBD900D40D95 /* URLSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionViewController.swift; sourceTree = "<group>"; };
+		4C376C232AA01A7B0009404D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		4C376C252AA01A820009404D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		4C701B9F2A9C1D6B001E97C0 /* SeSAC3PhotoGramHJH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSAC3PhotoGramHJH.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C701BA22A9C1D6B001E97C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C701BA42A9C1D6B001E97C0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C376C2E2AA0B0E00009404D /* TextFieldEffects in Frameworks */,
 				4CA7C8122A9D9BDE000FA519 /* SeSACPhotoFramework.framework in Frameworks */,
 				4C701BB82A9C1E1E001E97C0 /* SnapKit in Frameworks */,
 			);
@@ -111,6 +117,15 @@
 				4C1F17DC2A9EEBD900D40D95 /* URLSessionViewController.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		4C376C222AA01A5C0009404D /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				4C376C232AA01A7B0009404D /* HomeViewController.swift */,
+				4C376C252AA01A820009404D /* HomeView.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		4C701B962A9C1D6B001E97C0 = {
@@ -134,6 +149,7 @@
 		4C701BA12A9C1D6B001E97C0 /* SeSAC3PhotoGramHJH */ = {
 			isa = PBXGroup;
 			children = (
+				4C376C222AA01A5C0009404D /* Home */,
 				4C1F17D92A9EC72600D40D95 /* Network */,
 				4CA7C7DD2A9D8E8C000FA519 /* Extension */,
 				4CA7C77E2A9C2FC2000FA519 /* Add */,
@@ -226,6 +242,7 @@
 			name = SeSAC3PhotoGramHJH;
 			packageProductDependencies = (
 				4C701BB72A9C1E1E001E97C0 /* SnapKit */,
+				4C376C2D2AA0B0E00009404D /* TextFieldEffects */,
 			);
 			productName = SeSAC3PhotoGramHJH;
 			productReference = 4C701B9F2A9C1D6B001E97C0 /* SeSAC3PhotoGramHJH.app */;
@@ -257,6 +274,7 @@
 			mainGroup = 4C701B962A9C1D6B001E97C0;
 			packageReferences = (
 				4C701BB62A9C1E1E001E97C0 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				4C376C2C2AA0B0E00009404D /* XCRemoteSwiftPackageReference "TextFieldEffects" */,
 			);
 			productRefGroup = 4C701BA02A9C1D6B001E97C0 /* Products */;
 			projectDirPath = "";
@@ -322,6 +340,8 @@
 				4CA7C7822A9C3376000FA519 /* SearchView.swift in Sources */,
 				4CA7C81A2A9DC767000FA519 /* WebViewController.swift in Sources */,
 				4CA7C77D2A9C2ECB000FA519 /* BaseView.swift in Sources */,
+				4C376C262AA01A820009404D /* HomeView.swift in Sources */,
+				4C376C242AA01A7B0009404D /* HomeViewController.swift in Sources */,
 				4C701BA32A9C1D6B001E97C0 /* AppDelegate.swift in Sources */,
 				4C701BA52A9C1D6B001E97C0 /* SceneDelegate.swift in Sources */,
 				4C1F17DB2A9EC73B00D40D95 /* APIService.swift in Sources */,
@@ -535,6 +555,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		4C376C2C2AA0B0E00009404D /* XCRemoteSwiftPackageReference "TextFieldEffects" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/raulriera/TextFieldEffects.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		4C701BB62A9C1E1E001E97C0 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -546,6 +574,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		4C376C2D2AA0B0E00009404D /* TextFieldEffects */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4C376C2C2AA0B0E00009404D /* XCRemoteSwiftPackageReference "TextFieldEffects" */;
+			productName = TextFieldEffects;
+		};
 		4C701BB72A9C1E1E001E97C0 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 4C701BB62A9C1E1E001E97C0 /* XCRemoteSwiftPackageReference "SnapKit" */;

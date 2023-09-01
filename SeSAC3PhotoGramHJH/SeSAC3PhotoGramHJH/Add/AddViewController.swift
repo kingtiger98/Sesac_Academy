@@ -37,12 +37,14 @@ class AddViewController: BaseViewController {
         
         APIService.shared.callRequest()
         
-
-        
-        
-        
         NotificationCenter.default.addObserver(self, selector: #selector(selectImageNotificationObserver), name: .selectImage, object: nil)
     }
+    
+    
+    deinit {
+        print("deinit", self)
+    }
+    
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -130,11 +132,17 @@ class AddViewController: BaseViewController {
     }
     
     @objc func dateButtonClicked(){
-        // 5. Protocol 값 전달
-        // 현재 클래스에 delegate 위임하기
-        let vc = DateViewController()
-        vc.delegate = self
+//        // 5. Protocol 값 전달
+//        // 현재 클래스에 delegate 위임하기
+//        let vc = DateViewController()
+//        vc.delegate = self
+//        navigationController?.pushViewController(vc, animated: true)
+        
+        
+        let vc = HomeViewController()
         navigationController?.pushViewController(vc, animated: true)
+        
+        
     }
     
     
