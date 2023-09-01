@@ -11,6 +11,8 @@
 		4CA7C7F52A9D92AB000FA519 /* SeSACPhotoFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CA7C7EA2A9D92AB000FA519 /* SeSACPhotoFramework.framework */; };
 		4CA7C7FA2A9D92AB000FA519 /* SeSACPhotoFrameworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA7C7F92A9D92AB000FA519 /* SeSACPhotoFrameworkTests.swift */; };
 		4CA7C7FB2A9D92AB000FA519 /* SeSACPhotoFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CA7C7ED2A9D92AB000FA519 /* SeSACPhotoFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4CA7C8052A9D9356000FA519 /* ClassOpenExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA7C8042A9D9356000FA519 /* ClassOpenExample.swift */; };
+		4CA7C8072A9D9818000FA519 /* UIVewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA7C8062A9D9818000FA519 /* UIVewController+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,8 @@
 		4CA7C7EE2A9D92AB000FA519 /* SeSACPhotoFramework.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = SeSACPhotoFramework.docc; sourceTree = "<group>"; };
 		4CA7C7F42A9D92AB000FA519 /* SeSACPhotoFrameworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SeSACPhotoFrameworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CA7C7F92A9D92AB000FA519 /* SeSACPhotoFrameworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSACPhotoFrameworkTests.swift; sourceTree = "<group>"; };
+		4CA7C8042A9D9356000FA519 /* ClassOpenExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassOpenExample.swift; sourceTree = "<group>"; };
+		4CA7C8062A9D9818000FA519 /* UIVewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVewController+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,8 @@
 			children = (
 				4CA7C7ED2A9D92AB000FA519 /* SeSACPhotoFramework.h */,
 				4CA7C7EE2A9D92AB000FA519 /* SeSACPhotoFramework.docc */,
+				4CA7C8042A9D9356000FA519 /* ClassOpenExample.swift */,
+				4CA7C8062A9D9818000FA519 /* UIVewController+Extension.swift */,
 			);
 			path = SeSACPhotoFramework;
 			sourceTree = "<group>";
@@ -195,6 +201,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CA7C7EF2A9D92AB000FA519 /* SeSACPhotoFramework.docc in Sources */,
+				4CA7C8052A9D9356000FA519 /* ClassOpenExample.swift in Sources */,
+				4CA7C8072A9D9818000FA519 /* UIVewController+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,6 +410,7 @@
 		4CA7C8022A9D92AB000FA519 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Z9S6MZGC9J;
@@ -418,6 +427,7 @@
 		4CA7C8032A9D92AB000FA519 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Z9S6MZGC9J;
