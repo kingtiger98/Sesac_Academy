@@ -7,6 +7,40 @@
 
 import UIKit
 
+
+enum Profile: CaseIterable{
+    
+    case name
+    case nickName
+    case gender
+    
+    var key: String {
+        switch self {
+        case .name:
+            return "이름"
+        case .nickName:
+            return "사용자 이름"
+        case .gender:
+            return "성별 대명사"
+        }
+    }
+    
+    var value: String{
+        switch self {
+        case .name:
+            return "이름"
+        case .nickName:
+            return "사용자 이름"
+        case .gender:
+            return "성별 대명사"
+        }
+    }
+    
+}
+
+
+
+
 class ProfileViewController: BaseViewController{
     
     let mainView = ProfileView()
@@ -17,14 +51,22 @@ class ProfileViewController: BaseViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(profileValueNotificationObserve), name: NSNotification.Name("ProfileNewValue"), object: nil)
+        
     }
+    
+
     
     override func setConfigure() {
         super.setConfigure()
         
-        setNavigationItem()
+        mainView.profileTableView.dataSource = self
+        mainView.profileTableView.delegate = self
         
-        mainView.nameTextButton.addTarget(self, action: #selector(nameTextButtonClicked), for: .touchUpInside)
+        setNavigationItem()
+
     }
     
     override func setConstraints() {
@@ -32,7 +74,7 @@ class ProfileViewController: BaseViewController{
     }
     
     func setNavigationItem() {
-        navigationItem.title = "Movies"
+        navigationItem.title = "Profile"
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "완료", style: .plain, target: self, action: #selector(doneButtonClicked))
         navigationItem.titleView?.tintColor = .black
         navigationItem.rightBarButtonItem?.tintColor = .black
@@ -42,7 +84,38 @@ class ProfileViewController: BaseViewController{
         navigationController?.popViewController(animated: true)
     }
     
-    @objc func nameTextButtonClicked(){
-        navigationController?.pushViewController(ProfileEditViewController(), animated: true)
+}
+
+extension ProfileViewController: UITableViewDelegate, UITableViewDataSource{
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return Profile.allCases.count
     }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let row = Profile.allCases[indexPath.row]
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileTableViewCell", for: indexPath) as? ProfileTableViewCell else {
+            return UITableViewCell()
+        }
+        
+        cell.firstLabel1.text = row.key
+        cell.firstLabel2.text = row.value
+
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let vc = ProfileEditViewController()
+        
+        vc.receviedContents = Profile.allCases[indexPath.row].value
+        
+        navigationController?.pushViewController(vc, animated: true)
+        
+    }
+    
+    
 }

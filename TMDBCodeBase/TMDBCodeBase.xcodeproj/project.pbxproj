@@ -10,6 +10,9 @@
 		4C1F17D02A9E51CE00D40D95 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1F17CF2A9E51CE00D40D95 /* ProfileViewController.swift */; };
 		4C1F17D22A9E51D800D40D95 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1F17D12A9E51D800D40D95 /* ProfileView.swift */; };
 		4C1F17D52A9E5E0E00D40D95 /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1F17D42A9E5E0E00D40D95 /* ProfileEditViewController.swift */; };
+		4C376C2B2AA0AFD90009404D /* ProfileEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C376C2A2AA0AFD90009404D /* ProfileEditView.swift */; };
+		4C376C312AA0B0FA0009404D /* TextFieldEffects in Frameworks */ = {isa = PBXBuildFile; productRef = 4C376C302AA0B0FA0009404D /* TextFieldEffects */; };
+		4C376C332AA0BF4E0009404D /* profileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C376C322AA0BF4E0009404D /* profileTableViewCell.swift */; };
 		4CA7C7972A9CB52B000FA519 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA7C7962A9CB52B000FA519 /* AppDelegate.swift */; };
 		4CA7C7992A9CB52B000FA519 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA7C7982A9CB52B000FA519 /* SceneDelegate.swift */; };
 		4CA7C79B2A9CB52B000FA519 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA7C79A2A9CB52B000FA519 /* BaseViewController.swift */; };
@@ -43,6 +46,8 @@
 		4C1F17CF2A9E51CE00D40D95 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		4C1F17D12A9E51D800D40D95 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		4C1F17D42A9E5E0E00D40D95 /* ProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
+		4C376C2A2AA0AFD90009404D /* ProfileEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditView.swift; sourceTree = "<group>"; };
+		4C376C322AA0BF4E0009404D /* profileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileTableViewCell.swift; sourceTree = "<group>"; };
 		4CA7C7932A9CB52B000FA519 /* TMDBCodeBase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMDBCodeBase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CA7C7962A9CB52B000FA519 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CA7C7982A9CB52B000FA519 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +82,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CA7C7BC2A9CBB76000FA519 /* Alamofire in Frameworks */,
+				4C376C312AA0B0FA0009404D /* TextFieldEffects in Frameworks */,
 				4CA7C7B92A9CBB6A000FA519 /* Kingfisher in Frameworks */,
 				4CA7C7B62A9CBB5E000FA519 /* SnapKit in Frameworks */,
 			);
@@ -90,6 +96,7 @@
 			children = (
 				4C1F17CF2A9E51CE00D40D95 /* ProfileViewController.swift */,
 				4C1F17D12A9E51D800D40D95 /* ProfileView.swift */,
+				4C376C322AA0BF4E0009404D /* profileTableViewCell.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -98,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				4C1F17D42A9E5E0E00D40D95 /* ProfileEditViewController.swift */,
+				4C376C2A2AA0AFD90009404D /* ProfileEditView.swift */,
 			);
 			path = ProfileEdit;
 			sourceTree = "<group>";
@@ -220,6 +228,7 @@
 				4CA7C7B52A9CBB5E000FA519 /* SnapKit */,
 				4CA7C7B82A9CBB6A000FA519 /* Kingfisher */,
 				4CA7C7BB2A9CBB76000FA519 /* Alamofire */,
+				4C376C302AA0B0FA0009404D /* TextFieldEffects */,
 			);
 			productName = TMDBCodeBase;
 			productReference = 4CA7C7932A9CB52B000FA519 /* TMDBCodeBase.app */;
@@ -253,6 +262,7 @@
 				4CA7C7B42A9CBB5E000FA519 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				4CA7C7B72A9CBB6A000FA519 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				4CA7C7BA2A9CBB76000FA519 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				4C376C2F2AA0B0FA0009404D /* XCRemoteSwiftPackageReference "TextFieldEffects" */,
 			);
 			productRefGroup = 4CA7C7942A9CB52B000FA519 /* Products */;
 			projectDirPath = "";
@@ -288,6 +298,7 @@
 				4CA7C7D42A9CC96F000FA519 /* Transition.swift in Sources */,
 				4CA7C7AF2A9CB6BC000FA519 /* BaseView.swift in Sources */,
 				4CA7C7D12A9CC932000FA519 /* ActorViewController.swift in Sources */,
+				4C376C2B2AA0AFD90009404D /* ProfileEditView.swift in Sources */,
 				4CA7C7C52A9CC1B8000FA519 /* EndPoint.swift in Sources */,
 				4CA7C82C2A9E31FD000FA519 /* BaseTableViewCell.swift in Sources */,
 				4CA7C7CE2A9CC282000FA519 /* Extension + URL.swift in Sources */,
@@ -295,6 +306,7 @@
 				4CA7C8232A9DD95A000FA519 /* CastData.swift in Sources */,
 				4CA7C81C2A9DCF69000FA519 /* ActorView.swift in Sources */,
 				4CA7C7C32A9CC176000FA519 /* APIKey.swift in Sources */,
+				4C376C332AA0BF4E0009404D /* profileTableViewCell.swift in Sources */,
 				4C1F17D02A9E51CE00D40D95 /* ProfileViewController.swift in Sources */,
 				4C1F17D22A9E51D800D40D95 /* ProfileView.swift in Sources */,
 				4CA7C7992A9CB52B000FA519 /* SceneDelegate.swift in Sources */,
@@ -514,6 +526,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		4C376C2F2AA0B0FA0009404D /* XCRemoteSwiftPackageReference "TextFieldEffects" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/raulriera/TextFieldEffects.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		4CA7C7B42A9CBB5E000FA519 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -541,6 +561,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		4C376C302AA0B0FA0009404D /* TextFieldEffects */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4C376C2F2AA0B0FA0009404D /* XCRemoteSwiftPackageReference "TextFieldEffects" */;
+			productName = TextFieldEffects;
+		};
 		4CA7C7B52A9CBB5E000FA519 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 4CA7C7B42A9CBB5E000FA519 /* XCRemoteSwiftPackageReference "SnapKit" */;
