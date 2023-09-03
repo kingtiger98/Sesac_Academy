@@ -8,7 +8,7 @@
 import UIKit
 
 
-enum Profile: CaseIterable{
+enum Profile: CaseIterable {
     
     case name
     case nickName
@@ -25,39 +25,84 @@ enum Profile: CaseIterable{
         }
     }
     
-    var value: String{
-        switch self {
-        case .name:
-            return "이름"
-        case .nickName:
-            return "사용자 이름"
-        case .gender:
-            return "성별 대명사"
+    var value: String {
+        get {
+            switch self {
+            case .name:
+                return "이름"
+            case .nickName:
+                return "사용자 이름"
+            case .gender:
+                return "성별 대명사"
+            }
+        }
+        set(newValue) {
+            switch self {
+            case .name:
+                
+                self = .name
+            case .nickName:
+                self = .nickName
+            case .gender:
+                self = .gender
+            }
         }
     }
-    
 }
-
-
-
 
 class ProfileViewController: BaseViewController{
     
     let mainView = ProfileView()
     
+    var profileValue: String = "새이름와야지" // 초기값 설정
+    
     override func loadView() {
         self.view = mainView
     }
     
+    deinit {
+        print(#function)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(#function)
+        
+        // 1_1. addObserve : notification 관찰 시작
+        NotificationCenter.default.addObserver(self, selector: #selector(profileValueNotificationObserve), name: .setProfileValue, object: nil)
         
         
-        NotificationCenter.default.addObserver(self, selector: #selector(profileValueNotificationObserve), name: NSNotification.Name("ProfileNewValue"), object: nil)
         
     }
     
-
+    override func viewWillAppear(_ animated: Bool) {
+        print("====", #function)
+        
+    }
+    
+    // notification으로 역전달 받은 값 활용하는 함수  여기가 안되는 중!!!!!!
+    @objc func profileValueNotificationObserve(notification: NSNotification){
+        print("값 쓰는 곳")
+        
+        if let value = notification.userInfo?["profileValue"] as? String {
+            // 프로필 데이터 업데이트
+            profileValue = value
+            
+            // 테이블뷰 리로드
+            mainView.profileTableView.reloadData()
+        }
+        
+    }
+    
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        print(#function)
+        // notification : Notification이 중복으로 실해되지 않게 뷰가 사라지면 Notification삭제
+        NotificationCenter.default.removeObserver(self, name: Notification.Name("setValue"), object: nil)
+    }
+    
+    
     
     override func setConfigure() {
         super.setConfigure()
@@ -66,7 +111,6 @@ class ProfileViewController: BaseViewController{
         mainView.profileTableView.delegate = self
         
         setNavigationItem()
-
     }
     
     override func setConstraints() {
@@ -75,12 +119,12 @@ class ProfileViewController: BaseViewController{
     
     func setNavigationItem() {
         navigationItem.title = "Profile"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "완료", style: .plain, target: self, action: #selector(doneButtonClicked))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "완료", style: .plain, target: self, action: #selector(popView))
         navigationItem.titleView?.tintColor = .black
         navigationItem.rightBarButtonItem?.tintColor = .black
     }
     
-    @objc func doneButtonClicked() {
+    @objc func popView(){
         navigationController?.popViewController(animated: true)
     }
     
@@ -102,8 +146,8 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource{
         }
         
         cell.firstLabel1.text = row.key
-        cell.firstLabel2.text = row.value
-
+        cell.firstLabel2.text = profileValue // row.value
+        
         return cell
     }
     
@@ -117,5 +161,7 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource{
         
     }
     
-    
 }
+
+
+

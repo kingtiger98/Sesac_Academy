@@ -13,6 +13,8 @@
 		4C376C2B2AA0AFD90009404D /* ProfileEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C376C2A2AA0AFD90009404D /* ProfileEditView.swift */; };
 		4C376C312AA0B0FA0009404D /* TextFieldEffects in Frameworks */ = {isa = PBXBuildFile; productRef = 4C376C302AA0B0FA0009404D /* TextFieldEffects */; };
 		4C376C332AA0BF4E0009404D /* profileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C376C322AA0BF4E0009404D /* profileTableViewCell.swift */; };
+		4C376C3C2AA310B30009404D /* Notification+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C376C3B2AA310B30009404D /* Notification+Extension.swift */; };
+		4C9373F62AA4406700B357C6 /* AllData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9373F52AA4406700B357C6 /* AllData.swift */; };
 		4CA7C7972A9CB52B000FA519 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA7C7962A9CB52B000FA519 /* AppDelegate.swift */; };
 		4CA7C7992A9CB52B000FA519 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA7C7982A9CB52B000FA519 /* SceneDelegate.swift */; };
 		4CA7C79B2A9CB52B000FA519 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA7C79A2A9CB52B000FA519 /* BaseViewController.swift */; };
@@ -48,6 +50,8 @@
 		4C1F17D42A9E5E0E00D40D95 /* ProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
 		4C376C2A2AA0AFD90009404D /* ProfileEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditView.swift; sourceTree = "<group>"; };
 		4C376C322AA0BF4E0009404D /* profileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileTableViewCell.swift; sourceTree = "<group>"; };
+		4C376C3B2AA310B30009404D /* Notification+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Extension.swift"; sourceTree = "<group>"; };
+		4C9373F52AA4406700B357C6 /* AllData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllData.swift; sourceTree = "<group>"; };
 		4CA7C7932A9CB52B000FA519 /* TMDBCodeBase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMDBCodeBase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CA7C7962A9CB52B000FA519 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CA7C7982A9CB52B000FA519 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +114,14 @@
 			path = ProfileEdit;
 			sourceTree = "<group>";
 		};
+		4C376C3A2AA3109A0009404D /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				4C376C3B2AA310B30009404D /* Notification+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		4CA7C78A2A9CB52B000FA519 = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +141,7 @@
 		4CA7C7952A9CB52B000FA519 /* TMDBCodeBase */ = {
 			isa = PBXGroup;
 			children = (
+				4C376C3A2AA3109A0009404D /* Extension */,
 				4CA7C7AB2A9CB5D3000FA519 /* Movie */,
 				4CA7C7CF2A9CC91E000FA519 /* Actor */,
 				4C1F17CE2A9E51B600D40D95 /* Profile */,
@@ -204,6 +217,7 @@
 				4CA7C8222A9DD95A000FA519 /* CastData.swift */,
 				4CA7C81E2A9DD850000FA519 /* MovieDetail.swift */,
 				4CA7C82F2A9E42B2000FA519 /* MovieActor.swift */,
+				4C9373F52AA4406700B357C6 /* AllData.swift */,
 			);
 			path = Struct;
 			sourceTree = "<group>";
@@ -299,6 +313,7 @@
 				4CA7C7AF2A9CB6BC000FA519 /* BaseView.swift in Sources */,
 				4CA7C7D12A9CC932000FA519 /* ActorViewController.swift in Sources */,
 				4C376C2B2AA0AFD90009404D /* ProfileEditView.swift in Sources */,
+				4C9373F62AA4406700B357C6 /* AllData.swift in Sources */,
 				4CA7C7C52A9CC1B8000FA519 /* EndPoint.swift in Sources */,
 				4CA7C82C2A9E31FD000FA519 /* BaseTableViewCell.swift in Sources */,
 				4CA7C7CE2A9CC282000FA519 /* Extension + URL.swift in Sources */,
@@ -308,6 +323,7 @@
 				4CA7C7C32A9CC176000FA519 /* APIKey.swift in Sources */,
 				4C376C332AA0BF4E0009404D /* profileTableViewCell.swift in Sources */,
 				4C1F17D02A9E51CE00D40D95 /* ProfileViewController.swift in Sources */,
+				4C376C3C2AA310B30009404D /* Notification+Extension.swift in Sources */,
 				4C1F17D22A9E51D800D40D95 /* ProfileView.swift in Sources */,
 				4CA7C7992A9CB52B000FA519 /* SceneDelegate.swift in Sources */,
 				4CA7C7AD2A9CB638000FA519 /* MovieViewController.swift in Sources */,

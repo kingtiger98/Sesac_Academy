@@ -10,25 +10,11 @@ import TextFieldEffects
 
 class ProfileEditView: BaseView{
     
-    // 프로
-    lazy var doneButton = {
-        let button = UIBarButtonItem(title: "완료", style: .plain, target: self, action: #selector(profileValueNotificationObserve))
-        button.tintColor = .black
-        return button
-    }()
-    
-    @objc func profileValueNotificationObserve(notification: NSNotification) {
-        
-    }
-    
-    
-    
+
     let editTextField = {
         let view = HoshiTextField()
         view.backgroundColor = .systemGray6
-//        view.font = .boldSystemFont(ofSize: 18)
         view.placeholderColor = .black
-//        view.placeholder = "이름"
         return view
     }()
     

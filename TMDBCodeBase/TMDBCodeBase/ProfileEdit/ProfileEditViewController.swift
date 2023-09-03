@@ -12,18 +12,36 @@ class ProfileEditViewController: BaseViewController{
     let mainView = ProfileEditView()
     
     var receviedContents = ""
-
+    
     override func loadView() {
         view = mainView
     }
     
     override func viewDidLoad() {
+        print(#function)
         super.viewDidLoad()
         setData()
         
-        NotificationCenter.default.post(name: <#T##NSNotification.Name#>, object: <#T##Any?#>, userInfo: <#T##[AnyHashable : Any]?#>)
+        // 2_1 : Notification을 통한 값 역 전달하기
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "완료", style: .plain, target: self, action: #selector(profileValueNotificationPost(notification:)))
         
     }
+    
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        print(#function)
+    }
+    
+    // 2_2 : post _ Notification 뿌리기
+    @objc func profileValueNotificationPost(notification: NSNotification) {
+        guard let text = mainView.editTextField.text else { return }
+        NotificationCenter.default.post(name: Notification.Name("setValue"), object: nil, userInfo: ["profileValue": text])
+        print(text)
+        
+        navigationController?.popViewController(animated: true)
+    }
+    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -42,7 +60,6 @@ class ProfileEditViewController: BaseViewController{
         super.setConstraints()
         
         
-        
     }
     
     func setData() {
@@ -51,3 +68,7 @@ class ProfileEditViewController: BaseViewController{
     }
     
 }
+
+
+
+        

@@ -16,16 +16,10 @@ class ProfileView: BaseView{
         return view
     }()
     
-    
-    
-    
+
     deinit {
         
-        
-        
     }
-    
-    
     
     override func setConfigure() {
         super.setConfigure()

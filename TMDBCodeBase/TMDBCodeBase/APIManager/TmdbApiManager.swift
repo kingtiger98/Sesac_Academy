@@ -19,7 +19,22 @@ class TmdbApiManager{
       "Authorization": APIKey.TMDBToken
     ]
     
-    
+    //
+    func callRequestAllData(type: EndPoint, completionHandler: @escaping (AllData) -> Void){
+        
+        let url = type.requestURL
+        
+        AF.request(url, method: .get, headers: headers).validate()
+            .responseDecodable(of: AllData.self) { response in
+                switch response.result {
+                case .success(let value):
+                    //print(value)
+                    completionHandler(value)
+                case .failure(let error):
+                    print(error)
+                }
+            }
+    }
     
     func callRequestMovieData(type: EndPoint, completionHandler: @escaping (MovieData) -> Void ){
         
