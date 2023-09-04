@@ -6,6 +6,11 @@
 //
 
 import UIKit
+import RealmSwift
+
+protocol PassDataDelegate{
+        func newData()
+}
 
 class BookCollectionViewController: UICollectionViewController {
         
@@ -14,8 +19,25 @@ class BookCollectionViewController: UICollectionViewController {
     
     let searchBar = UISearchBar()
     
+    
+    // 3. Realm Read ***
+    var tasks: Results<BookTable>!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        // Realm Read _ 실시간의 데이터가 반영되고 있음!
+        let realm = try! Realm()
+        
+        // byKeyPath기준 내림차순으로 정렬
+        tasks = realm.objects(BookTable.self).sorted(byKeyPath: "name", ascending: true)
+        
+        print(realm.configuration.fileURL)
+        print(tasks)
+        
+        
         
         
         // XIB로 컬렉션뷰셀 생성했으므로 Register 해준다. ***
@@ -29,35 +51,54 @@ class BookCollectionViewController: UICollectionViewController {
         configureSearchButton()
     }
     
+
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // Realm에서 데이터를 매번 가져올 필요없이 UI의 업데이트만 신경쓰면 됨!
+        collectionView.reloadData()
+    }
+    
     
     // 1. 섹션 안의 item 갯수 지정
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return searchMovieInfo.searchMovieList.count
+        //return searchMovieInfo.searchMovieList.count
+        return tasks.count
     }
     
     
     // 2. item 디자인 및 데이터 조작
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let row: Movie = searchMovieInfo.searchMovieList[indexPath.row]
+//        let row: Movie = searchMovieInfo.searchMovieList[indexPath.row]
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BookCollectionViewCell.identifier, for: indexPath) as? BookCollectionViewCell else {
             print("다운캐스팅 실패")
             return UICollectionViewCell()
         }
         
+        cell.movieNameLabel.textColor = .black
+        cell.movieNameLabel.font = .boldSystemFont(ofSize: 14)
+        cell.movieNameLabel.text = tasks[indexPath.row].name
+        
+        let url = URL(string:tasks[indexPath.row].image)
+        cell.movieImageView.kf.setImage(with: url)
+        
+        cell.movieRateLabel.textColor = .black
+        cell.movieRateLabel.text = tasks[indexPath.row].author
         // 셀 디자인 및 데이터 할당 함수
-        cell.configureCell(row: row)
+//        cell.configureCell(row: row)
         
         // 좋아요 토글 버튼 *** addTarget사용 ***
-        cell.likeButton.tag = indexPath.row
-        cell.likeButton.addTarget(self, action: #selector(likeButtonClicked), for: .touchUpInside)
-        
-        if searchMovieInfo.searchMovieList[indexPath.row].favorite == true {
-            cell.likeButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-        } else {
-            cell.likeButton.setImage(UIImage(systemName: "heart"), for: .normal)
-        }
+//        cell.likeButton.tag = indexPath.row
+//        cell.likeButton.addTarget(self, action: #selector(likeButtonClicked), for: .touchUpInside)
+//
+//        if searchMovieInfo.searchMovieList[indexPath.row].favorite == true {
+//            cell.likeButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+//        } else {
+//            cell.likeButton.setImage(UIImage(systemName: "heart"), for: .normal)
+//        }
         return cell
     }
     
@@ -69,27 +110,27 @@ class BookCollectionViewController: UICollectionViewController {
     
     // 메인 화면 -> 상세 화면
     // 코드로 화면전환( Show : Push_Pop )구현 + 다음 뷰로 데이터 전달
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        let row: Movie = searchMovieInfo.searchMovieList[indexPath.row]
-        
-        // 1. 스토리보드 위치 확인
-        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        // 2. 스토리보드 내의 전환 될 뷰 확인, 뷰의 요소들에 접근하기 위해 다운캐스팅
-        guard let viewController = storyBoard.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController else {
-            print("화면이동 다운캐스팅 실패")
-            return
-        }
-        
-        // dismiss버튼 안보이게!
-        viewController.disMissButtonHiddenBool = true
-        
-        // 3. Push
-        navigationController?.pushViewController(viewController, animated: true)
-        
-        // 데이터 전달
-        viewController.configureDetail(row: row)
-    }
+//    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//
+//        let row: Movie = searchMovieInfo.searchMovieList[indexPath.row]
+//
+//        // 1. 스토리보드 위치 확인
+//        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+//        // 2. 스토리보드 내의 전환 될 뷰 확인, 뷰의 요소들에 접근하기 위해 다운캐스팅
+//        guard let viewController = storyBoard.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController else {
+//            print("화면이동 다운캐스팅 실패")
+//            return
+//        }
+//
+//        // dismiss버튼 안보이게!
+//        viewController.disMissButtonHiddenBool = true
+//
+//        // 3. Push
+//        navigationController?.pushViewController(viewController, animated: true)
+//
+//        // 데이터 전달
+//        viewController.configureDetail(row: row)
+//    }
 
     // 메인 화면 -> 검색 화면
     // 코드로 화면전환( Show : Push_Pop )구현 + 다음 뷰로 데이터 전달
