@@ -66,7 +66,7 @@ class RealmDetailViewController: UIViewController{
                 guard let data = data else { return }
 
                 // 도큐먼트에서 이미지 삭제하기
-                // removeImageFromDocument(fileName: "hwang_\(data._id).jpg")
+                 removeImageFromDocument(fileName: "hwang_\(data._id).jpg")
         
                 try! realm.write {
                     realm.delete(data)
