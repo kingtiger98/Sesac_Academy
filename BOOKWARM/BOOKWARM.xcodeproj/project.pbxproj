@@ -29,6 +29,8 @@
 		4CAE9FFC2AA5E32D00783CC6 /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAE9FFB2AA5E32D00783CC6 /* RealmModel.swift */; };
 		4CAE9FFF2AA5E3F700783CC6 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 4CAE9FFE2AA5E3F700783CC6 /* Realm */; };
 		4CAEA0012AA5E3F700783CC6 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4CAEA0002AA5E3F700783CC6 /* RealmSwift */; };
+		4CAEA0072AA772DA00783CC6 /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAEA0062AA772DA00783CC6 /* FileManager+Extension.swift */; };
+		4CAEA0092AA778FB00783CC6 /* RealmDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAEA0082AA778FB00783CC6 /* RealmDetailViewController.swift */; };
 		4CD15F472A7A52FF006BCFB5 /* AroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD15F462A7A52FF006BCFB5 /* AroundViewController.swift */; };
 		4CD15F4C2A7A53D5006BCFB5 /* BestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD15F4A2A7A53D5006BCFB5 /* BestTableViewCell.swift */; };
 		4CD15F4D2A7A53D5006BCFB5 /* BestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CD15F4B2A7A53D5006BCFB5 /* BestTableViewCell.xib */; };
@@ -56,6 +58,8 @@
 		4CAE9FF42AA5C5BF00783CC6 /* StructKakao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructKakao.swift; sourceTree = "<group>"; };
 		4CAE9FF62AA5C93400783CC6 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		4CAE9FFB2AA5E32D00783CC6 /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
+		4CAEA0062AA772DA00783CC6 /* FileManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
+		4CAEA0082AA778FB00783CC6 /* RealmDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDetailViewController.swift; sourceTree = "<group>"; };
 		4CD15F462A7A52FF006BCFB5 /* AroundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AroundViewController.swift; sourceTree = "<group>"; };
 		4CD15F4A2A7A53D5006BCFB5 /* BestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestTableViewCell.swift; sourceTree = "<group>"; };
 		4CD15F4B2A7A53D5006BCFB5 /* BestTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BestTableViewCell.xib; sourceTree = "<group>"; };
@@ -107,6 +111,7 @@
 				4C6287472A779CBD00A6808E /* BookCollectionViewCell.xib */,
 				4C62874E2A77AB0D00A6808E /* SearchViewController.swift */,
 				4CAE9FF62AA5C93400783CC6 /* SearchTableViewCell.swift */,
+				4CAEA0082AA778FB00783CC6 /* RealmDetailViewController.swift */,
 				4C6287392A77997C00A6808E /* Assets.xcassets */,
 				4C62874C2A779F9700A6808E /* Movie.swift */,
 				4C62874A2A779F7500A6808E /* MovieInfo.swift */,
@@ -120,6 +125,7 @@
 				4CAE9FEC2AA5C4AB00783CC6 /* kakaoAPIManager.swift */,
 				4CAE9FF42AA5C5BF00783CC6 /* StructKakao.swift */,
 				4CAE9FFB2AA5E32D00783CC6 /* RealmModel.swift */,
+				4CAEA0062AA772DA00783CC6 /* FileManager+Extension.swift */,
 				4C62873E2A77997C00A6808E /* Info.plist */,
 			);
 			path = BOOKWARM;
@@ -213,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C6287312A77997C00A6808E /* AppDelegate.swift in Sources */,
+				4CAEA0092AA778FB00783CC6 /* RealmDetailViewController.swift in Sources */,
 				4CAE9FED2AA5C4AB00783CC6 /* kakaoAPIManager.swift in Sources */,
 				4C62874F2A77AB0D00A6808E /* SearchViewController.swift in Sources */,
 				4CD15F502A7A9724006BCFB5 /* RecentCollectionViewCell.swift in Sources */,
@@ -223,6 +230,7 @@
 				4C6287332A77997C00A6808E /* SceneDelegate.swift in Sources */,
 				4CAE9FF72AA5C93400783CC6 /* SearchTableViewCell.swift in Sources */,
 				4C6287452A779C7C00A6808E /* BookCollectionViewController.swift in Sources */,
+				4CAEA0072AA772DA00783CC6 /* FileManager+Extension.swift in Sources */,
 				4CAE9FF52AA5C5BF00783CC6 /* StructKakao.swift in Sources */,
 				4CD15F472A7A52FF006BCFB5 /* AroundViewController.swift in Sources */,
 				4CAE9FFC2AA5E32D00783CC6 /* RealmModel.swift in Sources */,

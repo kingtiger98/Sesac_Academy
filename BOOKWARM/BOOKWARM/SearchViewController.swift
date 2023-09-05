@@ -12,10 +12,13 @@ import RealmSwift
 
 class SearchViewController: UIViewController {
     
+    
     var bookinfo = Welcome(documents: [])
     
     let searchBar = UISearchBar()
 
+    
+    
     
     let kakaoTableView = {
         let view = UITableView()
@@ -89,6 +92,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource{
         return cell
     }
     
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         // a. realm의 위치 탐색
@@ -99,7 +103,9 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource{
             name: bookinfo.documents[indexPath.row].title,
             author: bookinfo.documents[indexPath.row].authors[0],
             price: String(describing: bookinfo.documents[indexPath.row].price),
-            image: bookinfo.documents[indexPath.row].thumbnail)
+            image: bookinfo.documents[indexPath.row].thumbnail,
+            memo: "메모를 입력해주세요"
+        )
         
         // c. realm에 task 추가
         // transaction 단위로 작업 수행*
@@ -107,6 +113,22 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource{
             realm.add(task)
             print("Realm Add Succeed")
         }
+        
+        // d. Document 파일에 이미지 저장***
+        let image = bookinfo.documents[indexPath.row].thumbnail
+        DispatchQueue.global().async {
+            if let url = URL(string: image), let data = try? Data(contentsOf: url ) {
+                
+                if data != nil {
+                    print("===== Document 파일에 이미지 저장")
+                    DispatchQueue.main.async{
+                        self.saveImageToDoDocument(fileName: "hwang_\(task._id).jpg", image: UIImage(data: data)!)
+                    }
+                }
+                
+            }
+        }
+
         
         navigationController?.popViewController(animated: true)
     }

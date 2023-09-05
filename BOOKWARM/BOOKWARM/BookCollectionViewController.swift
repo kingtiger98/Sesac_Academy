@@ -19,6 +19,8 @@ class BookCollectionViewController: UICollectionViewController {
     
     let searchBar = UISearchBar()
     
+    // Realm Read _ 실시간의 데이터가 반영되고 있음!
+    let realm = try! Realm()
     
     // 3. Realm Read ***
     var tasks: Results<BookTable>!
@@ -28,8 +30,7 @@ class BookCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
         
         
-        // Realm Read _ 실시간의 데이터가 반영되고 있음!
-        let realm = try! Realm()
+
         
         // byKeyPath기준 내림차순으로 정렬
         tasks = realm.objects(BookTable.self).sorted(byKeyPath: "name", ascending: true)
@@ -108,6 +109,17 @@ class BookCollectionViewController: UICollectionViewController {
         collectionView.reloadData()
     }
     
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let vc = RealmDetailViewController()
+        
+        // 값 전달!
+        vc.data = tasks[indexPath.row]
+        
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
     // 메인 화면 -> 상세 화면
     // 코드로 화면전환( Show : Push_Pop )구현 + 다음 뷰로 데이터 전달
 //    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -183,7 +195,7 @@ class BookCollectionViewController: UICollectionViewController {
 extension BookCollectionViewController: UISearchBarDelegate {
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-
+        
         searchMovieInfo.searchMovieList.removeAll()
 
         for movie in 0...movieInfo.movie.count - 1{
@@ -194,6 +206,7 @@ extension BookCollectionViewController: UISearchBarDelegate {
         }
         collectionView.reloadData()
     }
+    
 
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchMovieInfo.searchMovieList.removeAll()
@@ -201,6 +214,7 @@ extension BookCollectionViewController: UISearchBarDelegate {
         collectionView.reloadData()
     }
 
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
         searchMovieInfo.searchMovieList.removeAll()
