@@ -14,6 +14,8 @@ protocol PassDataDelegate{
 
 class BookCollectionViewController: UICollectionViewController {
         
+    let repository = BookTableRepository()
+    
     var movieInfo = MovieInfo()
     var searchMovieInfo = MovieInfo()
     
@@ -29,17 +31,14 @@ class BookCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        // 스키마 버전 체크
+        repository.checkSchemaVersion()
 
-        
         // byKeyPath기준 내림차순으로 정렬
-        tasks = realm.objects(BookTable.self).sorted(byKeyPath: "name", ascending: true)
+        tasks = realm.objects(BookTable.self).sorted(byKeyPath: "bookName", ascending: true)
         
         print(realm.configuration.fileURL)
         print(tasks)
-        
-        
-        
         
         // XIB로 컬렉션뷰셀 생성했으므로 Register 해준다. ***
         let nib = UINib(nibName: "BookCollectionViewCell", bundle: nil)
@@ -81,7 +80,7 @@ class BookCollectionViewController: UICollectionViewController {
         
         cell.movieNameLabel.textColor = .black
         cell.movieNameLabel.font = .boldSystemFont(ofSize: 14)
-        cell.movieNameLabel.text = tasks[indexPath.row].name
+        cell.movieNameLabel.text = tasks[indexPath.row].bookName
         
         let url = URL(string:tasks[indexPath.row].image)
         cell.movieImageView.kf.setImage(with: url)

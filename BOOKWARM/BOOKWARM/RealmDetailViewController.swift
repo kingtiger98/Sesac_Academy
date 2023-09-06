@@ -46,7 +46,7 @@ class RealmDetailViewController: UIViewController{
         
         guard let data = data else { return }
         
-        let item = BookTable(value: ["_id": data._id,"name": data.name,"author": data.author,"price": data.price, "image": data.image ,"memo": memoTextView.text!])
+        let item = BookTable(value: ["_id": data._id,"name": data.bookName,"author": data.author,"price": data.price, "image": data.image ,"memo": memoTextView.text!])
         
         do {
             try realm.write {

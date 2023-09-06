@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C0AA2BF2AA881AF005AA25E /* BookTableRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0AA2BE2AA881AF005AA25E /* BookTableRepository.swift */; };
 		4C6287312A77997C00A6808E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6287302A77997C00A6808E /* AppDelegate.swift */; };
 		4C6287332A77997C00A6808E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6287322A77997C00A6808E /* SceneDelegate.swift */; };
 		4C6287382A77997C00A6808E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C6287362A77997C00A6808E /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C0AA2BE2AA881AF005AA25E /* BookTableRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableRepository.swift; sourceTree = "<group>"; };
 		4C62872D2A77997C00A6808E /* BOOKWARM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BOOKWARM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C6287302A77997C00A6808E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C6287322A77997C00A6808E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				4CAE9FF42AA5C5BF00783CC6 /* StructKakao.swift */,
 				4CAE9FFB2AA5E32D00783CC6 /* RealmModel.swift */,
 				4CAEA0062AA772DA00783CC6 /* FileManager+Extension.swift */,
+				4C0AA2BE2AA881AF005AA25E /* BookTableRepository.swift */,
 				4C62873E2A77997C00A6808E /* Info.plist */,
 			);
 			path = BOOKWARM;
@@ -234,6 +237,7 @@
 				4CAE9FF52AA5C5BF00783CC6 /* StructKakao.swift in Sources */,
 				4CD15F472A7A52FF006BCFB5 /* AroundViewController.swift in Sources */,
 				4CAE9FFC2AA5E32D00783CC6 /* RealmModel.swift in Sources */,
+				4C0AA2BF2AA881AF005AA25E /* BookTableRepository.swift in Sources */,
 				4CAE9FEB2AA5C11900783CC6 /* ApiKey.swift in Sources */,
 				4C6287512A77AB1800A6808E /* DetailViewController.swift in Sources */,
 			);

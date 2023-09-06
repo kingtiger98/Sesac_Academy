@@ -100,7 +100,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource{
         
         // b. 테이블에 값 추가할 task 상수 생성
         let task = BookTable(
-            name: bookinfo.documents[indexPath.row].title,
+            bookName: bookinfo.documents[indexPath.row].title,
             author: bookinfo.documents[indexPath.row].authors[0],
             price: String(describing: bookinfo.documents[indexPath.row].price),
             image: bookinfo.documents[indexPath.row].thumbnail,
