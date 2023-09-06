@@ -46,7 +46,9 @@ class RealmDetailViewController: UIViewController{
         
         guard let data = data else { return }
         // name, author, price, image
-        let item = BookTable(value: ["_id": data._id,"name": data.name,"author": data.author,"price": data.image, "image": data.price ,"memo": memoTextView.text!])
+        let item = BookTable(value: ["_id": data._id,"name": data.name,"author": data.author,"price": data.price, "image": data.image ,"memo": memoTextView.text!])
+        
+        // realm.create(DiaryTable.self, value: ["_id": data._id, "diaryTitle":  titleTextField.text!, "diaryContents": contentTextView.text!], update: .modified)
         
         do {
             try realm.write {

@@ -114,7 +114,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource{
             print("Realm Add Succeed")
         }
         
-        // d. Document 파일에 이미지 저장***
+        // d. Document 파일에 이미지 저장*** 존나 중요함
         let image = bookinfo.documents[indexPath.row].thumbnail
         DispatchQueue.global().async {
             if let url = URL(string: image), let data = try? Data(contentsOf: url ) {
