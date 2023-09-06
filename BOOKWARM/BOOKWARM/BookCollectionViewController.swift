@@ -35,10 +35,13 @@ class BookCollectionViewController: UICollectionViewController {
         repository.checkSchemaVersion()
 
         // byKeyPath기준 내림차순으로 정렬
-        tasks = realm.objects(BookTable.self).sorted(byKeyPath: "bookName", ascending: true)
+        // tasks = realm.objects(BookTable.self).sorted(byKeyPath: "bookName", ascending: true)
+        tasks = repository.fetch()
         
-        print(realm.configuration.fileURL)
-        print(tasks)
+        // print(realm.configuration.fileURL)
+        repository.fileURL()
+        
+        // print(tasks)
         
         // XIB로 컬렉션뷰셀 생성했으므로 Register 해준다. ***
         let nib = UINib(nibName: "BookCollectionViewCell", bundle: nil)

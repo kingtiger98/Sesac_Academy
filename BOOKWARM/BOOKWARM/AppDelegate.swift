@@ -31,8 +31,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     guard let new = newObject else { return }
                     guard let old = oldObject else { return }
                     
-                    
                     new["bookInfo"] = "책 제목 : \(old["bookName"]), 글쓴이 : \(old["author"])"
+                    
                 }
             }
             

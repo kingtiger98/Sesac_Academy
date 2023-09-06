@@ -12,14 +12,12 @@ import RealmSwift
 
 class SearchViewController: UIViewController {
     
+    let repository = BookTableRepository()
     
     var bookinfo = Welcome(documents: [])
     
     let searchBar = UISearchBar()
 
-    
-    
-    
     let kakaoTableView = {
         let view = UITableView()
         view.register(SearchTableViewCell.self, forCellReuseIdentifier: "SearchTableViewCell")
@@ -29,13 +27,10 @@ class SearchViewController: UIViewController {
         return view
     }()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "완료", style: .plain, target: self, action: #selector(bookSearchButtonClicked))
-        
-
-        
+    
         setConfigure()
         setConstraints()
         
@@ -96,7 +91,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         // a. realm의 위치 탐색
-        let realm = try! Realm()
+        // let realm = try! Realm()
         
         // b. 테이블에 값 추가할 task 상수 생성
         let task = BookTable(
@@ -109,13 +104,16 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource{
         
         // c. realm에 task 추가
         // transaction 단위로 작업 수행*
-        try! realm.write{
-            realm.add(task)
-            print("Realm Add Succeed")
-        }
+//        try! realm.write{
+//            realm.add(task)
+//            print("Realm Add Succeed")
+//        }
+        repository.createItem(task)
+        
         
         // d. Document 파일에 이미지 저장*** 존나 중요함
         let image = bookinfo.documents[indexPath.row].thumbnail
+        
         DispatchQueue.global().async {
             if let url = URL(string: image), let data = try? Data(contentsOf: url ) {
                 
@@ -128,7 +126,6 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource{
                 
             }
         }
-
         
         navigationController?.popViewController(animated: true)
     }
