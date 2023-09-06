@@ -45,14 +45,16 @@ class RealmDetailViewController: UIViewController{
     @objc func editButtonClicked(){
         
         guard let data = data else { return }
-        // name, author, price, image
-        let item = BookTable(value: ["_id": data._id,"name": data.name,"author": data.author,"price": data.price, "image": data.image ,"memo": memoTextView.text!])
         
-        // realm.create(DiaryTable.self, value: ["_id": data._id, "diaryTitle":  titleTextField.text!, "diaryContents": contentTextView.text!], update: .modified)
+        let item = BookTable(value: ["_id": data._id,"name": data.name,"author": data.author,"price": data.price, "image": data.image ,"memo": memoTextView.text!])
         
         do {
             try realm.write {
-                realm.add(item, update: .modified)
+                // 1. 특정 레코드에 있는 모든 값을 수정 할 때 사용합니다.
+                // realm.add(item, update: .modified)
+                
+                // 2. 특정 컬럼 값만 수정 할 때 사용합니다.
+                realm.create(BookTable.self, value: ["_id": data._id, "memo":  memoTextView.text!], update: .modified)
             }
             
         } catch {
