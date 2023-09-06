@@ -49,14 +49,14 @@ final class SearchTableViewCell: UITableViewCell{
         
     }
     
-    func setConfigure(){
+    private  func setConfigure(){
         contentView.addSubview(bookImage)
         contentView.addSubview(bookTitleLabel)
         contentView.addSubview(bookAuthorLabel)
         contentView.addSubview(bookPriceLabel)
     }
     
-    func setConstraints(){
+    private func setConstraints(){
         
         bookImage.snp.makeConstraints { make in
             make.centerY.equalToSuperview()

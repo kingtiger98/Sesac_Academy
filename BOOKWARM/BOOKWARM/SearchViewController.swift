@@ -12,13 +12,14 @@ import RealmSwift
 
 final class SearchViewController: UIViewController {
     
-    let repository = BookTableRepository()
+    private let repository = BookTableRepository()
     
-    var bookinfo = Welcome(documents: [])
+    private var bookinfo = Welcome(documents: [])
     
-    let searchBar = UISearchBar()
+    private let searchBar = UISearchBar()
 
-    let kakaoTableView = {
+    private let kakaoTableView = {
+        
         let view = UITableView()
         view.register(SearchTableViewCell.self, forCellReuseIdentifier: "SearchTableViewCell")
         view.backgroundColor = .systemGray6
@@ -36,7 +37,7 @@ final class SearchViewController: UIViewController {
         
     }
     
-    @objc func bookSearchButtonClicked(){
+    @objc private func bookSearchButtonClicked(){
         kakaoAPIManager.shared.callKakaoRequset(query: searchBar.text!) { data in
             print(data)
             self.bookinfo = data
@@ -44,7 +45,7 @@ final class SearchViewController: UIViewController {
         }
     }
     
-    func setConfigure() {
+    private func setConfigure() {
         
         searchBar.delegate = self
         searchBar.placeholder = "도서를 검색해보세요."
@@ -57,7 +58,7 @@ final class SearchViewController: UIViewController {
         view.addSubview(kakaoTableView)
     }
     
-    func setConstraints() {
+    private func setConstraints() {
         
         kakaoTableView.snp.makeConstraints { make in
             make.edges.equalTo(view.safeAreaLayoutGuide)

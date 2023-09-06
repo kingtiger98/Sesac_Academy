@@ -15,7 +15,7 @@ final class RealmDetailViewController: UIViewController{
     
     // let realm = try! Realm()
     
-    let repository = BookTableRepository()
+    private let repository = BookTableRepository()
     
     let memoTextView = {
         let view = UITextView()
@@ -44,7 +44,7 @@ final class RealmDetailViewController: UIViewController{
         
     }
     
-    @objc func editButtonClicked(){
+    @objc private func editButtonClicked(){
         
         guard let data = data else { return }
         
@@ -69,7 +69,7 @@ final class RealmDetailViewController: UIViewController{
     }
     
     
-    @objc func deleteButtonClicked(){
+    @objc private func deleteButtonClicked(){
         //Realm Delete ***
         guard let data = data else { return }
         
