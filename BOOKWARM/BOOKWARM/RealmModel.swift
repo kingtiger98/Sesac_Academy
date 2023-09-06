@@ -8,7 +8,7 @@
 import UIKit
 import RealmSwift
 
-class BookTable: Object { 
+final class BookTable: Object { 
     
     @Persisted(primaryKey: true) var _id: ObjectId
     @Persisted var bookName: String // 스키마 버전 3 : name -> bookName으로 column이름 변경

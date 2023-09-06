@@ -8,7 +8,7 @@
 import UIKit
 import Alamofire
 
-class kakaoAPIManager{
+final class kakaoAPIManager{
     
     static let shared = kakaoAPIManager()
     

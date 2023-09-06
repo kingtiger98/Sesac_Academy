@@ -12,7 +12,7 @@ protocol PassDataDelegate{
         func newData()
 }
 
-class BookCollectionViewController: UICollectionViewController {
+final class BookCollectionViewController: UICollectionViewController {
         
     let repository = BookTableRepository()
     

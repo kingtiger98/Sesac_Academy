@@ -8,7 +8,7 @@
 import UIKit
 import RealmSwift
 
-class BookTableRepository{
+final class BookTableRepository{
     
     private let realm = try! Realm()
     

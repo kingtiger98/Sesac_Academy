@@ -10,7 +10,7 @@ import SnapKit
 import Kingfisher
 import RealmSwift
 
-class SearchViewController: UIViewController {
+final class SearchViewController: UIViewController {
     
     let repository = BookTableRepository()
     

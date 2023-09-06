@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import RealmSwift
 
-class RealmDetailViewController: UIViewController{
+final class RealmDetailViewController: UIViewController{
     
     var data: BookTable?
     

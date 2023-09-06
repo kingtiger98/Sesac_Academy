@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AroundViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource {
+final class AroundViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource {
     
     let bestmovieinfo = MovieInfo()
     

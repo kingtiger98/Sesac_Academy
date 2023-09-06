@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BestTableViewCell: UITableViewCell {
+final class BestTableViewCell: UITableViewCell {
 
     static let identifier: String = "BestTableViewCell"
     
