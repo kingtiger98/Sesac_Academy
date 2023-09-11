@@ -38,6 +38,7 @@ class APIService {
             } catch {
                 print(error)
             }
+            
         }.resume()
         
     }

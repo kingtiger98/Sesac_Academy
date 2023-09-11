@@ -23,7 +23,6 @@ final class BookTable: Object {
     // 스키마 버전 4
     @Persisted var bookInfo: String
     
-    
     convenience init(bookName: String, author: String, price: String, image: String, memo: String) {
         self.init()
         self.bookName = bookName

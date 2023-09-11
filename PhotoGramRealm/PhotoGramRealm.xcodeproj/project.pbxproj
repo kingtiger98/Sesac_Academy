@@ -28,9 +28,16 @@
 		04BAEB342AA550D2005A3A69 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BAEB332AA550D2005A3A69 /* APIService.swift */; };
 		04BAEB362AA550E9005A3A69 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BAEB352AA550E9005A3A69 /* Photo.swift */; };
 		04BAEB382AA55290005A3A69 /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BAEB372AA55290005A3A69 /* SearchCollectionViewCell.swift */; };
+		4C0AA2BD2AA80018005AA25E /* DiaryTableRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0AA2BC2AA80018005AA25E /* DiaryTableRepository.swift */; };
+		4C6CC7BA2AA954D500E37A4B /* BackupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6CC7B92AA954D500E37A4B /* BackupViewController.swift */; };
+		4C6CC7BD2AA95BB600E37A4B /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = 4C6CC7BC2AA95BB600E37A4B /* Zip */; };
+		4C6CC7C02AAAA09400E37A4B /* ToDoTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6CC7BF2AAAA09400E37A4B /* ToDoTable.swift */; };
+		4C6CC7C22AAAA36A00E37A4B /* ToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6CC7C12AAAA36A00E37A4B /* ToDoViewController.swift */; };
 		4C9373FF2AA5650700B357C6 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 4C9373FE2AA5650700B357C6 /* Realm */; };
 		4C9374012AA5650700B357C6 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4C9374002AA5650700B357C6 /* RealmSwift */; };
 		4C9374032AA56A6600B357C6 /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9374022AA56A6600B357C6 /* RealmModel.swift */; };
+		4CAEA0032AA6CB1E00783CC6 /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAEA0022AA6CB1E00783CC6 /* FileManager+Extension.swift */; };
+		4CAEA0052AA6F25300783CC6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAEA0042AA6F25300783CC6 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,7 +63,13 @@
 		04BAEB332AA550D2005A3A69 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		04BAEB352AA550E9005A3A69 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		04BAEB372AA55290005A3A69 /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
+		4C0AA2BC2AA80018005AA25E /* DiaryTableRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTableRepository.swift; sourceTree = "<group>"; };
+		4C6CC7B92AA954D500E37A4B /* BackupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupViewController.swift; sourceTree = "<group>"; };
+		4C6CC7BF2AAAA09400E37A4B /* ToDoTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTable.swift; sourceTree = "<group>"; };
+		4C6CC7C12AAAA36A00E37A4B /* ToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoViewController.swift; sourceTree = "<group>"; };
 		4C9374022AA56A6600B357C6 /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
+		4CAEA0022AA6CB1E00783CC6 /* FileManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
+		4CAEA0042AA6F25300783CC6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +79,7 @@
 			files = (
 				4C9374012AA5650700B357C6 /* RealmSwift in Frameworks */,
 				4C9373FF2AA5650700B357C6 /* Realm in Frameworks */,
+				4C6CC7BD2AA95BB600E37A4B /* Zip in Frameworks */,
 				04BAEB2A2AA4C1D1005A3A69 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -92,6 +106,7 @@
 		04BAEAF72AA4BF3F005A3A69 /* PhotoGramRealm */ = {
 			isa = PBXGroup;
 			children = (
+				4C6CC7BE2AAAA07B00E37A4B /* ToDo */,
 				04BAEB322AA550CC005A3A69 /* Network */,
 				04BAEB232AA4C0DA005A3A69 /* Utility */,
 				04BAEB1A2AA4C04F005A3A69 /* Base */,
@@ -113,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				4C9374022AA56A6600B357C6 /* RealmModel.swift */,
+				4C0AA2BC2AA80018005AA25E /* DiaryTableRepository.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -120,6 +136,7 @@
 		04BAEB0D2AA4BF52005A3A69 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				4C6CC7B82AA954BC00E37A4B /* Backup */,
 				04BAEB2F2AA550A1005A3A69 /* Search */,
 				04BAEB0E2AA4BF5A005A3A69 /* Home */,
 				04BAEB102AA4BF63005A3A69 /* Add */,
@@ -139,6 +156,7 @@
 		04BAEB0F2AA4BF5F005A3A69 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				4CAEA0042AA6F25300783CC6 /* DetailViewController.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -185,6 +203,7 @@
 			children = (
 				04BAEB242AA4C0DF005A3A69 /* Constants.swift */,
 				04BAEB262AA4C106005A3A69 /* Color.swift */,
+				4CAEA0022AA6CB1E00783CC6 /* FileManager+Extension.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -204,6 +223,23 @@
 				04BAEB352AA550E9005A3A69 /* Photo.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		4C6CC7B82AA954BC00E37A4B /* Backup */ = {
+			isa = PBXGroup;
+			children = (
+				4C6CC7B92AA954D500E37A4B /* BackupViewController.swift */,
+			);
+			path = Backup;
+			sourceTree = "<group>";
+		};
+		4C6CC7BE2AAAA07B00E37A4B /* ToDo */ = {
+			isa = PBXGroup;
+			children = (
+				4C6CC7BF2AAAA09400E37A4B /* ToDoTable.swift */,
+				4C6CC7C12AAAA36A00E37A4B /* ToDoViewController.swift */,
+			);
+			path = ToDo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,6 +262,7 @@
 				04BAEB292AA4C1D1005A3A69 /* SnapKit */,
 				4C9373FE2AA5650700B357C6 /* Realm */,
 				4C9374002AA5650700B357C6 /* RealmSwift */,
+				4C6CC7BC2AA95BB600E37A4B /* Zip */,
 			);
 			productName = PhotoGramRealm;
 			productReference = 04BAEAF52AA4BF3F005A3A69 /* PhotoGramRealm.app */;
@@ -258,6 +295,7 @@
 			packageReferences = (
 				04BAEB282AA4C1D1005A3A69 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				4C9373FD2AA5650700B357C6 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				4C6CC7BB2AA95BB600E37A4B /* XCRemoteSwiftPackageReference "Zip" */,
 			);
 			productRefGroup = 04BAEAF62AA4BF3F005A3A69 /* Products */;
 			projectDirPath = "";
@@ -286,19 +324,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				04BAEB312AA550A7005A3A69 /* SearchViewController.swift in Sources */,
+				4CAEA0032AA6CB1E00783CC6 /* FileManager+Extension.swift in Sources */,
 				04BAEB1E2AA4C090005A3A69 /* BaseTableViewCell.swift in Sources */,
 				4C9374032AA56A6600B357C6 /* RealmModel.swift in Sources */,
 				04BAEB252AA4C0DF005A3A69 /* Constants.swift in Sources */,
 				04BAEAFD2AA4BF3F005A3A69 /* ViewController.swift in Sources */,
+				4C6CC7BA2AA954D500E37A4B /* BackupViewController.swift in Sources */,
+				4CAEA0052AA6F25300783CC6 /* DetailViewController.swift in Sources */,
+				4C6CC7C02AAAA09400E37A4B /* ToDoTable.swift in Sources */,
 				04BAEB202AA4C0A3005A3A69 /* BaseCollectionViewCell.swift in Sources */,
 				04BAEB162AA4BFD0005A3A69 /* PhotoListTableViewCell.swift in Sources */,
 				04BAEB342AA550D2005A3A69 /* APIService.swift in Sources */,
 				04BAEB272AA4C106005A3A69 /* Color.swift in Sources */,
 				04BAEB382AA55290005A3A69 /* SearchCollectionViewCell.swift in Sources */,
 				04BAEAF92AA4BF3F005A3A69 /* AppDelegate.swift in Sources */,
+				4C6CC7C22AAAA36A00E37A4B /* ToDoViewController.swift in Sources */,
 				04BAEB222AA4C0BB005A3A69 /* BaseViewController.swift in Sources */,
 				04BAEB362AA550E9005A3A69 /* Photo.swift in Sources */,
 				04BAEB192AA4BFFB005A3A69 /* PhotoImageView.swift in Sources */,
+				4C0AA2BD2AA80018005AA25E /* DiaryTableRepository.swift in Sources */,
 				04BAEAFB2AA4BF3F005A3A69 /* SceneDelegate.swift in Sources */,
 				04BAEB132AA4BF8C005A3A69 /* HomeViewController.swift in Sources */,
 				04BAEB2E2AA4CA1D005A3A69 /* WriteTextField.swift in Sources */,
@@ -525,6 +569,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		4C6CC7BB2AA95BB600E37A4B /* XCRemoteSwiftPackageReference "Zip" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marmelroy/Zip.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		4C9373FD2AA5650700B357C6 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
@@ -540,6 +592,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 04BAEB282AA4C1D1005A3A69 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		4C6CC7BC2AA95BB600E37A4B /* Zip */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4C6CC7BB2AA95BB600E37A4B /* XCRemoteSwiftPackageReference "Zip" */;
+			productName = Zip;
 		};
 		4C9373FE2AA5650700B357C6 /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;

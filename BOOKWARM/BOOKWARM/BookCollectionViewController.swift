@@ -104,6 +104,8 @@ final class BookCollectionViewController: UICollectionViewController {
 //        }
         return cell
     }
+     
+    
     
     // 좋아요 토글 버튼 ***
     @objc func likeButtonClicked(_ sender: UIButton) {
@@ -209,14 +211,6 @@ extension BookCollectionViewController: UISearchBarDelegate {
         collectionView.reloadData()
     }
     
-
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        searchMovieInfo.searchMovieList.removeAll()
-        searchBar.text = ""
-        collectionView.reloadData()
-    }
-
-    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
         searchMovieInfo.searchMovieList.removeAll()
@@ -229,6 +223,15 @@ extension BookCollectionViewController: UISearchBarDelegate {
         }
         collectionView.reloadData()
     }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchMovieInfo.searchMovieList.removeAll()
+        searchBar.text = ""
+        collectionView.reloadData()
+    }
+
+    
+
     
     
 }

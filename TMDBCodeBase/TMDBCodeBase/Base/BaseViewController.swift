@@ -45,5 +45,12 @@ class BaseViewController: UIViewController {
         }
     }
     
+    func callURLSessionMovieData(completionHandler: @escaping (MovieData) -> Void){
+        TmdbApiManager.shared.UrlSessionMovieData { data in
+            completionHandler(data!)
+        }
+    }
+    
+    
 }
 

@@ -21,9 +21,10 @@ class MovieViewController: BaseViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        callURLSessionMovieData { data in
+            print("===",data)
+        }
     }
-    
     
     override func setConfigure() {
         super.setConfigure()
@@ -38,7 +39,6 @@ class MovieViewController: BaseViewController{
         
         //**
         callRequestAllData { data in
-            print(data)
             self.allinfo = data
             self.mainView.MovieCollectionView.reloadData()
         }
@@ -60,7 +60,7 @@ class MovieViewController: BaseViewController{
         navigationItem.title = "Movies"
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person.fill"), style: .plain, target: self, action: #selector(profileButtonClicked))
         navigationItem.titleView?.tintColor = .black
-        navigationItem.rightBarButtonItem?.tintColor = .black
+        //navigationItem.rightBarButtonItem?.tintColor = .black
     }
     
     @objc func profileButtonClicked() {
@@ -88,15 +88,13 @@ extension MovieViewController: UICollectionViewDelegate, UICollectionViewDataSou
         
         if info.mediaType.rawValue == "tv" {
             item.setTypeConfiguer(type: "TV SERIES", color: UIColor.magenta.cgColor)
-        } else {
+        } else if info.mediaType.rawValue == "movie" {
             item.setTypeConfiguer(type: "MOVIE", color: UIColor.purple.cgColor)
         }
         
         return item
         
     }
-    
-    
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
                 

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "2A0A3876-3A83-49FC-83F6-CB660FA7AB77"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "ADB17327-7282-4729-A502-D0D529E3936B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PracticeAAPP/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
+            landmarkName = "saveButtonNotificationObserver(notification:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "ADB17327-7282-4729-A502-D0D529E3936B - 36e9dadef8491464"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PracticeAAPP.ViewController.saveButtonNotificationObserver(notification: __C.NSNotification) -&gt; ()"
+                  moduleName = "PracticeAAPP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kingha/Desktop/Sesac_Academy/PracticeAAPP/PracticeAAPP/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "123"
+                  endingLineNumber = "123"
+                  offsetFromSymbolStart = "80">
+               </Location>
+               <Location
+                  uuid = "ADB17327-7282-4729-A502-D0D529E3936B - 36e9dadef849142a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PracticeAAPP.ViewController.saveButtonNotificationObserver(notification: __C.NSNotification) -&gt; ()"
+                  moduleName = "PracticeAAPP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kingha/Desktop/Sesac_Academy/PracticeAAPP/PracticeAAPP/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "121"
+                  endingLineNumber = "121"
+                  offsetFromSymbolStart = "80">
+               </Location>
+               <Location
+                  uuid = "ADB17327-7282-4729-A502-D0D529E3936B - 36e9dadef849142a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PracticeAAPP.ViewController.saveButtonNotificationObserver(notification: __C.NSNotification) -&gt; ()"
+                  moduleName = "PracticeAAPP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kingha/Desktop/Sesac_Academy/PracticeAAPP/PracticeAAPP/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "121"
+                  endingLineNumber = "121"
+                  offsetFromSymbolStart = "552">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

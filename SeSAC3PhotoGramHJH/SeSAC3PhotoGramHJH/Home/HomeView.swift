@@ -11,14 +11,15 @@ class HomeView: BaseView{
     
     // weak*** : deinit{} 이 실행되게 함 왜지?? _ 강한 순환참조가 걸려있어서 그래~
     // ㄴ weak 키워드는 클래스에서만 사용 됨
+    // 2. delegate 프로토콜 값 전달
     weak var delegate: HomeViewProtocol?
     
     // ***
     lazy var collectionView = {
         let view = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout())
         view.register(SearchCollectionViewCell.self, forCellWithReuseIdentifier: "SearchCollectionViewCell")
-        view.dataSource = self
-        view.delegate = self
+        // view.dataSource = self
+        // view.delegate = self
         view.collectionViewLayout = collectionViewLayout()
         return view
     }()
@@ -54,25 +55,27 @@ class HomeView: BaseView{
 }
 
 
-extension HomeView: UICollectionViewDelegate, UICollectionViewDataSource{
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 100
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchCollectionViewCell", for: indexPath) as? SearchCollectionViewCell else
-        { return UICollectionViewCell() }
-        
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        print(#function)
-        
-        delegate?.didSelectItemAt(indexPath: indexPath)
-        
-    }
- 
-}
+//extension HomeView: UICollectionViewDelegate, UICollectionViewDataSource{
+//
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        return 100
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchCollectionViewCell", for: indexPath) as? SearchCollectionViewCell else
+//        { return UICollectionViewCell() }
+//
+//        cell.imageView.backgroundColor = .systemBlue
+//        return cell
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//
+//        print(#function)
+//
+//        // 3. delegate 프로토콜 값 전달 _ HomewView에서 사용했던 것
+//         delegate?.didSelectItemAt(indexPath: indexPath)
+//
+//    }
+//
+//}

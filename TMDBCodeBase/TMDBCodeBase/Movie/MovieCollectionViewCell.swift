@@ -26,7 +26,7 @@ class MovieCollectionViewCell: BaseCollectionViewCell {
         label.text = "장르"
         return label
     }()
-    
+     
     override func setConfigure() {
         contentView.addSubview(posterImageView)
         contentView.addSubview(typeLabel)

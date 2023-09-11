@@ -28,11 +28,13 @@ final class BookTableRepository{
         print(realm.configuration.fileURL)
     }
     
+    // 값 가져오기
     func fetch() -> Results<BookTable>{
         let data = realm.objects(BookTable.self).sorted(byKeyPath: "bookName", ascending: true)
         return data
     }
     
+    // 값 추가하기
     func createItem(_ item: BookTable) {
         do {
             try realm.write {
@@ -45,6 +47,7 @@ final class BookTableRepository{
         }
     }
     
+    // 값 수정하기
     func updateItem(id: ObjectId, memo: String){
         do {
             try realm.write {
@@ -60,6 +63,7 @@ final class BookTableRepository{
         }
     }
     
+    // 값 삭제하기
     func deleteItem(_ item: BookTable){
         
         do {

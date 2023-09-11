@@ -16,7 +16,14 @@ class ProfileView: BaseView{
         return view
     }()
     
-
+    let testlabel = {
+        let view = UILabel()
+        view.text = "떠주세요"
+        view.textColor = .white
+        view.backgroundColor = .blue
+        return view
+    }()
+    
     deinit {
         
     }
@@ -25,6 +32,8 @@ class ProfileView: BaseView{
         super.setConfigure()
         addSubview(profileTableView)
         
+        // test
+        addSubview(testlabel)
     }
     
     override func setConstraints() {
@@ -32,6 +41,12 @@ class ProfileView: BaseView{
         
         profileTableView.snp.makeConstraints { make in
             make.edges.equalTo(self)
+        }
+        
+        // test
+        testlabel.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+            make.size.equalTo(200)
         }
 
     }

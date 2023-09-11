@@ -1,8 +1,8 @@
 //
 //  BaseCollectionViewCell.swift
-//  PhotoGramRealm
+//  ShoppingListHJH
 //
-//  Created by jack on 2023/09/03.
+//  Created by 황재하 on 9/8/23.
 //
 
 import UIKit
@@ -11,6 +11,8 @@ class BaseCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        configure()
+        setConstraints()
     }
     
     required init?(coder: NSCoder) {

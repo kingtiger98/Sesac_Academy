@@ -34,10 +34,13 @@ class AddViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        APIService.shared.callRequest()
-        
+        print("==============", #function)
         NotificationCenter.default.addObserver(self, selector: #selector(selectImageNotificationObserver), name: .selectImage, object: nil)
+        
+        APIService.shared.callRequest2(query: "sky") { data in
+            
+        }
+
     }
     
     

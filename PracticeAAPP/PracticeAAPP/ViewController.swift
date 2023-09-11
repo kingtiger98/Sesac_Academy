@@ -9,12 +9,16 @@ import UIKit
 import Alamofire
 import SnapKit
 
+
+
+
 // 1_1. delegate 실질적으로 SecondViewController에 있다고 생각해랑
 protocol PassDelegate{
     func newData(text: String)
 }
 
 class ViewController: UIViewController {
+    
     
     let nameLabel = {
         let label = UILabel()
@@ -39,6 +43,19 @@ class ViewController: UIViewController {
     let moveButton2 = {
         let button = UIButton()
         button.setTitle("다음 뷰로 : Delegate", for: .normal)
+        button.backgroundColor = .blue
+        return button
+    }()
+    
+    let nameLabel3 = {
+        let label = UILabel()
+        label.text = "이름 : Closure"
+        return label
+    }()
+    
+    let moveButton3 = {
+        let button = UIButton()
+        button.setTitle("다음 뷰로 : Closure", for: .normal)
         button.backgroundColor = .blue
         return button
     }()
@@ -82,6 +99,21 @@ class ViewController: UIViewController {
         
         moveButton2.addTarget(self, action: #selector(moveButton2Clicked), for: .touchUpInside)
     
+        
+        view.addSubview(nameLabel3)
+        view.addSubview(moveButton3)
+        nameLabel3.snp.makeConstraints { make in
+            make.top.equalTo(moveButton2.snp.bottom).offset(50)
+            make.horizontalEdges.equalToSuperview().inset(30)
+        }
+        moveButton3.snp.makeConstraints { make in
+            make.top.equalTo(nameLabel3.snp.bottom).offset(20)
+            make.horizontalEdges.equalToSuperview().inset(30)
+            make.height.equalTo(50)
+        }
+        
+        moveButton3.addTarget(self, action: #selector(moveButton3Clicked), for: .touchUpInside)
+        
     }
     
     // 1_2. Notification : Post된 값을 사용할 준비
@@ -100,6 +132,18 @@ class ViewController: UIViewController {
         let vc = SecondViewController()
         // 4. delegate
         vc.delegate = self
+        present(vc, animated: true)
+    }
+    
+    
+    @objc func moveButton3Clicked(){
+        let vc = SecondViewController()
+
+        // 3. closure
+        vc.completionHandler = { data in
+            self.nameLabel3.text = data
+        }
+        
         present(vc, animated: true)
     }
     

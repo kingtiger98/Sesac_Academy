@@ -40,6 +40,7 @@ class SearchViewController: BaseViewController {
                 self.collectionView.reloadData()
             }
         }
+        
     }
      
     override func configure() {
@@ -71,7 +72,6 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchCollectionViewCell", for: indexPath) as? SearchCollectionViewCell else { return UICollectionViewCell() }
         
-        // 노랑이미지로 해놓음 일단
         let data = imageList.results![indexPath.item].urls.thumb
         cell.backgroundColor = .yellow        
         return cell
@@ -80,7 +80,7 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let data = imageList.results![indexPath.item].urls.full
-        didSelectItemHandler?(data)
+        didSelectItemHandler?(data) // 클로저 값 전달
         dismiss(animated: true)
     }
     
@@ -92,4 +92,5 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
         layout.itemSize = CGSize(width: size / 4, height: size / 4)
         return layout
     }
+    
 }

@@ -15,8 +15,8 @@ class TmdbApiManager{
     private init() { }
     
     let headers: HTTPHeaders = [
-      "accept": "application/json",
-      "Authorization": APIKey.TMDBToken
+        "accept": "application/json",
+        "Authorization": APIKey.TMDBToken
     ]
     
     //
@@ -70,4 +70,49 @@ class TmdbApiManager{
     }
     
     
+    func UrlSessionMovieData(completionHandler: @escaping (MovieData?) -> Void ){
+        
+        guard let url = URL(string: "https://api.themoviedb.org/3/trending/all/day?api_key=Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjMGI0NTQ2NDIwYzcyNmE4MWQyYjcxMWEwNDhlMTg0NiIsInN1YiI6IjY0ZDZlZGU3ZjQ5NWVlMDI4ZjYzZDNiYyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.BGtl-e-IpDeMJ9JAqP2qK5rmfvOf5gBPOuuYeYfDcbk") else { return }
+        
+        let request = URLRequest(url: url)
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            DispatchQueue.main.async {
+                
+                if let error {
+                    print(error)
+                    completionHandler(nil)
+                    return
+                }
+                
+                guard let response = response as? HTTPURLResponse,
+                      (200...500).contains(response.statusCode) else {
+                    print(error) // Alert 또는 Do try Catch 등
+                    completionHandler(nil)
+                    return
+                }
+                
+                guard let data = data else {
+                    completionHandler(nil)
+                    return
+                }
+                
+                do {
+                    let result = try JSONDecoder().decode(MovieData.self, from: data)
+                    print(result)
+                    completionHandler(result)
+                } catch {
+                    print(error) // 디코딩 오류 키
+                    completionHandler(nil)
+                }
+                
+            }
+            
+        }.resume() // 네트워크 통신 시작 신호
+    }
+    
+    
 }
+
+
+

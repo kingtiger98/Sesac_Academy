@@ -1,31 +1,32 @@
 //
 //  ResuableProtocol.swift
-//  PhotoGramRealm
+//  ShoppingListHJH
 //
-//  Created by jack on 2023/09/03.
+//  Created by 황재하 on 9/8/23.
 //
 
 import UIKit
 
-protocol ReusableViewProtocol: AnyObject {
-    static var reuseIdentifier: String { get }
-    
+// 각 뷰의 identifier를 실수없게 얻기위해 프토콜을 사용
+protocol ReuseableViewProtocol{
+    // identifier를 호출하면 ReuseableViewProtocol를 채택한 클래스의 클래스명을 문자열로 가져옴
+    static var identifier: String { get }
 }
 
-extension UIViewController: ReusableViewProtocol {
-    static var reuseIdentifier: String {
+extension UIViewController{
+    static var identifier: String {
         return String(describing: self)
     }
 }
 
-extension UICollectionViewCell: ReusableViewProtocol {
-    static var reuseIdentifier: String {
+extension UICollectionViewCell {
+    static var identifier: String {
         return String(describing: self)
     }
 }
 
-extension UITableViewCell: ReusableViewProtocol {
-    static var reuseIdentifier: String {
+extension UITableViewCell{
+    static var identifier: String {
         return String(describing: self)
     }
 }

@@ -2,7 +2,7 @@
 //  PreviewImageView.swift
 //  SeSAC3Week6
 //
-//  Created by 황재하 on 8/26/23.
+//  Created by 황재하 on 8/26/23. 
 //
 
 import UIKit

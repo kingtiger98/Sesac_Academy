@@ -32,7 +32,9 @@ class SearchViewController: BaseViewController {
         mainView.serchBar.becomeFirstResponder()
         mainView.serchBar.delegate = self
         
-        APIService.shared.callRequest2()
+        APIService.shared.callRequest2(query: "sky") { data in
+            print(data)
+        }
         
     }
     

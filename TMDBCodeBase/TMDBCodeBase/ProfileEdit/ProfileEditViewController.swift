@@ -23,7 +23,7 @@ class ProfileEditViewController: BaseViewController{
         setData()
         
         // 2_1 : Notification을 통한 값 역 전달하기
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "완료", style: .plain, target: self, action: #selector(profileValueNotificationPost(notification:)))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "완료", style: .plain, target: self, action: #selector(profileValueNotificationPost))
         
     }
     
@@ -33,10 +33,21 @@ class ProfileEditViewController: BaseViewController{
         print(#function)
     }
     
+    
     // 2_2 : post _ Notification 뿌리기
-    @objc func profileValueNotificationPost(notification: NSNotification) {
+    @objc func profileValueNotificationPost() {
+        
+        print("1")
+        
         guard let text = mainView.editTextField.text else { return }
-        NotificationCenter.default.post(name: Notification.Name("setValue"), object: nil, userInfo: ["profileValue": text])
+        
+        print("2")
+        
+        let useInfo : [String: String] = ["profileValue": text]
+        NotificationCenter.default.post(
+            name: Notification.Name("setValue"),
+            object: nil,
+            userInfo: useInfo)
         print(text)
         
         navigationController?.popViewController(animated: true)

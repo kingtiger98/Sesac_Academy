@@ -26,35 +26,25 @@ enum Profile: CaseIterable {
     }
     
     var value: String {
-        get {
-            switch self {
-            case .name:
-                return "이름"
-            case .nickName:
-                return "사용자 이름"
-            case .gender:
-                return "성별 대명사"
-            }
-        }
-        set(newValue) {
-            switch self {
-            case .name:
-                
-                self = .name
-            case .nickName:
-                self = .nickName
-            case .gender:
-                self = .gender
-            }
+        switch self {
+        case .name:
+            return "이름"
+        case .nickName:
+            return "사용자 이름"
+        case .gender:
+            return "성별 대명사"
         }
     }
+    
 }
+
 
 class ProfileViewController: BaseViewController{
     
     let mainView = ProfileView()
+        
     
-    var profileValue: String = "새이름와야지" // 초기값 설정
+    var index = IndexPath(row: 0, section: 0)
     
     override func loadView() {
         self.view = mainView
@@ -62,6 +52,8 @@ class ProfileViewController: BaseViewController{
     
     deinit {
         print(#function)
+        // notification : Notification이 중복으로 실해되지 않게 뷰가 사라지면 Notification 삭제
+        NotificationCenter.default.removeObserver(self, name: Notification.Name("setValue"), object: nil)
     }
     
     override func viewDidLoad() {
@@ -69,8 +61,8 @@ class ProfileViewController: BaseViewController{
         print(#function)
         
         // 1_1. addObserve : notification 관찰 시작
-        NotificationCenter.default.addObserver(self, selector: #selector(profileValueNotificationObserve), name: .setProfileValue, object: nil)
-        
+        //NotificationCenter.default.addObserver(self, selector: #selector(profileValueNotificationObserve), name: Notification.Name("setValue"), object: nil)
+            
         
         
     }
@@ -80,28 +72,17 @@ class ProfileViewController: BaseViewController{
         
     }
     
-    // notification으로 역전달 받은 값 활용하는 함수  여기가 안되는 중!!!!!!
+    // notification으로 역전달 받은 값 활용하는 함수
     @objc func profileValueNotificationObserve(notification: NSNotification){
-        print("값 쓰는 곳")
-        
         if let value = notification.userInfo?["profileValue"] as? String {
-            // 프로필 데이터 업데이트
-            profileValue = value
+            
+            mainView.testlabel.text = value
             
             // 테이블뷰 리로드
-            mainView.profileTableView.reloadData()
+            mainView.profileTableView.reloadRows(at: [index], with: .automatic)
         }
         
     }
-    
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        print(#function)
-        // notification : Notification이 중복으로 실해되지 않게 뷰가 사라지면 Notification삭제
-        NotificationCenter.default.removeObserver(self, name: Notification.Name("setValue"), object: nil)
-    }
-    
     
     
     override func setConfigure() {
@@ -146,7 +127,7 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource{
         }
         
         cell.firstLabel1.text = row.key
-        cell.firstLabel2.text = profileValue // row.value
+        cell.firstLabel2.text = row.value
         
         return cell
     }
@@ -155,8 +136,8 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource{
         
         let vc = ProfileEditViewController()
         
-        vc.receviedContents = Profile.allCases[indexPath.row].value
         
+        vc.receviedContents = Profile.allCases[indexPath.row].value
         navigationController?.pushViewController(vc, animated: true)
         
     }
