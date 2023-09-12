@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 // MVVM 활용하기 : UI적인 역할만 담당하게 만들거야
 class PhotoViewController: UIViewController{
@@ -42,17 +43,22 @@ extension PhotoViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "photoCell")!
-        
         let data = viewModel.cellForRowAt(at: indexPath)
         
+        let cell = tableView.dequeueReusableCell(withIdentifier: "photoCell")!
+                
         cell.backgroundColor = .lightGray
+        
+        let url = URL(string: "\(data.urls.thumb)")
+        cell.imageView?.kf.setImage(with: url)
         
         return cell
         
     }
     
     
+    // link : https://unsplash.com/photos/3YrppYQPoCI
+    // url : https://unsplash.com/photos/3YrppYQPoCI
     
     
     

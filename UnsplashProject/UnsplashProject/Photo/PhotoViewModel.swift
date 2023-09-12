@@ -7,7 +7,7 @@
 
 import Foundation
 
-// MVVM 활용하기 : UI적인 요소 다 제외하고 ViewModel 하게 만들거야
+// MVVM 활용하기 : UI적인 요소 제외하고, 다 ViewModel이 하게 만들거야
 class PhotoViewModel{
     
     var list = Observable(Photo(total: 0, total_pages: 0, results: []))

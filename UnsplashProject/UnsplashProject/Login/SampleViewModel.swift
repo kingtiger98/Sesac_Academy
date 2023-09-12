@@ -11,6 +11,7 @@ class SampleViewModel{
     
     var list = [User(name: "Hue", age: 23), User(name: "Jack", age: 23), User(name: "Bran", age: 20), User(name: "Kokojong", age: 20)]
 
+    
     var numberOfRowInSection: Int{
         return list.count
     }

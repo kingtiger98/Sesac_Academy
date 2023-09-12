@@ -56,7 +56,7 @@ class LoginViewController: UIViewController{
         
         // 로그인 성공 얼럿 띄우기
         viewModel.signIn {
-            <#code#>
+            
         }
         
     }

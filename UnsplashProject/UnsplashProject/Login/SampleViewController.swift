@@ -30,26 +30,27 @@ class SampleViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
             
-        
-        //
         var number1 = 10
         var number2 = 3
         
-        print(number1 + number2)
+        // print(number1 + number2)
         
         number1 = 3
         number2 = 1
         
-        var number3 = Observable(10)
-        var number4 = Observable(3)
+        // Observable 인스턴스 생성 초기값 3, 1 부여
+        var number3 = Observable(3)
+        var number4 = Observable(1)
 
-        number3.bind { number in
+        // number.3의 값이 변경 되면 클로저 실행됨
+        number3.bind { _ in
             print("Observable", number3.value - number4.value)
         }
         
         number3.value = 100
         number3.value = 500
         number3.value = 50
+        number3.value = 20
         
         tableView.delegate = self
         tableView.dataSource = self
