@@ -26,7 +26,6 @@ class Netflix2ViewController: UIPageViewController {
         view.distribution = .fillEqually
         view.alignment = .fill
         
-        
         return view
     }()
     
@@ -88,6 +87,8 @@ class Netflix2ViewController: UIPageViewController {
     }()
     
     
+    let viewModel = Netflix2ViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -105,7 +106,44 @@ class Netflix2ViewController: UIPageViewController {
         view.addSubview(switchButton)
 
         setLayout()
+        
+        emailTextField.addTarget(self, action: #selector(emailTextFieldChanged), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(passwordTextFieldChanged), for: .editingChanged)
+        memberButton.addTarget(self, action: #selector(memberButtonClicked), for: .touchUpInside)
+        
+        viewModel.id.bind { text in
+            print("ID bind : \(text)")
+            self.emailTextField.text = text
+        }
+        
+        viewModel.pw.bind { text in
+            print("PW bind : \(text)")
+            self.passwordTextField.text = text
+        }
+        
+        viewModel.isValid.bind { bool in
+            self.memberButton.isEnabled = bool
+            self.memberButton.backgroundColor = bool ? .green : .lightGray
+        }
+        
     }
+    
+    @objc func emailTextFieldChanged(){
+        viewModel.id.value = emailTextField.text!
+        viewModel.checkValid()
+    }
+    
+    @objc func passwordTextFieldChanged(){
+        viewModel.pw.value = passwordTextField.text!
+        viewModel.checkValid()
+    }
+    
+    @objc func memberButtonClicked(){
+        viewModel.signIn {
+            print("로그인 성공!")
+        }
+    }
+    
     
     
     func setLayout() {
