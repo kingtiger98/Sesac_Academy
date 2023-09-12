@@ -23,7 +23,6 @@ class ViewController: UIViewController{
         //resultLabel.text = String(format: value, "고래밥", "다마고치", "컹")
         resultLabel.text = "age_result".localized(number: 55)
         
-        
         let bar = UISearchBar()
         bar.text = "asda"
         bar.placeholder = "asdss"
