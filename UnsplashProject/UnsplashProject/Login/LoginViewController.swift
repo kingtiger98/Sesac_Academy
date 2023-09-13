@@ -38,7 +38,6 @@ class LoginViewController: UIViewController{
             self.loginButton.backgroundColor = bool ? .green : .lightGray
         }
         
-        
     }
     
     @objc func idTextFieldChanged(){
@@ -50,7 +49,6 @@ class LoginViewController: UIViewController{
         viewModel.pw.value = pwTextField.text!
         viewModel.checkValidation()
     }
- 
     
     @objc func loginButtonClicked(){
         
