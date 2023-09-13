@@ -54,6 +54,7 @@ class VideoViewController: UIViewController {
         
         KakaoAPIManager.shared.callRequest(type: .video, query: query) { data in
             print(data)
+            
             completionHandler(data)
             }
             
@@ -100,6 +101,7 @@ extension VideoViewController: UITableViewDelegate, UITableViewDataSource, UITab
         }
          
         return cell
+    
     }
     
     //UITableViewDataSourcePrefetching: iOS10이상 사용 가능한 프로토콜, cellForRowAt 메서드가 호출되기 전에 미리 호출됨
@@ -111,7 +113,7 @@ extension VideoViewController: UITableViewDelegate, UITableViewDataSource, UITab
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
         
         for indexPath in indexPaths {
-            if videoList.count - 1 == indexPath.row && page < 15 && isEnd == false {
+            if videoList.count - 1 == indexPath.row && page < 10 && isEnd == false {
                 page += 1
                 // callRequest(query: searchBar.text!, page: page)
                 callRequest(query: searchBar.text!, page: page) { data in

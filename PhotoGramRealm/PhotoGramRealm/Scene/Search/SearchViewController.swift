@@ -73,7 +73,8 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchCollectionViewCell", for: indexPath) as? SearchCollectionViewCell else { return UICollectionViewCell() }
         
         let data = imageList.results![indexPath.item].urls.thumb
-        cell.backgroundColor = .yellow        
+        cell.backgroundColor = .yellow
+        
         return cell
     }
     

@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  UnsplashProjectHJH
+//  LottoMVVM
 //
-//  Created by 황재하 on 9/11/23.
+//  Created by 황재하 on 9/13/23.
 //
 
 import UIKit
