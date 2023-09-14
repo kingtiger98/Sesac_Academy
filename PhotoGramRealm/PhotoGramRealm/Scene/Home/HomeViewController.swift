@@ -20,7 +20,7 @@ class HomeViewController: BaseViewController {
         view.rowHeight = 100
         view.delegate = self
         view.dataSource = self
-        view.register(PhotoListTableViewCell.self, forCellReuseIdentifier: PhotoListTableViewCell.reuseIdentifier)
+        view.register(PhotoListTableViewCell.self, forCellReuseIdentifier: PhotoListTableViewCell.identifier)
         return view
     }()
     
@@ -107,7 +107,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: PhotoListTableViewCell.reuseIdentifier) as? PhotoListTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: PhotoListTableViewCell.identifier) as? PhotoListTableViewCell else { return UITableViewCell() }
         
         let data = tasks[indexPath.row]
         

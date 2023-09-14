@@ -33,6 +33,9 @@
 		4C6CC7BD2AA95BB600E37A4B /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = 4C6CC7BC2AA95BB600E37A4B /* Zip */; };
 		4C6CC7C02AAAA09400E37A4B /* ToDoTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6CC7BF2AAAA09400E37A4B /* ToDoTable.swift */; };
 		4C6CC7C22AAAA36A00E37A4B /* ToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6CC7C12AAAA36A00E37A4B /* ToDoViewController.swift */; };
+		4C8A8BDB2AB2CC8B00ECF377 /* RealmNewCollectionVIewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8A8BDA2AB2CC8B00ECF377 /* RealmNewCollectionVIewController.swift */; };
+		4C8A8BDE2AB2D1B200ECF377 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 4C8A8BDD2AB2D1B200ECF377 /* Alamofire */; };
+		4C8A8BE12AB2E7FA00ECF377 /* NewHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8A8BE02AB2E7FA00ECF377 /* NewHomeViewController.swift */; };
 		4C9373FF2AA5650700B357C6 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 4C9373FE2AA5650700B357C6 /* Realm */; };
 		4C9374012AA5650700B357C6 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4C9374002AA5650700B357C6 /* RealmSwift */; };
 		4C9374032AA56A6600B357C6 /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9374022AA56A6600B357C6 /* RealmModel.swift */; };
@@ -67,6 +70,8 @@
 		4C6CC7B92AA954D500E37A4B /* BackupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupViewController.swift; sourceTree = "<group>"; };
 		4C6CC7BF2AAAA09400E37A4B /* ToDoTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTable.swift; sourceTree = "<group>"; };
 		4C6CC7C12AAAA36A00E37A4B /* ToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoViewController.swift; sourceTree = "<group>"; };
+		4C8A8BDA2AB2CC8B00ECF377 /* RealmNewCollectionVIewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmNewCollectionVIewController.swift; sourceTree = "<group>"; };
+		4C8A8BE02AB2E7FA00ECF377 /* NewHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHomeViewController.swift; sourceTree = "<group>"; };
 		4C9374022AA56A6600B357C6 /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
 		4CAEA0022AA6CB1E00783CC6 /* FileManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
 		4CAEA0042AA6F25300783CC6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C8A8BDE2AB2D1B200ECF377 /* Alamofire in Frameworks */,
 				4C9374012AA5650700B357C6 /* RealmSwift in Frameworks */,
 				4C9373FF2AA5650700B357C6 /* Realm in Frameworks */,
 				4C6CC7BD2AA95BB600E37A4B /* Zip in Frameworks */,
@@ -106,6 +112,7 @@
 		04BAEAF72AA4BF3F005A3A69 /* PhotoGramRealm */ = {
 			isa = PBXGroup;
 			children = (
+				4C8A8BDF2AB2E51E00ECF377 /* ListConfiguration */,
 				4C6CC7BE2AAAA07B00E37A4B /* ToDo */,
 				04BAEB322AA550CC005A3A69 /* Network */,
 				04BAEB232AA4C0DA005A3A69 /* Utility */,
@@ -238,8 +245,17 @@
 			children = (
 				4C6CC7BF2AAAA09400E37A4B /* ToDoTable.swift */,
 				4C6CC7C12AAAA36A00E37A4B /* ToDoViewController.swift */,
+				4C8A8BDA2AB2CC8B00ECF377 /* RealmNewCollectionVIewController.swift */,
 			);
 			path = ToDo;
+			sourceTree = "<group>";
+		};
+		4C8A8BDF2AB2E51E00ECF377 /* ListConfiguration */ = {
+			isa = PBXGroup;
+			children = (
+				4C8A8BE02AB2E7FA00ECF377 /* NewHomeViewController.swift */,
+			);
+			path = ListConfiguration;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,6 +279,7 @@
 				4C9373FE2AA5650700B357C6 /* Realm */,
 				4C9374002AA5650700B357C6 /* RealmSwift */,
 				4C6CC7BC2AA95BB600E37A4B /* Zip */,
+				4C8A8BDD2AB2D1B200ECF377 /* Alamofire */,
 			);
 			productName = PhotoGramRealm;
 			productReference = 04BAEAF52AA4BF3F005A3A69 /* PhotoGramRealm.app */;
@@ -296,6 +313,7 @@
 				04BAEB282AA4C1D1005A3A69 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				4C9373FD2AA5650700B357C6 /* XCRemoteSwiftPackageReference "realm-swift" */,
 				4C6CC7BB2AA95BB600E37A4B /* XCRemoteSwiftPackageReference "Zip" */,
+				4C8A8BDC2AB2D1B200ECF377 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 04BAEAF62AA4BF3F005A3A69 /* Products */;
 			projectDirPath = "";
@@ -329,6 +347,7 @@
 				4C9374032AA56A6600B357C6 /* RealmModel.swift in Sources */,
 				04BAEB252AA4C0DF005A3A69 /* Constants.swift in Sources */,
 				04BAEAFD2AA4BF3F005A3A69 /* ViewController.swift in Sources */,
+				4C8A8BE12AB2E7FA00ECF377 /* NewHomeViewController.swift in Sources */,
 				4C6CC7BA2AA954D500E37A4B /* BackupViewController.swift in Sources */,
 				4CAEA0052AA6F25300783CC6 /* DetailViewController.swift in Sources */,
 				4C6CC7C02AAAA09400E37A4B /* ToDoTable.swift in Sources */,
@@ -346,6 +365,7 @@
 				04BAEAFB2AA4BF3F005A3A69 /* SceneDelegate.swift in Sources */,
 				04BAEB132AA4BF8C005A3A69 /* HomeViewController.swift in Sources */,
 				04BAEB2E2AA4CA1D005A3A69 /* WriteTextField.swift in Sources */,
+				4C8A8BDB2AB2CC8B00ECF377 /* RealmNewCollectionVIewController.swift in Sources */,
 				04BAEB2C2AA4C261005A3A69 /* AddViewController.swift in Sources */,
 				04BAEB1C2AA4C07B005A3A69 /* ResuableProtocol.swift in Sources */,
 			);
@@ -577,6 +597,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		4C8A8BDC2AB2D1B200ECF377 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		4C9373FD2AA5650700B357C6 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
@@ -597,6 +625,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4C6CC7BB2AA95BB600E37A4B /* XCRemoteSwiftPackageReference "Zip" */;
 			productName = Zip;
+		};
+		4C8A8BDD2AB2D1B200ECF377 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4C8A8BDC2AB2D1B200ECF377 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 		4C9373FE2AA5650700B357C6 /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
