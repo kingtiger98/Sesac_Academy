@@ -13,7 +13,7 @@ class NewHomeViewController: BaseViewController{
     let realm = try! Realm()
     var tasks : Results<DiaryTable>!
     
-    // 1.
+    // 1_1. 컬렉션뷰 생성 후, 레이아웃에 1_2에서 생성한 compositional Layout 사용
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
     
     // 2. 컬렉션뷰 셀 등록, "User"에는 셀에 올 데이터의 타입을 써줌!
@@ -60,7 +60,8 @@ class NewHomeViewController: BaseViewController{
     }
 
     
-    // 컴포지셔널 레이아웃 사용하기 _ List Configuration
+    // 1_2.컴포지셔널 레이아웃 사용하기 _ Compositional Layout : List Configuration
+    // 레이아웃을 결정함 _ 셀 높이가 내부 컨텐츠의 데이터에 따라서 자동으로 조절됨
     static func createLayout() -> UICollectionViewLayout {
         
         var configuration = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
@@ -68,6 +69,7 @@ class NewHomeViewController: BaseViewController{
         configuration.backgroundColor = .brown
         
         let layout = UICollectionViewCompositionalLayout.list(using: configuration)
+        
         return layout
     }
     
@@ -88,6 +90,8 @@ extension NewHomeViewController: UICollectionViewDelegate, UICollectionViewDataS
         return items
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("아앙")
+    }
     
 }

@@ -8,10 +8,13 @@
 import UIKit
 
 // Model
-struct User {
+struct User: Hashable { // indexPath를 사용하지 않기 위해서, Hashable 값을 고유하게 유지하는 규칙을 부여
     
     let name: String
     let age: Int
+    
+    // 알아서 유니키한 스트링 데이터를 넣어줌
+    let unique = UUID().uuidString // name, age가 같더라도 문제가 생기지 않음
     
     var introduce: String {
         return "\(name), \(age)살"
@@ -22,6 +25,11 @@ struct User {
 
 // View, Controller
 class SampleViewController: UIViewController{
+    
+    
+    
+    
+    
     
     @IBOutlet weak var tableView: UITableView!
     

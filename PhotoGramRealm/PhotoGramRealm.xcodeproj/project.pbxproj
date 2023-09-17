@@ -36,6 +36,7 @@
 		4C8A8BDB2AB2CC8B00ECF377 /* RealmNewCollectionVIewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8A8BDA2AB2CC8B00ECF377 /* RealmNewCollectionVIewController.swift */; };
 		4C8A8BDE2AB2D1B200ECF377 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 4C8A8BDD2AB2D1B200ECF377 /* Alamofire */; };
 		4C8A8BE12AB2E7FA00ECF377 /* NewHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8A8BE02AB2E7FA00ECF377 /* NewHomeViewController.swift */; };
+		4C8A8BE32AB337E200ECF377 /* NewSearchPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8A8BE22AB337E200ECF377 /* NewSearchPhotoViewController.swift */; };
 		4C9373FF2AA5650700B357C6 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 4C9373FE2AA5650700B357C6 /* Realm */; };
 		4C9374012AA5650700B357C6 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4C9374002AA5650700B357C6 /* RealmSwift */; };
 		4C9374032AA56A6600B357C6 /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9374022AA56A6600B357C6 /* RealmModel.swift */; };
@@ -72,6 +73,7 @@
 		4C6CC7C12AAAA36A00E37A4B /* ToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoViewController.swift; sourceTree = "<group>"; };
 		4C8A8BDA2AB2CC8B00ECF377 /* RealmNewCollectionVIewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmNewCollectionVIewController.swift; sourceTree = "<group>"; };
 		4C8A8BE02AB2E7FA00ECF377 /* NewHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHomeViewController.swift; sourceTree = "<group>"; };
+		4C8A8BE22AB337E200ECF377 /* NewSearchPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSearchPhotoViewController.swift; sourceTree = "<group>"; };
 		4C9374022AA56A6600B357C6 /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
 		4CAEA0022AA6CB1E00783CC6 /* FileManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
 		4CAEA0042AA6F25300783CC6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				4C8A8BE02AB2E7FA00ECF377 /* NewHomeViewController.swift */,
+				4C8A8BE22AB337E200ECF377 /* NewSearchPhotoViewController.swift */,
 			);
 			path = ListConfiguration;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 				04BAEB162AA4BFD0005A3A69 /* PhotoListTableViewCell.swift in Sources */,
 				04BAEB342AA550D2005A3A69 /* APIService.swift in Sources */,
 				04BAEB272AA4C106005A3A69 /* Color.swift in Sources */,
+				4C8A8BE32AB337E200ECF377 /* NewSearchPhotoViewController.swift in Sources */,
 				04BAEB382AA55290005A3A69 /* SearchCollectionViewCell.swift in Sources */,
 				04BAEAF92AA4BF3F005A3A69 /* AppDelegate.swift in Sources */,
 				4C6CC7C22AAAA36A00E37A4B /* ToDoViewController.swift in Sources */,

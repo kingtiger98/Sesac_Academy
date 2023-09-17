@@ -156,8 +156,8 @@
 				DED9EBA32AAE993700EC3071 /* Assets.xcassets */,
 				DED9EBA52AAE993700EC3071 /* LaunchScreen.storyboard */,
 				DED9EBA82AAE993700EC3071 /* Info.plist */,
-				4C6CC8902AAEAE2400E37A4B /* Localizable.strings */,
 				4C6CC8932AAEBABB00E37A4B /* String+Extension.swift */,
+				4C6CC8902AAEAE2400E37A4B /* Localizable.strings */,
 				4C6CC8992AAEBDCC00E37A4B /* InfoPlist.strings */,
 			);
 			path = UnsplashProject;
