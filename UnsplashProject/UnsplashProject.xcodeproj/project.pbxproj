@@ -26,6 +26,7 @@
 		4C8A8BD42AB296F700ECF377 /* SimpleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8A8BD32AB296F700ECF377 /* SimpleTableViewController.swift */; };
 		4C8A8BD62AB2A01900ECF377 /* NewSimpleCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8A8BD52AB2A01900ECF377 /* NewSimpleCollectionViewController.swift */; };
 		4C8A8BD92AB2A9D300ECF377 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4C8A8BD82AB2A9D300ECF377 /* SnapKit */; };
+		4C8A8C152AB7D34200ECF377 /* NumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8A8C142AB7D34200ECF377 /* NumberViewController.swift */; };
 		DED9EB9B2AAE993600EC3071 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED9EB9A2AAE993600EC3071 /* AppDelegate.swift */; };
 		DED9EB9D2AAE993600EC3071 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED9EB9C2AAE993600EC3071 /* SceneDelegate.swift */; };
 		DED9EB9F2AAE993600EC3071 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED9EB9E2AAE993600EC3071 /* ViewController.swift */; };
@@ -56,6 +57,7 @@
 		4C8A8BA62AB13DA800ECF377 /* OvservableHwang.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OvservableHwang.swift; sourceTree = "<group>"; };
 		4C8A8BD32AB296F700ECF377 /* SimpleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTableViewController.swift; sourceTree = "<group>"; };
 		4C8A8BD52AB2A01900ECF377 /* NewSimpleCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSimpleCollectionViewController.swift; sourceTree = "<group>"; };
+		4C8A8C142AB7D34200ECF377 /* NumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberViewController.swift; sourceTree = "<group>"; };
 		DE93B8F02AAE9CB10025F8DA /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
 		DE93B8F12AAE9CB10025F8DA /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		DE93B8F22AAE9CBA0025F8DA /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				4C8A8B812AAFFDE800ECF377 /* SampleViewController.swift */,
 				4C8A8B832AB0015E00ECF377 /* SampleViewModel.swift */,
 				4C8A8B7F2AAFF2F900ECF377 /* Observable.swift */,
+				4C8A8C142AB7D34200ECF377 /* NumberViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				4C8A8B8F2AB02DA500ECF377 /* PhotoViewModel.swift in Sources */,
 				4C8A8B822AAFFDE800ECF377 /* SampleViewController.swift in Sources */,
 				4C8A8BA72AB13DA800ECF377 /* OvservableHwang.swift in Sources */,
+				4C8A8C152AB7D34200ECF377 /* NumberViewController.swift in Sources */,
 				4C8A8B862AB00E4A00ECF377 /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

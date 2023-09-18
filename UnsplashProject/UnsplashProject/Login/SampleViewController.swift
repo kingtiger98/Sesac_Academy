@@ -26,11 +26,6 @@ struct User: Hashable { // indexPath를 사용하지 않기 위해서, Hashable 
 // View, Controller
 class SampleViewController: UIViewController{
     
-    
-    
-    
-    
-    
     @IBOutlet weak var tableView: UITableView!
     
     let viewModel = SampleViewModel()

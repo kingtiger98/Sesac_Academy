@@ -8,6 +8,39 @@
 import UIKit
 import SnapKit
 
+class NewSimpleViewModel{
+    
+    let list: Observable<[User]> = Observable([])
+    
+    let list2 = [User(name: "jack", age: 23),
+                 User(name: "Hue", age: 23),
+                 User(name: "Bran", age: 20),
+                 User(name: "Hwang", age: 20)
+    ]
+    
+    func append() {
+        list.value = [User(name: "jack", age: 23),
+                      User(name: "Hue", age: 23),
+                      User(name: "Bran", age: 20),
+                      User(name: "Kokojong", age: 20)]
+    }
+    
+    func remove() {
+        list.value = []
+    }
+    
+    func removeUser(idx: Int){
+        list.value.remove(at: idx)
+    }
+    
+    func insertUser(name: String) {
+        let user = User(name: name, age: Int.random(in: 10...50))
+        list.value.insert(user, at: Int.random(in: 0...2))
+    }
+    
+}
+
+
 class NewSimpleCollectionViewController: UIViewController{
     
     enum Section: Int, CaseIterable{
@@ -15,17 +48,8 @@ class NewSimpleCollectionViewController: UIViewController{
     }
     
     
-    let list = [User(name: "jack", age: 23),
-                User(name: "Hue", age: 23),
-                User(name: "Bran", age: 20),
-                User(name: "Kokojong", age: 20)
-    ]
+    var viewModel = NewSimpleViewModel()
     
-    let list2 = [User(name: "jack", age: 23),
-                 User(name: "Hue", age: 23),
-                 User(name: "Bran", age: 20),
-                 User(name: "Hwang", age: 20)
-    ]
     
     // 1. 컬렉션뷰 생성
     var collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
@@ -39,10 +63,39 @@ class NewSimpleCollectionViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let searchBar = UISearchBar()
+        searchBar.delegate = self
+        navigationItem.titleView = searchBar
+        
         view.addSubview(collectionView)
+        collectionView.delegate = self
         collectionView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+        
+        configuerDataSource()
+
+        viewModel.list.bind { user in
+            self.updataSnapshot()
+        }
+        
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.viewModel.append()
+            self.updataSnapshot() // reloadData 대신에 사용!
+        }
+        
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+//            //self.list.insert(User(name: "번개맨", age: 24), at: 2)
+//            self.list.remove(at: 2)
+//            self.updataSnapshot() // reloadData 대신에 사용!
+//        }
+        
+        
+        
+    }
+    
+    func updataSnapshot(){
         
         // C. NumberOfItemsInSection기능을 대신함!***
         var snapshot = NSDiffableDataSourceSnapshot<Section, User>() // <String, User>
@@ -54,12 +107,14 @@ class NewSimpleCollectionViewController: UIViewController{
         // 섹션 여러개 사용
         // 오류발생! 여러 섹션에 같은 배열을 적용하면 렌더링이 제대로 안될 수 있어
         snapshot.appendSections(Section.allCases) // 0, 1 이 꼭 순서대로가 아니어도 됨 indexPath의 개념을 버려라 _ 120, 1 이어도 잘 작동함 심지어 문자열이어도 됨 고유하면 됨 그냥, [120, 1]
-        snapshot.appendItems(list, toSection: Section.first) // (list, toSection: 120)
-        snapshot.appendItems(list2, toSection: Section.second) // (list, toSection: 1)
+        snapshot.appendItems(viewModel.list.value, toSection: Section.first) // (list, toSection: 120)
+        snapshot.appendItems(viewModel.list2, toSection: Section.second) // (list, toSection: 1)
 
+        
         dataSource.apply(snapshot)
         
     }
+    
     
     // 컴포지셔널 레이아웃 사용하기 _ List Configuration
     static private func createLayout() -> UICollectionViewLayout {
@@ -110,6 +165,30 @@ class NewSimpleCollectionViewController: UIViewController{
     
 }
 
+extension NewSimpleCollectionViewController: UICollectionViewDelegate{
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        //let user = viewModel.list.value[indexPath.item]
+        guard let user = dataSource.itemIdentifier(for: indexPath) else {
+            return
+        }
+        
+        dump(user)
+        
+        //viewModel.removeUser(idx: indexPath.item)
+        
+    }
+    
+}
+
+extension NewSimpleCollectionViewController: UISearchBarDelegate{
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        viewModel.insertUser(name: searchBar.text!)
+    }
+    
+}
 
 //extension NewSimpleCollectionViewController: UICollectionViewDataSource{
 //

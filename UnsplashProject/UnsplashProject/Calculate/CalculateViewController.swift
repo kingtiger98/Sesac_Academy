@@ -26,12 +26,10 @@ class CalculateViewController: UIViewController{
         // viewModel의 데이터를 뷰에 전달
         viewModel.firstNumber.bind { number in
             self.firstTextField.text = number
-            //print("firstNumber changed : \(number)")
         }
         
         viewModel.secondNumber.bind { number in
             self.secondTextField.text = number
-            //print("secondNumber changed : \(number)")
         }
         
         viewModel.resultText.bind { text in
@@ -43,7 +41,6 @@ class CalculateViewController: UIViewController{
             self.templeLabel.text = text
         }
         
-      
     }
     
     // 사용자가 입력한 데이터를 viewModel에 전달
