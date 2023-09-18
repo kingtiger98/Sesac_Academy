@@ -25,11 +25,7 @@ class Obsevable<T>{
         closure(value)
         listener = closure
     }
-    
-    
-    
-    
-    
+ 
 }
 
 

@@ -79,13 +79,22 @@ class Netflix2ViewController: UIPageViewController {
         label.textColor = .lightGray
         return label
     }()
-    
+
     let switchButton = {
         let button = UISwitch()
         button.onTintColor = .red
         return button
     }()
     
+    let errorLabel = {
+        let label = UILabel()
+        label.text = " 회원가입 정보를 올바르게 입력해주세요"
+        label.layer.cornerRadius = 8
+        label.clipsToBounds = true
+        label.backgroundColor = .white
+        label.textColor = .black
+        return label
+    }()
     
     let viewModel = Netflix2ViewModel()
     
@@ -104,37 +113,60 @@ class Netflix2ViewController: UIPageViewController {
         
         view.addSubview(addInfoLabel)
         view.addSubview(switchButton)
-
+        view.addSubview(errorLabel)
+        
         setLayout()
+        
+        
+        // nickNameTextField, locationTextField, recommandCodeTextField
         
         emailTextField.addTarget(self, action: #selector(emailTextFieldChanged), for: .editingChanged)
         passwordTextField.addTarget(self, action: #selector(passwordTextFieldChanged), for: .editingChanged)
+        nickNameTextField.addTarget(self, action: #selector(nickNameTextFieldChanged), for: .editingChanged)
+        locationTextField.addTarget(self, action: #selector(loactionTextFieldChanged), for: .editingChanged)
+        recommandCodeTextField.addTarget(self, action: #selector(recommandCodeTextFieldChanged), for: .editingChanged)
+        
         memberButton.addTarget(self, action: #selector(memberButtonClicked), for: .touchUpInside)
         
-        viewModel.id.bind { text in
-            print("ID bind : \(text)")
-            self.emailTextField.text = text
-        }
-        
-        viewModel.pw.bind { text in
-            print("PW bind : \(text)")
-            self.passwordTextField.text = text
-        }
         
         viewModel.isValid.bind { bool in
             self.memberButton.isEnabled = bool
             self.memberButton.backgroundColor = bool ? .green : .lightGray
         }
         
+        viewModel.errormsg.bind { text in
+            self.errorLabel.text = text
+        }
+        
     }
     
     @objc func emailTextFieldChanged(){
         viewModel.id.value = emailTextField.text!
+        viewModel.idError()
         viewModel.checkValid()
     }
     
     @objc func passwordTextFieldChanged(){
         viewModel.pw.value = passwordTextField.text!
+        viewModel.pwError()
+        viewModel.checkValid()
+    }
+    
+    @objc func nickNameTextFieldChanged(){
+        viewModel.nickname.value = nickNameTextField.text!
+        viewModel.nicknameError()
+        viewModel.checkValid()
+    }
+    
+    @objc func loactionTextFieldChanged(){
+        viewModel.location.value = locationTextField.text!
+        viewModel.locationError()
+        viewModel.checkValid()
+    }
+    
+    @objc func recommandCodeTextFieldChanged(){
+        viewModel.code.value = recommandCodeTextField.text!
+        viewModel.codeError()
         viewModel.checkValid()
     }
     
@@ -174,6 +206,12 @@ class Netflix2ViewController: UIPageViewController {
             make.top.equalTo(memberButton.snp.bottom).offset(16)
             make.trailing.equalTo(signStackView)
 
+        }
+        
+        errorLabel.snp.makeConstraints { make in
+            make.top.equalTo(addInfoLabel.snp.bottom).offset(16)
+            make.horizontalEdges.equalToSuperview().inset(30)
+            make.height.equalTo(40)
         }
         
     }
