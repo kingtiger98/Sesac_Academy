@@ -17,13 +17,13 @@ class PhotoViewController: UIViewController{
     
     var dataSource : UICollectionViewDiffableDataSource<Int, PhotoResult>!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let searchBar = UISearchBar()
         searchBar.delegate = self
         navigationItem.titleView = searchBar
+        
         collectionVIew.collectionViewLayout = createLayout()
         configureDataSource()
         
