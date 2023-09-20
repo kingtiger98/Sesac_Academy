@@ -37,7 +37,7 @@ final class NetworkBasic{
     
     static let shared = NetworkBasic()
     
-    let key = SeSACAPI.key
+    //let key = SeSACAPI.key
     
     private init() {}
     

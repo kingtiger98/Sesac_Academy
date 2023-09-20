@@ -8,14 +8,6 @@
 import Foundation
 import Alamofire
 
-//enum Router: URLRequestConvertible{
-//
-//    func asURLRequest() throws -> URLRequest {
-//        <#code#>
-//    }
-//
-//}
-
 enum SeSACAPI {
     
     private static let key = "jIIsu7aMtDknZPWcBQXtkoENW103bwaUMg8nw5OdYYc"
@@ -66,8 +58,5 @@ enum SeSACAPI {
     var header: HTTPHeaders{
         return [ "Authorization" : "Client-ID \(SeSACAPI.key)" ]
     }
-    
-    
 
-    
 }
