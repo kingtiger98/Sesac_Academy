@@ -22,6 +22,7 @@
 		4C8A8C9B2ABA763700ECF377 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8A8C9A2ABA763700ECF377 /* Router.swift */; };
 		4C8A8C9D2ABA99B300ECF377 /* Struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8A8C9C2ABA99B300ECF377 /* Struct.swift */; };
 		4C8A8C9F2ABA9A8E00ECF377 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8A8C9E2ABA9A8E00ECF377 /* ViewModel.swift */; };
+		4C8A8CDA2ABBCB3E00ECF377 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8A8CD92ABBCB3E00ECF377 /* SearchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		4C8A8C9A2ABA763700ECF377 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		4C8A8C9C2ABA99B300ECF377 /* Struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Struct.swift; sourceTree = "<group>"; };
 		4C8A8C9E2ABA9A8E00ECF377 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		4C8A8CD92ABBCB3E00ECF377 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 				4C8A8C722AB93CBF00ECF377 /* Network */,
 				4C8A8C592AB9293500ECF377 /* ViewController.swift */,
 				4C8A8C9E2ABA9A8E00ECF377 /* ViewModel.swift */,
+				4C8A8CD92ABBCB3E00ECF377 /* SearchViewController.swift */,
 				4C8A8C5B2AB9293500ECF377 /* Main.storyboard */,
 				4C8A8C5E2AB9293600ECF377 /* Assets.xcassets */,
 				4C8A8C602AB9293600ECF377 /* LaunchScreen.storyboard */,
@@ -180,6 +183,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C8A8CDA2ABBCB3E00ECF377 /* SearchViewController.swift in Sources */,
 				4C8A8C5A2AB9293500ECF377 /* ViewController.swift in Sources */,
 				4C8A8C9F2ABA9A8E00ECF377 /* ViewModel.swift in Sources */,
 				4C8A8C742AB93CEE00ECF377 /* NetworkBasic.swift in Sources */,
