@@ -14,6 +14,7 @@ class ViewController: UIViewController {
 
     let viewModel = ViewModel()
     
+    // self 키워드를 사용할 수 있는 상황이 만들어진 다음에 프로퍼티를 초기화함 : lazy 사용
     private lazy var scrollView = {
         let view = UIScrollView()
         view.backgroundColor = .green
